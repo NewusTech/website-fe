@@ -3,8 +3,10 @@ import Image from "next/image";
 import Coolicon from "@/public/assets/icons/coolicon";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+
 import CardListProject from "@/components/SuccessProject/CardListProject";
 import CardSquareProject from "@/components/SuccessProject/CardSquareProject";
+import Pages from "@/components/shared/Pages";
 
 const TabsProject = () => {
   return (
@@ -56,6 +58,7 @@ const TabsProject = () => {
           </div>
         </div>
         <CardListProject />
+        <Pages />
       </TabsContent>
       <TabsContent value="square">
         <p className="text-gray">
@@ -97,6 +100,7 @@ const TabsProject = () => {
           <CardSquareProject />
           <CardSquareProject />
         </div>
+        <Pages />
       </TabsContent>
     </Tabs>
   );
