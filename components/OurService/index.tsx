@@ -10,12 +10,7 @@ const OurService = () => {
         With more than 5 years experience supporting 50+ customers, you can
         trust Newus Technology to deliver
       </p>
-      <div className="flex mt-[29px] pb-10">
-        <CardService />
-        <CardService />
-        <CardService />
-        <CardService />
-      </div>
+      <CardService />
     </section>
   );
 };

@@ -49,3 +49,30 @@ export const ourClient = [
     logo: "/assets/images/ggf.png",
   },
 ];
+
+export const service = [
+  {
+    id: 1,
+    title: "Web - Based Applications",
+    image: "/assets/images/web.jpg",
+    type: "web",
+  },
+  {
+    id: 2,
+    title: "Mobile Development",
+    image: "/assets/images/mobile.jpg",
+    type: "mobile",
+  },
+  {
+    id: 3,
+    title: "UI / UX Design",
+    image: "/assets/images/ui.jpg",
+    type: "ui/ux",
+  },
+  {
+    id: 4,
+    title: "Digital Marketing",
+    image: "/assets/images/digital.jpg",
+    type: "digital",
+  },
+];
