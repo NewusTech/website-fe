@@ -24,6 +24,7 @@ const config = {
         tangerine: "#FF6600",
         "tangerine-2": "#e75d00",
         gray: "#A7ABB6",
+        "gray-1": "#E0E0E0",
         "gray-2": "#4F4F4F",
         dark: "#202020",
         border: "hsl(var(--border))",
