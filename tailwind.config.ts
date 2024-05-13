@@ -26,6 +26,7 @@ const config = {
         gray: "#A7ABB6",
         "gray-1": "#E0E0E0",
         "gray-2": "#4F4F4F",
+        "gray-3": "#D9D9D9",
         dark: "#202020",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
