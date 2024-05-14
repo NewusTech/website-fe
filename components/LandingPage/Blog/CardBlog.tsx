@@ -6,7 +6,7 @@ const CardBlog = ({ type }: { type?: string }) => {
       className={`${
         type === "landing"
           ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[390px] w-full h-[97px] md:h-[465px]"
-          : "bg-transparent flex-col w-full md:w-[366px] h-full rounded-[2px]"
+          : "bg-transparent flex-col w-full md:w-[410px] h-full rounded-[2px]"
       } flex`}
     >
       <div

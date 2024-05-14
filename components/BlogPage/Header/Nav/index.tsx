@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const Nav = () => {
   return (
-    <section className="max-w-screen 2xl:container 2xl:mx-auto">
-      <div className="w-full container mx-auto flex justify-between md:mt-[30px] items-center md:z-20 md:absolute py-[22px] md:py-0">
+    <section className="max-w-screen 2xl:container 2xlmx-auto">
+      <div className="2xl:w-[72%] container mx-auto flex justify-between md:mt-[30px] items-center md:z-20 md:top-0 md:absolute py-[22px] md:py-0">
         <Image
-          src="/assets/icons/logo-2.svg"
+          src="/assets/icons/logo-mobile.svg"
           alt="logo"
           width={206}
           height={56}
