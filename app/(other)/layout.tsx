@@ -1,4 +1,4 @@
-import Nav from "../../components/BlogPage/Header/Nav";
+import Nav from "../../components/shared/Header/Nav";
 import Footer from "@/components/shared/Footer";
 
 export default function OtherLayout({
