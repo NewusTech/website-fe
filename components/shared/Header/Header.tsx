@@ -12,7 +12,7 @@ const Header = ({
 }) => {
   return (
     <header className="w-full z-10 relative">
-      <div className="md:min-w-[1350px] md:min-h-[75px]">
+      <div className="md:min-w-screen md:min-h-[75px]">
         <Image
           src={image}
           alt="blog header"
