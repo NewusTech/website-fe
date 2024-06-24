@@ -44,10 +44,6 @@ export const ourClient = [
     id: 11,
     logo: "/assets/images/ggf.png",
   },
-  {
-    id: 12,
-    logo: "/assets/images/ggf.png",
-  },
 ];
 
 export const service = [
