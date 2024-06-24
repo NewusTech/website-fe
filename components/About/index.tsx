@@ -22,21 +22,17 @@ const AboutLayout = () => {
     <section className="bg-[#F4F4F4]">
       <Tabs defaultValue="about" className="p-[120px]">
         <TabsList>
-          <TabsTrigger className="acbg-orange-300 text-[#FF6600] data-[state=active]:bg-[#FF6600] data-[state=active]" value="about">
-            <div className="mx-10 py-[25px] font-bold text-[20px]">
-              ABOUT
-            </div>
+          <TabsTrigger className="text-[#FF6600] px-10 py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-[20px]" value="about">
+            ABOUT
           </TabsTrigger>
           <TabsTrigger value="legalitas" className="text-[#FF6600] px-10 py-[25px] data-[state=active]:bg-[#FF6600]  font-bold text-[20px]">
             LEGALITAS
           </TabsTrigger>
         </TabsList>
-        <TabsContent value="about">
-          <div>
-            <About />
-          </div>
+        <TabsContent value="about" className="ml-1">
+          <About />
         </TabsContent>
-        <TabsContent value="legalitas">
+        <TabsContent value="legalitas" className="ml-1">
           <Legalitas />
         </TabsContent>
       </Tabs>
@@ -107,11 +103,11 @@ const AboutLayout = () => {
         </div>
       </div>
       {/* OurCliet */}
-      <div className="px-[100px] pt-24 flex flex-col w-full pb-10">
+      <div className="px-[150px] pt-24 flex flex-col w-full pb-[82px]">
         <OurClient />
       </div>
 
-      <div className="px-[100px] bg-[#4F4F4F] pt-24 flex flex-col w-full h-screen">
+      <div className="px-[150px] bg-[#4F4F4F] pt-24 flex flex-col w-full">
         <OurHistory />
       </div>
 
