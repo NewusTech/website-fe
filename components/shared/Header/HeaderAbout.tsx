@@ -21,16 +21,27 @@ const Header = ({
           className={`w-full h-full object-cover`}
         />
       </div>
-      <div className="flex justify-center">
-        <div className="z-30 px-[10px] md:px-10 py-[10px] md:py-5 inline-flex w-full -mt-[50px] md:-mt-[100px] bg-[#EEF0EB80]">
-          <div className="flex w-full justify-center items-center gap-[10px] md:gap-[21px]">
-            <h1 className="text-white uppercase font-bold text-[10px] md:text-[32px]">
-              {title}
-            </h1>
+      {title === 'team' ? (
+        <div className="relative">
+          <div className="absolute top-[-556px] left-[1055px] opacity-[1] max-w-[415px] text-white">
+            <h1 className="text-[40px] text-[#480DEC] font-bold tracking-[.1em]">NAME</h1>
+            <h2 className="text-[36px] text-black pb-10 tracking-[.25em]">POSITION</h2>
+            <p className="text-[16px]">
+              Lorem ipsum dolor sit amet consectetur. Volutpat velit nibh orci eu vel a phasellus dui est. Habitasse eget cum sed pulvinar morbi. Lorem ut ullamcorper est tincidunt venenatis venenatis dignissim magna. Eget adipiscing purus duis vel etiam.
+            </p>
           </div>
         </div>
-
-      </div>
+      ) : (
+        <div className="flex justify-center">
+          <div className="z-30 px-[10px] md:px-10 py-[10px] md:py-5 inline-flex w-full -mt-[50px] md:-mt-[100px] bg-[#EEF0EB80]">
+            <div className="flex w-full justify-center items-center gap-[10px] md:gap-[21px]">
+              <h1 className="text-white uppercase font-bold text-[10px] md:text-[32px]">
+                {title}
+              </h1>
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
