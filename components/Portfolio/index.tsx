@@ -8,6 +8,13 @@ import CardSquarePorto from "./CardSquarePorto";
 import CardListPorto from "./CardListPorto";
 
 const index = () => {
+  const projects = [
+    { slug: 'project-1', name: 'Project One', description: 'Description for project one' },
+    { slug: 'project-2', name: 'Project Two', description: 'Description for project two' },
+    { slug: 'project-3', name: 'Project Two', description: 'Description for project two' },
+    // Tambahkan proyek lain sesuai kebutuhan
+  ];
+
   return (
     <section>
       <div className="flex justify-center gap-[6px] md:gap-6 px-7 flex-wrap md:overflow-hidden pt-7 md:pt-10">
@@ -70,18 +77,16 @@ const index = () => {
             <TabsContent value="list">
               <div className="flex flex-col md:flex-row gap-4 my-4 md:my-7 ">
               </div>
-              <CardListPorto />
-              <CardListPorto />
-              <CardListPorto />
-              <CardListPorto />
+              {projects.map((project) => (
+                <CardListPorto key={project.slug} slug={project.slug} />
+              ))}
               <Pages />
             </TabsContent>
             <TabsContent value="square">
-              <div className="flex gap-4 md:gap-[0px] flex-wrap my-4 md:my-7 mb-10">
-                <CardSquarePorto />
-                <CardSquarePorto />
-                <CardSquarePorto />
-                <CardSquarePorto />
+              <div className="flex gap-4 md:gap-[20px] flex-wrap my-4 md:my-7 mb-10">
+                {projects.map((project) => (
+                  <CardSquarePorto key={project.slug} slug={project.slug} />
+                ))}
               </div>
               <Pages />
             </TabsContent>

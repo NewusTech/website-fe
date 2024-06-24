@@ -1,7 +1,21 @@
+'use client'
+
+import React from 'react';
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useRouter } from 'next/navigation';
 
-const CardListPorto = () => {
+interface CardListPortoProps {
+  slug: string;
+}
+
+const CardListPorto: React.FC<CardListPortoProps> = ({ slug }) => {
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    router.push(`/portfolio/${slug}`);
+  };
+
   return (
     <div className="bg-white rounded-[10px] w-[40%] md:w-full mb-[10px]">
       <div className="flex md:gap-[42px]">
@@ -23,6 +37,7 @@ const CardListPorto = () => {
           <Button
             size="xs"
             className="bg-blue py-[14px] md:py-6 px-20 rounded-[10px] w-[116px] md:w-[188px] hover:bg-blue-2 md:text-[16px] text-[8px]"
+            onClick={handleButtonClick}
           >
             See Project
           </Button>
