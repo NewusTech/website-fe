@@ -3,57 +3,61 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import ListIcon from "@/public/assets/icons/ListIcon";
-import CardSquareProject from "../LandingPage/SuccessProject/CardSquareProject";
-import { Button } from "@/components/ui/button";
-import CardListProject from "../LandingPage/SuccessProject/CardListProject";
 import Pages from "../shared/Pages";
+import CardSquarePorto from "./CardSquarePorto";
+import CardListPorto from "./CardListPorto";
+
 const index = () => {
   return (
     <section>
-      <div className="hidden md:flex gap-6 mt-10 justify-center">
-        <div className="bg-blue w-[102px] h-[43px] rounded-[16px] flex items-center justify-center">
-          <p className="text-white font-extrabold text-[16px]">All</p>
+      <div className="flex justify-center gap-[6px] md:gap-6 px-7 flex-wrap md:overflow-hidden pt-7 md:pt-10">
+        <div className="bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
+          <p className="text-white font-extrabold text-[6px] md:text-[16px] whitespace-nowrap md:whitespace-normal">
+            All
+          </p>
         </div>
-        <div className="h-[43px] rounded-[16px] flex items-center justify-center ">
-          <p className="text-dark font-[500] text-[16px] hover:text-blue transition-colors duration-300">
+        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
+          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Mobile Development
           </p>
         </div>
-        <div className="h-[43px] rounded-[16px] flex items-center justify-center">
-          <p className="text-dark font-[500] text-[16px] hover:text-blue transition-colors duration-300">
+        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
+          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Web App Development
           </p>
         </div>
-        <div className="h-[43px] rounded-[16px] flex items-center justify-center">
-          <p className="text-dark font-[500] text-[16px] hover:text-blue transition-colors duration-300">
+        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
+          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Website Development
           </p>
         </div>
-        <div className="h-[43px] rounded-[16px] flex items-center justify-center">
-          <p className="text-dark font-[500] text-[16px] hover:text-blue transition-colors duration-300">
+        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
+          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Digital Marketing
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto pt-12 pb-20">
+      <div className="max-w-7xl mx-auto pt-4 md:pt-12 pb-20">
         <div>
-          <Tabs defaultValue="list">
+          <Tabs defaultValue="list" className="px-4">
             <div className="flex justify-between items-center">
-              <div className="flex w-[773px] h-[40px]">
-                <Image
-                  src="/assets/icons/search.svg"
-                  alt="search"
-                  width={30}
-                  height={30}
-                  className="z-30"
-                />
+              <div className="flex w-full md:w-[773px] h-[24px] md:h-[40px] items-center border-[0.5px] rounded-[2px] md:rounded-lg border-dark">
+                <div className="flex items-center justify-center pl-3 border-0 rounded-none">
+                  <Image
+                    src="/assets/icons/search.svg"
+                    alt="search"
+                    width={20}
+                    height={20}
+                    className="z-30"
+                  />
+                </div>
                 <Input
                   type="text"
-                  className="bg-white border h-[40px] border-dark -ml-10"
+                  className="flex-grow h-full py-2 pl-2 md:pl-4 pr-2 border-0 rounded-none"
                 />
               </div>
-              <TabsList className="-mt-7 md:mt-7">
+              <TabsList>
                 <TabsTrigger value="list" className="ml-2 pb-[3px] pt-[3px]">
                   <ListIcon color="w-[10px] md:w-[25px]" />
                 </TabsTrigger>
@@ -65,44 +69,19 @@ const index = () => {
 
             <TabsContent value="list">
               <div className="flex flex-col md:flex-row gap-4 my-4 md:my-7 ">
-                <div className="gap-2 md:hidden flex">
-                  <Button
-                    className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                    size="xs"
-                  >
-                    Mobile Development
-                  </Button>
-                  <Button
-                    className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                    size="xs"
-                  >
-                    Web App Development
-                  </Button>
-                  <Button
-                    className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                    size="xs"
-                  >
-                    Website Development
-                  </Button>
-                  <Button
-                    className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                    size="xs"
-                  >
-                    Digital Marketing
-                  </Button>
-                </div>
               </div>
-              <CardListProject />
-              <CardListProject />
+              <CardListPorto />
+              <CardListPorto />
+              <CardListPorto />
+              <CardListPorto />
               <Pages />
             </TabsContent>
             <TabsContent value="square">
-              <div className="flex gap-4 md:gap-[60px] flex-wrap my-4 md:my-7 mb-10">
-                <CardSquareProject />
-                <CardSquareProject />
-                <CardSquareProject />
-                <CardSquareProject />
-                <CardSquareProject />
+              <div className="flex gap-4 md:gap-[0px] flex-wrap my-4 md:my-7 mb-10">
+                <CardSquarePorto />
+                <CardSquarePorto />
+                <CardSquarePorto />
+                <CardSquarePorto />
               </div>
               <Pages />
             </TabsContent>

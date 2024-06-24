@@ -22,12 +22,12 @@ const Header = ({
         />
       </div>
       <div className="flex justify-center">
-        <div className="z-30 px-10 py-5 rounded-[20px] inline-flex w-[690px] -mt-[50px] md:-mt-[100px] bg-white">
-          <div className="flex flex-col justify-center items-center gap-[10px] md:gap-10">
+        <div className="z-30 px-[10px] md:px-10 py-[10px] md:py-5 rounded-[6px] md:rounded-[20px] inline-flex w-[251px] md:w-[690px] -mt-[50px] md:-mt-[100px] bg-white">
+          <div className="flex flex-col justify-center items-center gap-[10px] md:gap-[21px]">
             <h1 className="text-black uppercase font-bold text-[10px] md:text-[32px]">
               {title}
             </h1>
-            <p className="text-center">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig. Kronde est </p>
+            <p className="text-center text-[6px] md:text-[16px]">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig. Kronde est </p>
           </div>
         </div>
       </div>
