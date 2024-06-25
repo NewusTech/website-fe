@@ -1,5 +1,4 @@
 import AboutLayout from "@/components/About";
-import PortLayout from "@/components/Portfolio"
 import Header from "@/components/shared/Header/HeaderAbout";
 
 const AboutPage = () => {
