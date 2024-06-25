@@ -4,7 +4,7 @@ import React from 'react'
 
 const TeamPage = () => {
   return (
-    <section className="min-h-[1200px]">
+    <section className="md:min-h-[1200px]">
       <Header
         type="team"
         title="team"
