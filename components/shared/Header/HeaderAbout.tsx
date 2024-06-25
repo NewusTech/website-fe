@@ -37,9 +37,9 @@ const Header = ({
         </div>
       ) : (
         <div className="flex justify-center">
-          <div className="z-30 px-[10px] md:px-10 py-[10px] md:py-5 inline-flex w-full -mt-[50px] md:-mt-[100px] bg-[#EEF0EB80]">
+          <div className="z-30 px-[10px] md:px-10 py-[10px] md:py-5 inline-flex w-full -mt-[50px] md:-mt-[140px] bg-[#EEF0EB80]">
             <div className="flex w-full justify-center items-center gap-[10px] md:gap-[21px]">
-              <h1 className="text-white uppercase font-bold text-[10px] md:text-[32px]">
+              <h1 className="text-white font-bold text-[10px] md:text-[64px]">
                 {title}
               </h1>
             </div>
