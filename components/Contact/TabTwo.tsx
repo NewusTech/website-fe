@@ -9,36 +9,36 @@ const TabTwo = () => {
   return (
     <section className='pt-6'>
       <form className='flex flex-col gap-6'>
-        <div className='flex w-full gap-4'>
-          <div className='flex flex-col gap-2 w-1/2'>
+        <div className='md:flex w-full gap-4'>
+          <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
             <label htmlFor="firstName" className='text-sm font-[500]'>Full Name</label>
-            <input type="text" name="firstName" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="text" name="firstName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Input here' />
           </div>
-          <div className='flex flex-col gap-2 w-1/2'>
+          <div className='flex flex-col gap-2 md:w-1/2'>
             <label htmlFor="lastName" className='text-sm font-[500]'>Company</label>
-            <input type="text" name="lastName" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="text" name="lastName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Input here' />
           </div>
         </div>
 
-        <div className='flex w-full gap-4'>
-          <div className='flex flex-col gap-2 w-1/2'>
+        <div className='md:flex w-full gap-4'>
+          <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
             <label htmlFor="email" className='text-sm font-[500]'>Email Address</label>
-            <input type="email" name="email" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="email" name="email" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Input here' />
           </div>
-          <div className='flex flex-col gap-2 w-1/2'>
+          <div className='flex flex-col gap-2 md:w-1/2'>
             <label htmlFor="phoneNumber" className='text-sm font-[500]'>Phone Number</label>
-            <input type="tel" name="phoneNumber" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="tel" name="phoneNumber" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Input here' />
           </div>
         </div>
 
-        <div className='flex w-full gap-4'>
-          <div className='flex flex-col gap-2 w-1/2'>
+        <div className='md:flex w-full gap-4'>
+          <div className='flex flex-col gap-2 pb-4 md:pb-0 md:w-1/2'>
             <label htmlFor="location" className='text-sm font-[500]'>Location</label>
-            <input type="text" name="location" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="text" name="location" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Input here' />
           </div>
-          <div className='flex flex-col gap-2 w-1/2'>
+          <div className='flex flex-col gap-2 md:w-1/2'>
             <label htmlFor="SelectOurService" className='text-sm font-[500]'>Select Our Service</label>
-            <select name="" id="" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]'>
+            <select name="" id="" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]'>
               <option value="">Select Service</option>
               <option value="option1">Option 1</option>
               <option value="option2">Option 2</option>
@@ -49,7 +49,7 @@ const TabTwo = () => {
         <div className='flex flex-col w-full gap-2'>
           <label htmlFor="budget" className='text-sm font-[500] pb-4'>Your Budget Estimation</label>
           <div className="flex items-center  w-full">
-            <div className="flex w-[20%] items-center justify-center h-10 bg-[#480DEC] text-white rounded-full">
+            <div className="flex w-[20%] text-[10px] md:text-sm items-center justify-center h-8 md:h-10 bg-[#480DEC] text-white rounded-full">
               {values[0].toLocaleString('id-ID')}
             </div>
             <ReactSlider
@@ -63,7 +63,7 @@ const TabTwo = () => {
               max={100000000}
               step={1000000}
             />
-            <div className="flex items-center justify-center w-32 h-10 bg-[#480DEC] text-white rounded-full">
+            <div className="flex items-center justify-center w-[20%] text-[10px] md:text-sm bg-[#480DEC] h-8 md:h-10 text-white rounded-full">
               {values[1].toLocaleString('id-ID')}
             </div>
           </div>
@@ -71,19 +71,22 @@ const TabTwo = () => {
 
         <div className='flex flex-col w-full gap-2'>
           <label htmlFor="project-desc" className='text-sm font-[500]'>Project Description</label>
-          <textarea name="project-desc" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]'></textarea>
+          <textarea name="project-desc" placeholder='Input here' className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]'></textarea>
         </div>
 
         <div className='flex flex-col gap-2'>
           <label htmlFor="SelectOurService" className='text-sm font-[500]'>Project Deadline</label>
-          <select name="" id="" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]'>
+          <select name="" id="" className='border  bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]'>
             <option value="">Project Deadline</option>
             <option value="option1">Option 1</option>
             <option value="option2">Option 2</option>
           </select>
         </div>
 
-        <button type="submit" className='text-sm font-[500] bg-[#480DEC] text-white py-4 rounded-xl'>Send Message</button>
+
+        <div className='flex justify-center'>
+          <button type="submit" className='text-sm font-[500] bg-[#480DEC] text-white md:py-4 md:rounded-xl rounded-2xl inline-flex w-[180px] md:w-full justify-center px-8 py-[10px]'>Submit</button>
+        </div>
       </form >
     </section >
   )

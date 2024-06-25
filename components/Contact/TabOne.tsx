@@ -1,6 +1,6 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+// import { useForm } from 'react-hook-form';
+// import { zodResolver } from '@hookform/resolvers/zod';
 // import { z } from 'zod';
 
 const TabOne = () => {
@@ -39,45 +39,47 @@ const TabOne = () => {
   // };
 
   return (
-    <section className='pt-5'>
+    <section className='pt-4 md:pt-5'>
       <form className='flex flex-col gap-6'>
-        <div className='flex w-full gap-4'>
-          <div className='flex flex-col gap-2 w-1/2'>
+        <div className='md:flex w-full gap-4'>
+          <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
             <label htmlFor="firstName" className='text-sm font-[500]'>First Name</label>
-            <input type="text" name="firstName" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="text" name="firstName" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
           </div>
-          <div className='flex flex-col gap-2 w-1/2'>
+          <div className='flex flex-col gap-2 md:w-1/2'>
             <label htmlFor="lastName" className='text-sm font-[500]'>Last Name</label>
-            <input type="text" name="lastName" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="text" name="lastName" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
           </div>
         </div>
 
-        <div className='flex w-full gap-4'>
-          <div className='flex flex-col gap-2 w-1/2'>
+        <div className='md:flex w-full gap-4'>
+          <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
             <label htmlFor="email" className='text-sm font-[500]'>Email</label>
-            <input type="email" name="email" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="email" name="email" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
           </div>
-          <div className='flex flex-col gap-2 w-1/2'>
+          <div className='flex flex-col gap-2 md:w-1/2 md:pb-0'>
             <label htmlFor="phoneNumber" className='text-sm font-[500]'>Phone Number</label>
-            <input type="tel" name="phoneNumber" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+            <input type="tel" name="phoneNumber" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
           </div>
         </div>
 
         <div className='flex flex-col w-full gap-2'>
           <label htmlFor="subjectMessage" className='text-sm font-[500]'>Subject Message</label>
-          <input type="text" name="subjectMessage" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+          <input type="text" name="subjectMessage" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
         </div>
         <div className='flex flex-col w-full gap-2'>
           <label htmlFor="message" className='text-sm font-[500]'>Message</label>
-          <textarea name="message" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px]'></textarea>
+          <textarea name="message" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here'></textarea>
         </div>
 
         <div className='flex w-full gap-5'>
-          <input type="text" name="kode" className='w-full border border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Input Code' />
+          <input type="text" name="kode" className='w-full border border-[#DDE5E9] bg-[#F4F4F4] rounded-lg px-4 py-[11px]' placeholder='Input Code' />
           <label htmlFor="message" className='w-full text-sm font-[500] py-4 bg-[#D9D9D9] text-center'>Kode</label>
         </div>
 
-        <button type="submit" className='text-sm font-[500] bg-[#480DEC] text-white py-4 rounded-xl'>Send Message</button>
+        <div className='flex justify-center'>
+          <button type="submit" className='text-sm font-[500] bg-[#480DEC] text-white md:py-4 md:rounded-xl rounded-2xl inline-flex w-[180px] md:w-full justify-center px-8 py-[10px]'>Send Message</button>
+        </div>
       </form >
     </section >
   );
