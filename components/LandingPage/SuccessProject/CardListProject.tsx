@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const CardListProject = () => {
   return (
-    <div className="bg-white rounded-[10px] w-[40%] md:w-full mb-[10px]">
+    <div data-aos="flip-left" className="bg-white rounded-[10px] w-[40%] md:w-full mb-[10px]">
       <div className="flex md:gap-[42px]">
         <Image
           src="/assets/images/placeholder-image (2).jpg"

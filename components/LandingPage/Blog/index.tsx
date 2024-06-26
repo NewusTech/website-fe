@@ -5,19 +5,19 @@ import { Button } from "@/components/ui/button";
 const Blog = () => {
   return (
     <section className="md:bg-gray-2">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center -mt-6 md:pt-9">
-          <h4 className="text-[16px] text-tangerine">Blog</h4>
+      <div className="container md:mx-auto">
+        <div className="flex flex-col items-center -mt-6 -mb-10 md:-mb-0 md:pt-9">
+          <h4 className="text-[12px] md:text-[16px] text-tangerine">Blog</h4>
           <h2 className="text-[32px] hidden md:block font-semibold text-white">
-            Blogsssss
+            Blogssss
           </h2>
         </div>
-        <div className="flex justify-between items-center mt-[54px]">
-          <div className="flex-col gap-6 hidden md:flex">
+        <div className="flex justify-between items-center w-full mt-[54px]">
+          <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
             <h2 className="font-medium text-[32px] text-white">
               What is Lorem Ipsum?
             </h2>
-            <p className="text-sm w-[350px] text-white">
+            <p className="text-sm w-[350px] text-white text-justify">
               Lorem ipsum dolor sit amet consectetur. Sit quam ac habitant
               interdum habitasse nulla sit nibh suscipit. Nam at tempus est nibh
               ornare in ut elementum amet. Interdum consequat nulla ornare
@@ -29,17 +29,17 @@ const Blog = () => {
               integer semper est sit mattis molestie.
             </p>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block md:w-[60%]">
             <Image
               src="/assets/images/blog.jpg"
               alt="blog"
               width={690}
               height={430}
-              className="rounded-xl"
+              className="rounded-xl w-full md:pb-3"
             />
           </div>
         </div>
-        <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
+        <div className="md:py-5 md:-mr-[45px] grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           <CardBlog type="landing" />
           <CardBlog type="landing" />
           <CardBlog type="landing" />

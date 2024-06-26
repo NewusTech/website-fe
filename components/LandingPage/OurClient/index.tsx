@@ -23,7 +23,7 @@ const OurClient = () => {
   );
 
   return (
-    <section>
+    <section data-aos="fade-up">
       <h2 className="mt-3 md:mt-6 md:mb-9 mb-6 text-center text-[10px] md:text-[16px] text-tangerine">
         Our Happy Client
       </h2>

@@ -16,7 +16,7 @@ const TabsProject = () => {
         Success Project
       </h1>
       <Tabs defaultValue="list" className="min-w-screen">
-        <TabsList className="flex justify-end -mt-7 md:mt-4">
+        <TabsList className="flex justify-end -mt-7 md:mt">
           <TabsTrigger value="list" className="ml-2 pb-[3px] pt-[3px]">
             <ListIcon color="w-[10px] md:w-[25px]" />
           </TabsTrigger>

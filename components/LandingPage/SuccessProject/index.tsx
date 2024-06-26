@@ -3,7 +3,7 @@ import CardListProject from "@/components/LandingPage/SuccessProject/CardListPro
 
 const SuccessProject = () => {
   return (
-    <section className="my-[20px] md:my-[130px] mx-auto container">
+    <section className="my-[20px] md:my-[80px] mx-auto container">
       <TabsProject />
     </section>
   );
