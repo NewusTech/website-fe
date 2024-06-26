@@ -27,7 +27,7 @@ const ImageSlider = ({ images }: any) => {
         </button>
 
         <div className="flex justify-between w-[90%] gap-2">
-          {images.slice(1, 4).map((image, index) => (
+          {images.slice(1, 4).map((image: any, index: any) => (
             <Image height={137} width={176} key={index} src={image} alt="slider" className="w-[160px] object-cover flex flex-wrap h-[137px]" />
           ))}
         </div>

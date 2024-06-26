@@ -23,7 +23,7 @@ const RightSide = () => {
             height={20}
           />
         </div>
-        <div className="bg-blue flex w-3/12 flex-col items-start container mx-auto pt-[26px] hidden md:block">
+        <div className="bg-blue md:flex w-3/12 flex-col items-start container mx-auto pt-[26px] hidden">
           <DropdownMenu />
         </div>
         <div className="w-full md:w-9/12 relative flex items-center justify-center">

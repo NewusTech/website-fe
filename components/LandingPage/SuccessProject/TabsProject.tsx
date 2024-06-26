@@ -31,7 +31,7 @@ const TabsProject = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] hover:bg-[#E3E3E3] text-blue">
+              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
                 Mobile Development
               </Button>
               <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
