@@ -1,7 +1,7 @@
 import ContactLayout from "@/components/Contact";
 import Header from "@/components/shared/Header/HeaderAbout";
 
-const AboutPage = () => {
+const ContactPage = () => {
   return (
     <section className="bg-[#F4F4F4]">
       <Header
@@ -25,4 +25,4 @@ const AboutPage = () => {
   )
 }
 
-export default AboutPage;
+export default ContactPage;

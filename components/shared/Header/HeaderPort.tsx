@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Input } from "@/components/ui/input";
 
 const Header = ({
   image,
