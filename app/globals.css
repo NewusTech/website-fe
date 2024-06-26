@@ -70,7 +70,12 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-[#F4F4F4] text-foreground;
   }
+}
+
+body {
+  font-family: 'Asap', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }

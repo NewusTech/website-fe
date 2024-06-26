@@ -18,6 +18,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+        asap: ['Asap', 'sans-serif'],
+      },
       colors: {
         blue: "#480DEC",
         "blue-2": "#2600a1",
