@@ -2,10 +2,16 @@ import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import Image from "next/image";
 import CardBlog from "@/components/LandingPage/Blog/CardBlog";
 
+const blogPaths = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Hello World', href: '/blog/hello-world' },
+];
+
 const DetailBlogPage = () => {
   return (
     <section className="container mx-auto md:my-32 mb-6">
-      <Breadcrumbs />
+      <Breadcrumbs paths={blogPaths} />
       <section className="my-2">
         <div className="my-3">
           <h1 className="text-[6px] md:text-3xl font-bold mb-1 md:mb-2">
