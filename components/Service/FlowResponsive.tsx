@@ -30,7 +30,7 @@ const FlowResponsive = () => {
         />
       </div>
       <div className="ml-7 mt-1 flex justify-center">
-        <div className="flex items-start gap-y-2 mr-10">
+        <div className="flex items-start gap-y-2 mr-16">
           <div className="flex flex-col items-center justify-center gap-y-2">
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">3</p>
@@ -43,12 +43,12 @@ const FlowResponsive = () => {
           </div>
           <Image
             src="/assets/illustration/line2-responsive.svg"
-            width={139}
+            width={159}
             height={10}
             alt="line"
             className="mt-7 -ml-2"
           />
-          <div className="flex flex-col items-center justify-center gap-y-2">
+          <div className="flex flex-col items-center justify-center gap-y-2 ml-3">
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">2</p>
             </div>
@@ -107,7 +107,7 @@ const FlowResponsive = () => {
             alt="line"
             className="mt-7 -ml-7 -mr-5"
           />
-          <div className="flex flex-col items-center justify-center gap-y-2 -mr-8">
+          <div className="flex flex-col items-center justify-center gap-y-2 -mr-2">
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">5</p>
             </div>
