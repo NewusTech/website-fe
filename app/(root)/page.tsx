@@ -1,8 +1,4 @@
-'use client'
-
-import AOS from "aos";
 import "aos/dist/aos.css"
-import { useEffect } from "react"
 import OurClient from "../../components/LandingPage/OurClient";
 import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
@@ -11,9 +7,6 @@ import Blog from "../../components/LandingPage/Blog";
 import Bottombar from "@/components/shared/Bottombar";
 
 export default function Home() {
-  useEffect(() => {
-    AOS.init()
-  }, [])
   return (
     <>
       <OurClient />
