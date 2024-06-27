@@ -13,7 +13,7 @@ const Intern = () => {
   return (
     <section>
       <div className='pb-10'>
-        <h2 className="font-bold text-[14px] md:text-[20px] py-4">Description :</h2>
+        <h2 className="font-bold text-[14px] md:text-[20px] pb-3 md:py-10">Description :</h2>
         <ul className={classList}>
           {data.description1}
           <br /> <br />
@@ -26,31 +26,31 @@ const Intern = () => {
           </Link>
         </div>
         <form className='flex flex-col gap-6'>
-          <h1 className="font-bold text-[14px] md:text-[20px] pt-4">Easy apply and be part of us!</h1>
+          <h1 className="font-bold text-sm md:text-[20px] pt-4">Easy apply and be part of us!</h1>
           <div className='flex-col flex md:flex-row w-full gap-4'>
             <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
               <label htmlFor="fullName" className='text-sm font-[500]'>Full Name</label>
-              <input type="text" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Your university or school' />
+              <input type="text" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px] text-sm' placeholder='Your university or school' />
             </div>
             <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
-              <label htmlFor="fullName" className='text-sm font-[500]'>provide about your current major</label>
-              <input type="text" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Your current major' />
+              <label htmlFor="fullName" className='text-sm font-[500]'>Provide about your current major</label>
+              <input type="text" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px] text-sm' placeholder='Your current major' />
             </div>
           </div>
           <div className='flex-col flex md:flex-row w-full gap-4'>
             <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
               <label htmlFor="fullName" className='text-sm font-[500]'>When do you plan to start your internship activities?</label>
-              <input type="date" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+              <input type="date" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px] text-sm' />
             </div>
             <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
               <label htmlFor="fullName" className='text-sm font-[500]'>When do you plan to complete your internship activities?</label>
-              <input type="date" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' placeholder='Drag & Drop to Upload File' />
+              <input type="date" name="fullName" className='border bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px] text-sm' placeholder='Drag & Drop to Upload File' />
             </div>
           </div>
           <div className='flex-col flex w-full'>
             <div className='flex flex-col gap-2'>
               <label htmlFor="coverLetter" className='text-sm font-[500]'>Upload an internship application letter</label>
-              <input type="file" name="coverLetter" className='border flex  w-full bg-[#F4F4F4] border-[#DDE5E9] rounded-lg px-4 py-[11px]' />
+              <input type="file" name="coverLetter" className='border flex  w-full bg-[#F4F4F4] border-[#DDE5E9] text-sm rounded-lg px-4 py-[11px]' />
             </div>
           </div>
           <div>
