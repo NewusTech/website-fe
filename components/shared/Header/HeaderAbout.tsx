@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = ({
   image,
@@ -14,13 +15,15 @@ const Header = ({
   return (
     <header className="w-full z-10 relative">
       <div className="md:min-w-[1350px] md:min-h-[75px]">
-        <Image
-          src={image}
-          alt="blog header"
-          width={1350}
-          height={75}
-          className={`w-full h-full object-cover`}
-        />
+        <Link href='/'>
+          <Image
+            src={image}
+            alt="blog header"
+            width={1350}
+            height={75}
+            className={`w-full h-full object-cover`}
+          />
+        </Link>
       </div>
       {title === 'team' ? (
         <div className="relative">

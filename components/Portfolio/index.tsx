@@ -6,14 +6,11 @@ import ListIcon from "@/public/assets/icons/ListIcon";
 import Pages from "../shared/Pages";
 import CardSquarePorto from "./CardSquarePorto";
 import CardListPorto from "./CardListPorto";
+import { getProjectList } from "../Fetching/Portfolio/port";
 
-const index = () => {
-  const projects = [
-    { slug: 'project-1', name: 'Project One', description: 'Description for project one' },
-    { slug: 'project-2', name: 'Project Two', description: 'Description for project two' },
-    { slug: 'project-3', name: 'Project Two', description: 'Description for project two' },
-    // Tambahkan proyek lain sesuai kebutuhan
-  ];
+export default async function index() {
+  const projectList = await getProjectList();
+  console.log(projectList);
 
   return (
     <section>
@@ -77,15 +74,15 @@ const index = () => {
             <TabsContent value="list">
               <div className="flex flex-col md:flex-row gap-4 my-4 md:my-7 ">
               </div>
-              {projects.map((project) => (
-                <CardListPorto key={project.slug} slug={project.slug} />
+              {projectList?.map((project: any, index: any) => (
+                <CardListPorto key={index} projects={project} />
               ))}
               <Pages />
             </TabsContent>
             <TabsContent value="square">
               <div className="flex gap-4 md:gap-[20px] flex-wrap my-4 md:my-7 mb-10">
-                {projects.map((project) => (
-                  <CardSquarePorto key={project.slug} slug={project.slug} />
+                {projectList?.map((project: any, index: any) => (
+                  <CardSquarePorto key={index} projects={project} />
                 ))}
               </div>
               <Pages />
@@ -96,5 +93,3 @@ const index = () => {
     </section >
   )
 }
-
-export default index

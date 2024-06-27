@@ -10,12 +10,14 @@ const RightSide = () => {
     <header>
       <div className="flex flex-col md:flex-row md:min-h-screen">
         <div className="px-[14px] py-[23px] flex justify-between items-center md:hidden">
-          <Image
-            src="/assets/icons/logo-2.svg"
-            alt="Newus Technology"
-            width={144}
-            height={34}
-          />
+          <Link href='/'>
+            <Image
+              src="/assets/icons/logo-2.svg"
+              alt="Newus Technology"
+              width={144}
+              height={34}
+            />
+          </Link>
           <Image
             src="/assets/icons/hamburger-2.svg"
             alt="hamburger menu"
@@ -33,12 +35,14 @@ const RightSide = () => {
               <span className="text-tangerine">What you need,</span> we can make
               it happen.
             </h1>
-            <Button
-              className="bg-tangerine hover:bg-tangerine-2 text-[8px] py-2"
-              size="sm"
-            >
-              Contact Us
-            </Button>
+            <Link href='/contact'>
+              <Button
+                className="bg-tangerine hover:bg-tangerine-2 text-[8px] py-2"
+                size="sm"
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
