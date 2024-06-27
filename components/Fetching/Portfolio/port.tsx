@@ -11,3 +11,18 @@ export async function getProjectList() {
     return [];
   }
 }
+
+export async function getProjectDetail(slug: string) {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/portfolio/detail`);
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch project detail');
+    }
+    const data = await response.json();
+    return data.portfolio;
+  } catch (error) {
+    console.error('Error fetching blog list:', error);
+    return [];
+  }
+}

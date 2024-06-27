@@ -1,3 +1,4 @@
+import { formattedDate } from "@/utils/blog";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,12 +29,6 @@ interface CardBlogProps {
 
 const CardBlog = ({ blogs = {} as any, type }: any) => {
   const { id, title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title } = blogs;
-
-  const formattedDate = new Date(publishAt).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
 
   return (
     <div
@@ -67,7 +62,7 @@ const CardBlog = ({ blogs = {} as any, type }: any) => {
           <div className="flex items-center gap-1 md:gap-2">
             <h5 className="md:text-[14px] text-[6px]">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
-            <h5 className="md:text-[14px] text-[6px]">{formattedDate ? formattedDate : 'January 13, 2024'}</h5>
+            <h5 className="md:text-[14px] text-[6px]">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
           <Link className="md:hidden" href={`/blog/${id}`}>
             <Image

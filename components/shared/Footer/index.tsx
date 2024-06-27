@@ -2,13 +2,14 @@ import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer className="bg-blue relative pb-14 md:pb-0">
       <div className="container mx-auto">
         <div className="h-[231px] md:h-[370px] w-full flex flex-col md:flex-row">
-          <div className="hidden md:block w-[370px] h-[419px] bg-white rounded-[10px] absolute -mt-16">
+          <div className="hidden md:block w-[370px] h-[390px] bg-white rounded-[10px] absolute -mt-16">
             <div className="w-full h-auto bg-blue py-[14px] px-[19px] rounded-t-[10px]">
               <h3 className="uppercase text-white font-bold text-[16px]">
                 Contact Form
@@ -19,12 +20,12 @@ const Footer = () => {
               <Input type="text" placeholder="Email" />
               <Input type="text" placeholder="Subject Message" />
               <Textarea placeholder="Message" className="h-[100px]" />
-              <div className="flex gap-5 justify-between">
+              {/* <div className="flex gap-5 justify-between">
                 <Input type="text" placeholder="Input Kode" />
                 <Button className="rounded-none bg-[#D9D9D9] hover:bg-[#CBCBCB] text-black py-[10px] px-[65px]">
                   Kode
                 </Button>
-              </div>
+              </div> */}
               <div className="flex items-center justify-center">
                 <Button className="mt-4 bg-blue hover:bg-blue-2 rounded-[10px] py-2 px-12">
                   Send
@@ -218,12 +219,25 @@ const Footer = () => {
         <div className="hidden md:block h-[1px] w-full bg-white"></div>
         <div className="hidden md:flex mt-5 pb-8 justify-between items-center">
           <ul className="flex gap-10 text-white uppercase font-medium text-sm">
-            <li>Service</li>
-            <li>Portfolio</li>
-            <li>Blog</li>
-            <li>About</li>
-            <li>Career</li>
-            <li>Contact</li>
+            <li>
+              <Link href='/service' >
+                Service
+              </Link></li>
+            <li><Link href='/portfolio' >
+              Portfolio
+            </Link></li>
+            <li><Link href='/blog' >
+              Blog
+            </Link></li>
+            <li><Link href='/about' >
+              About
+            </Link></li>
+            <li><Link href='/career' >
+              Career
+            </Link></li>
+            <li><Link href='/contact' >
+              Contact
+            </Link></li>
           </ul>
           <p className="text-sm text-white">
             Copyright © 2023 • Newus Technology.
