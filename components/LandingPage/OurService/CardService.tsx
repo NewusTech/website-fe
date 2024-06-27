@@ -13,7 +13,7 @@ const CardService = () => {
     <>
       <div className="hidden md:flex md:mt-[29px] mt-[10px] pb-10">
         {service.map(({ id, title, image, type }: OurServiceProps) => (
-          <div className="w-3/12 relative" key={id}>
+          <div className="w-3/12 relative" key={id} data-aos="flip-right">
             <Image src={image} alt="web" width={300} height={400} />
             <div className="absolute top-0 left-0 z-10 w-full h-full flex items-end justify-center pb-2">
               <p

@@ -4,7 +4,7 @@ const OurService = () => {
   return (
     <section className="md:mt-32 mt-[20px] md:bg-blue ">
       <div className="mx-auto container">
-        <h1 className="md:text-[56px] text-[8px] font-semibold text-dark md:text-white md:pt-10">
+        <h1 className="text-[10px] md:text-[32px] font-semibold text-dark md:text-white md:pt-10">
           Our Service
         </h1>
         <p className="md:text-white text-dark text-[8px] md:text-[18px] mt-3 md:mt-5">

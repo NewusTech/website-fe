@@ -25,7 +25,7 @@ const Job = () => {
       description: 'We need a Sales Marketing expert to help grow our customer base and drive sales.',
       minSalary: 10000000,
       maxSalary: 15000000,
-      status: ['On Site', 'Full Time']
+      status: ['Full Onsite', 'Full Time']
     },
     {
       id: 4,
@@ -39,35 +39,30 @@ const Job = () => {
 
   return (
     <section className='pb-20'>
-      <div className="flex justify-center gap-[6px] md:gap-6 px-7 flex-wrap md:overflow-hidden pt-7 md:pt-10">
-        <div className="bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-white font-extrabold text-[6px] md:text-[16px] whitespace-nowrap md:whitespace-normal">
+      <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pb-4 md:pb-0 md:pt-16">
+        <div className="bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[16px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
+          <p className="text-white font-bold text-[10px] md:text-[16px] whitespace-nowrap md:whitespace-normal">
             All
           </p>
         </div>
         <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Mobile Development
+          <p className="text-dark font-[500] text-[10px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+            Design
           </p>
         </div>
         <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Web App Development
+          <p className="text-dark font-[500] text-[10px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+            Development
           </p>
         </div>
         <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Website Development
-          </p>
-        </div>
-        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[6px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Digital Marketing
+          <p className="text-dark font-[500] text-[10px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+            Marketing
           </p>
         </div>
       </div>
 
-      <div className='md:pt-6'>
+      <div className='md:pt-6 flex flex-col gap-4'>
         {jobData.map((job) => (
           <div key={job.title} className='md:pt-6'>
             <CardJob
