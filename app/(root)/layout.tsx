@@ -1,6 +1,5 @@
 import RightSide from "@/components/LandingPage/Header/RightSide";
 import Footer from "@/components/shared/Footer";
-import Bottombar from "@/components/shared/Bottombar";
 
 export default function RootLayout({
   children,

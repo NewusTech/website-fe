@@ -2,14 +2,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
 import CardListProject from "@/components/LandingPage/SuccessProject/CardListProject";
 import CardSquareProject from "@/components/LandingPage/SuccessProject/CardSquareProject";
 import Pages from "@/components/shared/Pages";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import ListIcon from "@/public/assets/icons/ListIcon";
+import { getProjectList } from "@/components/Fetching/Portfolio/port";
 
-const TabsProject = () => {
+export default async function TabsProject() {
+  const projectList = await getProjectList();
+
   return (
     <div className="relative">
       <h1 className="text-blue font-semibold text-[10px] md:text-[32px]">
@@ -86,8 +88,9 @@ const TabsProject = () => {
               </Button>
             </div>
           </div>
-          <CardListProject />
-          <CardListProject />
+          {projectList?.map((project: any, index: any) => (
+            <CardListProject key={index} projects={project} />
+          ))}
           <Pages />
         </TabsContent>
         <TabsContent value="square">
@@ -153,11 +156,10 @@ const TabsProject = () => {
             </div>
           </div>
           <div className="flex gap-4 md:gap-[60px] flex-wrap mb-[10px]">
-            <CardSquareProject />
-            <CardSquareProject />
-            <CardSquareProject />
-            <CardSquareProject />
-            <CardSquareProject />
+            {projectList?.map((project: any, index: any) => (
+              <CardSquareProject key={index} projects={project} />
+            ))}
+            {/* <CardSquareProject /> */}
           </div>
           <Pages />
         </TabsContent>
@@ -165,5 +167,3 @@ const TabsProject = () => {
     </div>
   );
 };
-
-export default TabsProject;

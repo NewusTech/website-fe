@@ -1,20 +1,34 @@
+'use client'
 // components/TeamLayout.js
-import React from "react";
+import React, { useState } from "react";
+import Header from "@/components/shared/Header/HeaderTeam";
 import CardTeam from "./Card";
-import { teamImage } from "@/constants/index";
+import styles from "./CardTeam.module.css"; // Import CSS module
 
-const TeamLayout = () => {
+const TeamLayout = ({ teams }: any) => {
+  const [selectedTeam, setSelectedTeam] = useState(teams[0]);
+
+  const handleClick = (team: any) => {
+    setSelectedTeam(team);
+  };
+
   return (
-    <section className="flex flex-wrap justify-center gap-3 md:gap-7 pt-2 pb-5 md:pb-20">
-      {teamImage.map((team) => (
-        <CardTeam
-          key={team.id}
-          image={team.image}
-          name={`Name ${team.id}`}
-          position={`Position ${team.id}`}
-        />
-      ))}
-    </section>
+    <main>
+      <Header
+        teams={selectedTeam}
+      />
+      <section className={`flex md:flex-row flex-wrap justify-center py-5 px-3 md:px-0 md:pb-20 w-full ${styles.teamSection}`}>
+        {teams?.map((team: any, i: number) => (
+          <CardTeam
+            key={i}
+            image={team.image || "/assets/images/team.svg"}
+            name={team.name || `Name ${team.id}`}
+            position={team.title || `Position ${team.id}`}
+            onClick={() => handleClick(team)}
+          />
+        ))}
+      </section>
+    </main>
   );
 };
 

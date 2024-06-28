@@ -53,7 +53,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
         </div>
         <div className="w-full h-[150px] md:w-full md:h-[400px] rounded-[6px]">
           <Image
-            src={image !== null ? image : `/assets/images/blog.jpg`}
+            src={image ? image : `/assets/images/blog.jpg`}
             alt="blog"
             width={1140}
             height={211}

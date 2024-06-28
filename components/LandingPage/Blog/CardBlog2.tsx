@@ -16,7 +16,7 @@ interface BlogProps {
   tagblog_title?: string,
   user_id?: number,
   user_title?: string,
-  image?: string | null,
+  image: any,
   status?: boolean,
   status_desc?: string,
   publishAt?: any,
@@ -39,7 +39,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       <div className="w-[267px] h-[205px] rounded-[10px]">
         <Link href={`/blog/${id}`}>
           <Image
-            src={image || '/assets/images/blog.jpg'}
+            src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
             alt="blog"
             width={267}
             height={205}

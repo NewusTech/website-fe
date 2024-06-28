@@ -1,0 +1,16 @@
+/* components/CardTeam.module.css */
+
+.card {
+  /* Styling dasar */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card.selected {
+  /* Transformasi ketika dipilih */
+  transform: translateY(-100px);
+}
+
+.card.down {
+  /* Transformasi kembali ke posisi awal */
+  transform: translateY(0);
+}

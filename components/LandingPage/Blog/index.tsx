@@ -2,25 +2,26 @@ import Image from "next/image";
 import CardBlog from "@/components/LandingPage/Blog/CardBlog";
 import { Button } from "@/components/ui/button";
 import { getBlogList } from "@/components/Fetching/Blog/blog";
+import Link from "next/link";
 
 interface BlogProps {
-  id?: number,
-  title?: string;
-  slug?: string,
-  keyword?: string,
-  excerpt?: string,
-  body?: string,
-  kategoriblog_id?: number,
-  kategoriblog_title?: string,
-  tagblog_id?: number,
-  tagblog_title?: string,
-  user_id?: number,
-  user_title?: string,
-  image?: string | null,
-  status?: boolean,
-  status_desc?: string,
-  publishAt?: Date | string
-  createdAt?: Date;
+  id: number,
+  title: string;
+  slug: string,
+  keyword: string,
+  excerpt: string,
+  body: string,
+  kategoriblog_id: number,
+  kategoriblog_title: string,
+  tagblog_id: number,
+  tagblog_title: string,
+  user_id: number,
+  user_title: string,
+  image: any,
+  status: boolean,
+  status_desc: string,
+  publishAt: Date | string,
+  createdAt: Date;
   updatedAt: Date;
 }
 
@@ -63,15 +64,17 @@ export default async function Blog() {
             />
           </div>
         </div>
-        <div className="md:py-5 md:-mr-[45px] grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-          {blogList?.map((blog: BlogProps, index: any) => (
-            <CardBlog type="landing" key={index} blogs={blog} />
+        <div className="md:py-5 md:-mr-[45px] grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-center">
+          {blogList?.map((blog: BlogProps, i: number) => (
+            <CardBlog type="landing" key={i} blogs={blog} />
           ))}
         </div>
         <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-[119px] mt-5 md:mt-20">
-          <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
-            See More Articles
-          </Button>
+          <Link href='/blog'>
+            <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
+              See More Articles
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

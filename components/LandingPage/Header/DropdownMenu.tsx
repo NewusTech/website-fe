@@ -34,14 +34,30 @@ const DropdownMenu = () => {
           className={`w-full flex justify-end mt-5 transition ease-in-out duration-300 ${openDropdown ? "h-auto" : "h-0"}`}
         >
           <ul className="text-white text-right pr-1 flex flex-col gap-5 uppercase font-semibold text-[16px]">
-            <li>service</li>
-            <li>portfolio</li>
-            <li>blog</li>
-            <li>about</li>
-            <li>team</li>
-            <li>contact</li>
-            <li>career</li>
-            <li>download</li>
+            <li><Link href='/service' >
+              service
+            </Link></li>
+            <li><Link href='/portfolio' >
+              portfolio
+            </Link></li>
+            <li><Link href='/blog' >
+              blog
+            </Link></li>
+            <li><Link href='/about' >
+              about
+            </Link></li>
+            <li><Link href='/about/team' >
+              team
+            </Link></li>
+            <li><Link href='/contact' >
+              contact
+            </Link></li>
+            <li><Link href='/career' >
+              career
+            </Link></li>
+            <li><Link href='/#' >
+              download
+            </Link></li>
           </ul>
         </nav>
       )}
@@ -60,7 +76,7 @@ const DropdownMenu = () => {
         </p>
         <Button className="py-7 px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
           <Link
-            href="/public"
+            href="/contact"
             className="flex items-center justify-center gap-2"
           >
             <p className="text-lg">Contact Us</p>

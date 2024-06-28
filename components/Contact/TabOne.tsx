@@ -72,11 +72,6 @@ const TabOne = () => {
           <textarea name="message" className='border border-[#DDE5E9] rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here'></textarea>
         </div>
 
-        <div className='flex w-full gap-5'>
-          <input type="text" name="kode" className='w-full border border-[#DDE5E9] bg-[#F4F4F4] rounded-lg px-4 py-[11px]' placeholder='Input Code' />
-          <label htmlFor="message" className='w-full text-sm font-[500] py-4 bg-[#D9D9D9] text-center'>Kode</label>
-        </div>
-
         <div className='flex justify-center'>
           <button type="submit" className='text-sm font-[500] bg-[#480DEC] text-white md:py-4 md:rounded-xl rounded-2xl inline-flex w-[180px] md:w-full justify-center px-8 py-[10px]'>Send Message</button>
         </div>

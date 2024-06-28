@@ -1,18 +1,12 @@
 import TeamLayout from '@/components/About/Team'
-import Header from '@/components/shared/Header/HeaderAbout'
+import { getTeamList } from '@/components/Fetching/Division/division';
 import React from 'react'
 
-const TeamPage = () => {
+export default async function TeamPage() {
+  const teams = await getTeamList();
   return (
     <section className="md:min-h-[1200px]">
-      <Header
-        type="team"
-        title="team"
-        image="/assets/images/team.svg"
-      />
-      <TeamLayout />
+      <TeamLayout teams={teams} />
     </section>
   )
 }
-
-export default TeamPage

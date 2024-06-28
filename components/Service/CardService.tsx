@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface CardServiceProps {
   illustration: string;
@@ -27,14 +28,18 @@ const CardServices = ({ illustration, title, desc }: CardServiceProps) => {
       </h3>
       <p className="md:w-[529px] w-[146px] text-[6px] md:text-[16px]">{desc}</p>
       <div className="md:mt-6 mt-2 flex md:gap-x-6 gap-x-2">
-        <Button className="bg-blue hover:bg-blue-2 md:h-[51px] md:w-[161px] w-[49px] h-[16px] text-[6px] md:text-sm">
-          Start Project
-        </Button>
-        <Button className="md:h-[51px] bg-gray-2 md:w-[161px] w-[49px] h-[16px] text-[6px] md:text-sm">
-          View Portfolio
-        </Button>
+        <Link target="_blank" href='/contact'>
+          <Button className="bg-blue hover:bg-blue-2 md:h-[51px] md:w-[161px] w-[49px] h-[16px] text-[6px] md:text-sm">
+            Start Project
+          </Button>
+        </Link>
+        <Link target="_blank" href='/contact'>
+          <Button className="md:h-[51px] bg-gray-2 md:w-[161px] w-[49px] h-[16px] text-[6px] md:text-sm">
+            View Portfolio
+          </Button>
+        </Link>
       </div>
-    </div>
+    </div >
   );
 };
 
