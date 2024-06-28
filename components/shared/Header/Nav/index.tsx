@@ -48,7 +48,7 @@ const Nav = () => {
           />
         </div>
         {openDropdown && (
-          <nav className="absolute top-14 md:top-16 right-0 z-50 bg-white md:bg-[#480DEC]/30 md:backdrop-blur-xl w-72 md:w-[300px] mt-5 md:mt-0 py-5 px-6 shadow-lg md:rounded-md md:right-6">
+          <nav className="absolute top-14 md:top-16 right-0 z-50 bg-[#F4F4F4] md:bg-black/30 md:backdrop-blur-xl w-72 md:w-[300px] mt-5 md:mt-0 py-5 px-6 shadow-lg md:rounded-md md:right-6">
             <ul className="text-right flex flex-col gap-3 uppercase text-[16px]">
               <NavItem path="/service" currentPath={pathname} onClick={handleDropdown}>
                 Service

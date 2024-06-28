@@ -1,32 +1,30 @@
 'use client'
-
+// components/TeamLayout.js
 import React, { useState } from "react";
-import Header from '@/components/shared/Header/HeaderAbout'
+import Header from "@/components/shared/Header/HeaderTeam";
 import CardTeam from "./Card";
+import styles from "./CardTeam.module.css"; // Import CSS module
 
 const TeamLayout = ({ teams }: any) => {
-  const [selectedImage, setSelectedImage] = useState("");
-  console.log(teams[0]);
+  const [selectedTeam, setSelectedTeam] = useState(teams[0]);
 
-  const handleImageClick = (team: any) => {
-    setSelectedImage(team.image);
+  const handleClick = (team: any) => {
+    setSelectedTeam(team);
   };
 
   return (
     <main>
       <Header
-        type="team"
-        title="team"
-        image={selectedImage || "/assets/images/team.svg"}
+        teams={selectedTeam}
       />
-      <section className="flex flex-wrap justify-center pt-2 pb-5 md:pb-20 w-full">
+      <section className={`flex md:flex-row flex-wrap justify-center py-5 px-3 md:px-0 md:pb-20 w-full ${styles.teamSection}`}>
         {teams?.map((team: any, i: number) => (
           <CardTeam
             key={i}
-            image={`${team.image ? team.image : '/assets/images/team.svg'}`}
-            name={`${team.name ? team.name : 'Name ${team.id}'}`}
-            position={`${team.title ? team.title : 'Position ${team.id}'}`}
-            onClick={() => handleImageClick(team)}
+            image={team.image || "/assets/images/team.svg"}
+            name={team.name || `Name ${team.id}`}
+            position={team.title || `Position ${team.id}`}
+            onClick={() => handleClick(team)}
           />
         ))}
       </section>
