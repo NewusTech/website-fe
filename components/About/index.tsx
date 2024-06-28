@@ -5,6 +5,8 @@ import Image from "next/image";
 import Box from "./Box";
 import OurClient from "./OurClient";
 import OurHistory from "./OurHistory";
+import CarouselHeader from "../LandingPage/Header/CarouselHeader";
+import Carousels from "./Carousels/Carousel";
 
 const AboutLayout = () => {
   const boxes = [
@@ -36,7 +38,7 @@ const AboutLayout = () => {
           <Legalitas />
         </TabsContent>
       </Tabs>
-
+      <Carousels />
       <div className="px-[100px] pb-52 min-h-screen bg-[url('/assets/illustration/bg-about.svg')] bg-cover">
         <div className="flex justify-end text-white pt-[120px] text-[40px] font-bold">Meet the team behind the apps</div>
         <div className="flex justify-between gap-10">

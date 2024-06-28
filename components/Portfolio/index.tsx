@@ -10,8 +10,6 @@ import { getProjectList } from "../Fetching/Portfolio/port";
 
 export default async function index() {
   const projectList = await getProjectList();
-  console.log(projectList);
-
   return (
     <section>
       <div className="flex justify-center gap-[6px] md:gap-6 px-7 flex-wrap md:overflow-hidden pt-7 md:pt-10">
