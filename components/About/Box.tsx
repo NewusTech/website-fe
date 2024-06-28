@@ -1,10 +1,10 @@
-const Box = ({ title, description, bgImage }: any) => (
+const Box = ({ title, description, image }: any) => (
   <div
-    className="w-full md:w-full h-full p-[60px] bg-cover bg-center text-white"
-    style={{ backgroundImage: `url(${bgImage})` }}
+    className="w-full min-h-[100px] md:w-full md:min-h-[350px] md:p-[20px]  bg-center text-black bg-cover"
+    style={{ backgroundImage: `url(${image})` }}
   >
-    <h1 className="md:text-[36px] font-bold pb-3 md:pb-0">{title}</h1>
-    <p className="text-[12px] md:text-[20px]">{description}</p>
+    <h1 className="text-[8px] text-center md:text-[26px] font-bold pt-5 md:pb-4">{title}</h1>
+    <p className="text-[5px] text-center md:text-[20px] capitalize font-semibold">{description}</p>
   </div>
 );
 

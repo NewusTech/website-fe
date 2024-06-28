@@ -47,10 +47,11 @@ const OurHistory = () => {
     <section>
       <div className='flex items-center gap-4 md:gap-10 pb-4 md:pb-10 text-white'>
         <h1 className='md:text-[28px] font-bold'>Our History</h1>
-        <div className='flex-grow h-px bg-[#BDBDBD]' style={{ width: '849px' }}></div>
+        <div className='flex-grow h-px bg-[#BDBDBD]' style={{ width: '149px' }}></div>
+
       </div>
-      <p className='text-[12px] md:text-sm pb-3 md:pb-10 text-white'>Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig Terabel.</p>
-      <div className="md:pb-10 flex flex-wrap gap-4 md:gap-0 w-full h-auto">
+      <p className='text-[12px] md:text-sm pb-8 md:pb-10 text-white'>Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig Terabel.</p>
+      <div className="md:pb-10 flex flex-wrap gap-10 md:gap-0 w-full h-auto">
         {data.map(({ year, logos }, index) => (
           <YearlyLogos key={index} year={year} logos={logos} />
         ))}

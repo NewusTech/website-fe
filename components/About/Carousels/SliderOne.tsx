@@ -50,4 +50,34 @@ const SliderOne = () => {
   )
 }
 
-export default SliderOne
+
+
+const Component1 = ({ team }) => {
+  return (
+    <div className="flex justify-between items-center gap-10">
+      {team.slice(0, 3).map((member, index) => (
+        <div key={index} className="relative">
+          <Image
+            loading="lazy"
+            src={member.image}
+            width={index === 0 ? 579 : 359}
+            height={index === 0 ? 517 : 343}
+            alt={member.name}
+          />
+          <div className={`absolute bottom-0 w-full bg-opacity-75 py-2 ${index === 0 ? 'h-[158px]' : 'h-28'}`}>
+            <div className="text-white text-center">
+              <h1 className={`font-bold ${index === 0 ? 'text-[32px]' : 'text-[20px] md:text-[20px]'}`}>
+                {member.name}
+              </h1>
+              <h2 className={`text-[12px] md:text-[16px] ${index === 0 ? 'text-[16px]' : 'text-[12px] md:text-[16px]'}`}>
+                {member.title}
+              </h2>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export { SliderOne, Component1 }
