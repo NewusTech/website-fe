@@ -16,16 +16,18 @@ const CardListPorto = ({ projects }: any) => {
     Tagportofolio = {} } = projects || {};
 
   return (
-    <div className="bg-white rounded-[10px] w-[40%] md:w-full mb-[10px]">
-      <div className="flex md:gap-[42px]">
-        <Image
-          src={image ? image : `/assets/images/placeholder-image (2).jpg`}
-          alt="image card list"
-          width={367}
-          height={273}
-          className="rounded-l-[10px] object-cover"
-        />
-        <div className="flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 py-5 rounded-r-[10px]">
+    <div data-aos="flip-left" className="bg-white rounded-[10px] w-[40%] md:w-full mb-[10px]">
+      <div className="flex md:gap-[42px] w-full">
+        <div className="w-[20%]">
+          <Image
+            src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+            alt="image card list"
+            width={367}
+            height={273}
+            className="rounded-l-[10px] object-cover"
+          />
+        </div>
+        <div className="w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 py-5 rounded-r-[10px]">
           <h2 className="md:text-2xl text-[10px] font-semibold truncate">
             {title ? title : 'Name Project'}
           </h2>

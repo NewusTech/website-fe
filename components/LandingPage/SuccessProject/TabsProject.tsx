@@ -155,7 +155,7 @@ export default async function TabsProject() {
               </Button>
             </div>
           </div>
-          <div className="flex gap-4 md:gap-[60px] flex-wrap mb-[10px]">
+          <div className="flex gap-4 md:gap-8 flex-wrap flex-grow-0 justify-center mb-[10px] w-full">
             {projectList?.map((project: any, index: any) => (
               <CardSquareProject key={index} projects={project} />
             ))}

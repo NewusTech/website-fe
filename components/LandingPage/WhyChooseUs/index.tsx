@@ -20,6 +20,8 @@ const WhyChooseUs = () => {
       <div className="flex items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[60px]">
         {chooseUs.map(({ id, logo, name, desc }: WhyChooseUsProps) => (
           <div
+            data-aos='fade-in'
+            data-aos-delay={id * 200}
             key={id}
             className="flex flex-col items-center justify-center gap-3 md:gap-[60px]"
           >

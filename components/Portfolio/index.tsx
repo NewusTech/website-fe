@@ -78,7 +78,7 @@ export default async function index() {
               <Pages />
             </TabsContent>
             <TabsContent value="square">
-              <div className="flex gap-4 md:gap-[20px] flex-wrap my-4 md:my-7 mb-10">
+              <div className="flex gap-4 md:gap-[20px] flex-grow flex-wrap my-4 md:my-7 mb-10">
                 {projectList?.map((project: any, index: any) => (
                   <CardSquarePorto key={index} projects={project} />
                 ))}

@@ -46,15 +46,16 @@ export default async function Blog() {
         </div>
         <div className="flex justify-between items-center w-full mt-[54px]">
           <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
-            <h2 className="font-medium text-[32px] text-white">
+            <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white">
               {lastBlog.title}
             </h2>
-            <p className="text-sm w-[350px] text-white text-justify">
+            <p data-aos="zoom-in" className="text-sm w-[350px] text-white text-justify">
               {lastBlog.body}
             </p>
           </div>
           <div data-aos='fade-right' className="hidden md:block md:w-[60%] rounded-xl">
             <Image
+              data-aos="zoom-in"
               src={lastBlog.image}
               alt={lastBlog.title}
               width={690}

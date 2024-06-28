@@ -16,7 +16,7 @@ const CardSquarePorto = ({ projects }: any) => {
     Tagportofolio = {} } = projects || {};
 
   return (
-    <div className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[364px] w-[170px]">
+    <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[32%] w-[170px]">
       <Image
         src={image ? image : `/assets/images/placeholder-image (2).jpg`}
         alt="placeholder"
