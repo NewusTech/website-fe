@@ -7,8 +7,6 @@ const Header = ({
 }: {
   teams?: any
 }) => {
-  console.log({ teams });
-
   return (
     <header className="w-full z-10 relative">
       <div className="md:min-w-[1350px] md:min-h-[75px]">

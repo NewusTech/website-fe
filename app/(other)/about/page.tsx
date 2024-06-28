@@ -1,7 +1,9 @@
 import AboutLayout from "@/components/About";
+import { getTeamList } from "@/components/Fetching/Division/division";
 import Header from "@/components/shared/Header/HeaderAbout";
 
-const AboutPage = () => {
+export default async function AboutPage() {
+  const teams = await getTeamList();
   return (
     <section className="min-h-[1200px]">
       <Header
@@ -9,9 +11,7 @@ const AboutPage = () => {
         title="About Us"
         image="/assets/images/header-about.png"
       />
-      <AboutLayout />
+      <AboutLayout teams={teams} />
     </section>
   )
 }
-
-export default AboutPage;

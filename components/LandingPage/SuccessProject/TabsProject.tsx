@@ -11,7 +11,6 @@ import { getProjectList } from "@/components/Fetching/Portfolio/port";
 
 export default async function TabsProject() {
   const projectList = await getProjectList();
-  console.log(projectList);
 
   return (
     <div className="relative">

@@ -17,15 +17,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
     '/assets/images/placeholder-image (2).jpg',
     '/assets/images/placeholder-image (2).jpg',
     '/assets/images/placeholder-image (2).jpg',
-    // Tambahkan URL gambar lain jika diperlukan
   ];
-
-  // const projects = [
-  //   { slug: 'project-1', name: 'Project One', description: 'Description for project one' },
-  //   { slug: 'project-2', name: 'Project Two', description: 'Description for project two' },
-  //   { slug: 'project-3', name: 'Project Two', description: 'Description for project two' },
-  //   // Tambahkan proyek lain sesuai kebutuhan
-  // ];
 
   return (
     <section className="min-h-screen">
@@ -45,32 +37,36 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <h2 className="text-[12px] md:text-[20px] pb-2 md:pb-5">{projectsDetail?.portfolioYear ? projectsDetail.portfolioYear : '2023'}</h2>
             <p className="text-[12px] md:text-[20px] pb-2 md:pb-[50px]">{projectsDetail?.excerpt ? projectsDetail.excerpt : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
             <div className="flex items-center gap-2 md:gap-6">
-              <div className="flex items-center justify-center gap-[5px] md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm">
-                <Image
-                  src={iconWebsite}
-                  width={24}
-                  height={24}
-                  alt="Icon Website"
-                  className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
-                />
-                <Link target="_blank" href={projectsDetail?.webLink} className="text-[10px] md:text-[16px]">Visit Website</Link>
-              </div>
-              <div className="flex justify-center gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm">
-                <Image
-                  src={iconPlaystore}
-                  width={24}
-                  height={24}
-                  alt="Icon playstore"
-                  className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
-                />
-                <button className="text-[10px] md:text-[16px]">Google Play</button>
-              </div>
+              <Link target="_blank" href={projectsDetail?.webLink}>
+                <div className="flex items-center justify-center gap-[5px] md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm">
+                  <Image
+                    src={iconWebsite}
+                    width={24}
+                    height={24}
+                    alt="Icon Website"
+                    className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
+                  />
+                  <p className="text-[10px] md:text-[16px]">Visit Website</p>
+                </div>
+              </Link>
+              <Link target="_blank" href={projectsDetail?.appsLink}>
+                <div className="flex justify-center gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm">
+                  <Image
+                    src={iconPlaystore}
+                    width={24}
+                    height={24}
+                    alt="Icon playstore"
+                    className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
+                  />
+                  <Link href={projectsDetail?.appsLink} className="text-[10px] md:text-[16px]">Google Play</Link>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto min-h-screen md:pb-96 pt-14 md:pt-72 p-[35px] md:p-0">
+      <div className="max-w-7xl mx-auto min-h-screen md:pb-44 pt-14 md:pt-72 p-[35px] md:p-0">
         <div className="flex items-center gap-[40px]">
           <Image
             src="/assets/images/placeholder-image (2).jpg"
@@ -86,7 +82,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <p className="md:hidden text-[16px] text-justify text-sm pt-5">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
 
-        <div className="hidden flex gap-[40px] pt-5 md:pt-[86px] items-center justify-between">
+        <div className="hidden gap-[40px] pt-5 md:pt-[86px] items-center justify-between">
+          {/* <div className="hidden flex gap-[40px] pt-5 md:pt-[86px] items-center justify-between"> */}
           <div className="md:w-1/2">
             <div className="md:hidden mb-4">
               <Image height={367} width={570} src={images[0]} alt="slider" className="w-full" />
@@ -123,7 +120,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
 
         <div className="pt-5 md:pt-[84px]">
-          <h1 className="md:text-[28px] font-[500] pb-6">More Portofolio</h1>
+          <h1 className="md:text-[28px] font-[500] pb-6 md">More Portofolio</h1>
           <div className="hidden md:flex justify-between gap-4 md:gap-5 md:flex-wrap">
             {projects.slice(0, 3).map((project: any, index: any) => (
               <CardSquarePorto key={index} projects={project} />
@@ -136,6 +133,6 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
