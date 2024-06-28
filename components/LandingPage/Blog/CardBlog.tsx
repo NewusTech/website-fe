@@ -36,7 +36,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos="fade-up"
       data-aos-duration="1000"
       className={`${type === "landing"
-        ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[390px] w-full h-[97px] md:h-[465px] shadow-sm"
+        ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm"
         : "bg-transparent flex-col  md:w-[410px] h-full rounded-[2px]"
         } flex`}
     >
@@ -59,7 +59,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         />
       </div>
       <div
-        className={`${type === "landing" ? "md:mt-3 mt-2 mx-4 md:ml-0" : "my-1"}`}
+        className={`${type === "landing" ? "md:mt-3 mt-2 md:ml-0" : "my-1"}`}
       >
         <div className="flex items-center justify-between gap-1.5 text-dark">
           <div className="flex items-center gap-1 md:gap-2 md:pt-3">
@@ -78,7 +78,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-4 justify-between">
-          <h3 className="font-medium text-dark md:text-xl text-[10px] w-[150px] md:w-[291px]">
+          <h3 className="font-medium text-dark md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2">
             {title ? title : 'Lorem Ipsum'}
           </h3>
           <Link className="hidden md:block" href={`/blog/${id}`}>
@@ -87,16 +87,16 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
               alt="arrow up"
               width={24}
               height={24}
-              className="md:w-6 md:h-6 w-3 h-3"
+              className="md:w-full md:h-full"
             />
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-sm w-[182px] md:w-full" : "w-[142px] md:w-full -mt-1"} text-[8px] md:text-sm text-gray`}
+          className={`${type === "landing" ? "md:text-sm w-[182px] md:w-full" : "w-[142px] md:w-full -mt-1"} text-[8px] md:text-sm text-gray line-clamp-3`}
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
-        <div className="flex gap-1 mt-3 md:mt-4">
+        <div className="flex gap-1 mt-3 md:items-end">
           <div className="bg-gray rounded-full px-[10px] py-[2px] md:py-1">
             <p className="text-gray-2 md:text-xs text-[8px]">{tagblog_title}</p>
           </div>

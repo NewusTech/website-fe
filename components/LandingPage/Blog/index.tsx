@@ -27,6 +27,13 @@ interface BlogProps {
 
 export default async function Blog() {
   const blogList = await getBlogList();
+  if (!blogList.length) {
+    return <p>No blogs available</p>;
+  }
+
+  const lastBlog = blogList[blogList.length - 1];
+  const remainingBlogs = blogList.slice(0, -1);
+
 
   return (
     <section className="md:bg-gray-2">
@@ -40,32 +47,24 @@ export default async function Blog() {
         <div className="flex justify-between items-center w-full mt-[54px]">
           <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
             <h2 className="font-medium text-[32px] text-white">
-              What is Lorem Ipsum?
+              {lastBlog.title}
             </h2>
             <p className="text-sm w-[350px] text-white text-justify">
-              Lorem ipsum dolor sit amet consectetur. Sit quam ac habitant
-              interdum habitasse nulla sit nibh suscipit. Nam at tempus est nibh
-              ornare in ut elementum amet. Interdum consequat nulla ornare
-              placerat sed aenean aenean enim. Sed vestibulum integer semper est
-              sit mattis molestie.Lorem ipsum dolor sit amet consectetur. Sit
-              quam ac habitant interdum habitasse nulla sit nibh suscipit. Nam
-              at tempus est nibh ornare in ut elementum amet. Interdum consequat
-              nulla ornare placerat sed aenean aenean enim. Sed vestibulum
-              integer semper est sit mattis molestie.
+              {lastBlog.body}
             </p>
           </div>
-          <div className="hidden md:block md:w-[60%]">
+          <div data-aos='fade-right' className="hidden md:block md:w-[60%] rounded-xl">
             <Image
-              src="/assets/images/blog.jpg"
-              alt="blog"
+              src={lastBlog.image}
+              alt={lastBlog.title}
               width={690}
               height={430}
-              className="rounded-xl w-full md:pb-3"
+              className="rounded-xl w-full bg-cover object-cover"
             />
           </div>
         </div>
-        <div className="md:py-5 md:-mr-[45px] grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 items-center">
-          {blogList?.map((blog: BlogProps, i: number) => (
+        <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
+          {blogList?.slice(0, 3).map((blog: BlogProps, i: number) => (
             <CardBlog type="landing" key={i} blogs={blog} />
           ))}
         </div>

@@ -48,7 +48,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         </Link>
       </div>
       <div className="flex flex-col">
-        <div className="flex items-center gap-1.5 text-gray-2">
+        <div className="flex items-center gap-1.5 text-gray-2 pt-2">
           <h5 className="md:text-[14px] text-[6px]">{user_title}</h5>
           <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-gray-2"></div>
           <h5 className="md:text-[14px] text-[6px]">{formattedDate(publishAt)}</h5>
@@ -58,7 +58,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             {title}
           </Link>
         </h3>
-        <p className="md:text-sm text-[8px] text-gray w-[249px] md:w-[400px]">
+        <p className="md:text-sm text-[8px] text-gray w-[249px] md:w-[400px] line-clamp-3">
           {body}
         </p>
         <div className="flex gap-1 mt-3 md:mt-4">
