@@ -12,10 +12,10 @@ const NavItem = ({ path, onClick, children }: any) => {
 
   return (
     <li
-      className={`${isActive ? "text-[#480DEC] font-bold" : "md:text-white   hover:text-[#480DEC]"
+      className={`${isActive ? "text-[#480DEC] font-bold" : "md:text-white   hover:text-[#480DEC] hover:font-bold"
         }`}
     >
-      <Link href={path} onClick={onClick} className={`${isActive ? "border-b-[3px] border-[#480DEC]" : "border-none"
+      <Link href={path} onClick={onClick} className={`${isActive ? "border-b-[3px] border-[#480DEC]" : "border-none hover:font-bold"
         }`}>
         {children}
       </Link>

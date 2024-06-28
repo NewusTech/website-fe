@@ -14,7 +14,7 @@ interface BlogProps {
   tagblog_title: string,
   user_id: number,
   user_title: string,
-  image: string | null,
+  image: any,
   status: boolean,
   status_desc: string,
   publishAt: Date | string,
@@ -28,7 +28,10 @@ interface CardBlogProps {
 }
 
 const CardBlog = ({ blogs = {} as any, type }: any) => {
-  const { id, title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title } = blogs;
+  const { id, title, body, image, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title } = blogs;
+
+  console.log(blogs);
+
 
   return (
     <div
@@ -44,7 +47,7 @@ const CardBlog = ({ blogs = {} as any, type }: any) => {
           }`}
       >
         <Image
-          src="/assets/images/blog.jpg"
+          src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
           alt="blog"
           width={326}
           height={233}

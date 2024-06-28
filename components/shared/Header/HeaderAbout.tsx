@@ -20,12 +20,12 @@ const Header = ({
           alt="blog header"
           width={1350}
           height={75}
-          className={`w-full h-full object-cover`}
+          className={`w-full object-cover md:h-[600px] h-[200px]`}
         />
       </div>
       {title === 'team' ? (
         <div className="relative">
-          <div className="absolute top-[-105px] left-[210px] md:top-[-556px] md:left-[1055px] opacity-[1] max-w-[103px] md:max-w-[415px] text-white">
+          <div className="absolute top-[-105px] left-[210px] md:top-[-406px] md:left-[1055px] opacity-[1] max-w-[103px] md:max-w-[415px] text-white">
             <h1 className="text-[10px] md:text-[40px] text-[#480DEC] font-bold tracking-[.1em]">NAME</h1>
             <h2 className="text-[8px] md:text-[36px] text-black pb-2 md:pb-10 tracking-[.25em]">POSITION</h2>
             <p className="md:hidden text-[6px] md:text-[16px] leading-3">

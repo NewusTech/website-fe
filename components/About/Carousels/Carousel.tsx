@@ -5,8 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Component1 from "./SliderOne";
-import Component2 from "./Component2";
-import Component3 from "./Component3";
 
 const Carousels = () => {
   const settings = {
@@ -16,7 +14,7 @@ const Carousels = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 1000,
     pauseOnHover: true,
   };
 

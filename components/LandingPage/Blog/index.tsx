@@ -16,7 +16,7 @@ interface BlogProps {
   tagblog_title?: string,
   user_id?: number,
   user_title?: string,
-  image?: string | null,
+  image: any,
   status?: boolean,
   status_desc?: string,
   publishAt?: Date | string
@@ -64,8 +64,8 @@ export default async function Blog() {
           </div>
         </div>
         <div className="md:py-5 md:-mr-[45px] grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-          {blogList?.map((blog: BlogProps, index: any) => (
-            <CardBlog type="landing" key={index} blogs={blog} />
+          {blogList?.map((blog: any, i: number) => (
+            <CardBlog type="landing" key={i} blogs={blog} />
           ))}
         </div>
         <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-[119px] mt-5 md:mt-20">

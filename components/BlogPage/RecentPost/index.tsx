@@ -18,7 +18,7 @@ export default async function RecentPost() {
           <div className="w-[558px] md:w-full h-[250px] rounded-[10px]">
             <Link href={`/blog/${blogs[0]?.id}`} >
               <Image
-                src="/assets/images/blog.jpg"
+                src={`${blogs[0]?.image ? blogs[0].image : "/assets/images/blog.jpg"}`}
                 alt="blog"
                 width={558}
                 height={250}
