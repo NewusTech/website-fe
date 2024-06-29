@@ -19,6 +19,7 @@ const Header = ({
             src={image}
             alt="blog header"
             width={1350}
+            loading="lazy"
             height={75}
             className={`w-full h-full object-cover ${type === "service" ? "" : "md:rounded-b-[30px]"} `}
           />
@@ -32,7 +33,7 @@ const Header = ({
           <Input
             type="text"
             placeholder="Search here"
-            className={`${type === "service" ? "hidden" : "bg-white shadow-xl py-5 md:py-6 px-5 w-[300px] md:w-[500px]"}`}
+            className={`${type === "service" ? "hidden" : "bg-white shadow-xl py-5 md:py-6 px-5 w-[300px] md:w-[700px]"}`}
           />
         </div>
       </div>

@@ -42,7 +42,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
     >
       <div
         className={`${type === "landing"
-          ? "md:w-full w-[70%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
+          ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
           : "rounded-[2px] md:w-full"
           }`}
       >

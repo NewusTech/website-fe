@@ -14,7 +14,7 @@ export default async function TabsProject() {
 
   return (
     <div className="relative">
-      <h1 className="text-blue font-semibold text-[10px] md:text-[32px]">
+      <h1 className="text-blue font-semibold text-[12px] md:text-[32px]">
         Success Project
       </h1>
       <Tabs defaultValue="list" className="min-w-screen">

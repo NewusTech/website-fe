@@ -18,6 +18,7 @@ const Header = ({
         <Image
           src={image}
           alt="blog header"
+          loading="lazy"
           width={1350}
           height={75}
           className={`w-full object-cover md:h-[600px] h-[200px]`}

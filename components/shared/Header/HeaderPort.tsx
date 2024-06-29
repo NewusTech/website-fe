@@ -17,6 +17,7 @@ const Header = ({
         <Image
           src={image}
           alt="blog header"
+          loading="lazy"
           width={1350}
           height={75}
           className={`w-full h-full object-cover ${type === "service" ? "" : "md:rounded-b-[30px]"} `}

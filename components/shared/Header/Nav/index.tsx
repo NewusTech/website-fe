@@ -10,26 +10,35 @@ const Nav = () => {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const pathname = usePathname();
   const navRef = useRef<HTMLDivElement>(null);
-
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
 
   return (
     <section className="max-w-screen 2xl:container 2xlmx-auto">
-      <div className="2xl:w-[72%] container mx-auto flex justify-between md:mt-[30px] items-center md:z-20 md:top-0 md:absolute py-[22px] md:py-0">
-        <Link href='/'>
+      <div className="2xl:w-[80%] container mx-auto flex justify-between md:mt-[30px] items-center md:z-20 md:top-0 md:absolute py-[22px] md:py-0">
+        <Link href="/">
           <Image
             src="/assets/icons/logo-mobile.svg"
             alt="logo"
+            loading="lazy"
             width={206}
             height={56}
-            className="cursor-pointer w-[114px] h-[34px] md:w-[206px] md:h-[56px]"
+            className="md:hidden cursor-pointer w-[114px] h-[34px] md:w-[206px] md:h-[56px]"
+          />
+          <Image
+            src={pathname.startsWith('/blog/') ? '/assets/icons/logo-mobile.svg' : '/assets/icons/newus-light.svg'}
+            alt="logo"
+            loading="lazy"
+            width={206}
+            height={56}
+            className="hidden md:block cursor-pointer w-[114px] h-[34px] md:w-[206px] md:h-[56px]"
           />
         </Link>
         <Image
           src={`${openDropdown ? "/assets/icons/close.svg" : "/assets/icons/hamburger-2.svg"}`}
           alt="logo"
+          loading="lazy"
           width={24}
           height={40}
           className={`md:hidden ${openDropdown ? 'bg-blue md:bg-none text-[#480DEC] -p-1 md:p-0' : 'cursor-pointer md:hidden'}`}
