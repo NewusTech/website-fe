@@ -4,20 +4,22 @@ import React from 'react'
 
 interface OurClientProps {
   id: number;
-  logo: string;
+  image: string;
 }
 
-const OurClient = () => {
-  const firstRow = ourClientAbout.slice(0, 7);
-  const secondRow = ourClientAbout.slice(7, 14);
-  const thirdRow = ourClientAbout.slice(14, 21);
-  const mobile = ourClientAbout.slice(0, 21);
+const OurClient = ({ clients }: any) => {
+  const ourClient = clients.length > 7 ? clients : ourClientAbout
+
+  const firstRow = ourClient.slice(0, 7);
+  const secondRow = ourClient.slice(7, 14);
+  const thirdRow = ourClient.slice(14, 21);
+  const mobile = ourClient.slice(0, 21);
 
   const renderRow = (clients: OurClientProps[], justify: string) => (
     <div className={`flex w-full gap-3 md:gap-9 flex-wrap pb-5 justify-${justify}`}>
-      {clients.map(({ id, logo }: OurClientProps) => (
+      {clients.map(({ id, image }: OurClientProps) => (
         <div key={id} className="flex items-center">
-          <Image src={logo} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
+          <Image src={image} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
         </div>
       ))}
     </div>
@@ -47,9 +49,9 @@ const OurClient = () => {
 
       {/* Mobile View */}
       <div className="flex flex-wrap justify-center md:hidden items-center w-full">
-        {mobile.map(({ id, logo }) => (
+        {mobile.map(({ id, image }: OurClientProps) => (
           <div key={id} className="w-[20%] flex justify-center mb-5">
-            <Image src={logo} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
+            <Image src={image} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
           </div>
         ))}
       </div>
