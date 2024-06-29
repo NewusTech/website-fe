@@ -27,30 +27,30 @@ const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItem
 
   return (
     <li className="relative">
-      <div className="flex items-center">
+      <div className="flex justify-end items-center">
         {path ? (
-          <Link href={path} onClick={onClick} className={`${isActive ? "text-[#480DEC] font-bold border-b-[3px] border-[#480DEC]" : "md:text-black border-none hover:text-[#480DEC] hover:font-bold"
+          <Link href={path} onClick={onClick} className={`${isActive ? "text-[#480DEC] font-bold border-b-[3px] border-[#480DEC]" : "md:text-white border-none hover:text-[#b8acdb] hover:font-bold text-white"
             }`}>
             {children}
           </Link>
         ) : (
-          <button onClick={handleDropdown} className="md:text-black border-none hover:text-[#480DEC] hover:font-bold uppercase">
+          <button onClick={handleDropdown} className="md:text-white border-none hover:text-[#b8acdb] hover:font-bold uppercase text-white">
             {children}
           </button>
         )}
         {dropdownItems.length > 0 && (
           <button onClick={handleDropdown} className="ml-2 capitalize">
-            <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.05827 0.999997L6.6247 6.68296L12.3077 1.11653" stroke="#323232" stroke-linecap="round" stroke-linejoin="round" />
+            <svg width="14" height="7" viewBox="0 0 14 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.30143 0.796078L6.86786 6.47904L12.5508 0.912609" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </button>
         )}
       </div>
       {isDropdownOpen && (
-        <ul className="absolute right-0 mt-2 w-48 bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl capitalize border border-gray-200 rounded-md shadow-lg">
+        <ul className="mt-2 w-48 text-black bg-[#480DEC] capitalize">
           {dropdownItems.map((item, index) => (
-            <li key={index} className="bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl">
-              <Link href={item.path} onClick={onClick} className="block px-4 py-2 text-sm text-gray-700">
+            <li key={index} className="bg-[#480DEC]">
+              <Link href={item.path} onClick={onClick} className="py-3 text-sm text-white">
                 {item.label}
               </Link>
             </li>

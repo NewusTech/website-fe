@@ -34,11 +34,10 @@ export default async function Blog() {
   const lastBlog = blogList[blogList.length - 1];
   const remainingBlogs = blogList.slice(0, -1);
 
-
   return (
-    <section className="md:bg-gray-2">
+    <section className="md:bg-gray-2 py-10">
       <div className="container md:mx-auto">
-        <div className="flex flex-col items-center -mt-6 -mb-10 md:-mb-0 md:pt-9">
+        <div className="flex flex-col items-center md:-mt-0 -mb-8 md:-mb-0 md:pt-9">
           <h4 className="text-[12px] md:text-[16px] text-tangerine">Blog</h4>
           <h2 className="text-[32px] hidden md:block font-semibold text-white">
             Blogssss

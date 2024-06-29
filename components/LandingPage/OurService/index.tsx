@@ -2,7 +2,7 @@ import CardService from "@/components/LandingPage/OurService/CardService";
 
 const OurService = () => {
   return (
-    <section className="md:mt-32 mt-[20px] md:bg-blue ">
+    <section className="md:mt-32 md:pb-16 pt-10 md:bg-blue ">
       <div className="mx-auto container">
         <h1 className="text-[10px] md:text-[32px] font-semibold text-dark md:text-white md:pt-10">
           Our Service

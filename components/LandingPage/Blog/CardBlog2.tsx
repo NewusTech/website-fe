@@ -32,8 +32,6 @@ interface CardBlogProps {
 const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
   const { title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title, image, createdAt, updatedAt, id } = blogs;
 
-  console.log({ blogs });
-
   return (
     <div className="flex gap-4">
       <div className="w-[267px] h-[205px] rounded-[10px]">
