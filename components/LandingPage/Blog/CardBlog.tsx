@@ -36,13 +36,13 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos="fade-up"
       data-aos-duration="1000"
       className={`${type === "landing"
-        ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm"
-        : "bg-transparent flex-col  md:w-[410px] h-full rounded-[2px]"
+        ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 "
+        : "bg-transparent flex-col md:w-[410px] h-full rounded-[2px]"
         } flex`}
     >
       <div
         className={`${type === "landing"
-          ? "md:w-full md:h-[233px] w-[118px] h-full rounded-l-[6px] md:rounded-[10px]"
+          ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
           : "rounded-[2px] md:w-full"
           }`}
       >
@@ -59,7 +59,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         />
       </div>
       <div
-        className={`${type === "landing" ? "md:mt-3 mt-2 md:ml-0" : "my-1"}`}
+        className={`${type === "landing" ? "md:mt-3 w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "my-1"}`}
       >
         <div className="flex items-center justify-between gap-1.5 text-dark">
           <div className="flex items-center gap-1 md:gap-2 md:pt-3">

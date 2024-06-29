@@ -22,7 +22,7 @@ const CardSquareProject = ({ projects }: any) => {
         alt="placeholder"
         width={367}
         height={273}
-        className="w-full"
+        className="w-full  h-[120px] md:h-[273px] object-cover"
       />
       <div className="md:mt-4 my-4 md:mb-5 flex flex-col gap-1 md:gap-4 px-4">
         <h2 className="md:text-[24px] text-[10px] font-semibold truncate">

@@ -16,18 +16,18 @@ const CardListProject = ({ projects }: any) => {
     Tagportofolio = {} } = projects || {};
 
   return (
-    <div data-aos="flip-left" className="bg-white rounded-[10px] w-[40%] md:w-full mb-[10px]">
-      <div className="flex md:gap-[42px] w-full">
-        <div className="w-[20%]">
+    <div data-aos="flip-left" className="bg-white rounded-[10px] w-full mb-[10px]">
+      <div className="flex md:gap-[42px] md:w-full h-[120px] md:h-[273px]">
+        <div className="w-full md:w-[28%] h-full flex items-center">
           <Image
             src={image ? image : `/assets/images/placeholder-image (2).jpg`}
             alt="image card list"
             width={367}
             height={273}
-            className="rounded-l-[10px] h-full w-full object-cover"
+            className="rounded-l-[10px] h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
         </div>
-        <div className="w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 py-5 rounded-r-[10px]">
+        <div className="w-full md:w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 md:py-5 rounded-r-[10px]">
           <h2 className="md:text-2xl text-[10px] font-semibold">
             {title ? title : 'Name Project'}
           </h2>
@@ -37,7 +37,7 @@ const CardListProject = ({ projects }: any) => {
           <Link target="_blank" href={`/portfolio/${slug}`}>
             <Button
               size="xs"
-              className="bg-blue py-[14px] md:py-6 px-20 rounded-[10px] w-[116px] md:w-[188px] hover:bg-blue-2 md:text-[16px] text-[8px]"
+              className="bg-blue py-[14px] md:py-6 px-20 rounded-[10px] w-[116px] md:w-[188px] hover:bg-blue-2 md:text-[16px] text-[8px] transition-transform duration-300 ease-in-out transform hover:scale-105"
             >
               See Project
             </Button>

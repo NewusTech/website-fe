@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const Header = ({
   image
 }: {
@@ -9,7 +7,7 @@ const Header = ({
     <header className="w-full relative">
       <div className="md:min-w-[1350px] h-[212px] md:min-h-[471px] bg-[url('/assets/images/career-header.svg')] flex justify-center items-center">
         <div className="flex flex-col justify-center items-center md:gap-[21px] max-w-[238px] md:max-w-[831px]">
-          <h1 className="text-white font-bold text-[12px] md:text-[24px]">
+          <h1 className="text-white font-bold text-[14px] md:text-[24px]">
             Were Hiring !
           </h1>
           <h2 className="text-[#FF6600] font-bold md:text-[56px] pb-3 md:pb-0">Be part of our mission.</h2>

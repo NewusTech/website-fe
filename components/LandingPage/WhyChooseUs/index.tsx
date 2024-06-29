@@ -10,11 +10,11 @@ interface WhyChooseUsProps {
 
 const WhyChooseUs = () => {
   return (
-    <section className="container mx-auto mt-[20px] md:my-[76px] pb-[71px]">
-      <h1 className="text-center text-tangerine text-[10px] md:text-[32px]">
-        <strong className="text-blue mr-[10px]">Mengapa</strong> Memilih Kami?
+    <section className="container mx-auto pt-10 md:pt-5 md:pb-10 md:my-[76px]">
+      <h1 className="text-center text-tangerine text-[12px] md:text-[32px]">
+        <strong className="text-blue mr-2 md:mr-[10px]">Mengapa</strong> Memilih Kami?
       </h1>
-      <h4 className="font-bold text-[8px] md:text-2xl text-center mt-[10px] md:mt-5 text-black">
+      <h4 className="font-bold text-[10px] md:text-2xl text-center mt-[10px] md:mt-5 text-black">
         &quot;The Trusted and Quality Consultant in Service Excellence.&quot;
       </h4>
       <div className="flex items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[60px]">

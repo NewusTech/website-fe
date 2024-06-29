@@ -26,14 +26,14 @@ const CardServices = ({ illustration, title, desc }: CardServiceProps) => {
       <h3 className="text-[8px] md:text-[32px] font-semibold md:my-6 my-[6px]">
         {title}
       </h3>
-      <p className="md:w-[529px] w-[146px] text-[6px] md:text-[16px]">{desc}</p>
+      <p className="md:w-full w-[146px] text-[6px] md:text-[16px] line-clamp-3">{desc}</p>
       <div className="md:mt-6 mt-2 flex md:gap-x-6 gap-x-2">
         <Link target="_blank" href='/contact'>
           <Button className="bg-blue hover:bg-blue-2 md:h-[51px] md:w-[161px] w-[49px] h-[16px] text-[6px] md:text-sm">
             Start Project
           </Button>
         </Link>
-        <Link target="_blank" href='/contact'>
+        <Link target="_blank" href='/portfolio'>
           <Button className="md:h-[51px] bg-gray-2 md:w-[161px] w-[49px] h-[16px] text-[6px] md:text-sm">
             View Portfolio
           </Button>

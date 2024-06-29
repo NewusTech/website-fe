@@ -97,78 +97,78 @@ export const chooseUs = [
 export const ourClientAbout = [
   {
     id: 1,
-    logo: "/assets/images/pln.svg",
+    image: "/assets/images/pln.svg",
   },
   {
     id: 2,
-    logo: "/assets/images/OJK_Logo.svg",
+    image: "/assets/images/OJK_Logo.svg",
   },
   {
     id: 3,
-    logo: "/assets/images/bgp.svg"
+    image: "/assets/images/bgp.svg"
   },
   {
     id: 4,
-    logo: "/assets/images/lampung.png",
+    image: "/assets/images/lampung.png",
   },
   {
     id: 5,
-    logo: "/assets/images/rama-tranz.png",
+    image: "/assets/images/rama-tranz.png",
   },
   {
     id: 6,
-    logo: "/assets/images/pariwisata.png",
+    image: "/assets/images/pariwisata.png",
   },
   {
     id: 7,
-    logo: "/assets/images/pesisir-barat.png",
+    image: "/assets/images/pesisir-barat.png",
   },
   {
     id: 8,
-    logo: "/assets/images/bvet.png",
+    image: "/assets/images/bvet.png",
   },
   {
     id: 9,
-    logo: "/assets/images/sma-printis.png",
+    image: "/assets/images/sma-printis.png",
   },
   {
     id: 11,
-    logo: "/assets/images/ggf.png",
+    image: "/assets/images/ggf.png",
   },
   {
     id: 12,
-    logo: "/assets/images/pln.svg",
+    image: "/assets/images/pln.svg",
   },
   {
     id: 13,
-    logo: "/assets/images/OJK_Logo.svg",
+    image: "/assets/images/OJK_Logo.svg",
   },
   {
     id: 14,
-    logo: "/assets/images/lampung.png",
+    image: "/assets/images/lampung.png",
   },
   {
     id: 15,
-    logo: "/assets/images/bgp.svg"
+    image: "/assets/images/bgp.svg"
   },
   {
     id: 16,
-    logo: "/assets/images/rama-tranz.png",
+    image: "/assets/images/rama-tranz.png",
   },
   {
     id: 17,
-    logo: "/assets/images/pariwisata.png",
+    image: "/assets/images/pariwisata.png",
   },
   {
     id: 18,
-    logo: "/assets/images/pesisir-barat.png",
+    image: "/assets/images/pesisir-barat.png",
   },
   {
     id: 19,
-    logo: "/assets/images/bvet.png",
+    image: "/assets/images/bvet.png",
   }, {
     id: 20,
-    logo: "/assets/images/ggf.png",
+    image: "/assets/images/ggf.png",
   },
   {
     id: 21,

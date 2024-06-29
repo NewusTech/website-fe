@@ -7,7 +7,7 @@ import OurHistory from "./OurHistory";
 import Carousels from "./Carousels/Carousel";
 import SliderMobile from "./SliderMobile";
 
-const AboutLayout = ({ teams }: any) => {
+const AboutLayout = ({ teams, clients }: any) => {
   const boxes = [
     { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy1.png" },
     { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy2.png" },
@@ -23,7 +23,7 @@ const AboutLayout = ({ teams }: any) => {
 
   return (
     <section className="bg-white md:bg-[#F4F4F4] overflow-hidden">
-      <Tabs defaultValue="about" className="md:p-[120px] -m-1 mt-[2px]">
+      <Tabs defaultValue="about" className="md:p-[120px] -ml-2">
         <TabsList>
           <TabsTrigger className="text-[#FF6600] px-4 py-2 md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-[12px] md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border data-[state=active]:rounded-none" value="about">
             ABOUT
@@ -80,7 +80,7 @@ const AboutLayout = ({ teams }: any) => {
       </div>
       {/* OurCliet */}
       <div className="p-10 md:px-28 flex flex-col w-full md:pb-24">
-        <OurClient />
+        <OurClient clients={clients} />
       </div>
 
       <div className="p-10 md:px-28 bg-[#4F4F4F] md:pt-24 md:pb-24 flex flex-col w-full">
