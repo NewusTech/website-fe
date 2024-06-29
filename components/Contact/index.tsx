@@ -3,7 +3,6 @@ import React from 'react'
 import TabsContact from './TabsContact'
 import Link from 'next/link'
 
-
 const ContactUs = () => {
   return (
     <section className="max-w-7xl mx-auto pt-2 md:pt-20 md:pb-20">

@@ -27,7 +27,7 @@ const Header = ({
       </div>
       <div className="absolute z-30 w-full -mt-[50px] md:-mt-[160px]">
         <div className="flex flex-col justify-center items-center gap-[10px] md:gap-10">
-          <h1 className="text-white uppercase font-bold text-[10px] md:text-[64px]">
+          <h1 className="text-white uppercase font-bold text-[14px] md:text-[64px]">
             {title}
           </h1>
           <Input

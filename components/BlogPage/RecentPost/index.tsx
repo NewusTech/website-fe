@@ -12,13 +12,14 @@ export default async function RecentPost() {
 
   return (
     <section className="container mx-auto mt-[60px] md:mb-[80px] mb-10">
-      <h1 className="text-dark text-2xl font-medium">Recent Blog Post</h1>
+      <h1 className="text-dark md:text-2xl font-medium">Recent Blog Post</h1>
       <section className="hidden md:flex mt-10 gap-6">
         <div className="w-1/2">
           <div className="w-[558px] md:w-full h-[250px] rounded-[10px]">
             <Link href={`/blog/${blogs[0]?.id}`} >
               <Image
                 src={`${blogs[0]?.image ? blogs[0].image : "/assets/images/blog.jpg"}`}
+                loading="lazy"
                 alt="blog"
                 width={558}
                 height={250}

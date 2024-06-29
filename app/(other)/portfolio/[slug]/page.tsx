@@ -37,20 +37,23 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <h2 className="text-[12px] md:text-[20px] pb-2 md:pb-5">{projectsDetail?.portfolioYear ? projectsDetail.portfolioYear : '2023'}</h2>
             <p className="text-[12px] md:text-[20px] pb-2 md:pb-[50px]">{projectsDetail?.excerpt ? projectsDetail.excerpt : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
             <div className="flex items-center gap-2 md:gap-6">
-              <Link target="_blank" href={projectsDetail?.webLink}>
-                <div className="flex items-center justify-center gap-[5px] md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm">
-                  <Image
-                    src={iconWebsite}
-                    width={24}
-                    height={24}
-                    alt="Icon Website"
-                    className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
-                  />
-                  <p className="text-[10px] md:text-[16px]">Visit Website</p>
-                </div>
+              <Link
+                className="flex items-center justify-center gap-[5px] md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm"
+                href={projectsDetail?.webLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src={iconWebsite}
+                  width={24}
+                  height={24}
+                  alt="Icon Website"
+                  className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
+                />
+                <p className="text-[10px] md:text-[16px]">Visit Website</p>
               </Link>
-              <Link target="_blank" href={projectsDetail?.appsLink}>
-                <div className="flex justify-center gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm">
+              <div>
+                <Link rel="noopener noreferrer" className="flex justify-center gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm" target="_blank" href={projectsDetail?.appsLink}>
                   <Image
                     src={iconPlaystore}
                     width={24}
@@ -58,9 +61,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
                     alt="Icon playstore"
                     className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
                   />
-                  <Link href={projectsDetail?.appsLink} className="text-[10px] md:text-[16px]">Google Play</Link>
-                </div>
-              </Link>
+                  <p className="text-[10px] md:text-[16px]">Google Play</p>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -73,11 +76,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
             alt="image card list"
             width={367}
             height={273}
-            className="w-[64px] h-[36px] md:w-[367px] md:h-[273px] rounded-l-[10px] object-cover"
+            className="w-[64px] h-[36px] md:w-[467px] md:h-[310px] rounded-l-[10px] object-cover"
           />
           <div>
             <h1 className="text-2xl md:text-[24px] font-bold md:pb-4">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
-            <p className="hidden md:block text-[16px]">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
+            <p className="hidden md:block text-[16px] line-clamp-3">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
           </div>
         </div>
         <p className="md:hidden text-[16px] text-justify text-sm pt-5">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
