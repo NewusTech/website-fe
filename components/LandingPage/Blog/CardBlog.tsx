@@ -29,7 +29,7 @@ interface CardBlogProps {
 }
 
 const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
-  const { id, title, body, image, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title } = blogs;
+  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, tagblog_title } = blogs;
 
   return (
     <div
@@ -67,7 +67,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
             <h5 className="md:text-[14px] text-[8px]">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
-          <Link className="md:hidden" href={`/blog/${id}`}>
+          <Link className="md:hidden" href={`/blog/${slug}`}>
             <Image
               src="/assets/icons/arrow-up-right-black.svg"
               alt="arrow up"
@@ -81,7 +81,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           <h3 className="font-medium text-dark md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2">
             {title ? title : 'Lorem Ipsum'}
           </h3>
-          <Link className="hidden md:block" href={`/blog/${id}`}>
+          <Link className="hidden md:block" href={`/blog/${slug}`}>
             <Image
               src="/assets/icons/arrow-up-right-black.svg"
               alt="arrow up"
