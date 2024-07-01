@@ -17,13 +17,13 @@ const CardSquarePorto = ({ projects }: any) => {
 
   return (
     <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[32%] w-[47%] relative">
-      <div className="absolute top-0 left-[125px] md:left-72 z-10 md:p-4">
+      <div className="absolute top-0 left-[120px] md:left-[330px] z-10 p-1  md:p-2 w-full">
         <Image
           src={image ? image : `/assets/images/placeholder-image (2).jpg`}
           alt="Logo"
           width={50}
           height={50}
-          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
         />
       </div>
       <Image

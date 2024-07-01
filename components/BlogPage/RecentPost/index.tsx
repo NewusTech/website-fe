@@ -117,7 +117,7 @@ export default async function RecentPost() {
           <CardBlog key={index} blogs={blog} />
         ))}
       </section>
-      <Pages />
+      {/* <Pages /> */}
     </section>
   );
 };

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,6 @@ import CardSquareProject from "@/components/LandingPage/SuccessProject/CardSquar
 import Pages from "@/components/shared/Pages";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import ListIcon from "@/public/assets/icons/ListIcon";
-import { getProjectList } from "@/components/Fetching/Portfolio/port";
 
 interface Project {
   id: number;
@@ -37,37 +36,47 @@ interface Project {
   };
 }
 
-export default function TabsProject() {
+export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
   const [projectList, setProjectList] = useState<Project[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('Website Development');
+  const [categories, setCategories] = useState<string[]>(['Website Development']);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
 
   useEffect(() => {
     async function fetchData() {
-      const projects: Project[] = await getProjectList();
+      const projects: Project[] = portfolios;
       setProjectList(projects);
 
-      const uniqueCategories: string[] = [];
-      projects.forEach(project => {
-        if (!uniqueCategories.includes(project.Kategoriportofolio.title)) {
-          uniqueCategories.push(project.Kategoriportofolio.title);
-        }
-      });
-
-      setCategories(uniqueCategories);
+      const uniqueCategories: string[] = Array.from(new Set(projects.map(project => project.Kategoriportofolio.title)));
+      setCategories([...uniqueCategories]);
     }
     fetchData();
-  }, []);
+  }, [portfolios]);
 
-  const handleCategoryChange = (category: any) => {
+  const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
+    setSearchTerm('');
+    setCurrentPage(1); // Reset to first page when category changes
   };
 
-  const filteredProjects = selectedCategory
-    ? projectList.filter(
-      (project) => project.Kategoriportofolio.title === selectedCategory
-    )
-    : projectList;
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1); // Reset to first page when search term changes
+  };
+
+  const filteredProjects = projectList.filter(project => {
+    const matchCategory = selectedCategory === 'Website Development' || project.Kategoriportofolio.title === selectedCategory;
+    const matchSearchTerm = searchTerm === '' ||
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.body.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchCategory && matchSearchTerm;
+  });
+
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className="relative">
@@ -104,6 +113,8 @@ export default function TabsProject() {
             <div className="flex w-full">
               <Input
                 type="text"
+                value={searchTerm}
+                onChange={handleInputChange}
                 className="bg-white border border-dark border-r-0 rounded-r-none"
               />
               <div className="border border-l-0 border-dark -ml-4 bg-white flex items-center justify-center rounded-l-0 rounded-r-[6px]">
@@ -130,10 +141,10 @@ export default function TabsProject() {
               ))}
             </div>
           </div>
-          {filteredProjects?.map((project, index) => (
+          {paginatedProjects?.map((project, index) => (
             <CardListProject key={index} projects={project} />
           ))}
-          <Pages />
+          <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
         </TabsContent>
         <TabsContent value="square">
           <p className="text-gray text-[8px] md:text-[16px]">
@@ -156,6 +167,8 @@ export default function TabsProject() {
             <div className="flex w-full">
               <Input
                 type="text"
+                value={searchTerm}
+                onChange={handleInputChange}
                 className="bg-white border border-dark border-r-0 rounded-r-none"
               />
               <div className="border border-l-0 border-dark -ml-4 bg-white flex items-center justify-center rounded-l-0 rounded-r-[6px]">
@@ -183,12 +196,11 @@ export default function TabsProject() {
             </div>
           </div>
           <div className="flex gap-4 md:gap-8 flex-wrap flex-grow-0 justify-center mb-[10px] w-full">
-            {filteredProjects?.map((project, index) => (
+            {paginatedProjects?.map((project, index) => (
               <CardSquareProject key={index} projects={project} />
             ))}
-            {/* <CardSquareProject /> */}
           </div>
-          <Pages />
+          <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
         </TabsContent>
       </Tabs>
     </div>

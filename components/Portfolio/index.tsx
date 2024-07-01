@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
@@ -10,31 +10,78 @@ import Pages from '../shared/Pages';
 import CardSquarePorto from './CardSquarePorto';
 import CardListPorto from './CardListPorto';
 
-export default function Index({ portfolios }: any) {
-  const [projectList, setProjectList] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [categories, setCategories] = useState([]);
+interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  keyword: string;
+  excerpt: string;
+  body: string;
+  image: string;
+  portfolioYear: string;
+  webLink: string;
+  appsLink: string;
+  KategoriportofolioId: number;
+  TagportofolioId: number;
+  createdAt: string;
+  updatedAt: string;
+  Kategoriportofolio: {
+    title: string;
+    createdAt: string;
+  };
+  Tagportofolio: {
+    title: string;
+    createdAt: string;
+  };
+}
+
+type IndexProps = {
+  portfolios: Project[];
+};
+
+export default function Index({ portfolios }: IndexProps) {
+  const [projectList, setProjectList] = useState<Project[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [categories, setCategories] = useState<string[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
 
   useEffect(() => {
     async function fetchData() {
-      const projects = portfolios; // Use actual data from props
+      const projects: Project[] = portfolios;
       setProjectList(projects);
 
-      const uniqueCategories = Array.from(new Set(projects.map(project => project.Kategoriportofolio.title)));
-      setCategories(['All', ...uniqueCategories]); // Include 'All' as default category
-
-      setSelectedCategory('All'); // Default selected category
+      const uniqueCategories: string[] = Array.from(new Set(projects.map(project => project.Kategoriportofolio.title)));
+      setCategories(['All', ...uniqueCategories]);
     }
     fetchData();
-  }, []);
+  }, [portfolios]);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
+    setSearchTerm('');
+    setCurrentPage(1);
   };
 
-  const filteredProjects = selectedCategory === 'All'
-    ? projectList
-    : projectList.filter(project => project.Kategoriportofolio.title === selectedCategory);
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+    setSelectedCategory('All');
+    setCurrentPage(1);
+  };
+
+  const filteredProjects = projectList.filter(project => {
+    const matchCategory = selectedCategory === 'All' || project.Kategoriportofolio.title === selectedCategory;
+    const matchSearchTerm = searchTerm === '' ||
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.body.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchCategory && matchSearchTerm;
+  });
+
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
 
   return (
     <section>
@@ -68,6 +115,8 @@ export default function Index({ portfolios }: any) {
                 </div>
                 <Input
                   type="text"
+                  value={searchTerm}
+                  onChange={handleInputChange}
                   className="flex-grow h-full py-2 pl-2 md:pl-4 pr-2 border-0 rounded-none"
                 />
               </div>
@@ -83,19 +132,19 @@ export default function Index({ portfolios }: any) {
 
             <TabsContent value="list">
               <div className="flex flex-col md:flex-col gap-4 my-4 md:my-7 ">
-                {filteredProjects?.map((project: any, index: number) => (
+                {paginatedProjects.map((project: any, index: number) => (
                   <CardListPorto key={index} projects={project} />
                 ))}
               </div>
-              <Pages />
+              <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
             </TabsContent>
             <TabsContent value="square">
               <div className="flex gap-4 md:gap-[20px] flex-grow flex-wrap my-2 md:my-7 mb-10 justify-center">
-                {filteredProjects?.map((project: any, index: number) => (
+                {paginatedProjects.map((project: any, index: number) => (
                   <CardSquarePorto key={index} projects={project} />
                 ))}
               </div>
-              <Pages />
+              <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
             </TabsContent>
           </Tabs>
         </div>

@@ -16,7 +16,16 @@ const CardSquareProject = ({ projects }: any) => {
     Tagportofolio = {} } = projects || {};
 
   return (
-    <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[31%] w-[170px]">
+    <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[31%] w-[170px] shadow-lg">
+      <div className="absolute top-0 left-[130px] md:left-[345px] z-10 p-1 md:p-2">
+        <Image
+          src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+          alt="Logo"
+          width={50}
+          height={50}
+          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+        />
+      </div>
       <Image
         src={image ? image : `/assets/images/placeholder-image (2).jpg`}
         alt="placeholder"
