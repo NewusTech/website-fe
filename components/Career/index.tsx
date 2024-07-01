@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Job from "./Job/index";
 import Intern from "./Intern/index";
+import NotFound from "../shared/NotFound";
 
 const CareerLayout = () => {
   return (

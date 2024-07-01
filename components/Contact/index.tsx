@@ -11,8 +11,7 @@ const ContactUs = () => {
         <div className="w-[40%] md:justify-start hidden md:flex md:flex-col font-bold">
           <Image src={'/assets/images/contact.svg'} width={485} height={563} alt="Dummy Contact" className='pb-16' />
           <h1 className='text-[24px] pb-4'>Bandar Lampung</h1>
-          <h2 className='font-normal pb-4'>Jl. In aja dulu, No 212 Lintang Barat, Bujur Selatan 57142
-            (+62) 888-991-2992</h2>
+          <h2 className='font-normal pb-4'>Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</h2>
           <div className='flex items-center justify-start gap-6 '>
             <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/black/fb.svg" alt="Facebook" />
             <SocialLink href="https://www.twitter.com" src="/assets/icons/black/twitter.svg" alt="Twitter" />
@@ -27,8 +26,7 @@ const ContactUs = () => {
 
         <div className='md:hidden p-4 pt-5'>
           <h1 className='font-bold md:text-[24px] pb-4'>Bandar Lampung</h1>
-          <h2 className='text-[12px] md:text-sm font-normal pb-4'>Jl. In aja dulu, No 212 Lintang Barat, Bujur Selatan 57142
-            (+62) 888-991-2992</h2>
+          <h2 className='text-[12px] md:text-sm font-normal pb-4'>Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</h2>
           <div className='flex items-center justify-start gap-6 '>
             <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/black/fb.svg" alt="Facebook" />
             <SocialLink href="https://www.twitter.com" src="/assets/icons/black/twitter.svg" alt="Twitter" />
