@@ -53,22 +53,9 @@ const Footer = () => {
                 className="w-[10px] h-[10px] md:w-6 md:h-6"
               />
               <p className="text-white md:text-sm text-[6px]">
-                Newus Technology, Jl. In aja dulu, No 212 Lintang Barat
+                Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212
               </p>
             </div>
-            <div className="flex gap-2 md:gap-4 items-center mt-2 md:mt-6">
-              <Image
-                src="/assets/icons/printer.svg"
-                alt="place"
-                width={24}
-                height={24}
-                className="w-[10px] h-[10px] md:w-6 md:h-6"
-              />
-              <p className="text-white md:text-sm text-[6px]">
-                newustech@gmail.com
-              </p>
-            </div>
-
             <div className="flex gap-2 md:gap-4 items-center mt-2 md:mt-6">
               <Image
                 src="/assets/icons/phone.svg"
@@ -81,7 +68,19 @@ const Footer = () => {
                 (+62) 888-991-2992
               </p>
             </div>
-            <div className="hidden md:flex gap-4 items-center mt-6">
+            <div className="flex gap-2 md:gap-4 items-center mt-2 md:mt-6">
+              <Image
+                src="/assets/icons/printer.svg"
+                alt="place"
+                width={24}
+                height={24}
+                className="w-[10px] h-[10px] md:w-6 md:h-6"
+              />
+              <p className="text-white md:text-sm text-[6px]">
+                newustechnology@gmail.com
+              </p>
+            </div>
+            <div className="hidden md:flex gap-4 items-center mt-4">
               <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
               <SocialLink href="https://www.twitter.com" src="/assets/icons/twitter.svg" alt="Twitter" />
               <SocialLink href="https://id.linkedin.com/company/newustechnology" src="/assets/icons/linkedin.svg" alt="LinkedIn" />
@@ -93,7 +92,7 @@ const Footer = () => {
               <SocialLink href="https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0" src="/assets/icons/wifi.svg" alt="WhatsApp" /> */}
             </div>
           </div>
-          <div className="flex md:flex-col gap-3 md:gap-0 mt-5 md:mt-[52px] md:ml-[50px]">
+          <div className="flex md:flex-col gap-3 md:gap-0 mt-5 md:mt-[52px] md:ml-[0px] md:w-1/5">
             <div>
               <h4 className="font-semibold text-white md:text-sm text-[6px] uppercase">
                 Technology
@@ -125,54 +124,54 @@ const Footer = () => {
                 Social Media
               </h4>
               <div className="grid grid-cols-4 gap-3 mt-[6px]">
-                <Image
-                  src="/assets/icons/facebook.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/twitter.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/linkedin.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/youtube.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/instagram.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/google-plus.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/pinterest.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src="/assets/icons/wifi.svg"
-                  alt="place"
-                  width={15}
-                  height={15}
-                />
+                <Link href='https://www.facebook.com/newustechnology/' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+                  <Image
+                    src="/assets/icons/facebook.svg"
+                    alt="place"
+                    width={15}
+                    height={15}
+                  />
+                </Link>
+                <Link href='https://id.linkedin.com/company/newustechnology' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+                  <Image
+                    src="/assets/icons/linkedin.svg"
+                    alt="place"
+                    width={15}
+                    height={15}
+                  />
+                </Link>
+
+                <Link href='https://www.instagram.com/newustechnology/' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+                  <Image
+                    src="/assets/icons/instagram.svg"
+                    alt="place"
+                    width={15}
+                    height={15}
+                  />
+                </Link>
+                <Link href='https://www.tiktok.com/@newustech' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+                  <Image
+                    src="/assets/icons/tiktok.svg"
+                    alt="place"
+                    width={15}
+                    height={15}
+                  />
+                </Link><Link href='https://www.youtube.com' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+                  <Image
+                    src="/assets/icons/youtube.svg"
+                    alt="place"
+                    width={16}
+                    height={16}
+                  />
+                </Link>
+                <Link href='https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+                  <Image
+                    src="/assets/icons/wifi.svg"
+                    alt="place"
+                    width={15}
+                    height={15}
+                  />
+                </Link>
               </div>
             </div>
           </div>
