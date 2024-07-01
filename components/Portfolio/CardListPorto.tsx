@@ -16,7 +16,18 @@ const CardListPorto = ({ projects }: any) => {
     Tagportofolio = {} } = projects || {};
 
   return (
-    <div data-aos="flip-left" className="bg-white rounded-[10px] md:w-full mb-[10px]">
+    <div data-aos="flip-left" className="bg-white rounded-[10px] md:w-full mb-[10px] relative shadow-lg">
+      {/* Logo in top right corner */}
+      <div className="absolute top-0 left-[90px] md:left-[300px] z-10 p-1 md:p-2 w-full">
+        <Image
+          src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+          alt="Logo"
+          width={50}
+          height={50}
+          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
+        />
+      </div>
+
       <div className="flex md:gap-[42px] w-full">
         <div className="w-full md:w-[28%] h-[130px] md:h-[273px] rounded-l-[10px]">
           <Image

@@ -8,6 +8,8 @@ import { formattedDate } from "@/utils/blog";
 export default async function DetailBlogPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const blogDetail = await getBlogDetail(slug);
+  console.log(blogDetail[0]);
+
   const {
     title = "",
     keyword = "",
@@ -25,12 +27,12 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
     publishAt = "",
     createdAt = "",
     updatedAt = ""
-  } = blogDetail || {};
+  } = blogDetail[0] || {};
 
   const blogPaths = [
     { label: 'Home', href: '/' },
     { label: 'Blog', href: '/blog' },
-    { label: blogDetail?.title, href: `/blog/${slug}` },
+    { label: title, href: `/blog/${slug}` },
   ];
 
   const blogList = await getBlogList();

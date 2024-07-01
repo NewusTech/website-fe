@@ -30,12 +30,12 @@ interface CardBlogProps {
 }
 
 const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
-  const { title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title, image, createdAt, updatedAt, id } = blogs;
+  const { title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title, image, slug, createdAt, updatedAt, id } = blogs;
 
   return (
     <div className="flex gap-4">
       <div className="w-[267px] h-[205px] rounded-[10px]">
-        <Link href={`/blog/${id}`}>
+        <Link href={`/blog/${slug}`}>
           <Image
             src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
             alt="blog"
@@ -52,7 +52,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           <h5 className="md:text-[14px] text-[6px]">{formattedDate(publishAt)}</h5>
         </div>
         <h3 className="my-4 font-medium text-dark md:text-2xl text-[8px] md:w-[246px]">
-          <Link href={`/blog/${id}`}>
+          <Link href={`/blog/${slug}`}>
             {title}
           </Link>
         </h3>

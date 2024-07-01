@@ -12,9 +12,9 @@ export async function getBlogList() {
   }
 }
 
-export async function getBlogDetail(params: any) {
+export async function getBlogDetail(slug: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/blog/get/${params}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/blog/detail`);
     if (!response.ok) {
       throw new Error('Failed to fetch blog detail');
     }
@@ -25,3 +25,4 @@ export async function getBlogDetail(params: any) {
     return null;
   }
 }
+

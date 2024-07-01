@@ -1,5 +1,6 @@
 import React from 'react'
 import CardJob from './CardJob'
+import NotFound from '@/components/shared/NotFound';
 
 const Job = () => {
   const jobData = [
@@ -39,7 +40,7 @@ const Job = () => {
 
   return (
     <section className='pb-20'>
-      <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pb-4 md:pb-0 md:pt-16">
+      <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pb-4 md:pb-0 md:pt-10">
         <div className="bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[16px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
           <p className="text-white font-bold text-[10px] md:text-[16px] whitespace-nowrap md:whitespace-normal">
             All
@@ -62,19 +63,24 @@ const Job = () => {
         </div>
       </div>
 
-      <div className='md:pt-6 flex flex-col gap-4'>
-        {jobData.map((job) => (
-          <div key={job.title} className='md:pt-6'>
-            <CardJob
-              id={job.id}
-              title={job.title}
-              description={job.description}
-              minSalary={job.minSalary}
-              maxSalary={job.maxSalary}
-              status={job.status}
-            />
-          </div>
-        ))}
+      <div className='pt-10'>
+        <NotFound />
+      </div>
+      <div className='hidden'>
+        <div className='md:pt-6 flex flex-col gap-4'>
+          {jobData.map((job) => (
+            <div key={job.title} className='md:pt-6'>
+              <CardJob
+                id={job.id}
+                title={job.title}
+                description={job.description}
+                minSalary={job.minSalary}
+                maxSalary={job.maxSalary}
+                status={job.status}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

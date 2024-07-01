@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect, ChangeEvent } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -7,10 +10,73 @@ import CardSquareProject from "@/components/LandingPage/SuccessProject/CardSquar
 import Pages from "@/components/shared/Pages";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import ListIcon from "@/public/assets/icons/ListIcon";
-import { getProjectList } from "@/components/Fetching/Portfolio/port";
 
-export default async function TabsProject() {
-  const projectList = await getProjectList();
+interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  keyword: string;
+  excerpt: string;
+  body: string;
+  image: string;
+  portfolioYear: string;
+  webLink: string;
+  appsLink: string;
+  KategoriportofolioId: number;
+  TagportofolioId: number;
+  createdAt: string;
+  updatedAt: string;
+  Kategoriportofolio: {
+    title: string;
+    createdAt: string;
+  };
+  Tagportofolio: {
+    title: string;
+    createdAt: string;
+  };
+}
+
+export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
+  const [projectList, setProjectList] = useState<Project[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('Website Development');
+  const [categories, setCategories] = useState<string[]>(['Website Development']);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 4;
+
+  useEffect(() => {
+    async function fetchData() {
+      const projects: Project[] = portfolios;
+      setProjectList(projects);
+
+      const uniqueCategories: string[] = Array.from(new Set(projects.map(project => project.Kategoriportofolio.title)));
+      setCategories([...uniqueCategories]);
+    }
+    fetchData();
+  }, [portfolios]);
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setSearchTerm('');
+    setCurrentPage(1); // Reset to first page when category changes
+  };
+
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1); // Reset to first page when search term changes
+  };
+
+  const filteredProjects = projectList.filter(project => {
+    const matchCategory = selectedCategory === 'Website Development' || project.Kategoriportofolio.title === selectedCategory;
+    const matchSearchTerm = searchTerm === '' ||
+      project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      project.body.toLowerCase().includes(searchTerm.toLowerCase());
+
+    return matchCategory && matchSearchTerm;
+  });
+
+  const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+  const paginatedProjects = filteredProjects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
   return (
     <div className="relative">
@@ -33,22 +99,22 @@ export default async function TabsProject() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Mobile Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Web App Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Website Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
             <div className="flex w-full">
               <Input
                 type="text"
+                value={searchTerm}
+                onChange={handleInputChange}
                 className="bg-white border border-dark border-r-0 rounded-r-none"
               />
               <div className="border border-l-0 border-dark -ml-4 bg-white flex items-center justify-center rounded-l-0 rounded-r-[6px]">
@@ -62,36 +128,23 @@ export default async function TabsProject() {
               </div>
             </div>
             <div className="gap-2 md:hidden flex">
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Mobile Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Web App Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Website Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  size="xs"
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
           </div>
-          {projectList?.map((project: any, index: any) => (
+          {paginatedProjects?.map((project, index) => (
             <CardListProject key={index} projects={project} />
           ))}
-          <Pages />
+          <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
         </TabsContent>
         <TabsContent value="square">
           <p className="text-gray text-[8px] md:text-[16px]">
@@ -100,22 +153,22 @@ export default async function TabsProject() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Mobile Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Web App Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Website Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
             <div className="flex w-full">
               <Input
                 type="text"
+                value={searchTerm}
+                onChange={handleInputChange}
                 className="bg-white border border-dark border-r-0 rounded-r-none"
               />
               <div className="border border-l-0 border-dark -ml-4 bg-white flex items-center justify-center rounded-l-0 rounded-r-[6px]">
@@ -129,41 +182,27 @@ export default async function TabsProject() {
               </div>
             </div>
             <div className="gap-2 md:hidden flex">
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Mobile Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Web App Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Website Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  size="xs"
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
           </div>
           <div className="flex gap-4 md:gap-8 flex-wrap flex-grow-0 justify-center mb-[10px] w-full">
-            {projectList?.map((project: any, index: any) => (
+            {paginatedProjects?.map((project, index) => (
               <CardSquareProject key={index} projects={project} />
             ))}
-            {/* <CardSquareProject /> */}
           </div>
-          <Pages />
+          <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
         </TabsContent>
       </Tabs>
     </div>
   );
-};
+}

@@ -40,7 +40,9 @@ const TabOne = () => {
 
   return (
     <section className='pt-4 md:pt-5'>
-      <form className='flex flex-col gap-6'>
+      <form action="mailto:newustechnology@gmail.com"
+        method="post"
+        encType="text/plain" className='flex flex-col gap-6'>
         <div className='md:flex w-full gap-4 '>
           <div className='flex flex-col gap-2 md:w-1/2 pb-4 md:pb-0'>
             <label htmlFor="firstName" className='text-[12px] md:text-sm font-[500]'>First Name</label>
