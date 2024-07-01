@@ -15,23 +15,25 @@ const Footer = () => {
                 Contact Form
               </h3>
             </div>
-            <div className="mt-[10px] mx-[18px] mb-[16px] flex flex-col gap-[10px]">
-              <Input type="text" placeholder="Your Name" />
-              <Input type="text" placeholder="Email" />
-              <Input type="text" placeholder="Subject Message" />
-              <Textarea placeholder="Message" className="h-[100px]" />
-              {/* <div className="flex gap-5 justify-between">
+            <form action="mailto:newustechnology@gmail.com" method="post" encType="text/plain">
+              <div className="mt-[10px] mx-[18px] mb-[16px] flex flex-col gap-[10px]">
+                <Input type="text" placeholder="Your Name" />
+                <Input type="text" placeholder="Email" />
+                <Input type="text" placeholder="Subject Message" />
+                <Textarea placeholder="Message" className="h-[100px]" />
+                {/* <div className="flex gap-5 justify-between">
                 <Input type="text" placeholder="Input Kode" />
                 <Button className="rounded-none bg-[#D9D9D9] hover:bg-[#CBCBCB] text-black py-[10px] px-[65px]">
                   Kode
                 </Button>
               </div> */}
-              <div className="flex items-center justify-center">
-                <Button className="mt-4 bg-blue hover:bg-blue-2 rounded-[10px] py-2 px-12">
-                  Send
-                </Button>
+                <div className="flex items-center justify-center">
+                  <Button className="mt-4 bg-blue hover:bg-blue-2 rounded-[10px] py-2 px-12">
+                    Send
+                  </Button>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
           <div className="md:ml-[427px] md:mt-[75px] mt-4">
             <Image

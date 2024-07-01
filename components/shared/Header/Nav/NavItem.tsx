@@ -34,7 +34,7 @@ const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItem
             {children}
           </Link>
         ) : (
-          <button onClick={handleDropdown} className="md:text-black border-none hover:text-[#480DEC] hover:font-bold uppercase">
+          <button onClick={handleDropdown} className="md:text-black border-none hover:text-[#480DEC] hover:font-bold capitalize">
             {children}
           </button>
         )}
