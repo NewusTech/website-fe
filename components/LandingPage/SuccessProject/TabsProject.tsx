@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -9,8 +12,62 @@ import GridIcon from "@/public/assets/icons/GridIcon";
 import ListIcon from "@/public/assets/icons/ListIcon";
 import { getProjectList } from "@/components/Fetching/Portfolio/port";
 
-export default async function TabsProject() {
-  const projectList = await getProjectList();
+interface Project {
+  id: number;
+  title: string;
+  slug: string;
+  keyword: string;
+  excerpt: string;
+  body: string;
+  image: string;
+  portfolioYear: string;
+  webLink: string;
+  appsLink: string;
+  KategoriportofolioId: number;
+  TagportofolioId: number;
+  createdAt: string;
+  updatedAt: string;
+  Kategoriportofolio: {
+    title: string;
+    createdAt: string;
+  };
+  Tagportofolio: {
+    title: string;
+    createdAt: string;
+  };
+}
+
+export default function TabsProject() {
+  const [projectList, setProjectList] = useState<Project[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [categories, setCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const projects: Project[] = await getProjectList();
+      setProjectList(projects);
+
+      const uniqueCategories: string[] = [];
+      projects.forEach(project => {
+        if (!uniqueCategories.includes(project.Kategoriportofolio.title)) {
+          uniqueCategories.push(project.Kategoriportofolio.title);
+        }
+      });
+
+      setCategories(uniqueCategories);
+    }
+    fetchData();
+  }, []);
+
+  const handleCategoryChange = (category: any) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredProjects = selectedCategory
+    ? projectList.filter(
+      (project) => project.Kategoriportofolio.title === selectedCategory
+    )
+    : projectList;
 
   return (
     <div className="relative">
@@ -33,18 +90,16 @@ export default async function TabsProject() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Mobile Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Web App Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Website Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
             <div className="flex w-full">
               <Input
@@ -62,33 +117,20 @@ export default async function TabsProject() {
               </div>
             </div>
             <div className="gap-2 md:hidden flex">
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Mobile Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Web App Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Website Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  size="xs"
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
           </div>
-          {projectList?.map((project: any, index: any) => (
+          {filteredProjects?.map((project, index) => (
             <CardListProject key={index} projects={project} />
           ))}
           <Pages />
@@ -100,18 +142,16 @@ export default async function TabsProject() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Mobile Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Web App Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Website Development
-              </Button>
-              <Button className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue">
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
             <div className="flex w-full">
               <Input
@@ -129,34 +169,21 @@ export default async function TabsProject() {
               </div>
             </div>
             <div className="gap-2 md:hidden flex">
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Mobile Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Web App Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Website Development
-              </Button>
-              <Button
-                className="bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue"
-                size="xs"
-              >
-                Digital Marketing
-              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
+                    }`}
+                  size="xs"
+                  onClick={() => handleCategoryChange(category)}
+                >
+                  {category}
+                </Button>
+              ))}
             </div>
           </div>
           <div className="flex gap-4 md:gap-8 flex-wrap flex-grow-0 justify-center mb-[10px] w-full">
-            {projectList?.map((project: any, index: any) => (
+            {filteredProjects?.map((project, index) => (
               <CardSquareProject key={index} projects={project} />
             ))}
             {/* <CardSquareProject /> */}
@@ -166,4 +193,4 @@ export default async function TabsProject() {
       </Tabs>
     </div>
   );
-};
+}

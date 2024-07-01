@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
+import SocialLink from "../Social/SocialLink";
 
 const Footer = () => {
   return (
@@ -81,54 +82,15 @@ const Footer = () => {
               </p>
             </div>
             <div className="hidden md:flex gap-4 items-center mt-6">
-              <Image
-                src="/assets/icons/facebook.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/twitter.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/linkedin.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/youtube.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/instagram.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/google-plus.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/pinterest.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
-              <Image
-                src="/assets/icons/wifi.svg"
-                alt="place"
-                width={24}
-                height={24}
-              />
+              <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
+              <SocialLink href="https://www.twitter.com" src="/assets/icons/twitter.svg" alt="Twitter" />
+              <SocialLink href="https://id.linkedin.com/company/newustechnology" src="/assets/icons/linkedin.svg" alt="LinkedIn" />
+              <SocialLink href="https://www.youtube.com" src="/assets/icons/youtube.svg" alt="YouTube" />
+              <SocialLink href="https://www.instagram.com/newustechnology/" src="/assets/icons/instagram.svg" alt="Instagram" />
+              <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" />
+              {/*
+              <SocialLink href="https://www.pinterest.com" src="/assets/icons/pinterest.svg" alt="Pinterest" />
+              <SocialLink href="https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0" src="/assets/icons/wifi.svg" alt="WhatsApp" /> */}
             </div>
           </div>
           <div className="flex md:flex-col gap-3 md:gap-0 mt-5 md:mt-[52px] md:ml-[50px]">
