@@ -78,9 +78,9 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-4 justify-between">
-          <h3 className="font-medium text-dark md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2">
+          <Link className="font-medium text-dark md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
-          </h3>
+          </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>
             <Image
               src="/assets/icons/arrow-up-right-black.svg"
@@ -102,7 +102,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

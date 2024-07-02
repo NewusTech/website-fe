@@ -13,7 +13,7 @@ const Intern = () => {
   const classList: string = 'list-disc text-[12px] md:text-sm'
   return (
     <section>
-      <div className='pt-10'>
+      <div className='md:pt-10'>
         <NotFound />
       </div>
       <div className='hidden'>

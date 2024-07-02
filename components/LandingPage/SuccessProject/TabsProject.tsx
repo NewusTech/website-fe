@@ -36,23 +36,27 @@ interface Project {
   };
 }
 
-export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
+interface Category {
+  id: number;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface TabsProjectProps {
+  portfolios: Project[];
+  categories: Category[];
+}
+
+const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => {
   const [projectList, setProjectList] = useState<Project[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('Website Development');
-  const [categories, setCategories] = useState<string[]>(['Website Development']);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage: number = 6;
 
   useEffect(() => {
-    async function fetchData() {
-      const projects: Project[] = portfolios;
-      setProjectList(projects);
-
-      const uniqueCategories: string[] = Array.from(new Set(projects.map(project => project.Kategoriportofolio.title)));
-      setCategories([...uniqueCategories]);
-    }
-    fetchData();
+    setProjectList(portfolios);
   }, [portfolios]);
 
   const handleCategoryChange = (category: string) => {
@@ -94,19 +98,17 @@ export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
         </TabsList>
         <TabsContent value="list">
           <p className="text-gray text-[8px] md:text-[16px]">
-            Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig.
-            Terabel pov astrobel sar direlig.
+            See How We Elevate Businesses. Explore Our Success Projects.
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
               {categories.map((category) => (
                 <Button
-                  key={category}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
-                    }`}
-                  onClick={() => handleCategoryChange(category)}
+                  key={category.id}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
+                  onClick={() => handleCategoryChange(category.title)}
                 >
-                  {category}
+                  {category.title}
                 </Button>
               ))}
             </div>
@@ -130,37 +132,34 @@ export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
             <div className="gap-2 md:hidden flex">
               {categories.map((category) => (
                 <Button
-                  key={category}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
-                    }`}
+                  key={category.id}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
                   size="xs"
-                  onClick={() => handleCategoryChange(category)}
+                  onClick={() => handleCategoryChange(category.title)}
                 >
-                  {category}
+                  {category.title}
                 </Button>
               ))}
             </div>
           </div>
-          {paginatedProjects?.map((project, index) => (
+          {paginatedProjects.map((project, index) => (
             <CardListProject key={index} projects={project} />
           ))}
           <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
         </TabsContent>
         <TabsContent value="square">
           <p className="text-gray text-[8px] md:text-[16px]">
-            Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig.
-            Terabel pov astrobel sar direlig.
+            See How We Elevate Businesses. Explore Our Success Projects.
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
               {categories.map((category) => (
                 <Button
-                  key={category}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
-                    }`}
-                  onClick={() => handleCategoryChange(category)}
+                  key={category.id}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
+                  onClick={() => handleCategoryChange(category.title)}
                 >
-                  {category}
+                  {category.title}
                 </Button>
               ))}
             </div>
@@ -184,19 +183,18 @@ export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
             <div className="gap-2 md:hidden flex">
               {categories.map((category) => (
                 <Button
-                  key={category}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category ? "bg-blue text-white" : ""
-                    }`}
+                  key={category.id}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
                   size="xs"
-                  onClick={() => handleCategoryChange(category)}
+                  onClick={() => handleCategoryChange(category.title)}
                 >
-                  {category}
+                  {category.title}
                 </Button>
               ))}
             </div>
           </div>
           <div className="flex gap-4 md:gap-8 flex-wrap flex-grow-0 justify-center mb-[10px] w-full">
-            {paginatedProjects?.map((project, index) => (
+            {paginatedProjects.map((project, index) => (
               <CardSquareProject key={index} projects={project} />
             ))}
           </div>
@@ -206,3 +204,5 @@ export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
     </div>
   );
 }
+
+export default TabsProject;

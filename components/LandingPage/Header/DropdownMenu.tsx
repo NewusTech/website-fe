@@ -70,8 +70,8 @@ const DropdownMenu = () => {
           happen.
         </h1>
         <p className={`text-xs text-white leading-7 mt-5 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}>
-          Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig.
-          Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig.{" "}
+          Software House Lampung
+          <br />Innovate & Elevate: Your Custom Software Journey Starts Here (New Experience With Us)
         </p>
         <Button className="py-7 px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
           <Link href="/contact" className="flex items-center justify-center gap-2">

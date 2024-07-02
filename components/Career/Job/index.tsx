@@ -63,7 +63,7 @@ const Job = () => {
         </div>
       </div>
 
-      <div className='pt-10'>
+      <div className='md:pt-10'>
         <NotFound />
       </div>
       <div className='hidden'>
