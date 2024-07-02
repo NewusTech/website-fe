@@ -8,8 +8,7 @@ const OurService = () => {
           Our Service
         </h1>
         <p className="md:text-white text-dark text-[8px] md:text-[18px] mt-3 md:mt-5">
-          With more than 5 years experience supporting 50+ customers, you can
-          trust Newus Technology to deliver
+          With over 3 years of experience, Newus Technology is your trusted partner for digital success. Let{"'"}s collaborate to build a brighter future for your business.
         </p>
         <CardService />
       </div>

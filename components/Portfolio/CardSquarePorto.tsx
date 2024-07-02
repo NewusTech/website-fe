@@ -17,7 +17,7 @@ const CardSquarePorto = ({ projects }: any) => {
 
   return (
     <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[32%] w-[47%] relative">
-      <div className="absolute top-0 left-[120px] md:left-[330px] z-10 p-1  md:p-2 w-full">
+      <div className="absolute top-0 left-[128px] md:left-[345px]">
         <Image
           src={image ? image : `/assets/images/placeholder-image (2).jpg`}
           alt="Logo"

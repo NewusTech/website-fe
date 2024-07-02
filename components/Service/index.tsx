@@ -14,9 +14,7 @@ export default async function WhatWeDo() {
           What We Do
         </h1>
         <p className="w-[225px] md:w-[558px] text-center text-[6px] md:text-[16px] leading-[2]">
-          Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig.
-          Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig.
-          Kronde est
+          With over 3 years of experience, Newus Technology is your trusted partner for digital success. Let{"'"}s collaborate to build a brighter future for your business.
         </p>
         <div className="md:w-[110px] md:h-[27px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 -ml-16 md:-mt-[90px] md:-ml-[163px]"></div>
       </div>

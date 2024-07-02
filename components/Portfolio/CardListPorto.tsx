@@ -18,7 +18,8 @@ const CardListPorto = ({ projects }: any) => {
   return (
     <div data-aos="flip-left" className="bg-white rounded-[10px] md:w-full mb-[10px] relative shadow-lg">
       {/* Logo in top right corner */}
-      <div className="absolute top-0 left-[90px] md:left-[300px] z-10 p-1 md:p-2 w-full">
+      <div className="absolute top-0 left-[98px] md:left-[280px]">
+        {/* <div className="absolute top-0 left-[90px] md:left-[300px] z-10 p-1 md:p-2 w-full"> */}
         <Image
           src={image ? image : `/assets/images/placeholder-image (2).jpg`}
           alt="Logo"

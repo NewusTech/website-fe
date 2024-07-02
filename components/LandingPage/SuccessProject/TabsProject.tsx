@@ -98,8 +98,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
         </TabsList>
         <TabsContent value="list">
           <p className="text-gray text-[8px] md:text-[16px]">
-            Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig.
-            Terabel pov astrobel sar direlig.
+            See How We Elevate Businesses. Explore Our Success Projects.
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
@@ -150,8 +149,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
         </TabsContent>
         <TabsContent value="square">
           <p className="text-gray text-[8px] md:text-[16px]">
-            Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig.
-            Terabel pov astrobel sar direlig.
+            See How We Elevate Businesses. Explore Our Success Projects.
           </p>
           <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
             <div className="gap-4 md:flex hidden">
