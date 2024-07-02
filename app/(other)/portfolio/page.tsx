@@ -1,9 +1,10 @@
-import { getProjectList } from "@/components/Fetching/Portfolio/port";
+import { getProjectKategoriList, getProjectList } from "@/components/Fetching/Portfolio/port";
 import PortLayout from "@/components/Portfolio"
 import Header from "@/components/shared/Header/HeaderPort";
 
 export default async function PortofolioPage() {
   const projectList = await getProjectList();
+  const categories = await getProjectKategoriList();
   return (
     <section className="md:min-h-[1200px]">
       <Header
@@ -11,7 +12,7 @@ export default async function PortofolioPage() {
         title="Portfolio"
         image="/assets/images/header-port.jpg"
       />
-      <PortLayout portfolios={projectList} />
+      <PortLayout portfolios={projectList} categories={categories} />
     </section>
   )
 }

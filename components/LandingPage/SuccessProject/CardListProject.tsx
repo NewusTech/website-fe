@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import React from 'react';
 
 const CardListProject = ({ projects }: any) => {
   const { id = "", title = '', slug = "", keyword = "",
@@ -14,6 +15,8 @@ const CardListProject = ({ projects }: any) => {
     updatedAt = '',
     Kategoriportofolio = {},
     Tagportofolio = {} } = projects || {};
+
+  console.log(projects);
 
   return (
     <div data-aos="flip-left" className="bg-white rounded-[10px] w-full mb-[10px] shadow-lg">

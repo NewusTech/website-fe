@@ -26,3 +26,18 @@ export async function getProjectDetail(slug: string) {
     return [];
   }
 }
+
+export async function getProjectKategoriList() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/kategoriportofolio/get`);
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch project detail');
+    }
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    console.error('Error fetching blog list:', error);
+    return [];
+  }
+}
