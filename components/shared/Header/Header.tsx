@@ -33,7 +33,7 @@ const Header = ({
           <Input
             type="text"
             placeholder="Search here"
-            className={`${type === "service" ? "hidden" : "bg-white shadow-xl py-5 md:py-6 px-5 w-[300px] md:w-[700px]"}`}
+            className={type === "service" || type === "Blog" ? "hidden" : "bg-white shadow-xl py-5 md:py-6 px-5 w-[300px] md:w-[700px]"}
           />
         </div>
       </div>

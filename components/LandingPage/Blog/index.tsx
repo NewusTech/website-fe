@@ -27,11 +27,13 @@ interface BlogProps {
 
 export default async function Blog() {
   const blogList = await getBlogList();
+
   if (!blogList.length) {
     return <p>No blogs available</p>;
   }
 
   const lastBlog = blogList[blogList.length - 1];
+  console.log(lastBlog);
   const remainingBlogs = blogList.slice(0, -1);
 
   return (
@@ -46,17 +48,17 @@ export default async function Blog() {
         <div className="flex justify-between items-center w-full mt-[54px]">
           <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
             <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white">
-              {lastBlog.title}
+              {lastBlog?.title}
             </h2>
             <p data-aos="zoom-in" className="text-sm w-[350px] text-white text-justify">
-              {lastBlog.body}
+              {lastBlog?.body}
             </p>
           </div>
           <div data-aos='fade-right' className="hidden md:block md:w-[60%] rounded-xl">
             <Image
               data-aos="zoom-in"
-              src={lastBlog.image}
-              alt={lastBlog.title}
+              src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}
+              alt={lastBlog?.title}
               width={690}
               height={430}
               className="rounded-xl w-full bg-cover object-cover"
@@ -64,7 +66,7 @@ export default async function Blog() {
           </div>
         </div>
         <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
-          {blogList?.slice(0, 3).map((blog: BlogProps, i: number) => (
+          {blogList?.slice(0, 3).map((blog: any, i: number) => (
             <CardBlog type="landing" key={i} blogs={blog} />
           ))}
         </div>

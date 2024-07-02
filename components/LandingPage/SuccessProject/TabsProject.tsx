@@ -42,7 +42,7 @@ export default function TabsProject({ portfolios }: { portfolios: Project[] }) {
   const [categories, setCategories] = useState<string[]>(['Website Development']);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
 
   useEffect(() => {
     async function fetchData() {

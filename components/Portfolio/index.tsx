@@ -45,7 +45,7 @@ export default function Index({ portfolios }: IndexProps) {
   const [categories, setCategories] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 9;
 
   useEffect(() => {
     async function fetchData() {
@@ -85,7 +85,7 @@ export default function Index({ portfolios }: IndexProps) {
 
   return (
     <section>
-      <div className="flex justify-center gap-[6px] md:gap-6 px-7 flex-wrap md:overflow-hidden pt-4 md:pt-10">
+      <div className="flex justify-center gap-[6px] md:gap-2 px-7 flex-wrap md:overflow-hidden pt-4 md:pt-10">
         {categories.map((category: string, index: number) => (
           <div
             key={index}

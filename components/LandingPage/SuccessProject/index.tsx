@@ -1,5 +1,6 @@
 import TabsProject from "@/components/LandingPage/SuccessProject/TabsProject";
 import { getProjectList } from "@/components/Fetching/Portfolio/port";
+import { getBlogList } from "@/components/Fetching/Blog/blog";
 
 export default async function SuccessProject() {
   const projectList = await getProjectList();
