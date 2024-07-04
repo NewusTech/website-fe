@@ -61,7 +61,7 @@ const TestimonialsCarousel = () => {
   };
 
   return (
-    <div className="p-10 md:p-20 md:min-h-screen bg-white bg-cover">
+    <div className="p-10 md:p-20 bg-white bg-cover">
       <h1 className="text-center md:pb-10 font-bold text-tangerine text-lg md:text-[32px]">
         Testimonials
       </h1>
@@ -77,7 +77,7 @@ const TestimonialsCarousel = () => {
                 className="w-full h-36 md:w-[200px] md:h-[200px] mb-4 object-cover text-center"
               />
               <div className="flex flex-col items-center justify-center">
-                <p className="text-sm mb-2">"{testimonial.text}"</p>
+                <p className="text-sm md:text-xl mb-2">"{testimonial.text}"</p>
                 <p className="text-tangerine text-md font-bold">{testimonial.name}</p>
                 <p className="text-sm">{testimonial.position}</p>
               </div>
@@ -88,7 +88,7 @@ const TestimonialsCarousel = () => {
       <div className="flex justify-end gap-4 w-full mt-16 md:mt-10">
         <div
           onClick={previous}
-          className="bg-tangerine text-white px-4 py-2 rounded-full shadow-lg hover:bg-orange-500 transition cursor-pointer"
+          className="bg-blue-2 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue transition cursor-pointer"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M16.1602 7.41L11.5802 12L16.1602 16.59L14.7502 18L8.75016 12L14.7502 6L16.1602 7.41Z" fill="white" />
@@ -96,7 +96,7 @@ const TestimonialsCarousel = () => {
         </div>
         <div
           onClick={next}
-          className="bg-tangerine text-white px-4 py-2 rounded-full shadow-lg hover:bg-orange-500 transition cursor-pointer"
+          className="bg-blue-2 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue transition cursor-pointer"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M7.83984 7.41L12.4198 12L7.83984 16.59L9.24984 18L15.2498 12L9.24984 6L7.83984 7.41Z" fill="white" />

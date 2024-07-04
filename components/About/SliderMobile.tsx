@@ -63,7 +63,7 @@ const SliderMobile = () => {
                       width={359}
                       height={343}
                       alt={member.name}
-                      className='w-full'
+                      className='w-full h-[150px] object-cover'
                     />
                     <div className="w-full bg-opacity-75 py-2">
                       <div className="text-white text-center">

@@ -27,7 +27,7 @@ const RightSide = () => {
 
   return (
     <header>
-      <div className="flex flex-col md:flex-row md:min-h-screen">
+      <div className="flex flex-col md:flex-row md:min-h-[500px] lg:min-h-screen">
         <div className="px-[14px] py-[23px] flex justify-between items-center md:hidden">
           <Link href='/'>
             <Image
@@ -54,7 +54,7 @@ const RightSide = () => {
             onClick={handleDropdown}
           /> */}
         </div>
-        <div className="hidden md:flex bg-blue w-3/12 flex-col items-start container mx-auto pt-[26px]">
+        <div className="hidden md:flex bg-blue w-5/12 lg:w-3/12 flex-col items-start container mx-auto pt-[26px]">
           <DropdownMenu />
         </div>
         {openDropdown && (

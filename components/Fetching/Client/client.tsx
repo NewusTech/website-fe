@@ -1,8 +1,6 @@
 export async function getClientist() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/client/get`, {
-      cache: "no-store"
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/client/get`);
     if (!response.ok) {
       throw new Error('Failed to fetch blog list');
     }

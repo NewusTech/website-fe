@@ -62,7 +62,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         className={`${type === "landing" ? "md:mt-3 w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "my-1"}`}
       >
         <div className="flex items-center justify-between gap-1.5 text-white">
-          <div className="flex items-center gap-1 md:gap-2 md:pt-3">
+          <div className="flex items-center gap-1 md:gap-2">
             <h5 className="md:text-[14px] text-[8px]">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-white"></div>
             <h5 className="md:text-[14px] text-[8px]">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
@@ -77,7 +77,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             />
           </Link>
         </div>
-        <div className="flex items-start w-full md:gap-2 my-1 md:my-4 justify-between">
+        <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
           <Link className="font-medium text-white md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2 hover:underline" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
@@ -92,7 +92,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-sm w-[182px] md:w-full" : "w-[142px] md:w-full -mt-1"} text-[8px] md:text-sm text-gray line-clamp-3`}
+          className={`${type === "landing" ? "-mt-2 md:text-sm w-[182px] md:w-full" : "w-[142px] md:w-full -mt-3"} text-[8px] md:text-sm text-gray line-clamp-3`}
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>

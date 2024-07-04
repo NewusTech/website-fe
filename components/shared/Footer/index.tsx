@@ -208,14 +208,14 @@ const Footer = () => {
       </div>
       <div className="fixed bottom-14 md:bottom-3 right-4 z-30">
         <div className="bg-[#5FD568] rounded-3xl py-2 px-4">
-          <button onClick={toggleDropdown} className="flex gap-5 text-white items-center focus:outline-none">
-            <span className="md:font-semibold text-sm md:text-md">Contact Us</span>
+          <button onClick={toggleDropdown} className="flex gap-3 md:gap-5 text-white items-center focus:outline-none">
+            <span className="md:font-semibold text-[12px] md:text-md">Contact Us</span>
             <Image
               src="/assets/icons/whatsapp-icon.svg"
               alt="Contact Us"
               width={24}
               height={24}
-              className="w-[18px] h-[19px] md:w-[24px] md:h-[24px]"
+              className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]"
             />
           </button>
         </div>

@@ -1,8 +1,6 @@
 export async function getBlogList() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/blog/get`, {
-      cache: "no-store"
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/blog/get`);
     if (!response.ok) {
       throw new Error('Failed to fetch blog list');
     }
@@ -16,9 +14,7 @@ export async function getBlogList() {
 
 export async function getBlogDetail(slug: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/blog/detail`, {
-      cache: "no-store"
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/blog/detail`);
     if (!response.ok) {
       throw new Error('Failed to fetch blog detail');
     }
@@ -32,9 +28,7 @@ export async function getBlogDetail(slug: string) {
 
 export async function getBlogCategory() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/kategoriblog/get`, {
-      cache: "no-store"
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/kategoriblog/get`);
     if (!response.ok) {
       throw new Error('Failed to fetch blog detail');
     }

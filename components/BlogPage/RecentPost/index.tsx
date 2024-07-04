@@ -86,7 +86,7 @@ export default function RecentPost({ blogs, categories }: any) {
                   />
                 </Link>
               </div>
-              <p className="md:text-sm text-[8px] text-gray w-[182px] md:w-full">
+              <p className="md:text-sm text-[8px] text-gray w-[182px] md:w-full line-clamp-3">
                 {blogs[0]?.body}
               </p>
             </div>

@@ -1,8 +1,6 @@
 export async function getServiceList() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/service/get`, {
-      cache: "no-store"
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/service/get`);
     if (!response.ok) {
       throw new Error('Failed to fetch service list');
     }
@@ -16,9 +14,7 @@ export async function getServiceList() {
 
 export async function getServiceDetail(slug: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/service/detail`, {
-      cache: "no-store"
-    });
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/service/detail`);
 
     if (!response.ok) {
       throw new Error('Failed to fetch service detail');
