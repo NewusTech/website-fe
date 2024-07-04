@@ -33,7 +33,6 @@ export default async function Blog() {
   }
 
   const lastBlog = blogList[blogList.length - 1];
-  console.log(lastBlog);
   const remainingBlogs = blogList.slice(0, -1);
 
   return (

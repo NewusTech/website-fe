@@ -1,6 +1,8 @@
 export async function getTeamList() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/team/lists`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/team/lists`, {
+      cache: "no-store"
+    });
     if (!response.ok) {
       throw new Error('Failed to fetch team list');
     }
@@ -14,7 +16,9 @@ export async function getTeamList() {
 
 export async function getTeamDetail(slug: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/team/detail`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/team/detail`, {
+      cache: "no-store"
+    });
 
     if (!response.ok) {
       throw new Error('Failed to fetch team detail');
