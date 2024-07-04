@@ -3,6 +3,10 @@ import CardBlog from "@/components/LandingPage/Blog/CardBlog";
 import { Button } from "@/components/ui/button";
 import { getBlogList } from "@/components/Fetching/Blog/blog";
 import Link from "next/link";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ListIcon from "@/public/assets/icons/ListIcon";
+import GridIcon from "@/public/assets/icons/GridIcon";
+import CardBlogSquare from "./CardBlogSquare";
 
 interface BlogProps {
   id: number,
@@ -45,38 +49,65 @@ export default async function Blog() {
               Blogssss
             </h2> */}
           </div>
-          <div className="flex justify-between items-center w-full mt-[54px]">
-            <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
-              <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white">
-                {lastBlog?.title}
-              </h2>
-              <p data-aos="zoom-in" className="text-sm w-[350px] text-white text-justify">
-                {lastBlog?.body}
-              </p>
-            </div>
-            <div data-aos='fade-right' className="hidden md:block md:w-[60%] rounded-xl">
-              <Image
-                data-aos="zoom-in"
-                src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}
-                alt={lastBlog?.title}
-                width={690}
-                height={430}
-                className="rounded-xl w-full bg-cover object-cover"
-              />
-            </div>
-          </div>
-          <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
-            {blogList?.slice(0, 6).map((blog: any, i: number) => (
-              <CardBlog type="landing" key={i} blogs={blog} />
-            ))}
-          </div>
-          <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
-            <Link href='/blog'>
-              <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
-                See More Articles
-              </Button>
-            </Link>
-          </div>
+          <Tabs defaultValue="list" className="min-w-screen">
+            <TabsList className="hidden md:flex justify-end md:mt-5">
+              <TabsTrigger value="list" className="data-[state=active]:bg-tangerine  data-[state=active]:text-white text-tangerine ml-2 pb-[3px] pt-[3px]">
+                <ListIcon color="w-[10px] md:w-[25px]" />
+              </TabsTrigger>
+              <TabsTrigger value="square" className="data-[state=active]:bg-tangerine  data-[state=active]:text-white text-tangerine ml-2">
+                <GridIcon color="w-[10px] md:w-[25px]" />
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="list">
+              <div className="flex justify-between items-center w-full mt-[54px]">
+                <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
+                  <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white">
+                    {lastBlog?.title}
+                  </h2>
+                  <p data-aos="zoom-in" className="text-sm w-[350px] text-white text-justify">
+                    {lastBlog?.body}
+                  </p>
+                </div>
+                <div data-aos='fade-right' className="hidden md:block md:w-[60%] rounded-xl">
+                  <Image
+                    data-aos="zoom-in"
+                    src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}
+                    alt={lastBlog?.title}
+                    width={690}
+                    height={430}
+                    className="rounded-xl w-full bg-cover object-cover"
+                  />
+                </div>
+              </div>
+              <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
+                {blogList?.slice(0, 6).map((blog: any, i: number) => (
+                  <CardBlog type="landing" key={i} blogs={blog} />
+                ))}
+              </div>
+              <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
+                <Link href='/blog'>
+                  <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
+                    See More Articles
+                  </Button>
+                </Link>
+              </div>
+            </TabsContent>
+            <TabsContent value="square">
+              <div className="md:py-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
+                {blogList?.slice(0, 12).map((blog: any, i: number) => (
+                  <CardBlogSquare key={i} blogs={blog} />
+                ))}
+              </div>
+              <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
+                <Link href='/blog'>
+                  <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
+                    See More Articles
+                  </Button>
+                </Link>
+              </div>
+            </TabsContent>
+          </Tabs>
+
         </div>
       </div>
     </section>

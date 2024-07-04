@@ -28,7 +28,7 @@ interface CardBlogProps {
   type?: string;
 }
 
-const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
+const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
   const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, tagblog_title } = blogs;
 
   return (
@@ -37,29 +37,30 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos-duration="1000"
       className={`${type === "landing"
         ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 border-[0.5px]"
-        : "bg-transparent flex-col md:w-[410px] h-full rounded-[2px]"
-        } flex`}
+        : "bg-transparent flex-row md:w-[410px] h-full rounded-[2px]"
+        } flex gap-3`}
     >
       <div
         className={`${type === "landing"
           ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
-          : "rounded-[2px] md:w-full"
+          : "rounded-[2px] w-4/12 md:w-5/12"
           }`}
       >
         <Image
           src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
+          loading="lazy"
           alt="blog"
           width={326}
           height={233}
           className={`${type === "landing"
-            ? "w-full h-full object-cover md:rounded-[10px] rounded-l-[6px]"
-            : "rounded-[2px] md:w-full"
+            ? " md:h-[300px] object-cover md:rounded-[10px] rounded-l-[6px]"
+            : "rounded-[2px] md:w-full md:h-[150px] object-cover"
             }
           `}
         />
       </div>
       <div
-        className={`${type === "landing" ? "md:mt-3 w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "my-1"}`}
+        className={`${type === "landing" ? "md:mt-3 w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "w-8/12 md:w-7/12"}`}
       >
         <div className="flex items-center justify-between gap-1.5 text-white">
           <div className="flex items-center gap-1 md:gap-2">
@@ -96,7 +97,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
-        <div className="flex gap-1 pt-1 items-end">
+        <div className="flex gap-1 mt-3 md:items-end">
           <div className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1">
             <p className="text-white md:text-xs text-[8px]">{tagblog_title}</p>
           </div>
@@ -106,4 +107,4 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
   );
 };
 
-export default CardBlog;
+export default CardBlogSquare;
