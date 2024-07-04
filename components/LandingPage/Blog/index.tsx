@@ -66,11 +66,11 @@ export default async function Blog() {
           </div>
         </div>
         <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
-          {blogList?.slice(0, 3).map((blog: any, i: number) => (
+          {blogList?.slice(0, 6).map((blog: any, i: number) => (
             <CardBlog type="landing" key={i} blogs={blog} />
           ))}
         </div>
-        <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-[119px] mt-5 md:mt-20">
+        <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-[119px] mt-5">
           <Link href='/blog'>
             <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
               See More Articles

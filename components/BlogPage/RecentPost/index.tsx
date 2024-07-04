@@ -38,7 +38,7 @@ export default function RecentPost({ blogs, categories }: any) {
 
   return (
     <section className="container mx-auto mt-[60px] md:mb-[80px] mb-10 relative">
-      <div className="md:w-full right-14 md:right-0 flex justify-center absolute -top-[85px] z-10">
+      <div className="flex justify-center absolute inset-x-0 -top-[85px] z-10">
         <Input
           type="text"
           placeholder="Search here"
