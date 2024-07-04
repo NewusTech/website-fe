@@ -27,7 +27,7 @@ const RightSide = () => {
 
   return (
     <header>
-      <div className="flex flex-col md:flex-row md:min-h-screen">
+      <div className="flex flex-col md:flex-row md:min-h-[500px] lg:min-h-screen">
         <div className="px-[14px] py-[23px] flex justify-between items-center md:hidden">
           <Link href='/'>
             <Image
@@ -54,11 +54,13 @@ const RightSide = () => {
             onClick={handleDropdown}
           /> */}
         </div>
-        <div className="hidden md:flex bg-blue w-3/12 flex-col items-start container mx-auto pt-[26px]">
+        <div className="hidden md:flex bg-blue w-5/12 lg:w-3/12 flex-col items-start container mx-auto pt-[26px]">
           <DropdownMenu />
         </div>
         {openDropdown && (
-          <nav className="md:hidden absolute top-14 md:top-16 right-0 z-50 bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl w-72 md:w-[300px] mt-5 md:mt-0 py-5 px-6 shadow-lg md:rounded-md md:right-6 text-black pb-5 rounded-xl">
+          <nav data-aos="fade-down"
+            data-aos-easing="linear"
+            data-aos-duration="500" className="md:hidden absolute top-14 md:top-16 right-0 z-50 bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl w-72 md:w-[300px] mt-5 md:mt-0 py-5 px-6 shadow-lg md:rounded-md md:right-6 text-black pb-5 rounded-xl">
             <ul className="text-black text-right pr-1 flex flex-col gap-8 capitalize text-[16px] h-full justify-center">
               {navItems.map((item, index) => (
                 <li key={index} className="hover:text-[#b8acdb]">

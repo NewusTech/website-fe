@@ -1,6 +1,6 @@
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import Image from "next/image";
-import CardBlog from "@/components/LandingPage/Blog/CardBlog";
+import CardBlog from "@/components/BlogPage/RecentPost/CardBlog";
 import { getBlogDetail, getBlogList } from "@/components/Fetching/Blog/blog";
 import { formattedDate } from "@/utils/blog";
 
@@ -148,12 +148,12 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
                 width={24}
                 height={24}
               />
-              <Image
+              {/* <Image
                 src="/assets/icons/black/ig.svg"
                 alt="place"
                 width={24}
                 height={24}
-              />
+              /> */}
               <Image
                 src="/assets/icons/black/link.svg"
                 alt="place"
@@ -170,7 +170,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
           <div className="md:w-[916px] w-[200px] h-[2px] bg-gray-4"></div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-3 md:mt-10">
-          {blogList?.map((blog: any, index: any) => (
+          {blogList?.slice(0, 3).map((blog: any, index: any) => (
             <CardBlog key={index} blogs={blog} />
           ))}
         </div>

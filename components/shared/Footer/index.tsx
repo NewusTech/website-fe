@@ -1,11 +1,20 @@
+'use client'
+
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import SocialLink from "../Social/SocialLink";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <footer className="bg-blue relative pb-14 md:pb-0">
       <div className="container mx-auto">
@@ -22,12 +31,6 @@ const Footer = () => {
                 <Input type="text" placeholder="Email" />
                 <Input type="text" placeholder="Subject Message" />
                 <Textarea placeholder="Message" className="h-[100px]" />
-                {/* <div className="flex gap-5 justify-between">
-                <Input type="text" placeholder="Input Kode" />
-                <Button className="rounded-none bg-[#D9D9D9] hover:bg-[#CBCBCB] text-black py-[10px] px-[65px]">
-                  Kode
-                </Button>
-              </div> */}
                 <div className="flex items-center justify-center">
                   <Button className="mt-4 bg-blue hover:bg-blue-2 rounded-[10px] py-2 px-12">
                     Send
@@ -53,7 +56,7 @@ const Footer = () => {
                 className="w-[10px] h-[10px] md:w-6 md:h-6"
               />
               <p className="text-white md:text-sm text-[6px]">
-                Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212
+                Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212
               </p>
             </div>
             <div className="flex gap-2 md:gap-4 items-center mt-2 md:mt-6">
@@ -87,9 +90,6 @@ const Footer = () => {
               <SocialLink href="https://www.youtube.com" src="/assets/icons/youtube.svg" alt="YouTube" />
               <SocialLink href="https://www.instagram.com/newustechnology/" src="/assets/icons/instagram.svg" alt="Instagram" />
               <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" />
-              {/*
-              <SocialLink href="https://www.pinterest.com" src="/assets/icons/pinterest.svg" alt="Pinterest" />
-              <SocialLink href="https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0" src="/assets/icons/wifi.svg" alt="WhatsApp" /> */}
             </div>
           </div>
           <div className="flex md:flex-col gap-3 md:gap-0 mt-5 md:mt-[52px] md:ml-[0px] md:w-1/5">
@@ -97,7 +97,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white md:text-sm text-[6px] uppercase">
                 Technology
               </h4>
-              <ul className="list-disc pl-4 md:pl-5 text-white md:text-sm text-[6px] mt-[6px] md:mt-[10px] ">
+              <ul className="list-disc pl-4 md:pl-5 text-white md:text-sm text-[6px] mt-[6px] md:mt-[10px]">
                 <li>Mobile Apps Development</li>
                 <li>Website Development</li>
                 <li>Web Based Application</li>
@@ -111,7 +111,7 @@ const Footer = () => {
                 Digital Marketing
               </h4>
               <ul className="list-disc pl-4 md:pl-5 text-white md:text-sm text-[6px] mt-[6px] md:mt-[10px]">
-                <li>Online Advertising ( Seo )</li>
+                <li>Online Advertising (SEO)</li>
                 <li>Social Media Campaign</li>
                 <li>Facebook Ads</li>
                 <li>Instagram Ads</li>
@@ -140,7 +140,6 @@ const Footer = () => {
                     height={15}
                   />
                 </Link>
-
                 <Link href='https://www.instagram.com/newustechnology/' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
                   <Image
                     src="/assets/icons/instagram.svg"
@@ -206,6 +205,56 @@ const Footer = () => {
             Copyright © 2023 • Newus Technology.
           </p>
         </div>
+      </div>
+      <div className="fixed bottom-14 md:bottom-3 right-4 z-30">
+        <div className="bg-[#5FD568] rounded-3xl py-2 px-4">
+          <button onClick={toggleDropdown} className="flex gap-3 md:gap-5 text-white items-center focus:outline-none">
+            <span className="md:font-semibold text-[12px] md:text-md">Contact Us</span>
+            <Image
+              src="/assets/icons/whatsapp-icon.svg"
+              alt="Contact Us"
+              width={24}
+              height={24}
+              className="w-[16px] h-[16px] md:w-[24px] md:h-[24px]"
+            />
+          </button>
+        </div>
+        {isOpen && (
+          <div className="bg-white rounded-lg shadow-lg mt-2 p-4">
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/assets/icons/logo-2.svg"
+                alt="Devi"
+                width={24}
+                height={24}
+                className="rounded-full object-cover"
+              />
+              <Link
+                target="_blank"
+                href=" https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0"
+                className="text-black"
+              >
+                Admin
+              </Link>
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/assets/images/antoni.svg"
+                alt="Pasha"
+                width={24}
+                height={24}
+                className="rounded-full object-cover"
+              />
+              <Link
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=6285279737868"
+                className="text-black"
+              >
+                Antoni
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </footer>
   );

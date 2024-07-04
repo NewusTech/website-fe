@@ -1,9 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import CardBlog from "@/components/LandingPage/Blog/CardBlog";
+import CardBlog from "./CardBlog";
 import Pages from "@/components/shared/Pages";
-import CardBlog2 from "@/components/LandingPage/Blog/CardBlog2";
+import CardBlog2 from "./CardBlog2";
 import CardDummy from "./CardDummy";
 import Link from "next/link";
 import { formattedDate } from "@/utils/blog";
@@ -38,7 +38,7 @@ export default function RecentPost({ blogs, categories }: any) {
 
   return (
     <section className="container mx-auto mt-[60px] md:mb-[80px] mb-10 relative">
-      <div className="md:w-full right-14 md:right-0 flex justify-center absolute -top-[85px] z-10">
+      <div className="flex justify-center absolute inset-x-0 -top-[85px] z-10">
         <Input
           type="text"
           placeholder="Search here"
@@ -86,7 +86,7 @@ export default function RecentPost({ blogs, categories }: any) {
                   />
                 </Link>
               </div>
-              <p className="md:text-sm text-[8px] text-gray w-[182px] md:w-full">
+              <p className="md:text-sm text-[8px] text-gray w-[182px] md:w-full line-clamp-3">
                 {blogs[0]?.body}
               </p>
             </div>

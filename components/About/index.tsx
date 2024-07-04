@@ -54,23 +54,23 @@ const AboutLayout = ({ teams, clients }: any) => {
       </div>
 
       <div className="flex flex-col w-full">
-        <div className="hidden md:flex flex-wrap w-full h-1/2 md:h-full">
+        <div className="hidden md:flex flex-wrap w-full md:h-full">
           {items.slice(0, 4).map((box: any, index: number) => (
             <div key={index} className="w-[20%] md:w-1/4 h-1/2 md:h-full">
               <Box {...box} />
             </div>
           ))}
         </div>
-        <div className="hidden md:flex flex-wrap w-full h-1/2 md:h-full">
+        <div className="hidden md:flex flex-wrap w-full md:h-full">
           {items.slice(4).map((box: any, index: number) => (
-            <div key={index} className="w-1/2 md:w-1/4 h-1/2 md:h-full">
+            <div key={index} className="w-[20%] md:w-1/4 h-1/2 md:h-full">
               <Box {...box} />
             </div>
           ))}
         </div>
 
         {/* mobile */}
-        <div className="md:hidden flex flex-grow-0 justify-between flex-wrap w-full h-1/2 md:h-full">
+        <div className="md:hidden flex flex-grow-0 justify-between flex-wrap w-full h-full">
           {items.map((box: any, index: number) => (
             <div key={index} className="w-[24%] h-[24%]">
               <Box {...box} />
@@ -79,7 +79,7 @@ const AboutLayout = ({ teams, clients }: any) => {
         </div>
       </div>
       {/* OurCliet */}
-      <div className="p-10 md:px-28 flex flex-col w-full md:pb-24">
+      <div className="p-10 md:px-28 flex flex-col w-full md:py-24">
         <OurClient clients={clients} />
       </div>
 

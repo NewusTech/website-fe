@@ -43,7 +43,10 @@ const DropdownMenu = () => {
         />
       </div>
       {openDropdown && (
-        <nav className="w-full flex justify-end mt-5 transition ease-in-out duration-300">
+        <nav className="w-full flex justify-end mt-5 transition ease-in-out duration-300"
+          data-aos="fade-down"
+          data-aos-easing="linear"
+          data-aos-duration="500">
           <ul className="text-white text-right pr-1 flex flex-col gap-5 uppercase font-semibold text-[16px]">
             {navItems.map((item, index) => (
               <li key={index} className="hover:text-[#b8acdb]">
@@ -64,7 +67,9 @@ const DropdownMenu = () => {
           </ul>
         </nav>
       )}
-      <div className={`flex flex-col items-start ${openDropdown ? "pt-[10px]" : "pt-[158px]"}`}>
+      <div data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "pt-[10px]" : "pt-10 lg:pt-[158px]"}`}>
         <h1 className="text-3xl font-extrabold text-white w-64">
           <span className="text-tangerine">What you need,</span> we can make it
           happen.
