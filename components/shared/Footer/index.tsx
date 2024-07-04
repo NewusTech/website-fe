@@ -111,7 +111,7 @@ const Footer = () => {
                 Digital Marketing
               </h4>
               <ul className="list-disc pl-4 md:pl-5 text-white md:text-sm text-[6px] mt-[6px] md:mt-[10px]">
-                <li>Online Advertising ( Seo )</li>
+                <li>Online Advertising (SEO)</li>
                 <li>Social Media Campaign</li>
                 <li>Facebook Ads</li>
                 <li>Instagram Ads</li>

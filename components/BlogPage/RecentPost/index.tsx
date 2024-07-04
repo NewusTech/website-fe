@@ -1,9 +1,9 @@
 'use client';
 
 import Image from "next/image";
-import CardBlog from "@/components/LandingPage/Blog/CardBlog";
+import CardBlog from "./CardBlog";
 import Pages from "@/components/shared/Pages";
-import CardBlog2 from "@/components/LandingPage/Blog/CardBlog2";
+import CardBlog2 from "./CardBlog2";
 import CardDummy from "./CardDummy";
 import Link from "next/link";
 import { formattedDate } from "@/utils/blog";
