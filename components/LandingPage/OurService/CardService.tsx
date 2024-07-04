@@ -11,13 +11,27 @@ interface OurServiceProps {
 const CardService = () => {
   return (
     <>
-      <div className="hidden md:flex md:mt-[29px] mt-[10px] pb-10">
+      <div className="hidden md:flex md:mt-[29px] gap-6 mt-[10px] pb-10">
         {service.map(({ id, title, image, type }: OurServiceProps) => (
-          <div className="w-3/12 relative" key={id} data-aos="flip-right">
-            <Image src={image} alt="web" width={300} height={400} />
-            <div className="absolute top-0 left-0 z-10 w-full h-full flex items-end justify-center pb-2">
+          <div
+            className="w-3/12 relative p-4 rounded-xl backdrop-blur-3xl shadow-xl"
+            key={id}
+            data-aos="flip-right"
+          >
+            <Image
+              src={image}
+              alt="web"
+              width={300}
+              height={400}
+              className="rounded-xl transition-transform duration-300 ease-in-out transform hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-xl flex items-end justify-center p-4">
               <p
-                className={`text-white text-xl font-bold ${type === "web" ? "py-2" : "py-[34px]"} ${type === "digital" ? "w-[100px] -mb-2 mr-[147px]" : "w-[217px]"} z-20 leading-tight`}
+                className={`text-white text-xl font-bold ${type === "web" ? "py-2" : "py-[34px]"
+                  } ${type === "digital"
+                    ? "w-[100px] -mb-2 mr-[147px]"
+                    : "w-[217px]"
+                  } z-20 leading-tight text-center`}
               >
                 {title}
               </p>
@@ -40,16 +54,16 @@ const CardService = () => {
       <div className="md:hidden flex flex-wrap gap-3 mt-[10px]">
         {service.map(({ id, title, image, type }: OurServiceProps) => (
           <div
-            className="bg-blue w-[48%] rounded-[6px] flex items-center relative"
+            className="bg-blue w-[48%] rounded-[6px] flex items-center relative shadow-lg transition-transform transform "
             key={id}
           >
-            <div className="w-12 h-[60px] rounded-l-[6px] bg-black">
+            <div className="w-12 h-[60px] rounded-l-[6px] bg-black overflow-hidden ">
               <Image
                 src={image}
                 alt="web"
                 width={100}
                 height={100}
-                className="object-cover w-full h-full rounded-l-[6px]"
+                className="object-cover w-full h-full hover:scale-105"
               />
             </div>
             <h1 className="text-white font-bold text-[8px] w-[88px] ml-2 z-20">
