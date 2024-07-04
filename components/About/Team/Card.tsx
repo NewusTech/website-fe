@@ -17,7 +17,7 @@ const CardTeam = ({ image, name, position, onClick }: any) => {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center flex-grow-0 w-[50%] md:w-[20%] pb-10 ${styles.card} ${isSelected ? styles.selected : ""}`}
+      className={`flex flex-col justify-center items-center flex-grow-0 h-full w-[50%] md:w-[20%] pb-10 ${styles.card} ${isSelected ? styles.selected : ""}`}
       onClick={handleClick}
     >
       <Image
@@ -25,7 +25,7 @@ const CardTeam = ({ image, name, position, onClick }: any) => {
         alt="Team member"
         height={542}
         width={279}
-        className="object-cover w-full pr-2"
+        className="object-cover w-full h-full pr-2"
       />
       <h1 className="text-[12px] md:text-lg font-semibold mt-2 text-center">{name}</h1>
       <p className="text-[10px] md:text-sm text-gray-600 text-center">

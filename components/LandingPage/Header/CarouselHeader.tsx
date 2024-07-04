@@ -25,9 +25,9 @@ const CarouselHeader = () => {
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
-            <div className="h-48 md:min-h-screen">
+            <div className="h-48 sm:h-72 md:min-h-screen">
               <Image
-                className="object-cover h-48 md:min-h-screen"
+                className="object-cover h-48 lg:min-h-screen"
                 src="/assets/images/banner.jpg"
                 alt="banner"
                 width={1450}

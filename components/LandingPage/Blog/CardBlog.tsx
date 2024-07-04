@@ -67,13 +67,13 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-white"></div>
             <h5 className="md:text-[14px] text-[8px]">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
-          <Link className="md:hidden" href={`/blog/${slug}`}>
+          <Link className="block md:hidden" href={`/blog/${slug}`}>
             <Image
               src="/assets/icons/arrow.svg"
               alt="arrow up"
               width={24}
               height={24}
-              className="md:w-6 md:h-6 w-3 h-3"
+              className="w-3 h-3"
             />
           </Link>
         </div>

@@ -1,11 +1,20 @@
+'use client'
+
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import SocialLink from "../Social/SocialLink";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <footer className="bg-blue relative pb-14 md:pb-0">
       <div className="container mx-auto">
@@ -197,17 +206,55 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="bg-[#5FD568] z-30 fixed bottom-14 md:bottom-3 right-4 rounded-3xl py-2 px-4">
-        <Link target="_blank" href="https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0" passHref className="flex gap-4 text-white items-center">
-          <span className="md:font-semibold text-sm md:text-md">Contact Us</span>
-          <Image
-            src="/assets/icons/whatsapp-icon.svg"
-            alt="Contact Us"
-            width={28}
-            height={29}
-            className="w-[18px] h-[19px] md:w-[28px] md:h-[29px]"
-          />
-        </Link>
+      <div className="fixed bottom-14 md:bottom-3 right-4 z-30">
+        <div className="bg-[#5FD568] rounded-3xl py-2 px-4">
+          <button onClick={toggleDropdown} className="flex gap-5 text-white items-center focus:outline-none">
+            <span className="md:font-semibold text-sm md:text-md">Contact Us</span>
+            <Image
+              src="/assets/icons/whatsapp-icon.svg"
+              alt="Contact Us"
+              width={24}
+              height={24}
+              className="w-[18px] h-[19px] md:w-[24px] md:h-[24px]"
+            />
+          </button>
+        </div>
+        {isOpen && (
+          <div className="bg-white rounded-lg shadow-lg mt-2 p-4">
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/assets/icons/logo-2.svg"
+                alt="Devi"
+                width={24}
+                height={24}
+                className="rounded-full object-cover"
+              />
+              <Link
+                target="_blank"
+                href=" https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0"
+                className="text-black"
+              >
+                Admin
+              </Link>
+            </div>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/assets/images/antoni.svg"
+                alt="Pasha"
+                width={24}
+                height={24}
+                className="rounded-full object-cover"
+              />
+              <Link
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=6285279737868"
+                className="text-black"
+              >
+                Antoni
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     </footer>
   );

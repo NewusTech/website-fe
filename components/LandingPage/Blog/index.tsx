@@ -71,7 +71,7 @@ export default async function Blog() {
               <CardBlog type="landing" key={i} blogs={blog} />
             ))}
           </div>
-          <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-[119px] mt-5">
+          <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
             <Link href='/blog'>
               <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-[8px] md:text-[16px]">
                 See More Articles

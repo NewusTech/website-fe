@@ -4,6 +4,7 @@ import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
 import WhyChooseUs from "../../components/LandingPage/WhyChooseUs";
 import Blog from "../../components/LandingPage/Blog";
+import Testimoni from "@/components/LandingPage/Testimonials/index.";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <OurService />
       <WhyChooseUs />
       <Blog />
+      <Testimoni />
     </>
   );
 }
