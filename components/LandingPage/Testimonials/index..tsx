@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
+import TestiTailwind from "@/components/Testimoni/testimoni-tailwind";
 
 const testimonials = [
   {
@@ -67,6 +68,7 @@ const TestimonialsCarousel = () => {
       </h1>
       <Slider ref={sliderRef} {...settings}>
         {testimonials.map((testimonial) => (
+          // <TestiTailwind key={testimonial.id} />
           <div key={testimonial.id} className="flex flex-col md:flex-row justify-center items-center text-center p-4 w-full">
             <div className="flex flex-col md:flex-row  md:gap-10 justify-center">
               <Image
