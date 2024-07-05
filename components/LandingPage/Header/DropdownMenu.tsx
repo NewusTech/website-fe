@@ -69,7 +69,7 @@ const DropdownMenu = () => {
       )}
       <div data-aos="fade-down"
         data-aos-easing="linear"
-        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "pt-[10px]" : "pt-10 lg:pt-[158px]"}`}>
+        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "hidden pt-[10px]" : "block pt-10 md:pt-28 lg:pt-[158px]"}`}>
         <h1 className="text-3xl font-extrabold text-white w-64">
           <span className="text-tangerine">What you need,</span> we can make it
           happen.

@@ -35,8 +35,9 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
+      // style={{ border: '1.6px solid white' }}
       className={`${type === "landing"
-        ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 border-[0.5px]"
+        ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow gap-3 shadow-white"
         : "bg-transparent flex-col md:w-[410px] h-full rounded-[2px]"
         } flex`}
     >
