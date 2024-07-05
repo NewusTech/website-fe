@@ -54,8 +54,8 @@ const certifications = [
 
 export default function Certifications() {
   return (
-    <div className="text-center max-w-7xl mx-auto bg-gray-100">
-      <h1 className="text-lg md:text-3xl font-bold lg:mb-4">OUR ACHIEVEMENT</h1>
+    <div className="text-center max-w-7xl mx-auto bg-gray-100 pb-10">
+      <h1 className="text-lg md:text-3xl font-bold lg:mb-4 capitalize">Our Achievement</h1>
       <h2 className="md:text-2xl mb-8">Certifications</h2>
       <SliderOwner />
     </div >

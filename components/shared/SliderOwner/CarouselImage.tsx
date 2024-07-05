@@ -2,25 +2,30 @@
 
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
 
 const images = [
-  "/assets/images/ASPILUKI.jpg",
-  "/assets/images/cvnewus.jpg",
-  "/assets/images/ICTPM.jpg",
-  "/assets/images/KADIN.jpg"
+  {
+    image: "/assets/images/ASPILUKI.jpg",
+    logo: "/assets/icons/logoaspekti.png"
+  },
+  {
+    image: "/assets/images/cvnewus.jpg",
+    logo: "/assets/icons/logoaspiluki2.png"
+  },
+  {
+    image: "/assets/images/ICTPM.jpg",
+    logo: "/assets/icons/logoBNSP.webp"
+  },
+  {
+    image: "/assets/images/KADIN.jpg",
+    logo: "/assets/icons/logokadin.webp"
+  }
 ];
 
 const CarouselImage = () => {
-  const plugin = React.useRef(
-    Autoplay({ delay: 1000, stopOnInteraction: true }),
-  );
+  const plugin = React.useRef(Autoplay({ delay: 1000, stopOnInteraction: true }));
 
   return (
     <Carousel
@@ -32,15 +37,27 @@ const CarouselImage = () => {
       <CarouselContent>
         {images.map((src, index) => (
           <CarouselItem key={index}>
-            <div className="h-48 md:min-h-[500px] lg:min-h-screen">
-              <Image
-                className="object-contain h-48 md:min-h-[500px] lg:min-h-[600px]"
-                src={src}
-                alt={`banner-${index}`}
-                width={1450}
-                height={1000}
-                loading="lazy"
-              />
+            <div className="flex flex-col items-center bg-gray-700 md:rounded-lg">
+              <div className="hidden h-20 rounded-t-md w-full text-start lg:flex justify-start px-3">
+                <Image
+                  className="w-1/4 h-20 object-contain"
+                  src={src.logo}
+                  alt={`logo-${index}`}
+                  width={1000}
+                  height={1000}
+                  loading="lazy"
+                />
+              </div>
+              <div className="h-72 md:min-h-[500px] lg:min-h-[500px] px-5 md:px-0 md:shadow-sm">
+                <Image
+                  className="object-cover object-top h-72 md:min-h-[500px] lg:min-h-[600px] md:shadow-sm"
+                  src={src.image}
+                  alt={`banner-${index}`}
+                  width={1450}
+                  height={1000}
+                  loading="lazy"
+                />
+              </div>
             </div>
           </CarouselItem>
         ))}

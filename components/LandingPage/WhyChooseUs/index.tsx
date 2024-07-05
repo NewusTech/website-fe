@@ -60,7 +60,7 @@ const WhyChooseUs = () => {
           ))}
         </div>
       </div>
-      <div className="pt-10 md:pt-20 lg:px-28">
+      <div className="pt-10 md:pt-20 lg:px-10">
         <h1 className="text-center text-tangerine text-[12px] md:text-[32px] pb-3 md:pb-10">
           <strong className="text-blue mr-2 md:mr-[10px]">Our Skills</strong>
         </h1>

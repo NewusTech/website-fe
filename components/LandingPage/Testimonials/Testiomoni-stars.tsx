@@ -59,10 +59,10 @@ const TestiomoniStars = () => {
                 ))}
               </div>
               <blockquote className="text-center leading-8 text-gray-1 sm:leading-9 p-5">
-                <p className="relative">
-                  <FontAwesomeIcon icon={faQuoteLeft} className='w-5 h-5 absolute -left-4 top-1' />
+                <p className="relative text-sm md:text-lg">
+                  <FontAwesomeIcon icon={faQuoteLeft} className='w-5 h-5 absolute md:-left-4 lg:-left-1 top-1' />
                   <span>{testimonial.review}</span>
-                  <FontAwesomeIcon icon={faQuoteRight} className='w-5 h-5 absolute left-44 md:left-28 lg:left-44 bottom-1' />
+                  <FontAwesomeIcon icon={faQuoteRight} className='w-5 h-5 absolute left-[220px] md:left-36 lg:left-[150px] bottom-1' />
                 </p>
               </blockquote>
 

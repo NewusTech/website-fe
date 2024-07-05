@@ -19,7 +19,7 @@ const Footer = () => {
     <footer className="bg-blue relative pb-14 md:pb-0">
       <div className="container mx-auto">
         <div className="h-[231px] md:h-full lg:h-[370px] w-full flex flex-col lg:flex-row py-0 md:py-5 lg:py-0 ">
-          <div className="hidden lg:block w-[370px] h-[390px] bg-white rounded-[10px] absolute -mt-16">
+          <div className="hidden lg:block w-[370px] h-[390px] bg-white rounded-[10px] absolute -mt-12">
             <div className="w-full h-auto bg-blue py-[14px] px-[19px] rounded-t-[10px]">
               <h3 className="uppercase text-white font-bold text-[16px]">
                 Contact Form
@@ -39,7 +39,7 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          <div className="lg:ml-[427px] lg:mt-[75px] mt-4">
+          <div className="lg:ml-[427px] lg:mt-[50px] mt-4">
             <Image
               src="/assets/icons/logo.svg"
               alt="logo"
@@ -92,7 +92,7 @@ const Footer = () => {
               <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" />
             </div>
           </div>
-          <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[52px] lg:ml-[0px] lg:w-1/5">
+          <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[42px] lg:ml-[0px] lg:w-1/5">
             <div>
               <h4 className="font-semibold text-white md:text-sm text-[6px] uppercase">
                 Technology
