@@ -17,7 +17,7 @@ const TeamLayout = ({ teams }: any) => {
       <Header
         teams={selectedTeam}
       />
-      <section className={`flex md:flex-row flex-wrap justify-center py-2 px-3 md:px-0 gap-2 md:gap-2 md:pb-20 w-full ${styles.teamSection}`}>
+      <section className={`flex md:flex-row flex-wrap justify-center py-1 md:py-2 md:px-0 gap-2 md:gap-2 md:pb-20 w-full ${styles.teamSection}`}>
         {teams?.map((team: any, i: number) => (
           <CardTeam
             key={i}
