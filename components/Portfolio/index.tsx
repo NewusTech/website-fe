@@ -9,6 +9,7 @@ import ListIcon from '@/public/assets/icons/ListIcon';
 import Pages from '../shared/Pages';
 import CardSquarePorto from './CardSquarePorto';
 import CardListPorto from './CardListPorto';
+export const dynamic = 'force-dynamic';
 
 interface Project {
   id: number;

@@ -1,6 +1,7 @@
 import DetailCareer from "@/components/Career/DetailCareer";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import React from 'react'
+export const dynamic = 'force-dynamic';
 
 const careerPaths = [
   { label: 'Home', href: '/' },

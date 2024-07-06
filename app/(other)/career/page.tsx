@@ -1,6 +1,6 @@
-import AboutLayout from "@/components/About";
 import CareerLayout from "@/components/Career";
 import Header from "@/components/shared/Header/HeaderCareer";
+export const dynamic = 'force-dynamic';
 
 const CareerPage = () => {
   return (

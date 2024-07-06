@@ -1,5 +1,6 @@
 import Header from "@/components/shared/Header/Header";
 import WhatWeDo from "@/components/Service";
+export const dynamic = 'force-dynamic';
 
 const ServicePage = () => {
   return (

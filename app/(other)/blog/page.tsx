@@ -1,6 +1,7 @@
 import Header from "@/components/shared/Header/Header";
 import RecentPost from "@/components/BlogPage/RecentPost";
 import { getBlogCategory, getBlogList } from "@/components/Fetching/Blog/blog";
+export const dynamic = 'force-dynamic';
 
 export default async function Blog() {
   const blogs = await getBlogList();

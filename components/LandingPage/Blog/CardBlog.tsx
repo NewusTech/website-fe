@@ -37,7 +37,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos-duration="1000"
       // style={{ border: '1.6px solid white' }}
       className={`${type === "landing"
-        ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow gap-3 shadow-white"
+        ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow gap-3 shadow-gray md:shadow-white"
         : "bg-transparent flex-col md:w-[410px] h-full rounded-[2px]"
         } flex`}
     >
@@ -79,7 +79,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
-          <Link className="font-medium text-white md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2 hover:underline" href={`/blog/${slug}`}>
+          <Link className="font-medium text-white md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2 hover:underline truncate" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>
@@ -97,7 +97,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
-        <div className="flex gap-1 pt-1 items-end">
+        <div className="flex gap-1 pt-3 items-end">
           <div className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1">
             <p className="text-white md:text-xs text-[8px]">{tagblog_title}</p>
           </div>

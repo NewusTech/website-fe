@@ -18,6 +18,11 @@ const config = {
       },
     },
     extend: {
+      lineClamp: {
+        7: '7',
+        8: '8',
+        12: '12',
+      },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         asap: ['Asap', 'sans-serif'],

@@ -1,5 +1,6 @@
 import TabsProject from "@/components/LandingPage/SuccessProject/TabsProject";
 import { getProjectKategoriList, getProjectList } from "@/components/Fetching/Portfolio/port";
+export const dynamic = 'force-dynamic';
 
 export default async function SuccessProject() {
   const projectList = await getProjectList();

@@ -101,13 +101,13 @@ export default function RecentPost({ blogs, categories }: any) {
           </section>
         </section>
       )}
-      <section className="hidden md:flex gap-4 mt-10">
+      <section className="hidden md:flex gap-4 mt-10 overflow-scroll">
         {["All", ...categories.map((category: any) => category.title)].map(category => (
           <div key={category}
-            className={`md:px-10 h-[43px] rounded-[16px] flex items-center justify-center ${filter === category ? "bg-blue" : ""}`}
+            className={`md:px-10 py-3 px-6 w-full rounded-xl flex items-center justify-center ${filter === category ? "bg-blue" : ""}`}
             onClick={() => handleFilterChange(category)}
           >
-            <p className={`text-[16px] ${filter === category ? "text-white font-semibold" : "text-dark hover:text-blue transition-colors duration-300 cursor-pointer capitalize"}`}>
+            <p className={`text-nowrap text-[16px] ${filter === category ? "text-white font-semibold" : "text-dark hover:text-blue transition-colors duration-300 cursor-pointer capitalize"}`}>
               {category}
             </p>
           </div>

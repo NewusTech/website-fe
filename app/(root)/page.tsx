@@ -5,14 +5,13 @@ import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
 import WhyChooseUs from "../../components/LandingPage/WhyChooseUs";
 import Blog from "../../components/LandingPage/Blog";
-import Testimoni from "@/components/LandingPage/Testimonials/index.";
 import TestiomoniStars from "@/components/LandingPage/Testimonials/Testiomoni-stars";
 import Certifications from "@/components/LandingPage/Certifications";
-import SliderOwner from "@/components/shared/SliderOwner";
+export const dynamic = 'force-dynamic';
 
 export default function Home() {
   return (
-    <>
+    <section className="overflow-hidden">
       <OurClient />
       <SuccessProject />
       <OurService />
@@ -20,6 +19,6 @@ export default function Home() {
       <Blog />
       <TestiomoniStars />
       <Certifications />
-    </>
+    </section>
   );
 }

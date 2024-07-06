@@ -1,5 +1,6 @@
 import ContactLayout from "@/components/Contact";
 import Header from "@/components/shared/Header/HeaderAbout";
+export const dynamic = 'force-dynamic';
 
 const ContactPage = () => {
   return (
