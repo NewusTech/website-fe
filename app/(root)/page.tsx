@@ -1,5 +1,6 @@
 import "aos/dist/aos.css"
 import '../../lib/fa';
+import { Suspense } from 'react'
 import OurClient from "../../components/LandingPage/OurClient";
 import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
@@ -12,13 +13,15 @@ export const dynamic = 'force-dynamic';
 export default function Home() {
   return (
     <section className="overflow-hidden">
-      <OurClient />
-      <SuccessProject />
-      <OurService />
-      <WhyChooseUs />
-      <Blog />
-      <TestiomoniStars />
-      <Certifications />
+      <Suspense fallback={<p>Loading feed...</p>}>
+        <OurClient />
+        <SuccessProject />
+        <OurService />
+        <WhyChooseUs />
+        <Blog />
+        <TestiomoniStars />
+        <Certifications />
+      </Suspense>
     </section>
   );
 }

@@ -101,7 +101,7 @@ export default function RecentPost({ blogs, categories }: any) {
           </section>
         </section>
       )}
-      <section className="hidden md:flex gap-4 mt-10 overflow-scroll">
+      <section className="hidden md:flex gap-4 mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none', overflowY: 'hidden' }}>
         {["All", ...categories.map((category: any) => category.title)].map(category => (
           <div key={category}
             className={`md:px-10 py-3 px-6 w-full rounded-xl flex items-center justify-center ${filter === category ? "bg-blue" : ""}`}
@@ -113,6 +113,8 @@ export default function RecentPost({ blogs, categories }: any) {
           </div>
         ))}
       </section>
+
+
       <section className="my-5 grid grid-cols-2 gap-[10px] md:flex md:flex-wrap md: md:flex-grow-0 md:gap-6">
         {displayedBlogs.length > 0 ? (
           displayedBlogs.map((blog: any, index: number) => (
