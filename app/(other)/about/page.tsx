@@ -2,6 +2,7 @@ import AboutLayout from "@/components/About";
 import { getClientist } from "@/components/Fetching/Client/client";
 import { getTeamList } from "@/components/Fetching/Division/division";
 import Header from "@/components/shared/Header/HeaderAbout";
+export const dynamic = 'force-dynamic';
 
 export default async function AboutPage() {
   const teams = await getTeamList();

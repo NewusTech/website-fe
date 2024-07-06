@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ListIcon from "@/public/assets/icons/ListIcon";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import CardBlogSquare from "./CardBlogSquare";
+export const dynamic = 'force-dynamic';
 
 interface BlogProps {
   id: number,
@@ -40,7 +41,7 @@ export default async function Blog() {
   const remainingBlogs = blogList.slice(0, -1);
 
   return (
-    <section >
+    <section className="overflow-hidden">
       <div className="bg-[#14141F] md:bg-[#14141F] py-6 md:py-10">
         <div className="container md:mx-auto">
           <div className="flex flex-col items-center md:-mt-0 -mb-8 md:-mb-0 md:pt-1">
@@ -60,22 +61,22 @@ export default async function Blog() {
             </TabsList>
             <TabsContent value="list">
               <div className="flex justify-between items-center w-full mt-[54px]">
-                <div className="flex-col gap-6 hidden md:flex md:w-[40%]">
-                  <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white">
+                <div className="flex-col lg:gap-6 hidden md:flex md:w-[40%] lg:w-[5s0%]">
+                  <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white truncate lg:text-clip text-wrap">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-sm w-[350px] text-white text-justify">
+                  <p data-aos="zoom-in" className="text-sm lg:w-[500px] text-white text-justify md:line-clamp-12 lg:line-clamp-none">
                     {lastBlog?.body}
                   </p>
                 </div>
-                <div data-aos='fade-right' className="hidden md:block md:w-[60%] rounded-xl">
+                <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] rounded-xl">
                   <Image
                     data-aos="zoom-in"
                     src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}
                     alt={lastBlog?.title}
                     width={690}
                     height={430}
-                    className="rounded-xl w-full bg-cover object-cover"
+                    className="rounded-xl lg:w-full bg-cover object-cover"
                   />
                 </div>
               </div>

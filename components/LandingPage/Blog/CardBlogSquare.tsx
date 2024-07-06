@@ -79,7 +79,7 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
-          <Link className="font-medium text-white md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2 hover:underline" href={`/blog/${slug}`}>
+          <Link className="font-medium text-white md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2 hover:underline truncate" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>

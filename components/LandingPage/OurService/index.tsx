@@ -1,9 +1,8 @@
 import CardService from "@/components/LandingPage/OurService/CardService";
-import Image from "next/image";
 
 const OurService = () => {
   return (
-    <section className="md:mt-32 md:pb-16">
+    <section className="md:mt-32 md:pb-16 overflow-hidden">
       {/* <Image src='/assets/illustration/wave.svg' width={100} height={100} alt="wave" className="w-full" /> */}
       <div className="bg-[rgb(20,20,31)] py-10">
         <div className="mx-auto container">

@@ -1,13 +1,13 @@
 'use client'
 
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import HomeIcon from "@/public/assets/icons/HomeIcon";
 import ServiceIcon from "@/public/assets/icons/ServiceIcon";
 import PortfolioIcon from "@/public/assets/icons/PortfolioIcon";
 import BlogIcon from "@/public/assets/icons/BlogIcon";
 import AboutUsIcon from "@/public/assets/icons/AboutUsIcon";
 import WhatsappIcon from "@/public/assets/icons/WhatsappIcon";
+import TeamIcon from "@/public/assets/icons/TeamIcon";
 import Link from "next/link";
 
 const Bottombar = () => {
@@ -36,9 +36,9 @@ const Bottombar = () => {
           <PortfolioIcon color={getIconColor("/portfolio")} />
           <p className={`text-[6px] ${getLinkClass("/portfolio")}`}>Portfolio</p>
         </Link>
-        <Link href="/contact" className="flex flex-col gap-1 items-center justify-center">
-          <WhatsappIcon color={getIconColor("/contact")} />
-          <p className={`text-[6px] ${getLinkClass("/contact")}`}>Contact</p>
+        <Link href="/about/team" className="flex flex-col gap-1 items-center justify-center">
+          <TeamIcon color={getIconColor("/about/team")} />
+          <p className={`text-[6px] ${getLinkClass("/about/team")}`}>Team</p>
         </Link>
         <Link href="/blog" className="flex flex-col gap-1 items-center justify-center group">
           <BlogIcon color={getIconColor("/blog")} />

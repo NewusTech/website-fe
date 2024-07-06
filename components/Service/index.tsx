@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import CardServices from "@/components/Service/CardService";
 import FlowDesktop from "@/components/Service/FlowDesktop";
 import FlowResponsive from "@/components/Service/FlowResponsive";
 import { getServiceList } from "../Fetching/Service/service";
+export const dynamic = 'force-dynamic';
 
 export default async function WhatWeDo() {
   const services = await getServiceList();
+
   return (
     <section className="container md:my-[20px] my-8">
       <div className="flex items-center justify-center flex-col gap-1 md:gap-4 relative">

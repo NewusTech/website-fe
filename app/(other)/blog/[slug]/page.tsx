@@ -3,7 +3,7 @@ import Image from "next/image";
 import CardBlog from "@/components/BlogPage/RecentPost/CardBlog";
 import { getBlogDetail, getBlogList } from "@/components/Fetching/Blog/blog";
 import { formattedDate } from "@/utils/blog";
-
+export const dynamic = 'force-dynamic';
 
 export default async function DetailBlogPage({ params }: { params: { slug: string } }) {
   const { slug } = params;

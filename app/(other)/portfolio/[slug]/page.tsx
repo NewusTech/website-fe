@@ -6,6 +6,7 @@ import ImageSlider from "@/components/shared/SliderImage";
 import CardSquarePorto from "@/components/Portfolio/CardSquarePorto";
 import { getProjectList, getProjectDetail } from "@/components/Fetching/Portfolio/port";
 import Link from "next/link";
+export const dynamic = 'force-dynamic';
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;

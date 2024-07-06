@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
+import Modal from "./ModalImage"; // Adjust the import path as needed
 
 const images = [
   {
@@ -25,44 +26,47 @@ const images = [
 ];
 
 const CarouselImage = () => {
-  const plugin = React.useRef(Autoplay({ delay: 1000, stopOnInteraction: true }));
+  const [showModal, setShowModal] = useState(false);
+  const [currentImage, setCurrentImage] = useState("");
+  const plugin = React.useRef(Autoplay({ delay: 5000, stopOnInteraction: true }));
+
+  const handleImageClick = (imageSrc: any) => {
+    setCurrentImage(imageSrc);
+    setShowModal(true);
+  };
 
   return (
-    <Carousel
-      plugins={[plugin.current]}
-      className="w-full h-full"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
-    >
-      <CarouselContent>
-        {images.map((src, index) => (
-          <CarouselItem key={index}>
-            <div className="flex flex-col items-center bg-gray-700 md:rounded-lg">
-              <div className="hidden h-20 rounded-t-md w-full text-start lg:flex justify-start px-3">
-                <Image
-                  className="w-1/4 h-20 object-contain"
-                  src={src.logo}
-                  alt={`logo-${index}`}
-                  width={1000}
-                  height={1000}
-                  loading="lazy"
-                />
+    <>
+      <Carousel
+        plugins={[plugin.current]}
+        className="w-full h-full"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+      >
+        <CarouselContent>
+          {images.map((src, index) => (
+            <CarouselItem key={index}>
+              <div
+                className="flex flex-col items-center bg-gray-700 md:rounded-lg"
+                onClick={() => handleImageClick(src.image)}
+              >
+                <div className="h-72 md:min-h-[500px] lg:min-h-[600px] flex items-center">
+                  <Image
+                    className="object-cover object-top h-72 md:min-h-[500px] lg:h-full rounded-xl"
+                    src={src.image}
+                    alt={`banner-${index}`}
+                    width={1450}
+                    height={1000}
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <div className="h-72 md:min-h-[500px] lg:min-h-[500px] px-5 md:px-0 md:shadow-sm">
-                <Image
-                  className="object-cover object-top h-72 md:min-h-[500px] lg:min-h-[600px] md:shadow-sm"
-                  src={src.image}
-                  alt={`banner-${index}`}
-                  width={1450}
-                  height={1000}
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      <Modal showModal={showModal} setShowModal={setShowModal} imageSrc={currentImage} />
+    </>
   );
 };
 

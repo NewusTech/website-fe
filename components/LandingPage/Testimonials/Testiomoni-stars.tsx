@@ -26,29 +26,29 @@ const TestiomoniStars = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-10 md:pt-20">
-      <h2 className="text-lg md:text-3xl font-bold text-center pb-8 md:pb-36 capitalize">Testimonials</h2>
+    <div className="container mx-auto px-4 py-10 md:pt-20 lg:px-14">
+      <h2 className="text-lg md:text-3xl font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
       <div>
-        <div className="flex flex-col md:flex-row items-center justify-center md:space-x-4 gap-10 md:gap-1 lg:gap-10 pb-10">
+        <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="relative bg-[#14141F] text-white rounded-2xl p-6 text-center w-80 shadow-xl shadow-gray mt-20 md:mt-0">
+            <div key={index} className="relative bg-[#14141F] text-white rounded-2xl p-2 lg:p-6 text-center shadow-xl shadow-gray mt-10 md:mt-0">
               <div className="relative flex justify-center">
-                <div className="absolute top-[-110px]">
+                <div className="absolute top-[-40px] md:top-[-100px] lg:top-[-115px]">
                   <Image
                     width={1000}
                     height={1000}
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto mb-4"
+                    className="w-14 h-14 md:w-40 md:h-40 rounded-full mx-auto mb-4"
                   />
                 </div>
               </div>
-              <h3 className="md:text-xl font-sans pt-14 pb-2">{testimonial.name}</h3>
-              <div className="flex justify-center">
+              <h3 className="md:text-sm lg:text-xl text-[6px] font-sans pt-8 md:pt-[80px] lg:pt-16 pb-2">{testimonial.name}</h3>
+              <div className="flex justify-center pb-2">
                 {[...Array(5)].map((star, i) => (
                   <svg
                     key={i}
-                    className={`w-8 h-8 ${i < testimonial.rating ?
+                    className={`md:w-8 w-4 h-4 md:h-8 ${i < testimonial.rating ?
                       (testimonial.rating === 5 ? 'text-[#03fc4e]' : testimonial.rating === 3 ? 'text-yellow-300' : 'text-[#fc0328]') : 'text-gray-400'
                       }`}
                     fill="currentColor"
@@ -58,17 +58,17 @@ const TestiomoniStars = () => {
                   </svg>
                 ))}
               </div>
-              <blockquote className="text-center leading-8 text-gray-1 sm:leading-9 p-5">
-                <p className="relative text-sm md:text-lg">
-                  <FontAwesomeIcon icon={faQuoteLeft} className='w-5 h-5 absolute md:-left-4 lg:-left-1 top-1' />
+              <blockquote className="text-center leading-3 text-gray-1 lg:leading-9 p-1 md:p-5 lg-p-6">
+                <p className="relative md:text-sm lg:text-lg text-[6px]">
+                  <FontAwesomeIcon icon={faQuoteLeft} className='md:w-5 w-2 h-2 md:h-5 absolute -left-1 md:left-0 lg:left-1 -top-0' />
                   <span>{testimonial.review}</span>
-                  <FontAwesomeIcon icon={faQuoteRight} className='w-5 h-5 absolute left-[220px] md:left-36 lg:left-[150px] bottom-1' />
+                  <FontAwesomeIcon icon={faQuoteRight} className='md:w-5 w-2 h-2 md:h-5 absolute left-[92px] md:-left-28 lg:left-[270px] bottom-1' />
                 </p>
               </blockquote>
-
             </div>
           ))}
         </div>
+
       </div>
     </div >
   );

@@ -1,6 +1,8 @@
 export async function getProjectList() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/portfolio/lists`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/portfolio/lists`, {
+      cache: 'no-store',
+    });
     if (!response.ok) {
       throw new Error('Failed to fetch project list');
     }
@@ -14,7 +16,9 @@ export async function getProjectList() {
 
 export async function getProjectDetail(slug: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/portfolio/detail`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/portfolio/detail`, {
+      cache: 'no-store',
+    });
 
     if (!response.ok) {
       throw new Error('Failed to fetch project detail');
@@ -29,7 +33,9 @@ export async function getProjectDetail(slug: string) {
 
 export async function getProjectKategoriList() {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/kategoriportofolio/get`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/kategoriportofolio/get`, {
+      cache: 'no-store',
+    });
 
     if (!response.ok) {
       throw new Error('Failed to fetch project detail');
