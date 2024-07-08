@@ -1,19 +1,19 @@
 import Image from "next/image";
 
 const Box = ({ title, description, image }: any) => (
-  <div className="relative">
-    <div className="relative">
+  <div className="relative w-full">
+    <div className="relative h-[350px]">
       <Image
         loading="lazy"
-        src={image}
-        width={359}
-        height={343}
+        src={image ? image : "/assets/images/dummy1.png"}
+        width={1000}
+        height={1000}
         alt={title}
-        className="w-full min-h-[100px] md:w-full md:min-h-[350px] bg-center text-white bg-cover object-cover"
+        className="w-full min-h-[100px] md:w-full md:h-full bg-center text-white bg-cover object-cover"
       />
     </div>
-    <div className="absolute bottom-0 left-0 right-0 p-4 bg-black bg-opacity-10 text-white">
-      <h1 className="text-xs md:text-2xl font-bold">{title}</h1>
+    <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#480DEC] bg-opacity-30 text-white">
+      <h1 className="text-xs md:text-2xl font-bold">{title ? title : "Lorem Ipsum"}</h1>
       <p className="text-[10px] md:text-lg capitalize font-semibold truncate">{description}</p>
     </div>
   </div>

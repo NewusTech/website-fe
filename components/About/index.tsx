@@ -1,85 +1,96 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import About from "./About";
-import Legalitas from "./Legalitas";
+import About from "./Tabs/About";
+import Legalitas from "./Tabs/Legalitas";
 import Box from "./Box";
 import OurClient from "./OurClient";
 import OurHistory from "./OurHistory";
 import Carousels from "./Carousels/Carousel";
 import SliderMobile from "./SliderMobile";
+import Aspekti from "./Tabs/Aspekti";
+import Kadin from "./Tabs/Kadin";
+import TenagaAhli from "./Tabs/TenagaAhli";
+import Struktur from "./Struktur";
+import StrukturMobile from "./Struktur/mobile";
+import Medias from "./Medias";
 
-const AboutLayout = ({ teams, clients }: any) => {
+const AboutLayout = ({ teams, clients, medias }: any) => {
   const boxes = [
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy1.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy2.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy3.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy4.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy5.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy6.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy7.png" },
-    { title: "Tittle", description: "Description", bgImage: "/assets/images/dummy8.png" }
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy1.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy2.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy3.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy4.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy5.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy6.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy7.png" },
+    { title: "Tittle", description: "Description", image: "/assets/images/dummy8.png" }
   ];
 
   const items = teams || boxes;
 
   return (
-    <section className="bg-white md:bg-[#F4F4F4] overflow-hidden">
-      <Tabs defaultValue="about" className="md:p-[120px] -ml-2">
-        <TabsList>
-          <TabsTrigger className="text-[#FF6600] px-4 py-2 md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-[12px] md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border data-[state=active]:rounded-none" value="about">
+    <section className="bg-white md:bg-[#F4F4F4]">
+      <Tabs defaultValue="about" className="md:p-[20px] lg:p-[50px] xl:p-[120px]">
+        <TabsList className=" md:border-[#FF6600] md:border w-full pl-[135px] md:pl-0 md:px-0 md:py-10 overflow-x-scroll md:overflow-hidden rounded-none">
+          <TabsTrigger className="text-[#FF6600] px-4 py-2 md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-[12px] md:text-[20px] data-[state=active]:border-[rgb(255,102,0)] border-[#FF6600] border data-[state=active]:rounded-none rounded-none w-full" value="about">
             ABOUT
           </TabsTrigger>
-          <TabsTrigger value="legalitas" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[12px] font-bold md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border">
+          <TabsTrigger value="legalitas" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[12px] font-bold md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
             LEGALITAS
           </TabsTrigger>
+          <TabsTrigger value="aspekti" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[12px] font-bold md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+            SBU - ASPEKTI
+          </TabsTrigger>
+          <TabsTrigger value="kadin" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[12px] font-bold md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+            KADIN
+          </TabsTrigger>
+          <TabsTrigger value="tenaga-ahli" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[12px] font-bold md:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+            SERTIFIKAT TENAGA AHLI
+          </TabsTrigger>
         </TabsList>
-        <TabsContent value="about" className="-ml-1 md:ml-1">
+        <TabsContent value="about" className="-ml-1 md:mx-1">
           <About />
         </TabsContent>
-        <TabsContent value="legalitas" className="md:ml-1">
+        <TabsContent value="legalitas" className="md:mx-1">
           <Legalitas />
         </TabsContent>
+        <TabsContent value="aspekti" className="md:mx-1">
+          <Aspekti />
+        </TabsContent>
+        <TabsContent value="kadin" className="md:mx-1">
+          <Kadin />
+        </TabsContent>
+        <TabsContent value="tenaga-ahli" className="md:mx-1">
+          <TenagaAhli />
+        </TabsContent>
       </Tabs>
-      <div className="hidden md:block">
-        <Carousels teams={teams} />
+      <div className="hidden lg:block">
+        <Struktur teams={teams} />
+        {/* <Carousels teams={teams} /> */}
       </div>
-      <div className="block md:hidden">
-        <SliderMobile />
-      </div>
-
-      <div className="px-4 md:px-[100px] pb-10 min-h-[250px] md:min-h-[845px] bg-[url('/assets/images/bg-team.png')] bg-contain bg-center flex justify-center items-end">
-        <div className="text-center md:text-left md:w-[892px]">
-          <h1 className="text-white text-start text-[24px] md:text-[64px] font-bold font-asap">Strength in Numbers <span className="text-[#480DEC]">:</span></h1>
-          <h2 className="text-[#480DEC] font-bold md:leading-[70px] md:text-[64px]">“Together We Stand, United We Achieve! “</h2>
-        </div>
+      <div className="block lg:hidden">
+        <StrukturMobile teams={teams} />
       </div>
 
-      <div className="flex flex-col w-full">
-        <div className="hidden md:flex flex-wrap w-full md:h-full">
-          {items.slice(0, 4).map((box: any, index: number) => (
-            <div key={index} className="w-[20%] md:w-1/4 h-1/2 md:h-full">
-              <Box {...box} />
-            </div>
-          ))}
-        </div>
-        <div className="hidden md:flex flex-wrap w-full md:h-full">
+      <Medias medias={medias} />
+
+      {/* <div className="hidden md:flex flex-wrap w-full md:h-full">
           {items.slice(4).map((box: any, index: number) => (
             <div key={index} className="w-[20%] md:w-1/4 h-1/2 md:h-full">
               <Box {...box} />
             </div>
           ))}
-        </div>
+        </div> */}
 
-        {/* mobile */}
-        <div className="md:hidden flex flex-grow-0 justify-between flex-wrap w-full h-full">
+      {/* mobile */}
+      {/* <div className="md:hidden flex flex-grow-0 justify-between flex-wrap w-full h-full">
           {items.map((box: any, index: number) => (
             <div key={index} className="w-[24%] h-[24%]">
               <Box {...box} />
             </div>
           ))}
-        </div>
-      </div>
+        </div> */}
       {/* OurCliet */}
-      <div className="p-10 md:px-28 flex flex-col w-full md:py-24">
+      <div className="p-10 md:px-28 flex flex-col w-full md:p-20">
         <OurClient clients={clients} />
       </div>
 
