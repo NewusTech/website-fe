@@ -11,7 +11,7 @@ const Header = ({
             Were Hiring !
           </h1>
           <h2 className="text-[#FF6600] font-bold md:text-[56px] pb-3 md:pb-0">Be part of our mission.</h2>
-          <p className="text-white text-center text-[10px] md:text-[16px]">Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig. Lörem ipsum astrobel sar direlig.</p>
+          <p className="text-white text-center text-[10px] md:text-[16px]">Newus Technology is opening up opportunities for talented individuals to join our team! Find the position that matches your interests and skills! Click on the role that interests you & lets contribute and grow together!.</p>
         </div>
       </div>
     </header>

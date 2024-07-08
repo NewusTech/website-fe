@@ -30,3 +30,20 @@ export async function getTeamDetail(slug: string) {
     return [];
   }
 }
+
+export async function getTeamMedia() {
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/media/lists`, {
+      cache: 'no-store',
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to fetch team detail');
+    }
+    const data = await response.json();
+    return data.data;
+  } catch (error) {
+    console.error('Error fetching blog list:', error);
+    return [];
+  }
+}

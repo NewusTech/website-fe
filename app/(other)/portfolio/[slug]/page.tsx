@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="-mt-[200px] md:-mt-[500px] text-white max-w-7xl mx-auto">
           <div className="max-w-[500px] p-[35px] md:p-0">
             <h1 className="text-[14px] md:text-[36px] font-bold pb-2 md:pb-[50px]">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
-            <h2 className="text-[12px] md:text-[20px] pb-2 md:pb-5">{projectsDetail?.portfolioYear ? projectsDetail.portfolioYear : '2023'}</h2>
+            <h2 className="text-[12px] md:text-[20px] pb-2 md:pb-5">{projectsDetail?.portfolioYear ? getYearFromDate(projectsDetail.portfolioYear) : '2023'}</h2>
             <p className="text-[12px] md:text-[20px] pb-2 md:pb-[50px]">{projectsDetail?.excerpt ? projectsDetail.excerpt : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
             <div className="flex items-center gap-2 md:gap-6">
               <Link
@@ -71,12 +71,21 @@ export default async function Page({ params }: { params: { slug: string } }) {
       </header>
 
       <div className="max-w-7xl mx-auto min-h-screen md:pb-44 pt-14 md:pt-72 p-[35px] md:p-0">
-        <div className="flex items-center gap-[40px]">
+        <div className="flex items-center gap-[40px] relative">
+          <div className="absolute top-0 left-[128px] md:left-[420px] z-10">
+            <Image
+              src={projectsDetail?.logo ? projectsDetail.logo : `/assets/images/placeholder-image (2).jpg`}
+              alt="Logo"
+              width={1000}
+              height={1000}
+              className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-contain"
+            />
+          </div>
           <Image
-            src="/assets/images/placeholder-image (2).jpg"
+            src={projectsDetail?.image ? projectsDetail.image : "/assets/images/placeholder-image (2).jpg"}
             alt="image card list"
-            width={367}
-            height={273}
+            width={1000}
+            height={1000}
             className="w-[64px] h-[36px] md:w-[467px] md:h-[310px] rounded-l-[10px] object-cover"
           />
           <div>
@@ -140,3 +149,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
     </section >
   )
 }
+
+const getYearFromDate = (dateString: any) => {
+  const date = new Date(dateString);
+  return date.getFullYear();
+};

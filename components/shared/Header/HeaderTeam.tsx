@@ -13,14 +13,14 @@ const Header = ({
         <Image
           src={teams?.image ? teams.image : "/assets/images/team.svg"}
           alt="blog header"
-          width={1350}
-          height={75}
+          width={1000}
+          height={1000}
           className={`w-full object-cover md:h-[600px] h-[200px]`}
           loading="lazy"
         />
       </div>
       <div className="relative">
-        <div className="absolute top-[-135px] left-[230px] md:top-[-406px] md:left-[950px] opacity-[1] max-w-[153px] md:max-w-[515px] text-white">
+        <div className="absolute top-[-135px] left-[270px] md:top-[-406px] md:left-[950px] opacity-[1] max-w-[153px] md:max-w-[515px] text-white">
           <h1 className="text-[12px] md:text-[40px] text-[#480DEC] font-bold">{teams?.name ? teams.name : 'Name Team'}</h1>
 
           <h2 className="text-[10px] md:text-[36px] text-black pb-2 md:pb-4">{teams?.title ? teams.title : 'POSITION'}</h2>

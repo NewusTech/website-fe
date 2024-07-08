@@ -70,13 +70,11 @@ const DropdownMenu = () => {
       <div data-aos="fade-down"
         data-aos-easing="linear"
         data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "hidden pt-[10px]" : "block pt-10 md:pt-28 lg:pt-[158px]"}`}>
-        <h1 className="text-3xl font-extrabold text-white w-64">
-          <span className="text-tangerine">What you need,</span> we can make it
-          happen.
+        <h1 className="text-2xl font-extrabold text-white w-72">
+          <span className="text-tangerine text-3xl ">Software House Lampung</span><br />Innovate & Elevate: Your Custom Software
         </h1>
-        <p className={`text-xs text-white leading-7 mt-5 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}>
-          Software House Lampung
-          <br />Innovate & Elevate: Your Custom Software Journey Starts Here (New Experience With Us)
+        <p className={`text-xs text-white leading-7 mt-3 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}>
+          Journey Starts Here (New Experience With Us)
         </p>
         <Button className="py-7 px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
           <Link href="/contact" className="flex items-center justify-center gap-2">

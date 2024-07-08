@@ -85,8 +85,7 @@ const RightSide = () => {
           <CarouselHeader />
           <div className="absolute gap-[10px] md:hidden flex flex-col items-center justify-center">
             <h1 className="text-[16px] font-extrabold text-white w-60 text-center">
-              <span className="text-tangerine">What you need,</span> we can make
-              it happen.
+              <span className="text-tangerine">Software House Lampung</span>Innovate & Elevate: Your Custom Software
             </h1>
             <Link href='/contact'>
               <Button

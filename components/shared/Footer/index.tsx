@@ -212,7 +212,7 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="fixed bottom-14 md:bottom-4 lg:bottom-3 right-4 z-30">
+      <div className="fixed bottom-14 md:bottom-4 lg:bottom-3 right-4 z-40">
         <div className="bg-[#5FD568] rounded-3xl py-2 px-4">
           <button onClick={toggleDropdown} className="flex gap-3 lg:gap-4 text-white items-center focus:outline-none">
             <span className="lg:font-semibold text-[12px] lg:text-lg">Contact Us</span>
