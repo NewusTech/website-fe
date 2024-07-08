@@ -44,11 +44,11 @@ const TestiomoniStars = () => {
                 </div>
               </div>
               <h3 className="md:text-sm lg:text-xl text-[6px] font-sans pt-8 md:pt-[80px] lg:pt-16 pb-2">{testimonial.name}</h3>
-              <div className="flex justify-center pb-2">
+              <div className="flex justify-center pb-2 ">
                 {[...Array(5)].map((star, i) => (
                   <svg
                     key={i}
-                    className={`md:w-8 w-4 h-4 md:h-8 ${i < testimonial.rating ?
+                    className={` md:w-8 w-4 h-4 md:h-8 ${i < testimonial.rating ?
                       (testimonial.rating === 5 ? 'text-[#03fc4e]' : testimonial.rating === 3 ? 'text-yellow-300' : 'text-[#fc0328]') : 'text-gray-400'
                       }`}
                     fill="currentColor"

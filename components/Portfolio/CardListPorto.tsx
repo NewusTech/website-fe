@@ -4,6 +4,7 @@ import Link from "next/link";
 
 const CardListPorto = ({ projects }: any) => {
   const { id = "", title = '', slug = "", keyword = "",
+    logo = "",
     excerpt = "", body = "", image = '',
     portfolioYear = '',
     webLink = '',
@@ -19,12 +20,11 @@ const CardListPorto = ({ projects }: any) => {
     <div data-aos="flip-left" className="bg-white rounded-[10px] md:w-full mb-[10px] relative shadow-lg">
       {/* Logo in top right corner */}
       <div className="absolute top-0 left-[98px] md:left-[280px]">
-        {/* <div className="absolute top-0 left-[90px] md:left-[300px] z-10 p-1 md:p-2 w-full"> */}
         <Image
-          src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+          src={logo ? logo : `/assets/images/placeholder-image (2).jpg`}
           alt="Logo"
-          width={50}
-          height={50}
+          width={1000}
+          height={1000}
           className="w-[35px] h-[35px] md:w-[50px] md:h-[50px]"
         />
       </div>
@@ -34,8 +34,8 @@ const CardListPorto = ({ projects }: any) => {
           <Image
             src={image ? image : `/assets/images/placeholder-image (2).jpg`}
             alt="image card list"
-            width={367}
-            height={273}
+            width={1000}
+            height={1000}
             className="rounded-l-[10px] w-full h-full object-cover"
           />
         </div>

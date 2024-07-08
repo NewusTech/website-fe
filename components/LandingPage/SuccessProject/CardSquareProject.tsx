@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const CardSquareProject = ({ projects }: any) => {
-  const { id = "", title = '', slug = "", keyword = "",
+  const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
     portfolioYear = '',
     webLink = '',
@@ -19,18 +19,18 @@ const CardSquareProject = ({ projects }: any) => {
     <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[31%] w-[47%] shadow-lg">
       <div className="absolute top-0 left-[128px] md:left-[360px] z-10">
         <Image
-          src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+          src={logo ? logo : `/assets/images/placeholder-image (2).jpg`}
           alt="Logo"
-          width={50}
-          height={50}
-          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+          width={1000}
+          height={1000}
+          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-contain"
         />
       </div>
       <Image
         src={image ? image : `/assets/images/placeholder-image (2).jpg`}
         alt="placeholder"
-        width={367}
-        height={273}
+        width={1000}
+        height={1000}
         className="w-full  h-[120px] md:h-[273px] object-cover"
       />
       <div className="md:mt-4 my-4 md:mb-5 flex flex-col gap-1 md:gap-4 px-4">

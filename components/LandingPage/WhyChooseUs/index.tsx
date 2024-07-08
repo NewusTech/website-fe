@@ -31,7 +31,7 @@ const WhyChooseUs = () => {
     <section className="container mx-auto py-10 md:pt-5 md:pb-10 md:mb-20 overflow-hidden">
       <div>
         <h1 className="text-center text-tangerine text-[12px] md:text-[32px]">
-          <strong className="text-blue mr-1 md:mr-[2px]">Mengapa</strong> Memilih Kami?
+          <strong className="text-blue mr-1 md:mr-[2px]">Why </strong>Choose Us?
         </h1>
         <h4 className="font-bold text-[10px] md:text-2xl text-center mt-[10px] md:mt-5 text-black">
           &quot;Trusted IT Consulting for Exceptional Service Quality&quot;

@@ -10,14 +10,13 @@ const TeamLayout = ({ teams }: any) => {
 
   const handleClick = (team: any) => {
     setSelectedTeam(team);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <main>
-      <Header
-        teams={selectedTeam}
-      />
-      <section className={`flex md:flex-row flex-wrap justify-center py-1 md:py-2 md:px-0 gap-2 md:gap-2 md:pb-20 w-full ${styles.teamSection}`}>
+      <Header teams={selectedTeam} />
+      <section className={`flex md:flex-row flex-wrap justify-center py-1 md:py-2 md:px-0 gap-1 md:gap-2 md:pb-20 w-full ${styles.teamSection}`}>
         {teams?.map((team: any, i: number) => (
           <CardTeam
             key={i}

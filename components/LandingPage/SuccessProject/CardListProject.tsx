@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from 'react';
 
 const CardListProject = ({ projects }: any) => {
-  const { id = "", title = '', slug = "", keyword = "",
+  const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
     portfolioYear = '',
     webLink = '',
@@ -23,17 +23,17 @@ const CardListProject = ({ projects }: any) => {
           <Image
             src={image ? image : `/assets/images/placeholder-image (2).jpg`}
             alt="Logo"
-            width={50}
-            height={50}
-            className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+            width={1000}
+            height={1000}
+            className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-contain"
           />
         </div>
         <div className="w-full md:w-[28%] h-full flex items-center">
           <Image
             src={image ? image : `/assets/images/placeholder-image (2).jpg`}
             alt="image card list"
-            width={367}
-            height={273}
+            width={1000}
+            height={1000}
             className="rounded-l-[10px] h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
         </div>

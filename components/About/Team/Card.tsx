@@ -17,13 +17,13 @@ const CardTeam = ({ image, name, position, onClick }: any) => {
 
   return (
     <div
-      className={`flex flex-col justify-center items-center flex-grow-0 h-full w-[48%] md:w-[19.5%] z-40 ${styles.card} ${isSelected ? styles.selected : ""}`}
+      className={`flex flex-col justify-center items-center flex-grow-0 h-full w-[49%] md:w-[19.5%] z-40 ${styles.card} ${isSelected ? styles.selected : ""}`}
       onClick={handleClick}>
       <Image
         src={image || "/assets/images/team.svg"}
         alt="Team member"
-        height={542}
-        width={279}
+        height={1000}
+        width={1000}
         className="object-cover h-[200px] md:w-full md:h-[271px] object-center"
       />
       <h1 className="text-[12px] md:text-lg font-semibold mt-2 text-center">{name}</h1>
