@@ -7,7 +7,7 @@ export default async function PortofolioPage() {
   const projectList = await getProjectList();
   const categories = await getProjectKategoriList();
   return (
-    <section className="min-h-[55vh]">
+    <section className="min-h-[55vh] overflow-hidden">
       <Header
         type="Portfolio"
         title="Portfolio"

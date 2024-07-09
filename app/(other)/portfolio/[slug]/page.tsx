@@ -14,14 +14,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const projectsDetail = await getProjectDetail(slug)
 
   const images = [
-    '/assets/images/placeholder-image (2).jpg',
-    '/assets/images/placeholder-image (2).jpg',
-    '/assets/images/placeholder-image (2).jpg',
-    '/assets/images/placeholder-image (2).jpg',
+    projectsDetail?.image,
+    projectsDetail?.image,
+    projectsDetail?.image,
+    projectsDetail?.image,
   ];
 
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen overflow-hidden">
       <header className="w-full z-10 relative">
         <div className="md:min-w-[1350px] md:min-h-[75px]">
           <Image
@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             className={`w-full h-full object-cover`}
           />
         </div>
-        <div className="-mt-[200px] md:-mt-[500px] text-white max-w-7xl mx-auto">
+        <div className="-mt-[200px] md:ml-[30px] xl:mx-auto md:-mt-[500px] xl:-mt-[600px] text-white max-w-7xl mx-auto">
           <div className="max-w-[500px] p-[35px] md:p-0">
             <h1 className="text-[14px] md:text-[36px] font-bold pb-2 md:pb-[50px]">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
             <h2 className="text-[12px] md:text-[20px] pb-2 md:pb-5">{projectsDetail?.portfolioYear ? getYearFromDate(projectsDetail.portfolioYear) : '2023'}</h2>
@@ -70,9 +70,27 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto min-h-screen md:pb-44 pt-14 md:pt-72 p-[35px] md:p-0">
+      <div className="max-w-7xl mx-auto min-h-screen md:pb-44 pt-8 md:pt-[250px] xl:pt-[400px] p-[10px] md:p-5 xl:p-0">
         <div className="flex items-center gap-[40px] relative">
-          <div className="absolute top-0 left-[128px] md:left-[420px] z-10">
+          <div className="w-[40%] md:w-[28%] h-full flex items-center relative">
+            <Image
+              src={projectsDetail?.image ? projectsDetail.image : "/assets/images/placeholder-image (2).jpg"}
+              alt="image card list"
+              width={1000}
+              height={1000}
+              className="h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            />
+            <div className="absolute top-2 right-2 z-10">
+              <Image
+                src={projectsDetail?.logo ? projectsDetail.logo : `/assets/images/placeholder-image (2).jpg`}
+                alt="Logo"
+                width={1000}
+                height={1000}
+                className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+              />
+            </div>
+          </div>
+          {/* <div className="absolute top-0 left-[128px] md:left-[420px] z-10">
             <Image
               src={projectsDetail?.logo ? projectsDetail.logo : `/assets/images/placeholder-image (2).jpg`}
               alt="Logo"
@@ -80,14 +98,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
               height={1000}
               className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-contain"
             />
-          </div>
-          <Image
+          </div> */}
+          {/* <Image
             src={projectsDetail?.image ? projectsDetail.image : "/assets/images/placeholder-image (2).jpg"}
             alt="image card list"
             width={1000}
             height={1000}
             className="w-[64px] h-[36px] md:w-[467px] md:h-[310px] rounded-l-[10px] object-cover"
-          />
+          /> */}
           <div>
             <h1 className="text-2xl md:text-[24px] font-bold md:pb-4">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
             <p className="hidden md:block text-[16px] line-clamp-3">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
@@ -95,7 +113,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
         <p className="md:hidden text-[16px] text-justify text-sm pt-5">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
 
-        <div className="hidden gap-[40px] pt-5 md:pt-[86px] items-center justify-between">
+        <div className="hidden md:flex gap-[40px] items-center justify-between">
           {/* <div className="hidden flex gap-[40px] pt-5 md:pt-[86px] items-center justify-between"> */}
           <div className="md:w-1/2">
             <div className="md:hidden mb-4">
@@ -105,12 +123,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <p className="text-[16px]">{projectsDetail?.body ? projectsDetail.body : 'Do you really think graphic arts supply houses were hiring  scholars Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig. Kronde est.  <br /> <br /> Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig. Kronde est '}
             </p>
           </div>
-          <div className="hidden md:block md:w-1/2">
+          <div className="block md:w-1/2">
             <ImageSlider images={images} />
           </div>
         </div>
 
-        <div className="pt-5 md:pt-[84px]">
+        <div className="">
           <h1 className="md:text-[28px] font-[500] pb-5 md:pb-10">Technology</h1>
           <div className="flex gap-3 md:gap-5">
             <div className="flex justify-center flex-col items-center">
@@ -132,15 +150,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
           </p>
         </div>
 
-        <div className="pt-5 md:pt-[84px]">
+        <div className="pt-5 md:pt-[84px] w-full pb-5 xl:pb-20">
           <h1 className="md:text-[28px] font-[500] pb-6 md">More Portofolio</h1>
-          <div className="hidden md:flex justify-between gap-4 md:gap-5 md:flex-wrap">
-            {projects.slice(0, 3).map((project: any, index: any) => (
+          <div className="hidden md:flex overflow-x-auto justify-between gap-4">
+            {projects?.slice(0, 3).map((project: any, index: any) => (
               <CardSquarePorto key={index} projects={project} />
             ))}
           </div>
-          <div className="md:hidden flex justify-between gap-4 md:gap-5 md:flex-wrap">
-            {projects.slice(0, 2).map((project: any, index: any) => (
+          <div className="overflow-auto md:hidden flex w-full gap-4">
+            {projects?.slice(0, 2).map((project: any, index: any) => (
               <CardSquarePorto key={index} projects={project} />
             ))}
           </div>

@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-blue relative pb-14 md:pb-0">
+    <footer className="bg-blue relative pb-32 pt-5 md:pt-5 md:pb-0">
       <div className="container mx-auto">
         <div className="h-[231px] md:h-full lg:h-[370px] w-full flex flex-col lg:flex-row py-0 md:py-5 lg:py-0 ">
           <div className="hidden lg:block w-[370px] h-[390px] bg-white rounded-[10px] absolute -mt-12">
@@ -45,7 +45,7 @@ const Footer = () => {
               alt="logo"
               width={206}
               height={56}
-              className="lg:mb-10 w-[93px] h-[30px] md:w-[206px] md:h-[56px]"
+              className="lg:mb-10 w-[100px] h-[30px] md:w-[206px] md:h-[56px]"
             />
             <div className="flex gap-2 lg:gap-4 items-center mt-2 lg:mt-[55px]">
               <Image
@@ -53,9 +53,9 @@ const Footer = () => {
                 alt="place"
                 width={24}
                 height={24}
-                className="w-[10px] h-[10px] md:w-6 md:h-6"
+                className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
-              <p className="text-white md:text-sm text-[6px]">
+              <p className="text-white md:text-sm text-[10px]">
                 Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212
               </p>
             </div>
@@ -65,9 +65,9 @@ const Footer = () => {
                 alt="place"
                 width={24}
                 height={24}
-                className="w-[10px] h-[10px] md:w-6 md:h-6"
+                className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
-              <p className="text-white md:text-sm text-[6px]">
+              <p className="text-white md:text-sm text-[10px]">
                 (+62) 888-991-2992
               </p>
             </div>
@@ -77,9 +77,9 @@ const Footer = () => {
                 alt="place"
                 width={24}
                 height={24}
-                className="w-[10px] h-[10px] md:w-6 md:h-6"
+                className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
-              <p className="text-white md:text-sm text-[6px]">
+              <p className="text-white md:text-sm text-[10px]">
                 newustechnology@gmail.com
               </p>
             </div>
@@ -94,10 +94,10 @@ const Footer = () => {
           </div>
           <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[42px] lg:ml-[0px] lg:w-1/5">
             <div>
-              <h4 className="font-semibold text-white md:text-sm text-[6px] uppercase">
+              <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Technology
               </h4>
-              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-sm text-[6px] mt-[6px] lg:mt-[10px]">
+              <ul className="list-disc pl-2 lg:pl-5 text-white md:text-sm text-[8px] mt-[6px] lg:mt-[10px]">
                 <li>Mobile Apps Development</li>
                 <li>Website Development</li>
                 <li>Web Based Application</li>
@@ -107,10 +107,10 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold text-white md:text-sm text-[6px] uppercase lg:mt-3">
+              <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase lg:mt-3">
                 Digital Marketing
               </h4>
-              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-sm text-[6px] mt-[6px] lg:mt-[10px]">
+              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-sm text-[8px] mt-[6px] lg:mt-[10px]">
                 <li>Online Advertising (SEO)</li>
                 <li>Social Media Campaign</li>
                 <li>Facebook Ads</li>
@@ -120,7 +120,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="lg:hidden flex flex-col">
-              <h4 className="font-semibold text-white md:text-sm text-[6px] uppercase">
+              <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Social Media
               </h4>
               <div className="grid grid-cols-4 gap-3 mt-[6px]">
@@ -180,7 +180,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p className="text-[8px] md:text-sm text-white lg:hidden mt-5 mb-4">
+          <p className="text-[10px] md:text-sm text-white lg:hidden mt-5 mb-4">
             Copyright © 2023 • Newus Technology.
           </p>
         </div>

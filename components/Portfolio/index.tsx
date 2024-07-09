@@ -58,7 +58,7 @@ export default function Index({ portfolios, categories }: IndexProps) {
     setCurrentPage(1);
   };
 
-  const filteredProjects = projectList.filter(project => {
+  const filteredProjects = projectList?.filter(project => {
     const matchCategory = filter === 'All' || project.Kategoriportofolio.title.toLowerCase() === filter.toLowerCase();
     const matchSearchTerm = searchTerm === '' ||
       project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -69,10 +69,11 @@ export default function Index({ portfolios, categories }: IndexProps) {
 
   const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
   const paginatedProjects = filteredProjects.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  // <div className="flex justify-center gap-[6px] md:gap-2 px-7 flex-wrap md:overflidden pt-4 md:pt-10"></div>ow-h
 
   return (
     <section>
-      <div className="flex justify-center gap-[6px] md:gap-2 px-7 flex-wrap md:overflow-hidden pt-4 md:pt-10">
+      <div className="flex md:gap-2 px-5 lg:justify-center gap-4 mt-5 lg:mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
         {["All", ...categories.map((category) => category.title)].map(category => (
           <div
             key={category}
@@ -132,7 +133,7 @@ export default function Index({ portfolios, categories }: IndexProps) {
               <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
             </TabsContent>
             <TabsContent value="square">
-              <div className="flex gap-4 md:gap-[20px] flex-grow flex-wrap my-2 md:my-7 mb-10 justify-center">
+              <div className="flex gap-4 md:gap-[30px] flex-grow flex-wrap my-2 md:my-7 mb-10 justify-center">
                 {paginatedProjects.length > 0 ? (
                   paginatedProjects?.map((project: any, index: number) => (
                     <CardSquarePorto key={index} projects={project} />

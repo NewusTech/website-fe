@@ -13,7 +13,7 @@ const Header = ({
 }) => {
   return (
     <header className="w-full z-10 relative">
-      <div className="md:min-w-screen md:min-h-[75px]">
+      <div className="md:min-w-screen md:h-[305px] md:min-h-[75px]">
         <Link href='/'>
           <Image
             src={image}
@@ -25,9 +25,9 @@ const Header = ({
           />
         </Link>
       </div>
-      <div className="absolute z-30 w-full -mt-[50px] md:-mt-[160px]">
+      <div className="absolute z-30 w-full -mt-[60px] md:-mt-[160px]">
         <div className="flex flex-col justify-center items-center gap-[10px] md:gap-10">
-          <h1 className="text-white uppercase font-bold text-[14px] md:text-[64px]">
+          <h1 className={type === "service" ? "text-white uppercase font-bold  text-md md:text-[32px]" : "text-white uppercase font-bold text-md md:text-[32px]"}>
             {title}
           </h1>
           <Input

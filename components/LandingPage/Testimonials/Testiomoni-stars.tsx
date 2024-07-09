@@ -27,7 +27,7 @@ const TestiomoniStars = () => {
 
   return (
     <div className="container mx-auto px-4 py-10 md:pt-20 lg:px-14">
-      <h2 className="text-lg md:text-3xl font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
+      <h2 className="text-md md:text-[32px] font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
       <div>
         <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (

@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 const ServicePage = () => {
   return (
-    <section>
+    <section className="overflow-hidden">
       <Header
         type="service"
         title="Service"
