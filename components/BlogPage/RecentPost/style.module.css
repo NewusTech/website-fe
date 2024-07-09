@@ -1,0 +1,30 @@
+/* styles.css */
+.classScroll::-webkit-scrollbar {
+  height: 12px;
+  opacity: 0;
+  /* Awalnya scrollbar tidak terlihat */
+  transition: opacity 0.3s;
+  /* Transisi untuk munculnya scrollbar */
+}
+
+.classScroll:hover::-webkit-scrollbar {
+  opacity: 1;
+  /* Scrollbar terlihat saat di-hover */
+}
+
+.classScroll::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  /* Warna scrollbar */
+  border-radius: 10px;
+  /* Membulatkan ujung scrollbar */
+}
+
+.classScroll::-webkit-scrollbar-track {
+  background: transparent;
+  /* Background track scrollbar */
+}
+
+.classScroll::-webkit-scrollbar-button {
+  display: none;
+  /* Menghilangkan panah di ujung scrollbar */
+}

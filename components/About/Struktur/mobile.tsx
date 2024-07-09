@@ -43,18 +43,18 @@ const StrukturMobile = ({ teams }: any) => {
 
   return (
     <div className="p-5 bg-[url('/assets/illustration/bg-about.svg')] bg-cover">
-      <div className="flex justify-start leading-8 text-white pb-10 text-[28px] font-semibold">
+      <div className="flex justify-start leading-8 text-white pb-5 text-sm md:text-[30px] font-semibold">
         Organizational Structure
       </div>
       <div className='flex flex-col items-center justify-center'>
         <div className='flex flex-col items-center'>
           <Image width={1000} height={1000} src="/assets/images/dummy8.png" alt="Antoni, ST" className="h-[200px] w-[200px] rounded-sm shadow object-cover" />
-          <div className="w-[300px] text-center text-white text-sm mt-2">Antoni, ST<br />Direktur</div>
+          <div className="w-[300px] text-center text-white text-[12px] mt-2">Antoni, ST<br />Direktur</div>
         </div>
         <div className='flex flex-col w-full pt-5'>
           <div>
             <div className="my-[10px] flex justify-between items-center gap-3">
-              <h2 className="text-lg md:text-3xl font-bold lg:mb-4 capitalize md:text-[28px] text-[8px] text-nowrap text-white">
+              <h2 className="text-sm md:text-3xl font-bold lg:mb-4 capitalize md:text-[28px] text-[8px] text-nowrap text-white">
                 Developer Team
               </h2>
               <div className="w-full h-[1px] bg-gray-4"></div>
@@ -72,7 +72,7 @@ const StrukturMobile = ({ teams }: any) => {
 
           <div>
             <div className="my-[10px] flex justify-between items-center gap-3">
-              <h2 className="text-lg md:text-3xl font-bold lg:mb-4 capitalize md:text-[28px] text-[8px] text-nowrap text-white">
+              <h2 className="text-sm md:text-3xl font-bold lg:mb-4 capitalize md:text-[28px] text-[8px] text-nowrap text-white">
                 Digital Marketing
               </h2>
               <div className="w-full h-[1px] bg-gray-4"></div>
@@ -90,7 +90,7 @@ const StrukturMobile = ({ teams }: any) => {
 
           <div>
             <div className="my-[10px] flex justify-between items-center gap-3">
-              <h2 className="text-lg md:text-3xl font-bold lg:mb-4 capitalize md:text-[28px] text-[8px] text-nowrap text-white">
+              <h2 className="text-sm md:text-3xl font-bold lg:mb-4 capitalize md:text-[28px] text-[8px] text-nowrap text-white">
                 Back Office
               </h2>
               <div className="w-full h-[1px] bg-gray-4"></div>

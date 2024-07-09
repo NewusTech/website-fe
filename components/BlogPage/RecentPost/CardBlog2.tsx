@@ -51,7 +51,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-gray-2"></div>
           <h5 className="md:text-[14px] text-[6px]">{formattedDate(publishAt)}</h5>
         </div>
-        <h3 className="my-4 font-medium text-dark md:text-2xl text-[8px] md:w-[246px]">
+        <h3 className="my-4 font-medium text-dark md:text-2xl text-[8px] md:w-[246px] truncate">
           <Link href={`/blog/${slug}`}>
             {title}
           </Link>
