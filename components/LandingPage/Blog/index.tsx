@@ -65,7 +65,7 @@ export default async function Blog() {
                   <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white truncate lg:text-clip text-wrap">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-sm lg:w-[500px] text-white text-justify md:line-clamp-12 lg:line-clamp-none">
+                  <p data-aos="zoom-in" className="text-sm lg:w-[400px] xl:w-[480px] text-white text-justify md:line-clamp-12 lg:line-clamp-none">
                     {lastBlog?.body}
                   </p>
                 </div>

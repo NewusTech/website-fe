@@ -54,7 +54,7 @@ const RightSide = () => {
             onClick={handleDropdown}
           /> */}
         </div>
-        <div className="hidden md:flex bg-blue w-5/12 lg:w-3/12 flex-col items-start container mx-auto pt-[26px]">
+        <div className="hidden md:flex bg-blue w-5/12 lg:w-4/12 xl:w-3/12  flex-col items-start container mx-auto pt-[26px]">
           <DropdownMenu />
         </div>
         {openDropdown && (
