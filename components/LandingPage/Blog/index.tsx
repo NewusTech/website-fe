@@ -45,7 +45,7 @@ export default async function Blog() {
       <div className="bg-[#14141F] md:bg-[#14141F] py-6 md:py-10">
         <div className="container md:mx-auto">
           <div className="flex flex-col items-center md:-mt-0 -mb-8 md:-mb-0 md:pt-1">
-            <h4 className="text-lg md:text-[40px] font-semibold text-tangerine">Blog</h4>
+            <h4 className="text-md md:text-[32px] font-semibold text-tangerine">Blog</h4>
             {/* <h2 className="text-[32px] hidden md:block font-semibold text-white">
               Blogssss
             </h2> */}
@@ -65,7 +65,7 @@ export default async function Blog() {
                   <h2 data-aos="zoom-in" className="font-medium text-[32px] text-white truncate lg:text-clip text-wrap">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-sm lg:w-[500px] text-white text-justify md:line-clamp-12 lg:line-clamp-none">
+                  <p data-aos="zoom-in" className="text-sm lg:w-[400px] xl:w-[480px] text-white text-justify md:line-clamp-12 lg:line-clamp-none">
                     {lastBlog?.body}
                   </p>
                 </div>

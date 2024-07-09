@@ -18,7 +18,7 @@ const ImageSlider = ({ images }: any) => {
     <div className="w-full">
       {/* Gambar pertama */}
       <div className="mb-4">
-        <Image height={367} width={570} src={images[0]} alt="slider" className="w-full" />
+        <Image height={367} width={570} src={images[0]} alt="slider" className="w-full h-[300px] object-contain" />
       </div>
       {/* Slider dengan tiga gambar */}
       <div className="flex justify-between items-center gap-[5px]">

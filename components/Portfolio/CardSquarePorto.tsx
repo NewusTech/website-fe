@@ -16,23 +16,25 @@ const CardSquarePorto = ({ projects }: any) => {
     Tagportofolio = {} } = projects || {};
 
   return (
-    <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[32%] w-[47%] relative">
-      <div className="absolute top-0 left-[128px] md:left-[345px]">
+    <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 md:w-[31%] w-[47%] shadow-lg relative">
+      <div className="relative">
         <Image
-          src={logo ? logo : `/assets/images/placeholder-image (2).jpg`}
-          alt="Logo"
+          src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+          alt="placeholder"
           width={1000}
           height={1000}
-          className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+          className="w-full h-[120px] md:h-[273px] object-cover"
         />
+        <div className="absolute top-2 right-2 z-10">
+          <Image
+            src={logo ? logo : `/assets/images/placeholder-logo.jpg`}
+            alt="Logo"
+            width={1000}
+            height={1000}
+            className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+          />
+        </div>
       </div>
-      <Image
-        src={image ? image : `/assets/images/placeholder-image (2).jpg`}
-        alt="placeholder"
-        width={1000}
-        height={1000}
-        className="w-full object-cover h-[130px] md:h-[273px]"
-      />
       <div className="md:mt-4 my-4 md:mb-5 flex flex-col gap-1 md:gap-4 px-4">
         <h2 className="md:text-[24px] text-[10px] font-semibold truncate">
           {title ? title : 'Name Project'}

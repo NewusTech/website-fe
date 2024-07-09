@@ -30,8 +30,8 @@ const Struktur = ({ teams }: any) => {
   };
 
   return (
-    <div className="px-10 py-5 xl:pt-10 bg-[url('/assets/illustration/bg-about.svg')] bg-cover">
-      <div className='flex items-center justify-center md:max-w-5xl xl:max-w-7xl mx-auto'>
+    <div className="px-10 md:px-[67px] py-5 xl:pt-10 bg-[url('/assets/illustration/bg-about.svg')] bg-cover">
+      <div className='flex items-center justify-center lg:max-w-5xl xl:max-w-7xl mx-auto'>
         <div className='w-3/12 flex items-center pt-40 relative'>
           <div className="absolute -top-28 xl:text-nowrap text-white pt-20 pb-3 text-[28px] font-semibold">
             Organizational Structure
@@ -43,20 +43,21 @@ const Struktur = ({ teams }: any) => {
         </div>
 
         <div className='w-2/12 relative'>
-          <div className="text-white xl:text-lg mb-2 absolute -top-[170px] xl:-top-[220px] lg:-top-[185px] border-b-2 md:w-[132px] xl:w-[178px] text-nowrap text-sm">Developer Team</div>
+          <div className="text-white xl:text-lg mb-2 absolute -top-[170px] xl:-top-[220px] lg:-top-[185px] border-b-2 text-nowrap text-sm max-w-[148px] w-[178px] xl:max-w-[178px]">Developer Team</div>
           <div className='border-l-2 border-y-2 h-[108px] lg:h-[112px] xl:h-[160px] xl:w-10 w-7 absolute lg:-top-[220px] xl:-top-[270px] -top-[200px] -right-1'></div>
-          <div className="text-white text-nowrap text-sm xl:text-lg mb-2 absolute top-[20px] lg:top-[30px] xl:top-[35px] border-b-2 md:w-[132px] xl:w-[178px]">Digital Marketing</div>
+          <div className="text-white text-nowrap text-sm xl:text-lg mb-2 absolute top-[20px] lg:top-[30px] xl:top-[35px] border-b-2 max-w-[148px]  w-[178px] xl:max-w-[178px]">Digital Marketing</div>
           <div className='border-l-2 border-y-2 h-[50px] xl:w-10 w-7 absolute top-[15px] lg:top-[27px] xl:top-[40px] -right-1'></div>
-          <div className="text-white text-nowrap text-sm xl:text-lg mb-2 absolute top-[150px] lg:top-[185px] xl:top-[216px] border-b-2 md:w-[132px] xl:w-[178px]">Back Office</div>
+          <div className="text-white text-nowrap text-sm xl:text-lg mb-2 absolute top-[150px] lg:top-[185px] xl:top-[216px] border-b-2 max-w-[148px]  w-[178px] xl:max-w-[178px]">Back Office</div>
           <div className='border-l-2 border-y-2 h-[50px] w-7 xl:w-10 absolute top-[150px] lg:top-[180px] xl:top-[220px] -right-1'></div>
         </div>
+
 
         <div className='w-7/12 pt-5'>
           <div className='flex flex-col w-full'>
             <div className="flex flex-col items-end w-full pb-6">
               <div className='flex flex-wrap gap-2 pb-2 w-full'>
                 {developerTeam.map((box: any, index: number) => (
-                  <div key={index} className="w-[18%] xl:w-[19%] cursor-pointer" onClick={() => handleImageClick(box)}>
+                  <div key={index} className="w-[18%] md:w-[23%] xl:w-[22%] cursor-pointer" onClick={() => handleImageClick(box)}>
                     <Box {...box} />
                   </div>
                 ))}
@@ -65,7 +66,7 @@ const Struktur = ({ teams }: any) => {
             <div className="flex flex-col items-end w-full pb-6">
               <div className='flex flex-wrap gap-2 pb-2 w-full'>
                 {digitalMarketingTeam.map((box: any, index: number) => (
-                  <div key={index} className="w-[18%] xl:w-[19%] cursor-pointer" onClick={() => handleImageClick(box)}>
+                  <div key={index} className="w-[18%] md:w-[23%] xl:w-[22%] cursor-pointer" onClick={() => handleImageClick(box)}>
                     <Box {...box} />
                   </div>
                 ))}
@@ -74,7 +75,7 @@ const Struktur = ({ teams }: any) => {
             <div className="flex flex-col items-end w-full pb-6">
               <div className='flex flex-wrap gap-2 pb-2 w-full'>
                 {backOfficeTeam.map((box: any, index: number) => (
-                  <div key={index} className="w-[18%] xl:w-[19%] cursor-pointer" onClick={() => handleImageClick(box)}>
+                  <div key={index} className="w-[18%] md:w-[23%] xl:w-[22%] cursor-pointer" onClick={() => handleImageClick(box)}>
                     <Box {...box} />
                   </div>
                 ))}

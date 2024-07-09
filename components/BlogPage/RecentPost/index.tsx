@@ -8,8 +8,8 @@ import CardDummy from "./CardDummy";
 import Link from "next/link";
 import { formattedDate } from "@/utils/blog";
 import { useState, useEffect } from "react";
-import NotFound from "@/components/shared/NotFound";
 import { Input } from "@/components/ui/input";
+import styles from './style.module.css';
 
 export default function RecentPost({ blogs, categories }: any) {
   const [filter, setFilter] = useState<string>("All");
@@ -71,7 +71,7 @@ export default function RecentPost({ blogs, categories }: any) {
                 <h5 className="md:text-[14px] text-[6px]">{formattedDate(blogs[0]?.publishAt)}</h5>
               </div>
               <div className="flex items-start md:gap-2 my-1 md:my-4 justify-between">
-                <h3 className="font-medium text-dark md:text-2xl text-[8px] md:w-[491px]">
+                <h3 className="font-medium text-dark md:text-2xl text-[8px] md:w-[491px] truncate">
                   <Link href={`/blog/${blogs[0]?.id}`} >
                     {blogs[0]?.title}
                   </Link>
@@ -101,7 +101,7 @@ export default function RecentPost({ blogs, categories }: any) {
           </section>
         </section>
       )}
-      <section className="hidden md:flex gap-4 mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'none', msOverflowStyle: 'none', overflowY: 'hidden' }}>
+      <section className="hidden md:flex gap-4 mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
         {["All", ...categories.map((category: any) => category.title)].map(category => (
           <div key={category}
             className={`md:px-10 py-3 px-6 w-full rounded-xl flex items-center justify-center ${filter === category ? "bg-blue" : ""}`}

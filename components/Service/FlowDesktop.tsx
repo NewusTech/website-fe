@@ -26,7 +26,7 @@ const FlowDesktop = () => {
           width={725}
           height={367}
           alt="line"
-          className="mt-[75px] -ml-16"
+          className="mt-[75px] -z-10 -ml-36 xl:-ml-16"
         />
       </div>
       <div className="flex">
@@ -45,7 +45,7 @@ const FlowDesktop = () => {
           width={690}
           height={0}
           alt="line"
-          className="-mt-28 -mx-24"
+          className="-z-10 -mt-28 -mx-36 xl:-mx-24"
         />
         <div className="flex flex-col items-center gap-y-3">
           <div className="rounded-full w-[155px] h-[155px] bg-blue flex items-center justify-center">
@@ -58,12 +58,13 @@ const FlowDesktop = () => {
         </div>
       </div>
       <div className="flex mt-2">
-        <div className="flex flex-col items-center ml-[90px]">
+        <div className="flex flex-col items-center ml-[0px] xl:ml-[90px]">
           <Image
             src="/assets/illustration/line3.svg"
             alt="line"
             width={8}
             height={214}
+            className="z-10"
           />
           <div className="flex flex-col items-center gap-y-3">
             <div className="rounded-full w-[155px] h-[155px] bg-blue flex items-center justify-center">
@@ -79,7 +80,7 @@ const FlowDesktop = () => {
           alt="line"
           width={799}
           height={348}
-          className="w-[859px] h-[400px] mt-[373px] mr-[150px] -ml-14"
+          className="-z-10 w-[600px] xl:w-[859px] h-[400px] mt-[373px] mr-[15px] -ml-14"
         />
       </div>
       <div className="flex items-start mt-2">
@@ -101,7 +102,7 @@ const FlowDesktop = () => {
           alt="line"
           width={650}
           height={8}
-          className="w-[108vh] h-2 mt-[75px]"
+          className="w-[400px] xl:w-[108vh] h-2 mt-[75px]"
         />
         <div className="flex flex-col items-center gap-y-3 mr-40 -ml-20">
           <div className="rounded-full w-[155px] h-[155px] bg-blue flex items-center justify-center">

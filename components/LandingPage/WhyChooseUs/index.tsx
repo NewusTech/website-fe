@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
   return (
     <section className="container mx-auto py-10 md:pt-5 md:pb-10 md:mb-20 overflow-hidden">
       <div>
-        <h1 className="text-center text-tangerine text-[12px] md:text-[32px]">
+        <h1 className="text-center text-tangerine text-md md:text-[32px]">
           <strong className="text-blue mr-1 md:mr-[2px]">Why </strong>Choose Us?
         </h1>
         <h4 className="font-bold text-[10px] md:text-2xl text-center mt-[10px] md:mt-5 text-black">
@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
                   className="w-full h-full"
                 />
               </div>
-              <p className="text-center md:w-full lg:w-[320px] md:text-sm text-[6px]">
+              <p className="text-center md:w-full lg:w-[320px] md:text-sm text-[10px] line-clamp-3 md:line-clamp-none">
                 {desc}
               </p>
             </div>
@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
         </div>
       </div>
       <div className="pt-10 md:pt-20 lg:px-10">
-        <h1 className="text-center text-tangerine text-[12px] md:text-[32px] pb-3 md:pb-10">
+        <h1 className="text-center text-tangerine text-md md:text-[32px] pb-3 md:pb-10">
           <strong className="text-blue mr-2 md:mr-[10px]">Our Skills</strong>
         </h1>
         <div className="grid grid-cols-3 md:grid-cols-6 flex-grow-0

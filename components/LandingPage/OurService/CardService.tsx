@@ -66,7 +66,7 @@ const CardService = () => {
                 className="object-cover w-full h-full hover:scale-105"
               />
             </div>
-            <h1 className="text-white font-bold text-[8px] w-[88px] ml-2 z-20">
+            <h1 className="text-white font-bold text-[11px] w-[88px] ml-2 z-20">
               {title}
             </h1>
             {type === "web" && (

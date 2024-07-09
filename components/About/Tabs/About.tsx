@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section className='md:mt-[22px] -mt-[8px] md:px-[67px] px-5 pt-2 md:pt-14 pb-8 md:py-[64px] border bg-white md:border-[#FF6600]'>
+    <section className='-mt-[8px] md:mt-4 md:px-[67px] px-5 pt-2 md:pt-14 pb-8 md:py-[64px] md:border bg-white md:border-[#FF6600] mx-1'>
       <div className='py-5 md:pb-10'>
         <h1 className='text-[#FF6600] font-bold text-sm md:text-[30px] pb-3 md:pb-5 text-center md:text-start'>NEWUS <span className='text-[#480DEC] text-center md:text-start'>TECHNOLOGY</span></h1>
         <p className='text-[12px] md:text-[16px] leading-6 md:leading-8 text-center md:text-start'>Newus technology adalah sebuah perusahaan software yang bergerak dibidang jasa pembuatan website, aplikasi / sistem dan aplikasi berbasis android serta IOS. Selain sebagai perusahaan software newus technology merupakan sebuah perusahaan konsultan IT yang berdomisili di Kota Bandar Lampung.</p>
