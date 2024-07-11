@@ -19,7 +19,7 @@ const CardServices = ({ illustration, title, desc }: CardServiceProps) => {
             alt="illustration"
             width={350}
             height={350}
-            className="w-full h-full"
+            className="w-full h-full object-cover"
           />
         </div>
       </div>

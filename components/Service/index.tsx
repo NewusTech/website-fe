@@ -2,13 +2,14 @@ import CardServices from "@/components/Service/CardService";
 import FlowDesktop from "@/components/Service/FlowDesktop";
 import FlowResponsive from "@/components/Service/FlowResponsive";
 import { getServiceList } from "../Fetching/Service/service";
+import WorkFlow from "./WorkFlow";
 export const dynamic = 'force-dynamic';
 
 export default async function WhatWeDo() {
   const services = await getServiceList();
 
   return (
-    <section className="container md:my-[20px] my-8">
+    <section className="container md:my-[20px] my-8 overflow-hidden">
       <div className="flex items-center justify-center flex-col gap-1 md:gap-4 relative">
         <h1 className="font-bold text-dark text-mobileJudul md:text-webJudul z-20">
           What We Do
@@ -18,7 +19,7 @@ export default async function WhatWeDo() {
         </p>
         <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[90px] md:-ml-[73px]"></div>
       </div>
-      <section className="grid grid-cols-2 gap-x-3 md:gap-x-10 mb-5 md:mb-52">
+      <section className="grid grid-cols-2 gap-x-3 md:gap-x-10 mb-5 md:mb-20">
         {services?.map((service: any, i: number) => (
           <CardServices
             key={i}
@@ -35,6 +36,7 @@ export default async function WhatWeDo() {
       </section>
       <FlowDesktop />
       <FlowResponsive />
+      <WorkFlow />
     </section>
   );
 };
