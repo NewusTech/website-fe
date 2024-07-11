@@ -58,8 +58,8 @@ const TestiomoniStars = () => {
                   </svg>
                 ))}
               </div>
-              <blockquote className="text-center leading-3 text-gray-1 lg:leading-9 p-1 md:p-5 lg-p-6">
-                <p className="relative md:text-sm lg:text-lg text-mobileDesk">
+              <blockquote className="text-center leading-5 text-gray-1 p-1 md:p-5">
+                <p className="relative md:text-webDesk text-mobileDesk">
                   {/* <FontAwesomeIcon icon={faQuoteLeft} className='md:w-5 w-2 h-2 md:h-5 absolute -left-1 md:left-0 lg:left-1 -top-0' /> */}
                   <span>&ldquo;{testimonial.review}&rdquo;</span>
                   {/* <FontAwesomeIcon icon={faQuoteRight} className='md:w-5 w-2 h-2 md:h-5 absolute left-[92px] md:-left-28 lg:left-[270px] bottom-1' /> */}

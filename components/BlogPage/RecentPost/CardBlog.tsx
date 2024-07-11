@@ -37,23 +37,23 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos-duration="1000"
       className={`${type === "landing"
         ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 "
-        : "bg-transparent flex-col md:w-[410px] h-full rounded-[2px]"
+        : "bg-transparent flex-col md:w-[32.8%] h-full rounded-[2px]"
         } flex`}
     >
       <div
         className={`${type === "landing"
           ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
-          : "rounded-[2px] md:w-full"
+          : "rounded-[2px] md:w-full md:h-[233px] "
           }`}
       >
         <Image
-          src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
+          src={`${image || '/assets/images/blog.jpg'}`}
           alt="blog"
           width={326}
           height={233}
           className={`${type === "landing"
             ? "w-full h-full object-cover md:rounded-[10px] rounded-l-[6px]"
-            : "rounded-[2px] md:w-full"
+            : "rounded-[2px] md:w-full h-full"
             }
           `}
         />
