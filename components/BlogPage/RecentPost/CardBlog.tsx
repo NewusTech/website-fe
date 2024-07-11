@@ -63,9 +63,9 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       >
         <div className="flex items-center justify-between gap-1.5 text-dark">
           <div className="flex items-center gap-1 md:gap-2 md:pt-3">
-            <h5 className="md:text-[14px] text-[8px]">{user_title ? user_title : 'Lorenka'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
-            <h5 className="md:text-[14px] text-[8px]">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
           <Link className="md:hidden" href={`/blog/${slug}`}>
             <Image
@@ -77,8 +77,8 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             />
           </Link>
         </div>
-        <div className="flex items-start w-full md:gap-2 my-1 md:my-4 justify-between">
-          <Link className="font-medium text-dark md:text-xl text-[10px] w-[150px] md:w-[291px] pb-1 lg:pb-2 truncate" href={`/blog/${slug}`}>
+        <div className="flex items-start w-full md:gap-2 my-1 md:pt-1 justify-between">
+          <Link className="font-medium text-dark md:text-webJudul  text-mobileJudul w-[150px] md:w-[291px] pb-1 lg:pb-2 truncate" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>
@@ -92,13 +92,13 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-sm w-[182px] md:w-full" : "w-[142px] md:w-full -mt-1"} text-[8px] md:text-sm text-gray line-clamp-3`}
+          className={`${type === "landing" ? "md:text-webDesk text-mobileDesk w-[182px] md:w-full" : "md:text-webDesk text-mobileDesk w-[142px] md:w-full -mt-1"}  md:text-sm text-gray line-clamp-3`}
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
         <div className="flex gap-1 mt-3 md:items-end">
           <div className="bg-gray rounded-full px-[10px] py-[2px] md:py-1">
-            <p className="text-gray-2 md:text-xs text-[8px]">{tagblog_title}</p>
+            <p className="text-gray-2 md:text-webDesk text-mobileDesk">{tagblog_title}</p>
           </div>
         </div>
       </div>
