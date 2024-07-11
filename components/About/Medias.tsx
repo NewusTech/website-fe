@@ -10,19 +10,19 @@ const Medias = ({ medias }: any) => {
     setBackgroundUrl(newUrl);
   };
 
-  const repeatedMedias = Array(8).fill(medias).flat();
+  // const repeatedMedias = Array(8).fill(medias).flat();
 
   return (
     <div>
-      <div className={`px-4 md:px-[100px] pb-10 min-h-[250px] md:min-h-[600px] lg:min-h-[892px]] bg-contain bg-center flex justify-center items-end`} style={{ backgroundImage: `url(${backgroundUrl})` }}>
+      <div className={`px-4 md:px-[100px] pb-10 min-h-[250px] md:min-h-[600px] lg:min-h-[892px]] bg-contain bg-center flex justify-center items-end`} style={{ backgroundImage: `url('${backgroundUrl}')` }}>
         <div className="text-center md:text-left md:w-[892px]">
-          <h1 className="text-white text-start text-[24px] md:text-[64px] font-bold font-asap">Strength in Numbers <span className="text-[#480DEC]">:</span></h1>
-          <h2 className="text-[#480DEC] font-bold md:leading-[70px] md:text-[64px]">“Together We Stand, United We Achieve! “</h2>
+          <h1 className="text-white text-start text-mobileJudul md:text-[32px] font-bold font-asap">Strength in Numbers <span className="text-[#480DEC]">:</span></h1>
+          <h2 className="text-[#480DEC] font-bold md:leading-[70px] text-mobileJudul md:text-[32px]">“Together We Stand, United We Achieve! “</h2>
         </div>
       </div>
 
       <div className={`flex w-full h-[150px] md:h-[300px] overflow-auto ${medias.length > 4 ? 'overflow-auto' : ''} md:h-full`} style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
-        {repeatedMedias.map((box, index) => (
+        {medias?.map((box: any, index: number) => (
           <div
             key={index}
             className="w-4/12 md:w-[20%] h-1/2 md:h-full flex-shrink-0"
