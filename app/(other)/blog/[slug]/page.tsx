@@ -171,7 +171,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-5 mt-3 md:mt-10">
           {blogList?.slice(0, 3).map((blog: any, index: any) => (
-            <CardBlog key={index} blogs={blog} />
+            <CardBlog type="landing" key={index} blogs={blog} />
           ))}
         </div>
       </section>

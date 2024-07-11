@@ -42,7 +42,7 @@ export default function RecentPost({ blogs, categories }: any) {
   return (
     <main className="relative">
       <section className="px-10 mt-[60px] md:mb-[80px] mb-10 relative w-full">
-        <div className="flex justify-center absolute inset-x-0 -top-[85px] z-50 overflow-hidden">
+        <div className="flex justify-center absolute inset-x-0 -top-[85px] z-10 overflow-hidden">
           <Input
             type="text"
             placeholder="Search here"
