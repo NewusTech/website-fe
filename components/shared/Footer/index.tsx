@@ -6,10 +6,61 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import SocialLink from "../Social/SocialLink";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getSocialMedia } from "@/components/Fetching/Contact/contact";
 
 const Footer = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [dataAbout, setDataAbout] = useState<any>(null);
+  const [dataSocials, setDataSocials] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/aboutcompany/get`, {
+          cache: 'no-store',
+        });
+        const data = await response.json();
+        setDataAbout(data.data[0]);
+      } catch (error) {
+        console.error('Error fetching data about the company:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchSocialMedia = async () => {
+      try {
+        const response = await getSocialMedia();
+        setDataSocials(response);
+      } catch (error) {
+        console.error('Failed to fetch social media links:', error);
+      }
+    };
+
+    fetchSocialMedia();
+  }, []);
+
+  const getIconSrc = (title: any) => {
+    switch (title.toLowerCase()) {
+      case 'facebook':
+        return '/assets/icons/facebook.svg';
+      case 'twitter':
+        return '/assets/icons/twitter.svg';
+      case 'linkedin':
+        return '/assets/icons/linkedin.svg';
+      case 'youtube':
+        return '/assets/icons/youtube.svg';
+      case 'instagram':
+        return '/assets/icons/instagram.svg';
+      case 'tiktok':
+        return '/assets/icons/tiktok.svg';
+      default:
+        return '/assets/icons/default.svg';
+    }
+  };
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -55,8 +106,8 @@ const Footer = () => {
                 height={24}
                 className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
-              <p className="text-white md:text-sm text-[10px]">
-                Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212
+              <p className="text-white md:text-sm text-[10px] md:min-w-[350px] xl:min-w-[600px]">
+                {dataAbout?.address || 'Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212'}
               </p>
             </div>
             <div className="flex gap-2 lg:gap-4 items-center mt-2 lg:mt-6">
@@ -68,7 +119,7 @@ const Footer = () => {
                 className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
               <p className="text-white md:text-sm text-[10px]">
-                (+62) 888-991-2992
+                {dataAbout?.phoneNumber || '(+62) 888-991-2992'}
               </p>
             </div>
             <div className="flex gap-2 lg:gap-4 items-center mt-2 lg:mt-6">
@@ -80,16 +131,24 @@ const Footer = () => {
                 className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
               <p className="text-white md:text-sm text-[10px]">
-                newustechnology@gmail.com
+                {dataAbout?.email || 'newustechnology@gmail.com'}
               </p>
             </div>
             <div className="hidden lg:flex gap-4 items-center mt-4">
-              <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
+              {dataSocials?.map((social: any) => (
+                <SocialLink
+                  key={social.id}
+                  href={social.link}
+                  src={getIconSrc(social.title)}
+                  alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
+                />
+              ))}
+              {/* <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
               <SocialLink href="https://www.twitter.com" src="/assets/icons/twitter.svg" alt="Twitter" />
               <SocialLink href="https://id.linkedin.com/company/newustechnology" src="/assets/icons/linkedin.svg" alt="LinkedIn" />
               <SocialLink href="https://www.youtube.com" src="/assets/icons/youtube.svg" alt="YouTube" />
               <SocialLink href="https://www.instagram.com/newustechnology/" src="/assets/icons/instagram.svg" alt="Instagram" />
-              <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" />
+              <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" /> */}
             </div>
           </div>
           <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[42px] lg:ml-[0px] lg:w-1/5">
@@ -215,7 +274,7 @@ const Footer = () => {
       <div className="fixed bottom-14 md:bottom-4 lg:bottom-3 right-4 z-40">
         <div className="bg-[#5FD568] rounded-3xl py-2 px-4">
           <button onClick={toggleDropdown} className="flex gap-3 lg:gap-4 text-white items-center focus:outline-none">
-            <span className="lg:font-semibold text-[12px] lg:text-lg">Contact Us</span>
+            <span className="lg:font-semibold text-mobileSubjudul md:text-webSubjudul">Contact Us</span>
             <Image
               src="/assets/icons/whatsapp-icon.svg"
               alt="Contact Us"
@@ -238,7 +297,7 @@ const Footer = () => {
               <Link
                 target="_blank"
                 href=" https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0"
-                className="text-black text-sm"
+                className="text-black text-mobileSubjudul md:text-webSubjudul"
               >
                 Admin
               </Link>
@@ -254,7 +313,7 @@ const Footer = () => {
               <Link
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=6285279737868"
-                className="text-black text-sm"
+                className="text-black text-mobileSubjudul md:text-webSubjudul"
               >
                 Antoni
               </Link>

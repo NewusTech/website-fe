@@ -26,8 +26,8 @@ const TestiomoniStars = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-10 md:pt-20 lg:px-14">
-      <h2 className="text-md md:text-[32px] font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
+    <div className="container mx-auto px-1 py-10 md:pt-20 lg:px-14">
+      <h2 className="text-mobileJudul md:text-[24px] font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
       <div>
         <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
@@ -43,7 +43,7 @@ const TestiomoniStars = () => {
                   />
                 </div>
               </div>
-              <h3 className="md:text-sm lg:text-xl text-[6px] font-sans pt-8 md:pt-[80px] lg:pt-16 pb-2">{testimonial.name}</h3>
+              <h3 className="md:text-webSubjudul text-mobileSubjudul font-sans pt-8 md:pt-[80px] lg:pt-16 pb-2">{testimonial.name}</h3>
               <div className="flex justify-center pb-2 ">
                 {[...Array(5)].map((star, i) => (
                   <svg
@@ -58,11 +58,11 @@ const TestiomoniStars = () => {
                   </svg>
                 ))}
               </div>
-              <blockquote className="text-center leading-3 text-gray-1 lg:leading-9 p-1 md:p-5 lg-p-6">
-                <p className="relative md:text-sm lg:text-lg text-[6px]">
-                  <FontAwesomeIcon icon={faQuoteLeft} className='md:w-5 w-2 h-2 md:h-5 absolute -left-1 md:left-0 lg:left-1 -top-0' />
-                  <span>{testimonial.review}</span>
-                  <FontAwesomeIcon icon={faQuoteRight} className='md:w-5 w-2 h-2 md:h-5 absolute left-[92px] md:-left-28 lg:left-[270px] bottom-1' />
+              <blockquote className="text-center leading-5 text-gray-1 p-1 md:p-5">
+                <p className="relative md:text-webDesk text-mobileDesk">
+                  {/* <FontAwesomeIcon icon={faQuoteLeft} className='md:w-5 w-2 h-2 md:h-5 absolute -left-1 md:left-0 lg:left-1 -top-0' /> */}
+                  <span>&ldquo;{testimonial.review}&rdquo;</span>
+                  {/* <FontAwesomeIcon icon={faQuoteRight} className='md:w-5 w-2 h-2 md:h-5 absolute left-[92px] md:-left-28 lg:left-[270px] bottom-1' /> */}
                 </p>
               </blockquote>
             </div>

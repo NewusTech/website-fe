@@ -6,7 +6,11 @@ import CardTeam from "./Card";
 import styles from "./CardTeam.module.css"; // Import CSS module
 
 const TeamLayout = ({ teams }: any) => {
-  const [selectedTeam, setSelectedTeam] = useState(teams[0]);
+  const [selectedTeam, setSelectedTeam] = useState(() => {
+    // Cari objek pertama dengan title "Direktur"
+    const teamObj = teams.find((team: any) => team.title === 'Direktur');
+    return teamObj; // Kembalikan objek atau undefined jika tidak ditemukan
+  });
 
   const handleClick = (team: any) => {
     setSelectedTeam(team);

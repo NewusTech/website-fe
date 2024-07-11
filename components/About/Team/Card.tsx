@@ -26,8 +26,8 @@ const CardTeam = ({ image, name, position, onClick }: any) => {
         width={1000}
         className="object-cover h-[200px] md:w-full md:h-[200px] xl:h-[271px] object-center"
       />
-      <h1 className="text-[12px] md:text-lg font-semibold mt-2 text-center">{name}</h1>
-      <p className="text-[10px] md:text-sm text-gray-600 text-center">
+      <h1 className="text-mobileJudul md:text-webJudul font-semibold mt-2 text-center">{name}</h1>
+      <p className="text-mobileSubjudul md:text-webSubjudul text-gray-600 text-center">
         {position}
       </p>
     </div>

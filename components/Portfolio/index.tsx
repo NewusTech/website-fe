@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from 'next/image';
 import { Input } from '@/components/ui/input';
@@ -41,7 +41,7 @@ type IndexProps = {
   categories: { title: string }[];
 };
 
-export default function Index({ portfolios, categories }: IndexProps) {
+export default function Index({ portfolios, categories }: any) {
   const [filter, setFilter] = useState<string>("All");
   const [projectList, setProjectList] = useState<Project[]>(portfolios);
   const [searchTerm, setSearchTerm] = useState('');
@@ -74,13 +74,13 @@ export default function Index({ portfolios, categories }: IndexProps) {
   return (
     <section>
       <div className="flex md:gap-2 px-5 lg:justify-center gap-4 mt-5 lg:mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
-        {["All", ...categories.map((category) => category.title)].map(category => (
+        {["All", ...categories.map((category: any) => category.title)].map(category => (
           <div
             key={category}
-            className={`h-[14px] md:w-auto md:h-[43px] cursor-pointer rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-5 md:px-10 ${filter === category ? 'bg-blue' : ''}`}
+            className={`h-[17px] md:w-auto md:h-[43px] cursor-pointer rounded-[8px] md:rounded-[16px] flex items-center justify-center py-4 px-6 md:px-10 ${filter === category ? 'bg-blue' : ''}`}
             onClick={() => handleCategoryChange(category)}
           >
-            <p className={`text-${filter === category ? 'white' : 'dark'} font-[500] text-[10px] md:text-[16px] transition-colors duration-300 whitespace-nowrap md:whitespace-normal`}>
+            <p className={`text-${filter === category ? 'white' : 'dark'} font-[500] text-mobileSubjudul md:text-webSubjudul transition-colors duration-300 whitespace-nowrap md:whitespace-normal`}>
               {category}
             </p>
           </div>
@@ -120,7 +120,7 @@ export default function Index({ portfolios, categories }: IndexProps) {
 
             <TabsContent value="list">
               <div className="flex flex-col md:flex-col gap-4 my-4 md:my-7 ">
-                {paginatedProjects.length > 0 ? (
+                {paginatedProjects?.length > 0 ? (
                   paginatedProjects?.map((project: any, index: number) => (
                     <CardListPorto key={index} projects={project} />
                   )))
@@ -134,7 +134,7 @@ export default function Index({ portfolios, categories }: IndexProps) {
             </TabsContent>
             <TabsContent value="square">
               <div className="flex gap-4 md:gap-[30px] flex-grow flex-wrap my-2 md:my-7 mb-10 justify-center">
-                {paginatedProjects.length > 0 ? (
+                {paginatedProjects?.length > 0 ? (
                   paginatedProjects?.map((project: any, index: number) => (
                     <CardSquarePorto key={index} projects={project} />
                   )))

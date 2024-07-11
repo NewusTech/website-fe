@@ -64,9 +64,9 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       >
         <div className="flex items-center justify-between gap-1.5 text-white">
           <div className="flex items-center gap-1 md:gap-2">
-            <h5 className="md:text-[14px] text-[8px]">{user_title ? user_title : 'Lorenka'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-white"></div>
-            <h5 className="md:text-[14px] text-[8px]">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
           <Link className="block md:hidden" href={`/blog/${slug}`}>
             <Image
@@ -79,7 +79,7 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
-          <Link className="font-medium text-white md:text-xl text-[10px] w-[150px] md:w-[291px] pb-2 hover:underline truncate" href={`/blog/${slug}`}>
+          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-[150px] md:w-[291px] pb-2 hover:underline truncate" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>
@@ -93,13 +93,13 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "-mt-2 md:text-sm w-[182px] md:w-full" : "w-[142px] md:w-full -mt-3"} text-[8px] md:text-sm text-gray line-clamp-2`}
+          className={`${type === "landing" ? "-mt-2 md:text-webDesk w-[182px] md:w-full" : "w-[142px] md:w-full -mt-3"} text-mobileDesk md:text-webDesk text-gray line-clamp-2`}
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
         <div className="flex gap-1 mt-3 md:items-end">
           <div className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1">
-            <p className="text-white md:text-xs text-[8px]">{tagblog_title}</p>
+            <p className="text-white md:text-webDesk text-mobileDesk">{tagblog_title}</p>
           </div>
         </div>
       </div>

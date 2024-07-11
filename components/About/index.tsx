@@ -12,9 +12,8 @@ import TenagaAhli from "./Tabs/TenagaAhli";
 import Struktur from "./Struktur";
 import StrukturMobile from "./Struktur/mobile";
 import Medias from "./Medias";
-import { title } from "process";
 
-const AboutLayout = ({ teams, clients, medias }: any) => {
+const AboutLayout = ({ abouts, teams, clients, medias }: any) => {
   const boxes = [
     { title: "Tittle", description: "Description", image: "/assets/images/dummy1.png" },
     { title: "Tittle", description: "Description", image: "/assets/images/dummy2.png" },
@@ -40,25 +39,25 @@ const AboutLayout = ({ teams, clients, medias }: any) => {
   return (
     <section className="bg-white md:bg-[#F4F4F4] overflow-hidden">
       <Tabs defaultValue="about" className="md:p-[20px] lg:p-[50px] xl:px-[120px] xl:pt-[120px] w-full">
-        <TabsList className="w-full">
-          <TabsTrigger className="text-[#FF6600] px-4 py-2 md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-[8px] md:text-sm xl:text-[20px] data-[state=active]:border-[rgb(255,102,0)] border-[#FF6600] border data-[state=active]:rounded-none rounded-none w-full" value="about">
+        <TabsList className="w-full text-[#FF6600]">
+          <TabsTrigger className="text-[#FF6600] px-4 py-2 md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-mobileDesk md:text-webJudul data-[state=active]:border-[rgb(255,102,0)] border-[#FF6600] border data-[state=active]:rounded-none rounded-none w-full" value="about">
             ABOUT
           </TabsTrigger>
-          <TabsTrigger value="legalitas" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[8px] font-bold md:text-sm xl:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+          <TabsTrigger value="legalitas" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-mobileJudul md:text-webJudul font-bold data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
             LEGALITAS
           </TabsTrigger>
-          <TabsTrigger value="aspekti" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[8px] font-bold md:text-sm xl:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+          <TabsTrigger value="aspekti" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-mobileJudul md:text-webJudul data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
             SBU - ASPEKTI
           </TabsTrigger>
-          <TabsTrigger value="kadin" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[8px] font-bold md:text-sm xl:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+          <TabsTrigger value="kadin" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-mobileJudul md:text-webJudul data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
             KADIN
           </TabsTrigger>
-          <TabsTrigger value="tenaga-ahli" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] text-[8px] font-bold md:text-sm xl:text-[20px] data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
+          <TabsTrigger value="tenaga-ahli" className="text-[#FF6600] px-4 py-2  md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-mobileJudul md:text-webJudul data-[state=active]:border-[#FF6600] border-[#FF6600] border w-full">
             SERTIFIKAT TENAGA AHLI
           </TabsTrigger>
         </TabsList>
         <TabsContent value="about">
-          <About />
+          <About abouts={abouts} />
         </TabsContent>
         <TabsContent value="legalitas" >
           <Legalitas />
@@ -74,13 +73,13 @@ const AboutLayout = ({ teams, clients, medias }: any) => {
         </TabsContent>
       </Tabs>
       <div className="max-w-7xl mx-auto px-5 pb-10 xl:py-10 xl:pb-20 md:px-[67px] w-full flex flex-col justify-center items-center">
-        <h1 className='text-[#FF6600] font-bold text-sm md:text-[30px] pb-4 md:pb-10 text-center md:text-start uppercase'>Principles <span className='text-[#480DEC] text-center md:text-start'>& Values</span></h1>
+        <h1 className='text-[#FF6600] font-bold text-mobileJudul md:text-webJudul pb-4 md:pb-10 text-center md:text-start uppercase'>Principles <span className='text-[#480DEC] text-center md:text-start'>& Values</span></h1>
         <div className="grid gap-4 md:gap-6 grid-cols-6">
           {dummyValues.map((dummy: any, i: number) => (
             <div key={i} className="flex flex-col items-center">
               <div className="w-16 xl:w-40 h-16 xl:h-40 rounded-xl bg-[#FF6600]">
               </div>
-              <h1 className="pt-2 font-semibold uppercase text-[8px] md:text-lg">{dummy.title}</h1>
+              <h1 className="pt-2 font-semibold uppercase text-mobileSubjudul md:text-webSubjudul">{dummy.title}</h1>
             </div>
           ))}
         </div>

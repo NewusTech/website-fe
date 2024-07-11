@@ -35,15 +35,15 @@ const CardSquareProject = ({ projects }: any) => {
           />
         </div>
       </div>
-      <div className="md:mt-4 my-4 md:mb-5 flex flex-col gap-1 md:gap-4 px-4">
-        <h2 className="md:text-[24px] text-sm pb-1 font-semibold truncate">
+      <div className="md:mt-4 my-4 md:mb-3 flex flex-col gap-1 md:gap-2 px-4">
+        <h2 className="md:text-webJudul text-mobileJudul font-semibold truncate">
           {title ? title : 'Name Project'}
         </h2>
-        <p className="text-gray text-[12px] md:text-[16px] md:text-base line-clamp-3">
+        <p className="text-gray text-mobileSubjudul md:text-webSubjudul md:text-base line-clamp-3">
           {body ? body : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Löremipsum astrobel sar direlig. Kronde est konfoni med kelig.'}
         </p>
         <Link target="_blank" href={`/portfolio/${slug}`}>
-          <Button size="sm" className="bg-blue md:py-6 md:mt-0 h-7 mt-2 rounded-[10px] w-full hover:bg-blue-2 text-[12px] md:text-[16px]">
+          <Button size="sm" className="bg-blue md:py-6 md:mt-0 h-7 mt-2 rounded-[10px] w-full hover:bg-blue-2 text-[11px] md:text-webDesk text-white">
             See Project
           </Button>
         </Link>

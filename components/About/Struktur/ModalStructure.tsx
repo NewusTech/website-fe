@@ -22,13 +22,13 @@ const ModalStructure = ({ showModal, setShowModal, teams }: any) => {
                 className="object-cover object-top w-full h-auto rounded-xl max-h-screen"
                 src={teams.image}
                 alt="Full Image"
-                width={2050}
+                width={1000}
                 height={1000}
                 loading="lazy"
               />
             </div>
             <div className="relative">
-              <div className="absolute top-[-135px] left-[280px] md:top-[-406px] md:left-[730px] opacity-[1] max-w-[150px] md:max-w-[400px] text-white">
+              <div className="absolute top-[-135px] left-[270px] md:top-[-406px] md:left-[730px] opacity-[1] max-w-[150px] md:max-w-[400px] text-white">
                 <h1 className="text-[12px] md:text-[40px] text-[#480DEC] font-bold">{teams?.name ? teams.name : 'Name Team'}</h1>
 
                 <h2 className="text-[10px] md:text-[36px] text-black pb-2 md:pb-4">{teams?.title ? teams.title : 'POSITION'}</h2>

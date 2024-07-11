@@ -13,8 +13,8 @@ const Box = ({ title, description, image }: any) => (
       />
     </div>
     <div className="absolute bottom-0 left-0 right-0 p-4 bg-[#480DEC] bg-opacity-30 text-white">
-      <h1 className="text-xs md:text-2xl font-bold">{title ? title : "Lorem Ipsum"}</h1>
-      <p className="text-[10px] md:text-lg capitalize font-semibold truncate">{description}</p>
+      <h1 className="text-mobileSubjudul md:text-webSubjudul font-bold line-clamp-2">{title ? title : "Lorem Ipsum"}</h1>
+      <p className="text-mobileDesk md:text-webDesk capitalize font-semibold truncate">{description}</p>
     </div>
   </div>
 );

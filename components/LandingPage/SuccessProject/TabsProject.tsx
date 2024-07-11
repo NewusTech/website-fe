@@ -84,7 +84,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
 
   return (
     <div className="relative">
-      <h1 className="text-blue font-semibold text-md md:text-[32px]">
+      <h1 className="text-blue font-semibold text-mobileJudul md:text-[24px]">
         Success Project
       </h1>
       <Tabs defaultValue="list" className="min-w-screen">
@@ -97,15 +97,15 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
           </TabsTrigger>
         </TabsList>
         <TabsContent value="list">
-          <p className="text-gray text-[12px] md:text-[16px]">
+          <p className="text-gray text-mobileSubjudul md:text-webSubjudul">
             See How We Elevate Businesses. Explore Our Success Projects.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
+          <div className="flex flex-col md:flex-row gap-4 my-4 md:my-5 ">
             <div className="gap-4 md:flex hidden">
               {categories.map((category) => (
                 <Button
                   key={category.id}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
+                  className={`bg-transparent border text-webSubjudul border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
                   onClick={() => handleCategoryChange(category.title)}
                 >
                   {category.title}
@@ -133,7 +133,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
               {categories.map((category) => (
                 <Button
                   key={category.id}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue text-[12px] py-2 ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
+                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue text-mobileSubjudul py-2 ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
                   size="sm"
                   onClick={() => handleCategoryChange(category.title)}
                 >
@@ -148,15 +148,15 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
           <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
         </TabsContent>
         <TabsContent value="square">
-          <p className="text-gray text-[12px] md:text-[16px]">
+          <p className="text-gray text-mobileSubjudul md:text-webSubjudul">
             See How We Elevate Businesses. Explore Our Success Projects.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 my-4 md:my-10 ">
+          <div className="flex flex-col md:flex-row gap-4 my-4 md:my-5 ">
             <div className="gap-4 md:flex hidden">
               {categories.map((category) => (
                 <Button
                   key={category.id}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
+                  className={`bg-transparent border text-mobileSubjudul md:text-webSubjudul border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
                   onClick={() => handleCategoryChange(category.title)}
                 >
                   {category.title}
@@ -184,7 +184,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
               {categories.map((category) => (
                 <Button
                   key={category.id}
-                  className={`bg-transparent border border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
+                  className={`bg-transparent border text-mobileSubjudul md:text-webSubjudul border-dark shadow-none hover:bg-[#E3E3E3] text-blue ${selectedCategory === category.title ? "bg-blue text-white" : ""}`}
                   size="sm"
                   onClick={() => handleCategoryChange(category.title)}
                 >

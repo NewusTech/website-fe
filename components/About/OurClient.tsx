@@ -28,11 +28,11 @@ const OurClient = ({ clients }: any) => {
   return (
     <section>
       <div className='flex items-center gap-[22px] pb-3 md:pb-7'>
-        <h1 className='md:text-[28px] font-bold'>Our Happy Client</h1>
+        <h1 className='text-mobileJudul md:text-webJudul font-bold'>Our Happy Client</h1>
         <div className='flex-grow h-px bg-[#BDBDBD]' style={{ width: '149px' }}></div>
       </div>
       <div>
-        <p className='text-[12px] md:text-sm pb-4 md:pb-[50px]'>Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig Terabel
+        <p className='text-mobileSubjudul md:text-webSubJudul pb-4 md:pb-[50px]'>Explore the success stories of Our Happy Client partners to see how our dedicated services have helped them achieve their goals and thrive in their respective industries.
         </p>
       </div>
       <div className="hidden md:flex flex-col items-center w-full">

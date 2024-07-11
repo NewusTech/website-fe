@@ -2,7 +2,9 @@ import React from 'react'
 import CardJob from './CardJob'
 import NotFound from '@/components/shared/NotFound';
 
-const Job = () => {
+const Job = ({ dataJobs }: any) => {
+  console.log(dataJobs);
+
   const jobData = [
     {
       id: 1,
@@ -42,22 +44,22 @@ const Job = () => {
     <section className='pb-20'>
       <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pb-4 md:pb-0 md:pt-10">
         <div className="bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[16px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-white font-bold text-[10px] md:text-[16px] whitespace-nowrap md:whitespace-normal">
+          <p className="text-white font-bold text-mobileSubjudul md:text-webSubjudul whitespace-nowrap md:whitespace-normal">
             All
           </p>
         </div>
         <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[10px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+          <p className="text-dark font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Design
           </p>
         </div>
         <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[10px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+          <p className="text-dark font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Development
           </p>
         </div>
         <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-[10px] md:text-[16px] hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+          <p className="text-dark font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
             Marketing
           </p>
         </div>
