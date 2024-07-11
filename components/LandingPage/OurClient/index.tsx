@@ -29,7 +29,7 @@ const OurClient = () => {
 
   return (
     <section data-aos="fade-up">
-      <h2 className="mt-3 md:mt-6 md:mb-9 mb-6 text-center text-[12px] md:text-[16px] text-tangerine">
+      <h2 className="mt-3 md:mt-6 md:mb-9 mb-6 text-center text-mobileJudul md:text-[20px] text-tangerine">
         Our Happy Client
       </h2>
       <div className="flex items-center">
@@ -50,6 +50,7 @@ const OurClient = () => {
                   alt="logo"
                   height={60}
                   width={100}
+                  loading="lazy"
                   className="aspect-video object-contain"
                 />
               </CarouselItem>

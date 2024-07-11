@@ -57,7 +57,7 @@ const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItem
         <ul className="mt-2 md:w-48 text-black md:bg-[#480DEC] capitalize">
           {dropdownItems.map((item, index) => (
             <li key={index} className="md:bg-[#480DEC]">
-              <Link href={item.path} onClick={onClick} className="md:py-3 text-black md:text-white text-[12px]">
+              <Link href={item.path} onClick={onClick} className="md:py-3 text-black md:text-white text-mobileSubjudul md:text-webSubjudul">
                 {item.label}
               </Link>
             </li>

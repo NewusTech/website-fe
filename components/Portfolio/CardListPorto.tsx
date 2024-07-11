@@ -18,8 +18,8 @@ const CardListPorto = ({ projects }: any) => {
 
   return (
     <div data-aos="flip-left" className="bg-white rounded-[10px] w-full mb-[10px] shadow-lg">
-      <div className="flex md:gap-[32px] md:w-full h-[120px] md:h-[273px] relative">
-        <div className="w-full md:w-[28%] h-full flex items-center relative">
+      <div className="flex md:gap-[32px] md:w-full h-[140px] md:h-[243px] relative">
+        <div className="w-[40%] md:w-[30%] h-full flex items-center relative">
           <Image
             src={image ? image : `/assets/images/placeholder-image (2).jpg`}
             alt="image card list"
@@ -38,17 +38,17 @@ const CardListPorto = ({ projects }: any) => {
           </div>
         </div>
 
-        <div className="w-full md:w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 md:py-5 rounded-r-[10px]">
-          <h2 className="md:text-2xl text-[10px] font-semibold">
+        <div className="w-[70%] md:w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 md:py-5 rounded-r-[10px]">
+          <h2 className="md:text-webJudul text-mobileJudul font-semibold">
             {title ? title : 'Name Project'}
           </h2>
-          <p className="md:text-[16px] text-[8px] text-gray mt-[10px] mb-2 md:mb-5 w-[200px] md:w-full line-clamp-3">
+          <p className="md:text-webSubjudul text-mobileSubjudul text-gray mt-[10px] mb-2 md:mb-5 w-full md:w-full line-clamp-3">
             {body ? body : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Löremipsum astrobel sar direlig. Kronde est konfoni med kelig.'}
           </p>
           <Link target="_blank" href={`/portfolio/${slug}`}>
             <Button
-              size="xs"
-              className="bg-blue py-[14px] md:py-6 px-20 rounded-[10px] w-[116px] md:w-[188px] hover:bg-blue-2 md:text-[16px] text-[8px] transition-transform duration-300 ease-in-out transform hover:scale-105"
+              size="sm"
+              className="bg-blue py-[14px] md:py-6 px-20 rounded-[10px] w-[116px] md:w-[188px] hover:bg-blue-2 text-[11px] md:text-webDesk text-white transition-transform duration-300 ease-in-out transform hover:scale-105 "
             >
               See Project
             </Button>

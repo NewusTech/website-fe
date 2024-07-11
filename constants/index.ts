@@ -55,7 +55,7 @@ export const service = [
   },
   {
     id: 2,
-    title: "Mobile Development",
+    title: "Mobile Apps Development",
     image: "/assets/images/mobile.jpg",
     type: "mobile",
   },

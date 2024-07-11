@@ -73,7 +73,7 @@ const DropdownMenu = () => {
         <h1 className="text-2xl font-extrabold text-white w-72">
           <span className="text-tangerine text-3xl ">Software House Lampung</span><br />Innovate & Elevate: Your Custom Software
         </h1>
-        <p className={`text-xs text-white leading-7 mt-3 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}>
+        <p className={`text-mobileDesk md:text-webDesk  text-white leading-7 mt-3 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}>
           Journey Starts Here (New Experience With Us)
         </p>
         <Button className="py-7 px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">

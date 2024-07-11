@@ -11,10 +11,10 @@ interface OurServiceProps {
 const CardService = () => {
   return (
     <>
-      <div className="hidden md:flex md:mt-[29px] gap-6 mt-[10px] pb-10">
+      <div className="hidden md:flex md:mt-[29px] gap-6 mt-[10px] pb-10  relative">
         {service.map(({ id, title, image, type }: OurServiceProps) => (
           <div
-            className="w-3/12 relative p-4 rounded-xl backdrop-blur-3xl shadow-xl"
+            className="w-3/12 p-4 rounded-xl backdrop-blur-3xl shadow-xl relative"
             key={id}
             data-aos="flip-right"
           >
@@ -27,7 +27,7 @@ const CardService = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-xl flex items-end justify-center p-4">
               <p
-                className={`text-white text-xl font-bold ${type === "web" ? "py-2" : "py-[34px]"
+                className={`text-white text-mobileJudul md:text-[18px] font-bold ${type === "web" ? "py-2" : "py-[34px]"
                   } ${type === "digital"
                     ? "w-[100px] -mb-2 mr-[147px]"
                     : "w-[217px]"
@@ -36,7 +36,7 @@ const CardService = () => {
                 {title}
               </p>
               {type === "web" && (
-                <div className="bg-tangerine w-[123px] h-[30px] absolute z-10 mb-[17.5px] mr-[88px]"></div>
+                <div className="bg-tangerine w-[123px] h-[30px] absolute z-10 mb-[17.5px] mr-[0px]"></div>
               )}
               {type === "mobile" && (
                 <div className="bg-tangerine w-[105px] h-[22px] absolute z-10 mb-[45px] mr-[135px]"></div>

@@ -10,13 +10,13 @@ export default async function WhatWeDo() {
   return (
     <section className="container md:my-[20px] my-8">
       <div className="flex items-center justify-center flex-col gap-1 md:gap-4 relative">
-        <h1 className="font-bold text-dark text-[8px] md:text-[32px] z-20">
+        <h1 className="font-bold text-dark text-mobileJudul md:text-webJudul z-20">
           What We Do
         </h1>
-        <p className="w-[225px] md:w-[558px] text-center text-[6px] md:text-[16px] leading-[2]">
+        <p className="w-full md:w-[558px] text-center text-mobileSubjudul md:text-webSubjudul leading-[2]">
           With over 3 years of experience, Newus Technology is your trusted partner for digital success. Let{"'"}s collaborate to build a brighter future for your business.
         </p>
-        <div className="md:w-[110px] md:h-[27px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 -ml-16 md:-mt-[90px] md:-ml-[163px]"></div>
+        <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[90px] md:-ml-[73px]"></div>
       </div>
       <section className="grid grid-cols-2 gap-x-3 md:gap-x-10 mb-5 md:mb-52">
         {services?.map((service: any, i: number) => (

@@ -30,19 +30,19 @@ const WhyChooseUs = () => {
   return (
     <section className="container mx-auto py-10 md:pt-5 md:pb-10 md:mb-20 overflow-hidden">
       <div>
-        <h1 className="text-center text-tangerine text-md md:text-[32px]">
+        <h1 className="text-center text-tangerine text-mobileJudul md:text-[24px]">
           <strong className="text-blue mr-1 md:mr-[2px]">Why </strong>Choose Us?
         </h1>
-        <h4 className="font-bold text-[10px] md:text-2xl text-center mt-[10px] md:mt-5 text-black">
+        <h4 className="font-bold text-mobileSubjudul md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
           &quot;Trusted IT Consulting for Exceptional Service Quality&quot;
         </h4>
-        <div className="flex items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[60px] overflow-hidden">
+        <div className="flex items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[30px] max-w-6xl mx-auto overflow-hidden">
           {chooseUs.map(({ id, logo, name, desc }: WhyChooseUsProps) => (
             <div
               data-aos='fade-in'
               data-aos-delay={id * 100}
               key={id}
-              className="flex flex-col items-center justify-center gap-3 md:gap-[60px] w-4/12 md:w-4/12 "
+              className="flex flex-col items-center justify-center gap-3 md:gap-[60px] w-4/12 mx-auto md:w-4/12"
             >
               <div className="md:w-[100px] md:h-[100px] h-7 w-7">
                 <Image
@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
                   className="w-full h-full"
                 />
               </div>
-              <p className="text-center md:w-full lg:w-[320px] md:text-sm text-[10px] line-clamp-3 md:line-clamp-none">
+              <p className="text-center md:w-full lg:w-[320px] md:text-webDesk text-mobileDesk line-clamp-3 md:line-clamp-none">
                 {desc}
               </p>
             </div>
@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
         </div>
       </div>
       <div className="pt-10 md:pt-20 lg:px-10">
-        <h1 className="text-center text-tangerine text-md md:text-[32px] pb-3 md:pb-10">
+        <h1 className="text-center text-tangerine text-mobileJudul md:text-[24px] pb-3 md:pb-10">
           <strong className="text-blue mr-2 md:mr-[10px]">Our Skills</strong>
         </h1>
         <div className="grid grid-cols-3 md:grid-cols-6 flex-grow-0
@@ -79,7 +79,7 @@ const WhyChooseUs = () => {
               ) : (
                 <FontAwesomeIcon icon={skill.icon} className="w-7 h-7 md:h-12 md:w-12 mb-4" />
               )}
-              <h3 className="text-[10px] md:text-xl font-semibold">{skill.name}</h3>
+              <h3 className="md:text-webDesk text-mobileDesk font-semibold">{skill.name}</h3>
             </div>
           ))}
         </div>

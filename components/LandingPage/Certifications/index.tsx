@@ -55,11 +55,11 @@ const certifications = [
 export default function Certifications() {
   return (
     <div className="text-center max-w-7xl mx-auto bg-gray-100 pb-10">
-      <div className="md:mt-10 mt-[10px] flex justify-between items-center  gap-4 md:gap-10 px-5">
-        <h2 className="font-bold lg:mb-4 capitalize text-md md:text-[32px] text-nowrap">
+      <div className="md:mt-10 mt-[10px] flex justify-between items-center   gap-5 md:gap-10 px-5">
+        <h2 className="font-bold lg:mb-4 capitalize text-mobileJudul md:text-[24px] text-nowrap">
           Our Achievement
         </h2>
-        <div className="md:w-full w-[200px] md:mb-3 h-[2px] bg-gray-4"></div>
+        <div className="w-full md:mb-3 h-[2px] bg-gray-4"></div>
       </div>
       {/* <h1 className="text-lg md:text-3xl font-bold lg:mb-4 capitalize">Our Achievement</h1>
       <h2 className="md:text-2xl mb-8">Certifications</h2> */}

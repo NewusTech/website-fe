@@ -1,25 +1,7 @@
-import React from 'react';
-
-const LoadingSpinner = () => {
+export default function LoadingScreen() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32"></div>
-      <style jsx>{`
-        .loader {
-          border-top-color: #3498db;
-          animation: spinner 1.5s linear infinite;
-        }
-        @keyframes spinner {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-      `}</style>
-    </div>
+    // <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-white"></div>
+    // </div>
   );
 };
-
-export default LoadingSpinner;
