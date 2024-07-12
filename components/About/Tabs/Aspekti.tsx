@@ -36,7 +36,7 @@ const Aspekti = () => {
     setShowModal(true);
   };
   return (
-    <section className='-mt-[8px] md:mt-4 md:px-[67px] px-5 pt-2 md:pt-14 pb-8 md:py-[64px] md:border bg-white md:border-[#FF6600] mx-1'>
+    <section className='-mt-[8px] md:px-[67px] px-5 pt-2 md:pt-14 pb-8 md:py-[64px] md:border bg-white md:border-[#FF6600]'>
       <Carousel
         plugins={[plugin.current]}
         className="w-full h-full"

@@ -62,14 +62,14 @@ export default async function Blog() {
             <TabsContent value="list">
               <div className="flex justify-between items-center w-full mt-[54px]">
                 <div className="flex-col lg:gap-6 hidden md:flex md:w-[40%] lg:w-[5s0%]">
-                  <h2 data-aos="zoom-in" className="font-medium lg:w-[500px] xl:w-[480px] text-[20px] text-white truncate lg:text-clip text-wrap">
+                  <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-[20px] text-white truncate lg:text-clip text-wrap">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-webSubjudul lg:w-[400px] xl:w-[480px] text-white text-justify md:line-clamp-12 lg:line-clamp-none">
+                  <p data-aos="zoom-in" className="text-webSubjudul lg:w-[400px] xl:w-[480px] text-white text-justify md:line-clamp-12 xl:line-clamp-none">
                     {lastBlog?.body}
                   </p>
                 </div>
-                <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] rounded-xl">
+                <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[50%] xg:w-[60%] rounded-xl">
                   <Image
                     data-aos="zoom-in"
                     src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}

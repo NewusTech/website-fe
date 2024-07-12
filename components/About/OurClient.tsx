@@ -27,7 +27,7 @@ const OurClient = ({ clients }: any) => {
 
   return (
     <section>
-      <div className='flex items-center gap-[22px] pb-3 md:pb-7'>
+      <div className='flex items-center gap-[22px] pb-3 lg:pb-7'>
         <h1 className='text-mobileJudul md:text-webJudul font-bold'>Our Happy Client</h1>
         <div className='flex-grow h-px bg-[#BDBDBD]' style={{ width: '149px' }}></div>
       </div>

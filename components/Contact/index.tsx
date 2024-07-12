@@ -52,14 +52,18 @@ export default async function ContactUs() {
           <h1 className='text-webJudul pb-4'>Bandar Lampung</h1>
           <h2 className='font-normal text-mobileSubjudul md:text-webSubjudul pb-4'>{dataAbout[0] ? dataAbout[0].address : 'Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212'}</h2>
           <div className='flex items-center justify-start gap-6 '>
-            {dataSocials?.map((data: any, i: number) => {
-              <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/black/fb.svg" alt="Facebook" />
-
-            })}
-            <SocialLink href="https://www.twitter.com" src="/assets/icons/black/twitter.svg" alt="Twitter" />
+            {dataSocials?.map((social: any) => (
+              <SocialLink
+                key={social.id}
+                href={social.link}
+                src={getIconSrc(social.title)}
+                alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
+              />
+            ))}
+            {/* <SocialLink href="https://www.twitter.com" src="/assets/icons/black/twitter.svg" alt="Twitter" />
             <SocialLink href="https://id.linkedin.com/company/newustechnology" src="/assets/icons/black/linkedin.svg" alt="LinkedIn" />
             <SocialLink href="https://www.instagram.com/newustechnology/" src="/assets/icons/black/instagram.svg" alt="Instagram" />
-            <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/black/tiktok.svg" alt="Tiktok" />
+            <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/black/tiktok.svg" alt="Tiktok" /> */}
           </div>
         </div>
       </div>

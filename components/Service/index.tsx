@@ -9,15 +9,15 @@ export default async function WhatWeDo() {
   const services = await getServiceList();
 
   return (
-    <section className="container md:my-[20px] my-8 overflow-hidden">
+    <section className="px-5 max-w-7xl mx-auto md:my-[20px] my-8 overflow-hidden">
       <div className="flex items-center justify-center flex-col gap-1 md:gap-4 relative">
         <h1 className="font-bold text-dark text-mobileJudul md:text-webJudul z-20">
           What We Do
         </h1>
-        <p className="w-full md:w-[558px] text-center text-mobileSubjudul md:text-webSubjudul leading-[2]">
+        <p className="w-full md:w-[558px] text-center text-mobileDesk md:text-webSubjudul lg:leading-[2]">
           With over 3 years of experience, Newus Technology is your trusted partner for digital success. Let{"'"}s collaborate to build a brighter future for your business.
         </p>
-        <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[90px] md:-ml-[73px]"></div>
+        <div className="md:w-[60px] md:h-[20px] w-[51px] h-[45px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[90px] md:-ml-[73px]"></div>
       </div>
       <section className="grid grid-cols-2 gap-x-3 md:gap-x-10 mb-5 md:mb-20">
         {services?.map((service: any, i: number) => (

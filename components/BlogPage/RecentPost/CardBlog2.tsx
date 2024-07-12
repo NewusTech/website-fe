@@ -47,11 +47,11 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       </div>
       <div className="w-[70%] flex flex-col">
         <div className="flex items-center gap-1.5 text-gray-2 pt-2">
-          <h5 className="md:text-[14px] text-[6px]">{user_title}</h5>
+          <h5 className="capitalize text-webDesk">{user_title}</h5>
           <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-gray-2"></div>
           <h5 className="md:text-[14px] text-[6px]">{formattedDate(publishAt)}</h5>
         </div>
-        <h3 className="py-1 font-medium text-dark  md:text-webJudul text-mobileJudul md:w-[246px] truncate">
+        <h3 className="py-1 font-medium text-dark  md:text-webJudul text-mobileJudul md:w-[246px] line-clamp-2 hover:underline">
           <Link href={`/blog/${slug}`}>
             {title}
           </Link>
@@ -59,11 +59,11 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         <p className="md:text-sm text-[8px] text-gray line-clamp-2 text-wrap">
           {body}
         </p>
-        <div className="flex gap-1 mt-3 md:mt-4">
+        {/* <div className="flex gap-1 mt-3 md:mt-4">
           <div className="bg-gray rounded-full px-[10px] py-1">
             <p className="text-gray-2 md:text-xs text-[6px]">{tagblog_title}</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import Image from "next/image";
 const FlowResponsive = () => {
   return (
     <section className="my-10 md:hidden">
-      <h1 className="uppercase text-tangerine text-center font-semibold md:text-3xl text-sm">
+      <h1 className="uppercase text-tangerine text-center font-semibold md:text-webJudul text-nowrap text-mobileJudul">
         work <span className="text-blue">flow</span>
       </h1>
       <div className="mt-5 ml-4 flex justify-center">
@@ -11,10 +11,10 @@ const FlowResponsive = () => {
           <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
             <p className="text-white font-bold text-xs">1</p>
           </div>
-          <h3 className="text-tangerine text-[10px] font-bold">
+          <h3 className="text-tangerine text-mobileSubjudul font-bold">
             Kick-off Meeting
           </h3>
-          <p className="text-[6px] w-[162px] text-center">
+          <p className="text-mobileDesk w-[162px] text-center">
             Kami akan menjadwalkan pertemuan awal dengan tim Anda untuk memulai
             kolaborasi. Tujuan pertemuan ini adalah untuk memahami lebih dalam
             tentang masalah yang perlu dipecahkan, menetapkan ekspektasi, dan
@@ -26,17 +26,17 @@ const FlowResponsive = () => {
           width={65}
           height={60}
           alt="line"
-          className="mt-7 -ml-12"
+          className="mt-7 -ml-0"
         />
       </div>
       <div className="ml-7 mt-1 flex justify-center">
-        <div className="flex items-start gap-y-2 mr-16">
+        <div className="flex items-start gap-y-2 mr-10">
           <div className="flex flex-col items-center justify-center gap-y-2">
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">3</p>
             </div>
-            <h3 className="text-tangerine text-[10px] font-bold">Solution</h3>
-            <p className="text-[6px] w-[75px] text-center">
+            <h3 className="text-tangerine text-mobileSubjudul font-bold">Solution</h3>
+            <p className="text-mobileDesk w-[105px] text-center">
               Berdasarkan analisis, kami akan merancang rencana implementasi
               untuk membuat, memperbaiki atau meningkatkan sistem.
             </p>
@@ -52,8 +52,8 @@ const FlowResponsive = () => {
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">2</p>
             </div>
-            <h3 className="text-tangerine text-[10px] font-bold">Analysis</h3>
-            <p className="text-[6px] w-[75px] text-center">
+            <h3 className="text-tangerine text-mobileSubjudul  font-bold">Analysis</h3>
+            <p className="text-mobileDesk w-[105px] text-center">
               Melakukan analisis yang mendalam terhadap berbagai aspek.
             </p>
           </div>
@@ -72,7 +72,7 @@ const FlowResponsive = () => {
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">4</p>
             </div>
-            <h3 className="text-tangerine text-[10px] font-bold">
+            <h3 className="text-tangerine text-mobileSubjudul font-bold">
               Development
             </h3>
           </div>
@@ -91,10 +91,10 @@ const FlowResponsive = () => {
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">6</p>
             </div>
-            <h3 className="text-tangerine text-[10px] text-center w-[100px] font-bold">
+            <h3 className="text-tangerine text-mobileSubjudul text-center w-[100px] font-bold">
               Training and Knowledge Transfer
             </h3>
-            <p className="text-[6px] w-[75px] text-center">
+            <p className="text-mobileDesk w-[105px] text-center">
               Kami akan mengajari tim Anda cara menggunakan sistem baru atau
               proses yang telah diubah sehingga semua orang merasa nyaman dengan
               perubahan tersebut.
@@ -111,10 +111,10 @@ const FlowResponsive = () => {
             <div className="rounded-full w-[50px] h-[50px] bg-blue flex items-center justify-center">
               <p className="text-white font-bold text-xs">5</p>
             </div>
-            <h3 className="text-tangerine text-[10px] w-[100px] text-center font-bold">
+            <h3 className="text-tangerine text-mobileSubjudul w-[100px] text-center font-bold">
               Trial and Evaluation
             </h3>
-            <p className="text-[6px] w-[75px] text-center">
+            <p className="text-mobileDesk w-[105px] text-center">
               Setelah implementasi selesai, kami akan melakukan uji coba
               menyeluruh untuk memastikan bahwa solusi berfungsi dengan baik dan
               memenuhi kebutuhan Anda. Evaluasi juga akan dilakukan untuk
