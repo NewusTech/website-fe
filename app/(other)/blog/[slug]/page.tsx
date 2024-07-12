@@ -41,12 +41,12 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
   ];
 
   return (
-    <section className="max-w-7xl mx-auto md:my-32 mb-6 px-3 md:px-0">
+    <section className="max-w-7xl mx-auto md:my-32 mb-6 px-3 md:px-5">
       <div className="py-2">
         <Breadcrumbs paths={blogPaths} />
       </div>
       <section className="flex gap-2 w-full">
-        <div className="w-9/12">
+        <div className="w-full lg:w-9/12">
           <div>
             <h1 className="text-mobileJudul md:text-webJudul font-bold py-1 md:py-2">
               {title ? title : 'Lorem Ipsum Dolor Amet Amit Amon Amin'}
@@ -57,7 +57,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
               <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
             </div>
           </div>
-          <div className="w-full h-[150px] md:w-full md:h-[400px] rounded-[6px]">
+          <div className="w-full h-[150px] md:w-full md:h-[400px] rounded-[6px] mr-0 lg:mr-5">
             <Image
               src={image ? image : `/assets/images/blog.jpg`}
               alt="blog"
@@ -66,7 +66,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
               className="w-full h-[150px] md:h-[400px] object-cover rounded-[6px] md:rounded-[10px]"
             />
           </div>
-          <div className="mt-3 md:mt-10 md:text-webDesk text-mobileDesk">
+          <div className="pt-3 md:pt-5 md:text-webDesk text-mobileDesk mr-0 lg:mr-5">
             {body ? <p className="text-justify">{body}</p> : (
               <p className="text-justify">
                 <strong>
@@ -127,8 +127,8 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
             )}
 
           </div>
-          <div className="md:pt-[30px] pt-3">
-            <h1 className="font-semibold text-mobileJudul pb-3  md:text-webJudul">Share</h1>
+          <div className="md:pt-[30px] py-5">
+            <h1 className="font-semibold text-mobileJudul pb-2  md:text-webJudul">Share</h1>
             <div className="flex gap-4 items-center">
               {dataSocials?.map((social: any) => (
                 <SocialLink
@@ -140,8 +140,8 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
               ))}
             </div>
           </div>
-          <div>
-            <div className="md:pt-10 pt-5 flex gap-2 md:gap-5 items-center">
+          <div className="bg-white p-5 rounded-md pt-5 mb-4 mr-0 lg:mr-5">
+            <div className="flex gap-2 md:gap-5 items-center">
               <h2 className="font-medium md:text-webJudul text-mobileJudul text-nowrap">
                 More Articles
               </h2>
@@ -152,46 +152,48 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
                 <CardBlog key={index} blogs={blog} />
               ))}
             </div>
-            <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-5 py-3">
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-5">
               {blogList?.slice(0, 3).map((blog: any, index: any) => (
                 <CardBlog type="landing" key={index} blogs={blog} />
               ))}
             </div>
           </div>
           {/* Mobile Side */}
-          <div className="md:hidden block bg-white rounded-md">
-            <div className="md:mt-10 mt-[10px] flex gap-2 md:gap-5 items-center">
+          <div className="block lg:hidden bg-white p-5 rounded-md mb-4">
+            <div className="flex gap-2 md:gap-5 items-center">
               <h2 className="font-medium md:text-webJudul text-mobileJudul text-nowrap">
                 Posts
               </h2>
               <div className="w-full h-[1px] bg-blue-2"></div>
             </div>
-            <section className="my-5 grid grid-cols-1 gap-3 w-full">
-              {blogList?.slice(0, 5).map((blog: any, index: number) => (
+            <section className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+              {blogList?.slice(-6).map((blog: any, index: number) => (
                 <CardBlogSide key={index} blogs={blog} />
               ))}
             </section>
           </div>
 
-          <div className="md:hidden block bg-white rounded-md">
-            <div className="md:mt-10 mt-[10px] flex gap-2 md:gap-5 items-center">
+          <div className="block lg:hidden bg-white p-5 rounded-md mb-4">
+            <div className="flex gap-2 md:gap-5 items-center">
               <h2 className="font-medium md:text-webJudul text-mobileJudul text-nowrap">
-                Artikel Terbaru
+                Recent Post
               </h2>
               <div className="w-full h-[1px] bg-blue-2"></div>
             </div>
-            {/* <h1 className="text-webJudul font-bold relative z-20 "></h1>
-          <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div> */}
-            <section className="my-5 grid grid-cols-1 gap-3 w-full">
-              {blogList?.slice(-5).map((blog: any, index: number) => (
+            <section className="my-5 grid grid-cols-1 md:grid-cols-2 gap-3 w-full">
+              {blogList?.slice(-6).map((blog: any, index: number) => (
                 <CardBlogSide key={index} blogs={blog} />
               ))}
             </section>
           </div>
+
+          <div className="block lg:hidden bg-white p-5 rounded-md">
+            <TagsDisplay blogs={blogList} />
+          </div>
         </div>
         <div className="w-4/12 xl:w-3/12 lg:flex flex-col gap-2 relative hidden my-5 md:mt-0">
-          <div className="p-5 rounded-md">
-            <h1 className="text-webJudul font-bold text-center relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
+          <div className="bg-white p-5 rounded-md">
+            <h1 className="text-webJudul font-bold text-center relative z-20">Artikel Terbaru</h1>
             <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
             <section className="my-5 grid grid-cols-1 gap-3 w-full">
               {blogList?.slice(-12).map((blog: any, index: number) => (
@@ -199,8 +201,8 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
               ))}
             </section>
           </div>
-          <div className="p-5 rounded-md">
-            <h1 className="text-webJudul font-bold text-center relative z-20 py-3 ">Recent Post</h1>
+          <div className="bg-white p-5 rounded-md">
+            <h1 className="text-webJudul font-bold text-center relative z-20 ">Recent Post</h1>
             <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
             <section className="my-5 grid grid-cols-1 gap-3 w-full">
               {blogList?.slice(-5).map((blog: any, index: number) => (
@@ -208,7 +210,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
               ))}
             </section>
           </div>
-          <div className="hidden lg:block bg-white p-5 rounded-md">
+          <div className="bg-white p-5 rounded-md">
             <TagsDisplay blogs={blogList} />
           </div>
         </div>

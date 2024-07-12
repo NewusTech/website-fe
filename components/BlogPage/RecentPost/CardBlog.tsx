@@ -59,10 +59,10 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         />
       </div>
       <div
-        className={`${type === "landing" ? "md:mt-3 w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "my-1"}`}
+        className={`${type === "landing" ? "w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "my-1"}`}
       >
         <div className="flex items-center justify-between gap-1.5 text-dark">
-          <div className="flex items-center gap-1 md:gap-2 md:pt-3">
+          <div className="flex items-center gap-1 md:gap-2">
             <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
