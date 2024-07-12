@@ -3,7 +3,7 @@ import Image from "next/image";
 const FlowDesktop = () => {
   return (
     <section className="md:flex flex-col items-center md:mb-10 hidden  overflow-hidden">
-      <h1 className="uppercase text-tangerine text-center font-bold md:text-[24px] text-mobileJudul">
+      <h1 className="uppercase text-tangerine text-center font-bold md:text-webJudul text-nowrap text-mobileJudul">
         work <span className="text-blue">flow</span>
       </h1>
       <div className="mt-[75px] mr-40 flex justify-around overflow-hidden">
@@ -52,7 +52,7 @@ const FlowDesktop = () => {
             <p className="text-white font-bold md:text-webJudul text-mobileJudul">2</p>
           </div>
           <h3 className="text-tangerine md:text-webJudul text-mobileJudul font-bold">Analysis</h3>
-          <p className="md:text-webSubJudul text-mobileSubjudul w-[353px] text-center">
+          <p className="md:text-webSubJudul text-mobileSubjudul w-[253px] text-center">
             Melakukan analisis yang mendalam terhadap berbagai aspek.
           </p>
         </div>
