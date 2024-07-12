@@ -49,7 +49,7 @@ const TabOne = () => {
             <input type="text" name="firstName" className='border border-[#DDE5E9] text-mobileSubjudul md:text-webSubjudul rounded-lg px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
           </div>
           <div className='flex flex-col gap-2 md:w-1/2  '>
-            <label htmlFor="lastName" className='text-mobileSubjudul md:text-webSubjudulfont-[500]'>Last Name</label>
+            <label htmlFor="lastName" className='text-mobileSubjudul md:text-webSubjudul font-[500]'>Last Name</label>
             <input type="text" name="lastName" className='border border-[#DDE5E9] rounded-lg text-mobileSubjudul md:text-webSubjudul px-4 py-[11px] bg-[#F4F4F4]' placeholder='Input here' />
           </div>
         </div>

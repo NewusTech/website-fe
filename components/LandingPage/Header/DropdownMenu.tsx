@@ -69,14 +69,14 @@ const DropdownMenu = () => {
       )}
       <div data-aos="fade-down"
         data-aos-easing="linear"
-        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "hidden pt-[10px]" : "block pt-10 md:pt-28 lg:pt-[158px]"}`}>
-        <h1 className="text-2xl font-extrabold text-white w-72">
-          <span className="text-tangerine text-3xl ">Software House Lampung</span><br />Innovate & Elevate: Your Custom Software
+        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "hidden pt-[10px]" : "block pt-10 md:pt-28 lg:pt-[50px] xl:pt-[150px]"}`}>
+        <h1 className="text-[24px] xl:text-3xl font-extrabold text-white w-72">
+          <span className="text-tangerine text-[24px] xl:text-3xl ">Software House Lampung</span><br />Innovate & Elevate: Your Custom Software
         </h1>
         <p className={`text-mobileDesk md:text-webDesk  text-white leading-7 mt-3 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}>
           Journey Starts Here (New Experience With Us)
         </p>
-        <Button className="py-7 px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
+        <Button className="xl:py-7 py-5 px-5 xl:px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
           <Link href="/contact" className="flex items-center justify-center gap-2">
             <p className="text-lg">Contact Us</p>
             <Image src="/assets/icons/arrow-up-right.svg" alt="arrow up right" width={24} height={24} />

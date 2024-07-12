@@ -1,4 +1,4 @@
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs/tab";
 import About from "./Tabs/About";
 import Legalitas from "./Tabs/Legalitas";
 import Box from "./Box";
