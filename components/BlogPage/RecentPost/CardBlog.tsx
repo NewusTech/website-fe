@@ -43,7 +43,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       <div
         className={`${type === "landing"
           ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
-          : "rounded-[2px] md:w-full md:h-[233px] "
+          : "rounded-[2px] md:w-full h-[133px] xl:h-[233px] "
           }`}
       >
         <Image
@@ -53,7 +53,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           height={233}
           className={`${type === "landing"
             ? "w-full h-full object-cover md:rounded-[10px] rounded-l-[6px]"
-            : "rounded-[2px] md:w-full h-full"
+            : "rounded-[2px] md:w-full h-full object-cover"
             }
           `}
         />
@@ -92,7 +92,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-webDesk text-mobileDesk w-[182px] md:w-full" : "md:text-webDesk text-mobileDesk w-[142px] md:w-full -mt-1"}  md:text-sm text-gray line-clamp-3`}
+          className={`${type === "landing" ? "md:text-webDesk text-mobileDesk w-[182px] md:w-full" : "md:text-webDesk text-mobileDesk w-full -mt-1"}  md:text-sm text-gray line-clamp-2 xl:line-clamp-3`}
         >
           {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
