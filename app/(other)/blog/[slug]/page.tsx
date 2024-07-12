@@ -57,7 +57,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
               <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
             </div>
           </div>
-          <div className="w-full h-[150px] md:w-full md:h-[400px] rounded-[6px] mr-0 lg:mr-5">
+          <div className="w-full h-[150px] md:w-full md:h-[400px] rounded-[6px] pr-0 lg:pr-5">
             <Image
               src={image ? image : `/assets/images/blog.jpg`}
               alt="blog"
@@ -193,8 +193,8 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
         </div>
         <div className="w-4/12 xl:w-3/12 lg:flex flex-col gap-2 relative hidden my-5 md:mt-0">
           <div className="bg-white p-5 rounded-md">
-            <h1 className="text-webJudul font-bold text-center relative z-20">Artikel Terbaru</h1>
-            <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
+            <h1 className="text-webJudul font-bold text-center relative z-10">Artikel Terbaru</h1>
+            <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 right-20"></div>
             <section className="my-5 grid grid-cols-1 gap-3 w-full">
               {blogList?.slice(-12).map((blog: any, index: number) => (
                 <CardBlogSide key={index} blogs={blog} />

@@ -45,9 +45,9 @@ const OurHistory = () => {
 
   return (
     <section>
-      <div className='flex items-center gap-4 md:gap-5 pb-4 md:pb-8 text-white'>
+      <div className='flex items-center gap-4 md:gap-5 pb-3 lg:pb-8 text-white'>
         <h1 className='text-mobileJudul md:text-webJudul font-bold'>Our History</h1>
-        <div className='flex-grow h-px bg-[#BDBDBD]'></div>
+        <div className='flex-grow h-[1px] bg-[#BDBDBD]'></div>
       </div>
       <p className='text-mobileSubjudul md:text-webSubJudul pb-8 md:pb-10 text-white'>A Software House based in Lampung has been trusted by various local and national companies for more than 3 years to fulfill their technology needs.</p>
       <div className="md:pb-10 flex flex-wrap gap-10 md:gap-0 w-full h-auto">

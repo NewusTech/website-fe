@@ -14,7 +14,7 @@ const Medias = ({ medias }: any) => {
 
   return (
     <div>
-      <div className={`px-4 md:px-[100px] pb-10 min-h-[250px] md:min-h-[600px] lg:min-h-[892px]] bg-contain bg-center flex justify-center items-end`} style={{ backgroundImage: `url('${backgroundUrl}')` }}>
+      <div className={`px-4 md:px-[50px] pb-10 min-h-[250px] md:min-h-[600px] lg:min-h-[892px]] bg-contain bg-center flex justify-center items-end`} style={{ backgroundImage: `url('${backgroundUrl}')` }}>
         <div className="text-center md:text-left md:w-[892px]">
           <h1 className="text-white text-start text-mobileJudul md:text-[32px] font-bold font-asap">Strength in Numbers <span className="text-[#480DEC]">:</span></h1>
           <h2 className="text-[#480DEC] font-bold md:leading-[70px] text-mobileJudul md:text-[32px]">“Together We Stand, United We Achieve! “</h2>
