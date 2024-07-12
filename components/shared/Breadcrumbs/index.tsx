@@ -25,8 +25,11 @@ const Breadcrumbs = ({ paths }: any) => {
               </>
             ) : (
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-gray-4 font-medium">
+                <BreadcrumbPage className="hidden xl:block text-gray-4 font-medium">
                   {path.label}
+                </BreadcrumbPage>
+                <BreadcrumbPage className="block xl:hidden text-gray-4 font-medium">
+                  {truncateLabel(path.label)}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             )}
@@ -38,3 +41,11 @@ const Breadcrumbs = ({ paths }: any) => {
 };
 
 export default Breadcrumbs;
+
+const truncateLabel = (label: any) => {
+  const words = label.split(' ');
+  if (words.length > 3) {
+    return words.slice(0, 3).join(' ') + '...';
+  }
+  return label;
+}

@@ -38,7 +38,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       className={`${type === "landing"
         ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 "
         : "bg-transparent flex-col md:w-[32.8%] h-full rounded-[2px]"
-        } flex`}
+        } flex md:pb-5`}
     >
       <div
         className={`${type === "landing"
@@ -63,7 +63,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       >
         <div className="flex items-center justify-between gap-1.5 text-dark">
           <div className="flex items-center gap-1 md:gap-2 md:pt-3">
-            <h5 className="md:text-webDesk text-mobileDesk">{user_title ? user_title : 'Lorenka'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
@@ -78,7 +78,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:pt-1 justify-between">
-          <Link className="font-medium text-dark md:text-webJudul  text-mobileJudul w-[150px] md:w-[291px] pb-1 lg:pb-2 truncate" href={`/blog/${slug}`}>
+          <Link className="font-medium text-dark md:text-webJudul  text-mobileJudul w-[150px] md:w-[291px] pb-1 hover:underline line-clamp-2" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>

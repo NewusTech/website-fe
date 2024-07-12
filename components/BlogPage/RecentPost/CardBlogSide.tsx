@@ -35,17 +35,17 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
     <div
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="bg-transparent flex w-full h-auto rounded-[2px] gap-2"
+      className="bg-transparent flex w-full h-full rounded-[2px] gap-2"
     >
       <div
-        className="w-[40%] max-h-[100px] overflow-hidden rounded-[2px]"
+        className="w-[40%] h-[100px] overflow-hidden rounded-[2px]"
       >
         <Image
           src={`${image || '/assets/images/blog.jpg'}`}
           loading="lazy"
           alt="blog"
-          width={100}
-          height={100}
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover"
         />
       </div>
@@ -60,7 +60,7 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </div>
           <div className="flex items-start md:gap-2 mt-1 justify-between">
             <Link
-              className="font-medium text-black md:text-webSubjudul text-mobileSubjudul hover:underline"
+              className="font-medium text-black md:text-webDesk text-mobileDesk  hover:underline"
               href={`/blog/${slug}`}
             >
               {title ? truncateTitle(title, 80) : 'Lorem Ipsum'}

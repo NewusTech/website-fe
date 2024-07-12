@@ -37,7 +37,7 @@ export default function RecentPost({ blogs, categories }: any) {
 
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
   const displayedBlogs = filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
-  const repeatedMedias = Array(8).fill(displayedBlogs).flat(); //ganti nanti
+  // const repeatedMedias = Array(8).fill(displayedBlogs).flat(); //ganti nanti
 
   return (
     <main className="relative">
@@ -57,25 +57,25 @@ export default function RecentPost({ blogs, categories }: any) {
             <h1 className="text-dark md:text-[24px] font-medium">Recent Blog Post</h1>
             <section className="hidden md:flex mt-10 gap-6">
               <div className="w-1/2">
-                <div className="w-[558px] md:w-full h-[250px] rounded-[10px]">
+                <div className="w-[558px] md:w-full h-[200px] rounded-[10px]">
                   <Link href={`/blog/${blogs[0]?.id}`} >
                     <Image
                       src={`${blogs[0]?.image || "/assets/images/blog.jpg"}`}
                       loading="lazy"
                       alt="blog"
                       width={558}
-                      height={250}
+                      height={500}
                       className="w-full h-full object-cover rounded-sm"
                     />
                   </Link>
                 </div>
                 <div className="flex items-center gap-1.5 text-gray-2 mt-4">
-                  <h5 className="md:text-webDesk text-mobileDesk">{blogs[0]?.user_title}</h5>
+                  <h5 className="md:text-webDesk text-mobileDesk capitalize">{blogs[0]?.user_title}</h5>
                   <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-gray-2"></div>
                   <h5 className="md:text-webDesk text-mobileDesk">{formattedDate(blogs[0]?.publishAt)}</h5>
                 </div>
                 <div className="flex items-start md:gap-2 my-1 md:my-1 justify-between">
-                  <h3 className="font-medium text-dark md:text-webJudul text-mobileJudul md:w-[491px] truncate">
+                  <h3 className="font-medium text-dark md:text-webJudul text-mobileJudul md:w-[491px] line-clamp-2">
                     <Link href={`/blog/${blogs[0]?.id}`} >
                       {blogs[0]?.title}
                     </Link>
@@ -142,12 +142,12 @@ export default function RecentPost({ blogs, categories }: any) {
               <Pages currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
             </div>
 
-            {/* Mobile Sida */}
+            {/* Mobile Side */}
             <div className="md:hidden block bg-white p-5 -m-5 rounded-md">
               <h1 className="text-webJudul font-bold relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {repeatedMedias.slice(0, 12).map((blog: any, index: number) => (
+                {blogs?.slice(-12).map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
@@ -155,33 +155,35 @@ export default function RecentPost({ blogs, categories }: any) {
             <div className="block md:hidden bg-white rounded-md">
               <TagsDisplay blogs={blogs} />
             </div>
-            {/* More Article */}
 
+            {/* More Article */}
             <div className="hidden sm:block bg-white p-5 rounded-md mt-5">
               <div className="flex justify-between items-center gap-5 md:gap-5 relative">
                 <h1 className="relative z-20 capitalize text-black text-center font-bold md:text-webJudul text-nowrap text-mobileJudul">
                   More <span className="text-blue">Artikel</span>
                 </h1>
-                <div className="w-full h-[2px] bg-gray-4"></div>
+                <div className="w-full h-[1px] bg-gray-4"></div>
               </div>
               <section className="hidden my-5 xl:grid grid-cols-3 gap-3 w-full">
-                {repeatedMedias.slice(0, 3).map((blog: any, index: number) => (
+                {blogs?.slice(-3).map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
               <section className="xl:hidden my-5 grid grid-cols-2 gap-3 w-full">
-                {repeatedMedias.slice(0, 2).map((blog: any, index: number) => (
+                {blogs?.slice(-2).map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
             </div>
           </div>
-          <div className="w-4/12 xl:w-3/12 px-5 lg:flex flex-col gap-4 relative hidden my-5">
+
+          {/* Side bar web */}
+          <div className="w-4/12 xl:w-3/12 px-5 lg:flex flex-col gap-4 relative hidden my-5 md:mt-0">
             <div className="bg-white p-5 rounded-md">
               <h1 className="text-webJudul font-bold text-center relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
               <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {repeatedMedias.slice(0, 12).map((blog: any, index: number) => (
+                {blogs?.slice(0, 12).map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
