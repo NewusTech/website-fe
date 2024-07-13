@@ -1,5 +1,5 @@
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
-import { getBlogDetail, getBlogList } from "@/components/Fetching/About/Blog/blog";
+import { getBlogDetail, getBlogList } from "@/components/Fetching/Blog/blog";
 import { getSocialMedia } from "@/components/Fetching/Contact/contact";
 import BodyContent from "@/components/BlogPage/Detail/Detail";
 export const dynamic = 'force-dynamic';

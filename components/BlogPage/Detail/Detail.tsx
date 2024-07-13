@@ -22,9 +22,9 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sidebar = document.querySelector('.sidebar');
-      const mainContent: Element | null = document.querySelector('.main-content');
-      const offsetTop = mainContent.offsetTop;
+      const sidebar: any = document.querySelector('.sidebar');
+      const mainContent: any = document.querySelector('.main-content');
+      const offsetTop: any = mainContent.offsetTop;
 
       if (window.scrollY >= offsetTop) {
         sidebar.classList.add('static');

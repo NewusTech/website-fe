@@ -143,7 +143,7 @@ export default function RecentPost({ blogs, categories }: any) {
             </div>
 
             {/* Mobile Side */}
-            <div className="md:hidden block bg-white p-5 -m-5 rounded-md">
+            <div className="md:hidden block bg-white p-5 mb-5 rounded-md">
               <h1 className="text-webJudul font-bold relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
@@ -152,7 +152,7 @@ export default function RecentPost({ blogs, categories }: any) {
                 ))}
               </section>
             </div>
-            <div className="block md:hidden bg-white rounded-md">
+            <div className="block md:hidden bg-white p-5 rounded-md">
               <TagsDisplay blogs={blogs} />
             </div>
 
