@@ -1,9 +1,8 @@
+import { getTestimony } from '@/components/Fetching/About/about';
 import Image from 'next/image';
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuoteLeft, faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 
-const TestiomoniStars = () => {
+export default async function TestiomoniStars() {
+  const dataTestimony = await getTestimony()
   const testimonials = [
     {
       name: "Neil Patel",
@@ -25,21 +24,23 @@ const TestiomoniStars = () => {
     }
   ];
 
+  const dummyImage = "/assets/images/antoni.svg"
+
   return (
     <div className="container mx-auto px-1 py-10 md:pt-20 lg:px-14">
       <h2 className="text-mobileJudul md:text-[24px] font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
       <div>
         <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">
-          {testimonials.map((testimonial, index) => (
+          {dataTestimony?.map((testimonial: any, index: number) => (
             <div key={index} className="relative bg-[#14141F] text-white rounded-2xl p-2 lg:p-6 text-center shadow-xl shadow-gray mt-10 md:mt-0">
               <div className="relative flex justify-center">
                 <div className="absolute top-[-40px] md:top-[-100px] lg:top-[-115px]">
                   <Image
                     width={1000}
                     height={1000}
-                    src={testimonial.image}
+                    src={testimonial.image || dummyImage}
                     alt={testimonial.name}
-                    className="w-14 h-14 md:w-40 md:h-40 rounded-full mx-auto mb-4"
+                    className="w-14 object-cover h-14 md:w-40 md:h-40 rounded-full mx-auto mb-4"
                   />
                 </div>
               </div>
@@ -61,7 +62,7 @@ const TestiomoniStars = () => {
               <blockquote className="text-center leading-5 text-gray-1 p-1 md:p-5">
                 <p className="relative md:text-webDesk text-mobileDesk">
                   {/* <FontAwesomeIcon icon={faQuoteLeft} className='md:w-5 w-2 h-2 md:h-5 absolute -left-1 md:left-0 lg:left-1 -top-0' /> */}
-                  <span>&ldquo;{testimonial.review}&rdquo;</span>
+                  <span>&ldquo;{testimonial.testimony}&rdquo;</span>
                   {/* <FontAwesomeIcon icon={faQuoteRight} className='md:w-5 w-2 h-2 md:h-5 absolute left-[92px] md:-left-28 lg:left-[270px] bottom-1' /> */}
                 </p>
               </blockquote>
@@ -73,5 +74,3 @@ const TestiomoniStars = () => {
     </div >
   );
 }
-
-export default TestiomoniStars;

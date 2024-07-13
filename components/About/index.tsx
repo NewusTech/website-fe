@@ -78,7 +78,8 @@ const AboutLayout = ({ abouts, teams, clients, medias }: any) => {
         <div className="grid gap-4 md:gap-6 grid-cols-3 md:grid-cols-6">
           {dummyValues.map((dummy: any, i: number) => (
             <div key={i} className="flex flex-col items-center">
-              <div className="w-20 xl:w-40 flex items-center justify-center h-20 xl:h-40 rounded-full bg-[#FF6600]"><Image src={dummy.imageUrl} alt="logo" width={100} height={100} className="text-white w-10 h-10 lg:w-20 lg:h-20" />
+              <div className="w-20 md:w-28 md:h-28 xl:w-40 flex items-center justify-center h-20 xl:h-40 rounded-full bg-[#FF6600]">
+                <Image src={dummy.imageUrl} alt="logo" width={100} height={100} className="text-white w-10 h-10 md:w-14 md:h-14 xl:w-20 xl:h-20" />
               </div>
               <h1 className="pt-2 font-semibold uppercase text-mobileSubjudul md:text-webSubjudul">{dummy.title}</h1>
             </div>

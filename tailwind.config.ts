@@ -18,6 +18,50 @@ const config = {
       },
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '100%',
+            fontSize: '11px',
+            h1: {
+              fontSize: '14px',
+              fontWeight: 'bold',
+            },
+            h2: {
+              fontSize: '12px',
+              fontWeight: 'bold',
+            },
+            h3: {
+              fontSize: '11px',
+              fontWeight: 'bold',
+            },
+            p: {
+              fontSize: '11px',
+            },
+          },
+        },
+        lg: {
+          css: {
+            maxWidth: '100%',
+            fontSize: '12px',
+            h1: {
+              fontSize: '16px',
+              fontWeight: 'bold',
+            },
+            h2: {
+              fontSize: '14px',
+              fontWeight: 'bold',
+            },
+            h3: {
+              fontSize: '12px',
+              fontWeight: 'bold',
+            },
+            p: {
+              fontSize: '12px',
+            },
+          },
+        },
+      },
       lineClamp: {
         7: '7',
         8: '8',
@@ -101,7 +145,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography'),],
 
 } satisfies Config;
 

@@ -28,16 +28,16 @@ const ModalStructure = ({ showModal, setShowModal, teams }: any) => {
               />
             </div>
             <div className="relative">
-              <div className="absolute top-[-135px] left-[250px] md:top-[-406px] md:left-[730px] opacity-[1] max-w-[150px] md:max-w-[400px] text-white">
-                <h1 className="text-[12px] md:text-[40px] text-[#480DEC] font-bold">{teams?.name ? teams.name : 'Name Team'}</h1>
+              <div className="absolute top-[-135px] md:top-[-235px] left-[250px] xl:top-[-406px] md:left-[480px] xl:left-[700px] opacity-[1] max-w-[150px] md:max-w-[400px] xl:max-w-[350px] text-white">
+                <h1 className="text-mobileJudul xl:text-[32px] text-[#480DEC] font-bold">{teams?.name ? teams.name : 'Name Team'}</h1>
 
-                <h2 className="text-[10px] md:text-[36px] text-black pb-2 md:pb-4">{teams?.title ? teams.title : 'POSITION'}</h2>
+                <h2 className="text-mobileSubjudul xl:text-[24px] text-black pb-2 md:pb-4">{teams?.title ? teams.title : 'POSITION'}</h2>
 
-                <p className="md:hidden text-[10px] md:text-[16px] capitalize leading-3 ">
+                <p className="md:hidden text-mobileDesk xl:text-[14px] capitalize leading-3 ">
                   {teams?.description ? teams.description : 'Lorem ipsum dolor sit amet consectetur. Volutpat velit nibh orci eu vel a phasellus dui est. Habitasse eget cum sed pulvinar morbi. Lorem ipsum dolor sit amet consectetur.'}
 
                 </p>
-                <p className="hidden md:block text-[6px] md:text-[16px] capitalize">
+                <p className="hidden md:block text-mobileDesk xl:text-[16px] capitalize">
                   {teams?.description ? teams.description : 'Lorem ipsum dolor sit amet consectetur. Volutpat velit nibh orci eu vel a phasellus dui est. Habitasse eget cum sed pulvinar morbi. Lorem ut ullamcorper est tincidunt venenatis venenatis dignissim magna. Eget adipiscing purus duis vel etiam.'}
                 </p>
               </div>

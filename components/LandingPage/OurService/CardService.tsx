@@ -27,10 +27,10 @@ const CardService = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent rounded-xl flex items-end justify-center p-4">
               <p
-                className={`text-white text-mobileJudul md:text-[18px] font-bold ${type === "web" ? "py-2" : "py-[34px]"
+                className={`text-white text-mobileJudul md:text-webJudul font-bold ${type === "web" ? "text-wrap py-2" : "py-[34px]"
                   } ${type === "digital"
                     ? "w-[100px] -mb-2 mr-[147px]"
-                    : "w-[217px]"
+                    : "w-[117px]"
                   } z-20 leading-tight text-center`}
               >
                 {title}

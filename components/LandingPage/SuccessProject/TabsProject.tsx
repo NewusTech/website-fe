@@ -84,7 +84,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
 
   return (
     <div className="relative">
-      <h1 className="text-blue font-semibold text-mobileJudul md:text-[24px]">
+      <h1 className="text-blue font-semibold text-mobileJudul md:text-[20px]">
         Success Project
       </h1>
       <Tabs defaultValue="list" className="min-w-screen">

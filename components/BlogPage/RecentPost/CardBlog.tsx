@@ -42,7 +42,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
     >
       <div
         className={`${type === "landing"
-          ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
+          ? "md:w-full w-[40%] md:h-[200px] h-full rounded-l-[6px] md:rounded-[10px]"
           : "rounded-[2px] md:w-full h-[133px] xl:h-[233px] "
           }`}
       >
@@ -52,7 +52,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           width={326}
           height={233}
           className={`${type === "landing"
-            ? "w-full h-full object-cover md:rounded-[10px] rounded-l-[6px]"
+            ? "w-full h-[200px] object-cover md:rounded-[10px] rounded-l-[6px]"
             : "rounded-[2px] md:w-full h-full object-cover"
             }
           `}
@@ -67,7 +67,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
-          <Link className="md:hidden" href={`/blog/${slug}`}>
+          <Link className="md:hidden" href={`/${slug}`}>
             <Image
               src="/assets/icons/arrow-up-right-black.svg"
               alt="arrow up"
@@ -78,10 +78,10 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:pt-1 justify-between">
-          <Link className="font-medium text-dark md:text-webJudul  text-mobileJudul w-[150px] md:w-[291px] pb-1 hover:underline line-clamp-2" href={`/blog/${slug}`}>
+          <Link className="font-medium text-dark md:text-webJudul  text-mobileJudul w-[150px] md:w-[291px] pb-1 hover:underline line-clamp-2" href={`/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
-          <Link className="hidden md:block" href={`/blog/${slug}`}>
+          <Link className="hidden md:block" href={`/${slug}`}>
             <Image
               src="/assets/icons/arrow-up-right-black.svg"
               alt="arrow up"

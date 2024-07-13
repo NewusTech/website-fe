@@ -58,7 +58,7 @@ export default function RecentPost({ blogs, categories }: any) {
             <section className="hidden md:flex mt-10 gap-6">
               <div className="w-1/2">
                 <div className="w-[558px] md:w-full h-[200px] rounded-[10px]">
-                  <Link href={`/blog/${blogs[0]?.id}`} >
+                  <Link href={`/${blogs[0]?.slug}`} >
                     <Image
                       src={`${blogs[0]?.image || "/assets/images/blog.jpg"}`}
                       loading="lazy"
@@ -76,11 +76,11 @@ export default function RecentPost({ blogs, categories }: any) {
                 </div>
                 <div className="flex items-start md:gap-2 my-1 md:my-1 justify-between">
                   <h3 className="font-medium text-dark md:text-webJudul text-mobileJudul md:w-[491px] line-clamp-2">
-                    <Link href={`/blog/${blogs[0]?.id}`} >
+                    <Link href={`/${blogs[0]?.slug}`} >
                       {blogs[0]?.title}
                     </Link>
                   </h3>
-                  <Link href={`/blog/${blogs[0]?.id}`}>
+                  <Link href={`/${blogs[0]?.slug}`}>
                     <Image
                       src="/assets/icons/arrow-up-right-black.svg"
                       alt="arrow up"

@@ -61,11 +61,11 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           <div className="flex items-start md:gap-2 mt-1 justify-between">
             <Link
               className="font-medium text-black md:text-webDesk text-mobileDesk  hover:underline"
-              href={`/blog/${slug}`}
+              href={`/${slug}`}
             >
               {title ? truncateTitle(title, 80) : 'Lorem Ipsum'}
             </Link>
-            <Link className="hidden md:block" href={`/blog/${slug}`}>
+            <Link className="hidden md:block" href={`/${slug}`}>
               <Image
                 src="/assets/icons/arrow.svg"
                 alt="arrow up"

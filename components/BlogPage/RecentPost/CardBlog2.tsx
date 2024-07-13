@@ -35,7 +35,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
   return (
     <div className="gap-4 flex w-full h-auto">
       <div className="w-[40%] max-h-[140px] rounded-[10px]">
-        <Link href={`/blog/${slug}`}>
+        <Link href={`/${slug}`}>
           <Image
             src={`${image || '/assets/images/blog.jpg'}`}
             alt="blog"
@@ -52,7 +52,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           <h5 className="md:text-[14px] text-[6px]">{formattedDate(publishAt)}</h5>
         </div>
         <h3 className="py-1 font-medium text-dark  md:text-webJudul text-mobileJudul md:w-[246px] line-clamp-2 hover:underline">
-          <Link href={`/blog/${slug}`}>
+          <Link href={`/${slug}`}>
             {title}
           </Link>
         </h3>

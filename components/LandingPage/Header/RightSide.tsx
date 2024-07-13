@@ -20,7 +20,7 @@ const RightSide = () => {
     { path: "/portfolio", label: "Portfolio" },
     { path: "/blog", label: "Blog" },
     { path: "/about", label: "About" },
-    { path: "/about/team", label: "Team" },
+    { path: "/team", label: "Team" },
     { path: "/contact", label: "Contact" },
     { path: "/career", label: "Career" },
   ];
@@ -84,7 +84,7 @@ const RightSide = () => {
         <div className="w-full md:w-9/12 relative flex items-center justify-center">
           <CarouselHeader />
           <div className="absolute gap-[10px] md:hidden flex flex-col items-center justify-center">
-            <h1 className="text-mobileJudul font-extrabold text-white w-60 text-center">
+            <h1 className="text-mobileJudul font-extrabold text-white w-60 xl:w-52 text-center">
               <span className="text-tangerine">Software House Lampung</span><br />Innovate & Elevate: Your Custom Software
             </h1>
             <Link href='/contact'>
