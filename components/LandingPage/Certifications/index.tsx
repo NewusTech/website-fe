@@ -1,5 +1,5 @@
+import { getTestimony } from "@/components/Fetching/About/about";
 import SliderOwner from "@/components/shared/SliderOwner";
-import Image from "next/image";
 
 const certifications = [
   {
@@ -52,7 +52,8 @@ const certifications = [
   },
 ];
 
-export default function Certifications() {
+export default async function Certifications() {
+
   return (
     <div className="text-center max-w-7xl mx-auto bg-gray-100 pb-10">
       <div className="md:mt-10 mt-[10px] flex justify-between items-center   gap-5 md:gap-10 px-5">

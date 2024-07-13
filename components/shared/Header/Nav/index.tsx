@@ -9,7 +9,16 @@ import Link from "next/link";
 const Nav = () => {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const pathname = usePathname();
-  const navRef = useRef<HTMLDivElement>(null);
+  const lightLogoPaths = [
+    '/',
+    '/service',
+    '/team',
+    '/about',
+    '/career',
+    '/blog',
+    '/portfolio',
+  ];
+  const useLightLogo = lightLogoPaths.includes(pathname);
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
@@ -27,7 +36,7 @@ const Nav = () => {
             className="md:hidden cursor-pointer w-[114px] h-[34px] md:w-[206px] md:h-[56px]"
           />
           <Image
-            src={pathname.startsWith('/blog/') ? '/assets/icons/logo-mobile.svg' : '/assets/icons/newus-light.svg'}
+            src={useLightLogo ? '/assets/icons/newus-light.svg' : '/assets/icons/logo-mobile.svg'}
             alt="logo"
             loading="lazy"
             width={206}
@@ -69,7 +78,7 @@ const Nav = () => {
               <NavItem path="/about" onClick={handleDropdown}>
                 About
               </NavItem>
-              <NavItem path="/about/team" onClick={handleDropdown}>
+              <NavItem path="/team" onClick={handleDropdown}>
                 Team
               </NavItem>
               <NavItem path="/contact" onClick={handleDropdown}>

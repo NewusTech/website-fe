@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
   return (
     <section className="container mx-auto py-10 md:pt-5 md:pb-10 md:mb-20 overflow-hidden">
       <div>
-        <h1 className="text-center text-tangerine text-mobileJudul md:text-[24px]">
+        <h1 className="text-center text-tangerine text-mobileJudul md:text-[20px]">
           <strong className="text-blue mr-1 md:mr-[2px]">Why </strong>Choose Us?
         </h1>
         <h4 className="font-bold text-mobileSubjudul md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
         </div>
       </div>
       <div className="pt-10 md:pt-20 lg:px-10">
-        <h1 className="text-center text-tangerine text-mobileJudul md:text-[24px] pb-3 md:pb-10">
+        <h1 className="text-center text-tangerine text-mobileJudul md:text-[20px] pb-3 md:pb-10">
           <strong className="text-blue mr-2 md:mr-[10px]">Our Skills</strong>
         </h1>
         <div className="grid grid-cols-3 md:grid-cols-6 flex-grow-0

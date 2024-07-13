@@ -36,9 +36,9 @@ const Bottombar = () => {
           <PortfolioIcon color={getIconColor("/portfolio")} />
           <p className={`text-[6px] ${getLinkClass("/portfolio")}`}>Portfolio</p>
         </Link>
-        <Link href="/about/team" className="flex flex-col gap-1 items-center justify-center">
-          <TeamIcon color={getIconColor("/about/team")} />
-          <p className={`text-[6px] ${getLinkClass("/about/team")}`}>Team</p>
+        <Link href="/team" className="flex flex-col gap-1 items-center justify-center">
+          <TeamIcon color={getIconColor("/team")} />
+          <p className={`text-[6px] ${getLinkClass("/team")}`}>Team</p>
         </Link>
         <Link href="/blog" className="flex flex-col gap-1 items-center justify-center group">
           <BlogIcon color={getIconColor("/blog")} />

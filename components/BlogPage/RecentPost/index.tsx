@@ -58,7 +58,7 @@ export default function RecentPost({ blogs, categories }: any) {
             <section className="hidden md:flex mt-10 gap-6">
               <div className="w-1/2">
                 <div className="w-[558px] md:w-full h-[200px] rounded-[10px]">
-                  <Link href={`/blog/${blogs[0]?.id}`} >
+                  <Link href={`/${blogs[0]?.slug}`} >
                     <Image
                       src={`${blogs[0]?.image || "/assets/images/blog.jpg"}`}
                       loading="lazy"
@@ -76,11 +76,11 @@ export default function RecentPost({ blogs, categories }: any) {
                 </div>
                 <div className="flex items-start md:gap-2 my-1 md:my-1 justify-between">
                   <h3 className="font-medium text-dark md:text-webJudul text-mobileJudul md:w-[491px] line-clamp-2">
-                    <Link href={`/blog/${blogs[0]?.id}`} >
+                    <Link href={`/${blogs[0]?.slug}`} >
                       {blogs[0]?.title}
                     </Link>
                   </h3>
-                  <Link href={`/blog/${blogs[0]?.id}`}>
+                  <Link href={`/${blogs[0]?.slug}`}>
                     <Image
                       src="/assets/icons/arrow-up-right-black.svg"
                       alt="arrow up"
@@ -143,7 +143,7 @@ export default function RecentPost({ blogs, categories }: any) {
             </div>
 
             {/* Mobile Side */}
-            <div className="md:hidden block bg-white p-5 -m-5 rounded-md">
+            <div className="md:hidden block bg-white p-5 mb-5 rounded-md">
               <h1 className="text-webJudul font-bold relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
@@ -152,7 +152,7 @@ export default function RecentPost({ blogs, categories }: any) {
                 ))}
               </section>
             </div>
-            <div className="block md:hidden bg-white rounded-md">
+            <div className="block md:hidden bg-white p-5 rounded-md">
               <TagsDisplay blogs={blogs} />
             </div>
 

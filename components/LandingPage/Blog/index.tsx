@@ -45,7 +45,7 @@ export default async function Blog() {
       <div className="bg-[#14141F] md:bg-[#14141F] py-6 md:py-10">
         <div className="container md:mx-auto">
           <div className="flex flex-col items-center md:-mt-0 -mb-8 md:-mb-0 md:pt-1">
-            <h4 className="text-mobileJudul md:text-[24px] font-semibold text-tangerine">Blog</h4>
+            <h4 className="text-mobileJudul md:text-[20px] font-semibold text-tangerine">Blog</h4>
             {/* <h2 className="text-[32px] hidden md:block font-semibold text-white">
               Blogssss
             </h2> */}
@@ -60,23 +60,23 @@ export default async function Blog() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="list">
-              <div className="flex justify-between items-center w-full mt-[54px]">
-                <div className="flex-col lg:gap-6 hidden md:flex md:w-[40%] lg:w-[5s0%]">
-                  <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-[20px] text-white truncate lg:text-clip text-wrap">
+              <div className="flex justify-between items-center gap-4 lg:gap-8  w-full mt-[54px]">
+                <div className="flex-col gap-4 xl:gap-6 hidden md:flex md:w-[40%] lg:w-[40%] xl:w-[40%]">
+                  <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-mobileJudul md:text-webJudul text-white truncate lg:text-clip text-wrap capitalize">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-webSubjudul lg:w-[400px] xl:w-[480px] text-white text-justify md:line-clamp-12 xl:line-clamp-none">
+                  <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-none">
                     {lastBlog?.body}
                   </p>
                 </div>
-                <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[50%] xg:w-[60%] rounded-xl">
+                <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] xl:w-[60%] rounded-xl">
                   <Image
                     data-aos="zoom-in"
                     src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}
                     alt={lastBlog?.title}
                     width={690}
                     height={430}
-                    className="rounded-xl lg:w-full bg-cover object-cover"
+                    className="rounded-xl w-full lg:h-[300px] xl:h-[400px] bg-cover object-cover"
                   />
                 </div>
               </div>

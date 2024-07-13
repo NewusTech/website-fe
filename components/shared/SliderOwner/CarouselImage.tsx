@@ -47,12 +47,12 @@ const CarouselImage = () => {
           {images.map((src, index) => (
             <CarouselItem key={index}>
               <div
-                className="flex flex-col items-center bg-gray-700 md:rounded-lg"
+                className="flex flex-col items-center md:rounded-lg"
                 onClick={() => handleImageClick(src.image)}
               >
-                <div className="h-72 md:min-h-[500px] lg:min-h-[600px] flex items-center">
+                <div className="h-72 md:min-h-[500px] lg:min-h-[480px] xl:min-h-[550px] flex items-center">
                   <Image
-                    className="object-cover object-top h-72 md:min-h-[500px] lg:h-full rounded-xl"
+                    className="object-cover h-full rounded-xl"
                     src={src.image}
                     alt={`banner-${index}`}
                     width={1450}
