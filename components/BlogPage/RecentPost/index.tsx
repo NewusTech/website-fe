@@ -18,6 +18,7 @@ export default function RecentPost({ blogs, categories }: any) {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
+  const itemsPerPageMobile = 8;
 
   const handleFilterChange = (category: string) => {
     setFilter(category);
@@ -37,12 +38,13 @@ export default function RecentPost({ blogs, categories }: any) {
 
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
   const displayedBlogs = filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const displayedBlogsMobile = filteredBlogs.slice((currentPage - 1) * itemsPerPageMobile, currentPage * itemsPerPageMobile);
   // const repeatedMedias = Array(8).fill(displayedBlogs).flat(); //ganti nanti
 
   return (
     <main className="relative">
-      <section className="px-5 2xl:px-10 mt-[60px] md:mb-[80px] mb-10 relative w-full">
-        <div className="flex justify-center absolute inset-x-0 -top-[85px] z-10 overflow-hidden">
+      <section className="px-5 2xl:px-10 mt-[40px] md:mb-[80px] mb-3 relative w-full">
+        <div className="flex justify-center absolute inset-x-0 -top-[63px] xl:-top-[67px] z-10 overflow-hidden">
           <Input
             type="text"
             placeholder="Search here"
@@ -116,7 +118,6 @@ export default function RecentPost({ blogs, categories }: any) {
                   )))}
               </div>
             </section>
-
           </section>
         )}
         <div className="flex md:mt-10 w-full">
@@ -133,7 +134,20 @@ export default function RecentPost({ blogs, categories }: any) {
                 </div>
               ))}
             </section>
-            <section className="my-5 grid grid-cols-2 md:grid-cols-3 gap-[5px] md:flex md:flex-wrap md:flex-grow-0 xl:gap-2">
+            {/* Mobile */}
+            <section className="my-5 grid grid-cols-2 md:grid-cols-3 gap-[5px] md:hidden md:flex-wrap md:flex-grow-0 xl:gap-2">
+              {displayedBlogsMobile.length > 0 ? (
+                displayedBlogsMobile.map((blog: any, index: number) => (
+                  <CardBlog key={index} blogs={blog} />
+                ))
+              ) : (
+                <div className='border shadow-lg py-10 px-5 font-bold text-center rounded-lg w-full'>
+                  Coming Soon !
+                </div>
+              )}
+            </section>
+            {/* MD ketas */}
+            <section className="hidden my-5 md:grid-cols-3 gap-[5px] md:flex md:flex-wrap md:flex-grow-0 xl:gap-2 min-h-[1147px]">
               {displayedBlogs.length > 0 ? (
                 displayedBlogs.map((blog: any, index: number) => ( //ganti nanti
                   <CardBlog key={index} blogs={blog} />

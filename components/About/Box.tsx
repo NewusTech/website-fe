@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Box = ({ title, description, image }: any) => (
   <div className="relative :w-full">
-    <div className="relative h-[150px] lg:h-[350px]">
+    <div className="relative h-[160px] md:h-[300px] 2xl:h-[350px]">
       <Image
         loading="lazy"
         src={image ? image : "/assets/images/dummy1.png"}

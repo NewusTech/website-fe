@@ -79,21 +79,21 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
-          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-[150px] md:w-[291px] hover:underline line-clamp-2" href={`/blog/${slug}`}>
+          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-full md:w-11/12 hover:underline line-clamp-2" href={`/blog/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
-          <Link className="hidden md:block" href={`/blog/${slug}`}>
+          <Link className="hidden md:flex w-1/12 justify-end" href={`/blog/${slug}`}>
             <Image
               src="/assets/icons/arrow.svg"
               alt="arrow up"
               width={32}
               height={32}
-              className="w-5 h-5"
+              className="w-4 h-4"
             />
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-webDesk w-[182px] md:w-full" : "w-[142px] md:w-full"} pb-1 md:text-webDesk text-mobileDesk text-gray line-clamp-1`}
+          className={`${type === "landing" ? "md:text-webDesk md:w-full" : "w-[142px] md:w-full"} pb-1 md:text-webDesk text-mobileDesk text-gray line-clamp-1`}
         >
           {excerpt || "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>

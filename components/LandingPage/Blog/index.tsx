@@ -40,7 +40,7 @@ export default async function Blog() {
     <section className="overflow-hidden">
       <div className="bg-[#14141F] md:bg-[#14141F] py-6 md:py-10">
         <div className="container md:mx-auto">
-          <div className="flex flex-col items-center md:-mt-0 -mb-8 md:-mb-0 md:pt-1">
+          <div className="flex flex-col items-center md:py-1">
             <h4 className="text-mobileJudul md:text-[20px] font-semibold text-tangerine">Blog</h4>
             {/* <h2 className="text-[32px] hidden md:block font-semibold text-white">
               Blogssss
@@ -76,12 +76,12 @@ export default async function Blog() {
                   />
                 </div>
               </div>
-              <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
+              <div className="md:py-5 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4">
                 {blogList?.slice(0, 6).map((blog: any, i: number) => (
                   <CardBlog type="landing" key={i} blogs={blog} />
                 ))}
               </div>
-              <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
+              <div className="flex items-center justify-center md:pb-5 mt-5">
                 <Link href='/blog'>
                   <Button className="md:h-[51px] bg-tangerine hover:bg-tangerine-2 py-1 text-[11px] md:text-webDesk  text-white">
                     See More Articles

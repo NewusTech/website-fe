@@ -28,15 +28,15 @@ interface WhyChooseUsProps {
 
 const WhyChooseUs = () => {
   return (
-    <section className="container mx-auto py-10 md:pt-5 md:pb-10 md:mb-20 overflow-hidden">
+    <section className="px-5 md:container mx-auto py-8 md:pt-5 md:pb-16 xl:pb-16 2xl:pb-[90px] overflow-hidden">
       <div>
         <h1 className="text-center text-tangerine text-mobileJudul md:text-[20px]">
           <strong className="text-blue mr-1 md:mr-[2px]">Why </strong>Choose Us?
         </h1>
-        <h4 className="font-bold text-mobileSubjudul md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
+        <h4 className="font-bold text-mobileDesk md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
           &quot;Trusted IT Consulting for Exceptional Service Quality&quot;
         </h4>
-        <div className="flex items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[30px] max-w-6xl mx-auto overflow-hidden">
+        <div className="flex items-start md:items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[30px] max-w-6xl mx-auto overflow-hidden">
           {chooseUs.map(({ id, logo, name, desc }: WhyChooseUsProps) => (
             <div
               data-aos='fade-in'
@@ -53,14 +53,14 @@ const WhyChooseUs = () => {
                   className="w-full h-full"
                 />
               </div>
-              <p className="text-center md:w-full lg:w-[320px] md:text-webDesk text-mobileDesk line-clamp-3 md:line-clamp-none">
+              <p className="text-center md:w-full lg:w-[320px] md:text-webDesk text-[10px] line-clamp-4 md:line-clamp-none">
                 {desc}
               </p>
             </div>
           ))}
         </div>
       </div>
-      <div className="pt-10 md:pt-20 lg:px-10">
+      <div className="pt-10 2xl:pt-20 lg:px-10">
         <h1 className="text-center text-tangerine text-mobileJudul md:text-[20px] pb-3 md:pb-10">
           <strong className="text-blue mr-2 md:mr-[10px]">Our Skills</strong>
         </h1>

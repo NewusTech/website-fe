@@ -55,7 +55,7 @@ const certifications = [
 export default async function Certifications() {
 
   return (
-    <div className="text-center max-w-7xl mx-auto bg-gray-100 pb-10">
+    <div className="text-center px-5 2xl:max-w-7xl mx-auto bg-gray-100 pb-10">
       <div className="md:mt-10 mt-[10px] flex justify-between items-center   gap-5 md:gap-10 px-5">
         <h2 className="font-bold lg:mb-4 capitalize text-mobileJudul md:text-[24px] text-nowrap">
           Our Achievement
