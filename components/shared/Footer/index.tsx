@@ -106,7 +106,7 @@ const Footer = () => {
                 height={24}
                 className="w-[15px] h-[15px] md:w-6 md:h-6"
               />
-              <p className="text-white md:text-sm text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:min-w-[600px]">
+              <p className="text-white md:text-sm text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px]">
                 {dataAbout?.address || 'Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212'}
               </p>
             </div>

@@ -32,12 +32,8 @@ interface BlogProps {
 
 export default async function Blog() {
   const blogList = await getBlogList();
-
-  // if (!blogList.length) {
-  //   return <p>No blogs available</p>;
-  // }
-
-  const lastBlog = blogList[blogList.length - 1];
+  const lastBlog = blogList[blogList.length - 2];
+  // const lastBlog = blogList[0];
   const remainingBlogs = blogList.slice(0, -1);
 
   return (
@@ -60,13 +56,13 @@ export default async function Blog() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="list">
-              <div className="flex justify-between items-center gap-4 lg:gap-8  w-full mt-[54px]">
+              <div className="flex justify-between items-center gap-4 lg:gap-8  w-full xl:mt-[20px]">
                 <div className="flex-col gap-4 xl:gap-6 hidden md:flex md:w-[40%] lg:w-[40%] xl:w-[40%]">
                   <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-mobileJudul md:text-webJudul text-white truncate lg:text-clip text-wrap capitalize">
                     {lastBlog?.title}
                   </h2>
                   <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-none">
-                    {lastBlog?.body}
+                    {lastBlog?.excerpt}
                   </p>
                 </div>
                 <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] xl:w-[60%] rounded-xl">
@@ -76,7 +72,7 @@ export default async function Blog() {
                     alt={lastBlog?.title}
                     width={690}
                     height={430}
-                    className="rounded-xl w-full lg:h-[300px] xl:h-[400px] bg-cover object-cover"
+                    className="rounded-xl w-full h-[300px] lg:h-[300px] xl:h-[400px] bg-cover object-cover"
                   />
                 </div>
               </div>

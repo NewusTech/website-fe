@@ -37,8 +37,8 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos-duration="1000"
       className={`${type === "landing"
         ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 "
-        : "bg-transparent flex-col md:w-[32.8%] h-full rounded-[2px]"
-        } flex md:pb-5`}
+        : "bg-transparent flex-col md:w-[32.5%] 2xl:w-[32.8%] h-full rounded-[2px]"
+        } flex`}
     >
       <div
         className={`${type === "landing"
@@ -62,7 +62,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         className={`${type === "landing" ? "w-[70%] md:w-full mt-2 mr-2 md:ml-0" : "my-1"}`}
       >
         <div className="flex items-center justify-between gap-1.5 text-dark">
-          <div className="flex items-center gap-1 md:gap-2">
+          <div className="flex items-center gap-1 md:gap-2 pt-1">
             <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
@@ -77,9 +77,9 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             />
           </Link>
         </div>
-        <div className="flex items-start w-full md:gap-2 my-1 md:pt-1 justify-between">
+        <div className="flex items-start w-full md:gap-2 my-1 justify-between">
           <Link className="font-medium text-dark md:text-webJudul  text-mobileJudul w-[150px] md:w-[291px] pb-1 hover:underline line-clamp-2" href={`/${slug}`}>
-            {title ? title : 'Lorem Ipsum'}
+            {title || 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/${slug}`}>
             <Image
@@ -92,13 +92,13 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-webDesk text-mobileDesk w-[182px] md:w-full" : "md:text-webDesk text-mobileDesk w-full -mt-1"}  md:text-sm text-gray line-clamp-2 xl:line-clamp-3`}
+          className={`${type === "landing" ? "md:text-webDesk text-mobileDesk w-[182px] md:w-full" : "md:text-webDesk text-mobileDesk w-full "}  md:text-sm text-gray line-clamp-2 xl:line-clamp-1`}
         >
-          {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
+          {excerpt || "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
-        <div className="flex gap-1 mt-3 md:items-end">
-          <div className="bg-gray rounded-full px-[10px] py-[2px] md:py-1">
-            <p className="text-gray-2 md:text-webDesk text-mobileDesk">{tagblog_title}</p>
+        <div className="flex gap-1 pt-2 md:items-end">
+          <div className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1">
+            <p className="text-white md:text-webDesk text-mobileDesk">{tagblog_title}</p>
           </div>
         </div>
       </div>

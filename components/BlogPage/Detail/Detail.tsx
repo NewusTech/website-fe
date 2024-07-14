@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { formattedDate } from "@/utils/blog";
 import CardBlog from "@/components/BlogPage/RecentPost/CardBlog";
 import CardBlogSide from "@/components/BlogPage/RecentPost/CardBlogSide";
-import TagsDisplay from "@/components/BlogPage/RecentPost/Tags";
+import TagsDisplay from "@/components/BlogPage/Detail/Tags";
 import SocialLink from "@/components/shared/Social/SocialLink";
 import DOMPurify from 'dompurify';
 

@@ -38,7 +38,7 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       className="bg-transparent flex w-full h-full rounded-[2px] gap-2"
     >
       <div
-        className="w-[40%] h-[100px] overflow-hidden rounded-[2px]"
+        className="w-[40%] h-[80px] overflow-hidden rounded-[2px]"
       >
         <Image
           src={`${image || '/assets/images/blog.jpg'}`}
@@ -54,18 +54,19 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       >
         <div>
           <div className="flex items-center gap-1 md:gap-2">
-            <h5 className="md:text-webDesk text-mobileDesk">{user_title ? user_title : 'Lorenka'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title ? user_title : 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-black"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
           <div className="flex items-start md:gap-2 mt-1 justify-between">
             <Link
-              className="font-medium text-black md:text-webDesk text-mobileDesk  hover:underline"
+              className="font-medium text-black md:text-webDesk text-mobileDesk  hover:underline line-clamp-3"
               href={`/${slug}`}
             >
-              {title ? truncateTitle(title, 80) : 'Lorem Ipsum'}
+              {title || 'Lorem Ipsum'}
+              {/* {title ? truncateTitle(title, 80) : 'Lorem Ipsum'} */}
             </Link>
-            <Link className="hidden md:block" href={`/${slug}`}>
+            {/* <Link className="hidden md:block" href={`/${slug}`}>
               <Image
                 src="/assets/icons/arrow.svg"
                 alt="arrow up"
@@ -73,7 +74,7 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
                 height={32}
                 className="w-5 h-5"
               />
-            </Link>
+            </Link> */}
           </div>
           {/* <p className="text-black text-mobileDesk md:text-webDesk line-clamp-2">
             {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
