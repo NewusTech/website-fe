@@ -14,12 +14,12 @@ export default async function WhatWeDo() {
         <h1 className="font-bold text-dark text-mobileJudul md:text-webJudul z-20">
           What We Do
         </h1>
-        <p className="w-full md:w-[558px] text-center text-mobileDesk md:text-webSubjudul lg:leading-[2]">
+        <p className="w-full md:w-[558px] text-center text-mobileDesk md:text-webSubjudul">
           With over 3 years of experience, Newus Technology is your trusted partner for digital success. Let{"'"}s collaborate to build a brighter future for your business.
         </p>
-        <div className="md:w-[60px] md:h-[20px] w-[51px] h-[45px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[90px] md:-ml-[73px]"></div>
+        <div className="md:w-[70px] md:h-[45px] w-[51px] h-[45px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[100px] md:-ml-[80px]"></div>
       </div>
-      <section className="grid grid-cols-2 gap-x-3 md:gap-x-10 mb-5 md:mb-20">
+      <section className="grid grid-cols-2 gap-x-3 md:gap-x-2 2xl:gap-x-10 mb-5 py-5 md:px-5 xl:px-10">
         {services?.map((service: any, i: number) => (
           <CardServices
             key={i}
@@ -34,8 +34,8 @@ export default async function WhatWeDo() {
           desc="Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Tera bel pov astrobel. Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Tera bel pov astrobel."
         /> */}
       </section>
-      <FlowDesktop />
-      <FlowResponsive />
+      {/* <FlowDesktop />
+      <FlowResponsive /> */}
       <WorkFlow />
     </section>
   );
