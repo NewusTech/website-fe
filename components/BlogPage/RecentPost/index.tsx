@@ -18,6 +18,7 @@ export default function RecentPost({ blogs, categories }: any) {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
+  const itemsPerPageMobile = 8;
 
   const handleFilterChange = (category: string) => {
     setFilter(category);
@@ -37,12 +38,13 @@ export default function RecentPost({ blogs, categories }: any) {
 
   const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
   const displayedBlogs = filteredBlogs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const displayedBlogsMobile = filteredBlogs.slice((currentPage - 1) * itemsPerPageMobile, currentPage * itemsPerPageMobile);
   // const repeatedMedias = Array(8).fill(displayedBlogs).flat(); //ganti nanti
 
   return (
     <main className="relative">
-      <section className="px-5 md:px-10 mt-[60px] md:mb-[80px] mb-10 relative w-full">
-        <div className="flex justify-center absolute inset-x-0 -top-[85px] z-10 overflow-hidden">
+      <section className="px-5 2xl:px-10 mt-[40px] md:mb-[80px] mb-3 relative w-full">
+        <div className="flex justify-center absolute inset-x-0 -top-[63px] xl:-top-[67px] z-10 overflow-hidden">
           <Input
             type="text"
             placeholder="Search here"
@@ -55,10 +57,10 @@ export default function RecentPost({ blogs, categories }: any) {
         {!searchTerm && (
           <section>
             <h1 className="text-dark md:text-[24px] font-medium">Recent Blog Post</h1>
-            <section className="hidden md:flex mt-10 gap-6">
-              <div className="w-1/2">
+            <section className="hidden md:flex mt-5 xl:mt-5 2xl:mt-10 gap-3 2xl:gap-6">
+              <div className="lg:w-1/2 xl:w-1/3 2xl:w-1/2">
                 <div className="w-[558px] md:w-full h-[200px] rounded-[10px]">
-                  <Link href={`/${blogs[0]?.slug}`} >
+                  <Link href={`/${blogs[0]?.slug}`}>
                     <Image
                       src={`${blogs[0]?.image || "/assets/images/blog.jpg"}`}
                       loading="lazy"
@@ -76,7 +78,7 @@ export default function RecentPost({ blogs, categories }: any) {
                 </div>
                 <div className="flex items-start md:gap-2 my-1 md:my-1 justify-between">
                   <h3 className="font-medium text-dark md:text-webJudul text-mobileJudul md:w-[491px] line-clamp-2">
-                    <Link href={`/${blogs[0]?.slug}`} >
+                    <Link href={`/${blogs[0]?.slug}`}>
                       {blogs[0]?.title}
                     </Link>
                   </h3>
@@ -90,9 +92,14 @@ export default function RecentPost({ blogs, categories }: any) {
                     />
                   </Link>
                 </div>
-                <p className="md:text-webDesk text-mobileDesk text-gray w-[182px] md:w-full line-clamp-2">
-                  {blogs[0]?.body}
-                </p>
+                <div className="relative">
+                  <p className="md:text-webDesk text-mobileDesk text-gray w-[182px] md:w-full line-clamp-2">
+                    {blogs[0]?.body}
+                    <Link href={`/${blogs[0]?.slug}`} className="absolute bottom-0 right-0 hover:underline md:text-webDesk text-mobileDesk bg-[#F4F4F4] rounded-sm px-1">
+                      Selengkapnya
+                    </Link>
+                  </p>
+                </div>
               </div>
               <div className="xl:grid hidden xl:grid-cols-2 gap-2 w-full">
                 {blogs.length === 0 ? (
@@ -127,7 +134,20 @@ export default function RecentPost({ blogs, categories }: any) {
                 </div>
               ))}
             </section>
-            <section className="my-5 grid grid-cols-2 md:grid-cols-3 gap-[5px] md:flex md:flex-wrap md:flex-grow-0 xl:gap-2">
+            {/* Mobile */}
+            <section className="my-5 grid grid-cols-2 md:grid-cols-3 gap-[5px] md:hidden md:flex-wrap md:flex-grow-0 xl:gap-2">
+              {displayedBlogsMobile.length > 0 ? (
+                displayedBlogsMobile.map((blog: any, index: number) => (
+                  <CardBlog key={index} blogs={blog} />
+                ))
+              ) : (
+                <div className='border shadow-lg py-10 px-5 font-bold text-center rounded-lg w-full'>
+                  Coming Soon !
+                </div>
+              )}
+            </section>
+            {/* MD ketas */}
+            <section className="hidden my-5 md:grid-cols-3 gap-[5px] md:flex md:flex-wrap md:flex-grow-0 xl:gap-2 min-h-[1147px]">
               {displayedBlogs.length > 0 ? (
                 displayedBlogs.map((blog: any, index: number) => ( //ganti nanti
                   <CardBlog key={index} blogs={blog} />
@@ -178,12 +198,12 @@ export default function RecentPost({ blogs, categories }: any) {
           </div>
 
           {/* Side bar web */}
-          <div className="w-4/12 xl:w-3/12 px-5 lg:flex flex-col gap-4 relative hidden my-5 md:mt-0">
+          <div className="w-4/12 xl:w-3/12 lg:flex flex-col gap-4 relative hidden ml-3 my-5 md:mt-0">
             <div className="bg-white p-5 rounded-md">
               <h1 className="text-webJudul font-bold text-center relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
               <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {blogs?.slice(0, 12).map((blog: any, index: number) => (
+                {blogs?.slice(-12).map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>

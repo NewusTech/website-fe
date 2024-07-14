@@ -39,24 +39,34 @@ const MobileCycle = () => {
           </div>
         </div>
         <div className="flex flex-col items-center gap-3">
-
           <div className='relative'>
             <div className='absolute bottom-0 top-0 left-1/2 transform -translate-x-1/2 -z-10 w-40 h-40' style={{ clipPath: 'polygon(25% 0%, 75% 50%, 100% 0%, 0% 50%)', backgroundColor: 'blue' }}></div>
-            <Image src='/assets/icons/sdlc/evaluation.svg' width={100} height={100} alt='Testing Icon' className="h-20 w-20 hover:animate-spin" />
+            <Image src='/assets/icons/sdlc/developing.svg' width={100} height={100} alt='Testing Icon' className="h-20 w-20 hover:animate-spin" />
           </div>
           <div className="flex flex-col justify-center items-center">
             <hr className='w-0.5 h-10 bg-red-500' />
-            <h2 className="text-mobileSubjudul text-blue font-semibold py-2 shadow shadow-tangerine rounded-sm px-3">Testing the Product</h2>
+            <h2 className="text-mobileSubjudul text-blue font-semibold py-2 shadow shadow-tangerine rounded-sm px-3">Developing The Product</h2>
             <hr className='w-0.5 h-10 bg-red-500' />
           </div>
         </div>
         <div className="flex flex-col items-center gap-3">
           <div className='relative'>
-            <Image src='/assets/icons/sdlc/5.svg' width={100} height={100} alt='Deployment Icon' className="h-20 w-20 hover:animate-spin" />
+            <Image src='/assets/icons/sdlc/evaluation.svg' width={100} height={100} alt='Deployment Icon' className="h-20 w-20 hover:animate-spin" />
             <div className='absolute -top-5 left-1/2 transform -translate-x-1/2 -z-10 w-40 h-40' style={{ clipPath: 'polygon(25% 0%, 75% 0%, 50% 50%, 50% 100%)', backgroundColor: 'blue' }}></div>
           </div>
           <div className="flex flex-col justify-center items-center">
             <hr className='w-0.5 h-10 bg-yellow-300' />
+            <h2 className="text-mobileSubjudul text-blue font-semibold py-2 shadow shadow-tangerine rounded-sm px-3">Testing the Product</h2>
+          </div>
+        </div>
+        <div className="flex flex-col items-center gap-3">
+          <hr className='w-0.5 h-10 bg-red-500' />
+          <div className='relative'>
+            <div className='absolute bottom-0 top-0 left-1/2 transform -translate-x-1/2 -z-10 w-40 h-40' style={{ clipPath: 'polygon(25% 0%, 75% 50%, 100% 0%, 0% 50%)', backgroundColor: 'blue' }}></div>
+            <Image src='/assets/icons/sdlc/5.svg' width={100} height={100} alt='Testing Icon' className="h-20 w-20 hover:animate-spin" />
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <hr className='w-0.5 h-10 bg-red-500' />
             <h2 className="text-mobileSubjudul text-blue font-semibold py-2 shadow shadow-tangerine rounded-sm px-3">Deployment & Maintenance</h2>
           </div>
         </div>

@@ -41,7 +41,7 @@ const TagsDisplay = ({ blogs }: TagsDisplayProps) => {
   }, [blogs]);
 
   return (
-    <div className='xl:h-[200px] 2xl:h-[210px]'>
+    <div>
       <h1 className="text-mobileJudul md:text-webJudul font-bold pb-3">Tags</h1>
       <div className="flex flex-wrap gap-2 mt-2">
         {tags.map((tag, index) => (
