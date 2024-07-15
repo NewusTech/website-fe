@@ -8,6 +8,7 @@ const SocialLink = ({ href, src, alt }: any) => (
       alt={alt}
       width={24}
       height={24}
+      className="lg:h-6 h-5 w-5 lg:w-6"
     />
   </Link>
 );
