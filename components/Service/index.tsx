@@ -9,7 +9,7 @@ export default async function WhatWeDo() {
   const services = await getServiceList();
 
   return (
-    <section className="px-5 max-w-7xl mx-auto md:my-[20px] my-8 overflow-hidden">
+    <section className="px-2 md:px-5 max-w-7xl mx-auto md:my-[20px] my-8 overflow-hidden">
       <div className="flex items-center justify-center flex-col gap-1 md:gap-4 relative">
         <h1 className="font-bold text-dark text-mobileJudul md:text-webJudul z-20">
           What We Do

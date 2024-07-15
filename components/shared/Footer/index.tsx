@@ -67,9 +67,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-blue relative pb-32 pt-5 md:pt-5 md:pb-0">
-      <div className="container mx-auto">
-        <div className="h-[231px] md:h-full lg:h-[370px] w-full flex flex-col lg:flex-row py-0 md:py-5 lg:py-0 ">
+    <footer className="bg-blue relative pb-12 pt-5 md:pt-2 md:pb-0">
+      <div className="px-5 md:container mx-auto">
+        <div className="h-full md:h-full lg:h-[370px] w-full flex flex-col lg:flex-row py-0 md:py-5 lg:py-0 ">
           <div className="hidden lg:block w-[300px] xl:w-[370px] h-[390px] bg-white rounded-[10px] absolute -mt-12">
             <div className="w-full h-auto bg-blue py-[14px] px-[19px] rounded-t-[10px]">
               <h3 className="uppercase text-white font-bold text-[16px]">
@@ -90,21 +90,21 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          <div className="lg:ml-[320px] xl:ml-[417px] lg:mt-[50px] mt-4">
+          <div className="lg:ml-[320px] xl:ml-[417px] lg:mt-[40px] xl:mt-10">
             <Image
               src="/assets/icons/logo.svg"
               alt="logo"
               width={206}
               height={56}
-              className="xl:mb-10 w-[100px] h-[30px] xl:w-[206px] md:w-[150px] md:h-[56px]"
+              className="mb-5 md:mb-0 2xl:mb-10 w-[100px] h-[30px] xl:w-[206px] md:w-[150px] md:h-[56px]"
             />
-            <div className="flex gap-2 lg:gap-4 items-center mt-2 md:mt-10 xl:mt-[55px]">
+            <div className="flex gap-2 lg:gap-4 items-start md:mt-5 xl:mt-10 2xl:mt-[40px]">
               <Image
                 src="/assets/icons/place.svg"
                 alt="place"
                 width={24}
                 height={24}
-                className="w-[15px] h-[15px] md:w-6 md:h-6"
+                className="w-[15px] h-[15px] lg:w-6 lg:h-6"
               />
               <p className="text-white md:text-sm text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px]">
                 {dataAbout?.address || 'Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212'}
@@ -116,7 +116,7 @@ const Footer = () => {
                 alt="place"
                 width={24}
                 height={24}
-                className="w-[15px] h-[15px] md:w-6 md:h-6"
+                className="w-[15px] h-[15px] lg:w-6 lg:h-6"
               />
               <p className="text-white md:text-sm text-[10px]">
                 {dataAbout?.phoneNumber || '(+62) 888-991-2992'}
@@ -128,13 +128,13 @@ const Footer = () => {
                 alt="place"
                 width={24}
                 height={24}
-                className="w-[15px] h-[15px] md:w-6 md:h-6"
+                className="w-[15px] h-[15px] lg:w-6 lg:h-6"
               />
               <p className="text-white md:text-sm text-[10px]">
                 {dataAbout?.email || 'newustechnology@gmail.com'}
               </p>
             </div>
-            <div className="hidden lg:flex gap-4 items-center mt-4">
+            <div className="hidden lg:flex gap-4 items-center pt-5">
               {dataSocials?.map((social: any) => (
                 <SocialLink
                   key={social.id}
@@ -156,7 +156,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Technology
               </h4>
-              <ul className="list-disc pl-2 lg:pl-5 text-white md:text-webDesk text-mobileDesk mt-[6px] lg:mt-[10px]">
+              <ul className="list-disc pl-3 md:pl-4 lg:pl-5 text-white md:text-webDesk text-[10px] mt-[6px] lg:mt-[10px]">
                 <li>Mobile Apps Development</li>
                 <li>Website Development</li>
                 <li>Web Based Application</li>
@@ -169,7 +169,7 @@ const Footer = () => {
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase lg:mt-3">
                 Digital Marketing
               </h4>
-              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-webDesk text-mobileDesk mt-[6px] lg:mt-[10px]">
+              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-webDesk text-[10px] mt-[6px] lg:mt-[10px]">
                 <li>Online Advertising (SEO)</li>
                 <li>Social Media Campaign</li>
                 <li>Facebook Ads</li>
@@ -183,68 +183,23 @@ const Footer = () => {
                 Social Media
               </h4>
               <div className="grid grid-cols-4 gap-3 mt-[6px]">
-                <Link href='https://www.facebook.com/newustechnology/' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
-                  <Image
-                    src="/assets/icons/facebook.svg"
-                    alt="place"
-                    width={15}
-                    height={15}
-                    className="w-[15px] h-[15px] md:w-10 md:h-10"
+                {dataSocials?.map((social: any) => (
+                  <SocialLink
+                    key={social.id}
+                    href={social.link}
+                    src={getIconSrc(social.title)}
+                    alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
                   />
-                </Link>
-                <Link href='https://id.linkedin.com/company/newustechnology' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
-                  <Image
-                    src="/assets/icons/linkedin.svg"
-                    alt="place"
-                    width={15}
-                    height={15}
-                    className="w-[15px] h-[15px] md:w-10 md:h-10"
-                  />
-                </Link>
-                <Link href='https://www.instagram.com/newustechnology/' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
-                  <Image
-                    src="/assets/icons/instagram.svg"
-                    alt="place"
-                    width={15}
-                    height={15}
-                    className="w-[15px] h-[15px] md:w-10 md:h-10"
-                  />
-                </Link>
-                <Link href='https://www.tiktok.com/@newustech' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
-                  <Image
-                    src="/assets/icons/tiktok.svg"
-                    alt="place"
-                    width={15}
-                    height={15}
-                    className="w-[15px] h-[15px] md:w-10 md:h-10"
-                  />
-                </Link><Link href='https://www.youtube.com' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
-                  <Image
-                    src="/assets/icons/youtube.svg"
-                    alt="place"
-                    width={16}
-                    height={16}
-                    className="w-[15px] h-[15px] md:w-10 md:h-10"
-                  />
-                </Link>
-                <Link href='https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0' passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
-                  <Image
-                    src="/assets/icons/wifi.svg"
-                    alt="place"
-                    width={15}
-                    height={15}
-                    className="w-[15px] h-[15px] md:w-10 md:h-10"
-                  />
-                </Link>
+                ))}
               </div>
             </div>
           </div>
-          <p className="text-mobileSubjudul md:text-webSubjudul text-white lg:hidden mt-5 mb-4">
+          <p className="text-[10px] md:text-webSubjudul text-white lg:hidden pt-3">
             Copyright © 2023 • Newus Technology.
           </p>
         </div>
         <div className="hidden lg:block h-[1px] w-full bg-white"></div>
-        <div className="hidden lg:flex mt-5 pb-8 justify-between items-center">
+        <div className="hidden lg:flex mt-5 pb-5 justify-between items-center">
           <ul className="flex gap-10 text-white uppercase font-medium text-mobileSubjudul md:text-webSubjudul">
             <li>
               <Link href='/service' className="text-mobileSubjudul md:text-webSubjudul" >
