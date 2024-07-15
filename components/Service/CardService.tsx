@@ -23,10 +23,10 @@ const CardServices = ({ illustration, title, desc }: CardServiceProps) => {
           />
         </div>
       </div>
-      <h3 className="text-mobileJudul md:text-webJudul font-bold md:my-6 my-[6px]">
+      <h3 className="text-mobileSubjudul md:text-webJudul font-bold md:my-6 my-[6px] line-clamp-1">
         {title}
       </h3>
-      <p className="md:w-full w-[146px] text-mobileSubjudul md:text-webSubjudul line-clamp-3">{desc}</p>
+      <p className="md:w-full w-[146px] text-mobileDesk md:text-webSubjudul line-clamp-3">{desc}</p>
       <div className="md:mt-6 mt-2 flex md:gap-x-6 gap-x-2">
         <Link target="_blank" href='/contact'>
           <Button className="bg-blue hover:bg-blue-2 md:h-[51px] md:w-[161px] w-[80px] h-[22px] text-[10px] md:text-webDesk text-white">
