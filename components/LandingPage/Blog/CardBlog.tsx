@@ -1,3 +1,4 @@
+import { removeHTMLTags } from "@/lib/utils";
 import { formattedDate } from "@/utils/blog";
 import Image from "next/image";
 import Link from "next/link";
@@ -93,11 +94,11 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "md:text-webDesk md:w-full" : "w-[142px] md:w-full"} pb-1 md:text-webDesk text-mobileDesk text-gray line-clamp-1`}
+          className={`${type === "landing" ? "md:text-webDesk md:w-full" : "w-[142px] md:w-full"} pb-1 md:text-webDesk text-mobileDesk text-gray line-clamp-1 md:line-clamp-2`}
         >
-          {excerpt || "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
+          {removeHTMLTags(body) || "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
-        <div className="flex gap-1 py-2 md:pt-1 md:pb-0 items-end">
+        <div className="flex py-2 md:pt-1 md:pb-0 items-end ">
           <div className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1">
             <p className="text-white md:text-webDesk text-mobileDesk">{tagblog_title}</p>
           </div>

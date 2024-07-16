@@ -3,27 +3,6 @@ import Image from 'next/image';
 
 export default async function TestiomoniStars() {
   const dataTestimony = await getTestimony()
-  const testimonials = [
-    {
-      name: "Neil Patel",
-      image: "/assets/images/antoni.svg",
-      rating: 5,
-      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      name: "Cellia Rins",
-      image: "/assets/images/antoni.svg",
-      rating: 3,
-      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      name: "Mike Demien",
-      image: "/assets/images/antoni.svg",
-      rating: 1,
-      review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    }
-  ];
-
   const dummyImage = "/assets/images/antoni.svg"
 
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formattedDate } from '@/utils/blog';
+import { removeHTMLTags } from '@/lib/utils';
 
 interface BlogProps {
   id?: number,
@@ -57,7 +58,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </h3>
         <p className="md:text-webDesk text-mobileDesk text-gray line-clamp-2 text-wrap">
-          {body}
+          {removeHTMLTags(body)}
         </p>
         {/* <div className="flex gap-1 mt-3 md:mt-4">
           <div className="bg-gray rounded-full px-[10px] py-1">

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { removeHTMLTags } from "@/lib/utils";
 
 const CardListPorto = ({ projects }: any) => {
-  const { id = "", title = '', slug = "", keyword = "",
-    logo = "",
+  const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
     portfolioYear = '',
     webLink = '',
@@ -21,7 +21,7 @@ const CardListPorto = ({ projects }: any) => {
       <div className="flex md:gap-[32px] md:w-full h-[140px] md:h-[243px] relative">
         <div className="w-[40%] md:w-[30%] h-full flex items-center relative">
           <Image
-            src={image ? image : `/assets/images/placeholder-image (2).jpg`}
+            src={image || `/assets/images/placeholder-image (2).jpg`}
             alt="image card list"
             width={1000}
             height={1000}
@@ -29,7 +29,7 @@ const CardListPorto = ({ projects }: any) => {
           />
           <div className="absolute top-2 right-2 z-10">
             <Image
-              src={logo ? logo : `/assets/images/placeholder-logo.jpg`}
+              src={logo || `/assets/images/placeholder-logo.jpg`}
               alt="Logo"
               width={1000}
               height={1000}
@@ -40,10 +40,10 @@ const CardListPorto = ({ projects }: any) => {
 
         <div className="w-[70%] md:w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 md:py-5 rounded-r-[10px]">
           <h2 className="md:text-webJudul text-mobileJudul font-semibold">
-            {title ? title : 'Name Project'}
+            {title || 'Name Project'}
           </h2>
           <p className="md:text-webSubjudul text-mobileSubjudul text-gray mt-[10px] mb-2 md:mb-5 w-full md:w-full line-clamp-3">
-            {body ? body : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Löremipsum astrobel sar direlig. Kronde est konfoni med kelig.'}
+            {removeHTMLTags(body) || 'lorem1'}
           </p>
           <Link target="_blank" href={`/portfolio/${slug}`}>
             <Button

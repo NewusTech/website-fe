@@ -23,12 +23,12 @@ const Header = ({
         />
       </div>
       <div className="flex justify-center md:w-full ">
-        <div className="z-30 px-[10px] md:px-24 py-[10px] md:py-5 rounded-[6px] md:rounded-[20px] inline-flex  -mt-[50px] md:-mt-[80px] bg-white shadow-sm">
-          <div className="flex flex-col justify-center items-center gap-[10px] md:gap-[21px] w-[251px] md:w-[540px]">
+        <div className="z-30 px-[10px] md:px-24 py-[10px] md:py-5 rounded-[6px] md:rounded-[20px] inline-flex -mt-[50px] md:-mt-[80px] bg-white shadow-sm">
+          <div className="flex flex-col justify-center items-center gap-[5px] md:gap-[21px] w-[251px] md:w-[540px]">
             <h1 className="text-black uppercase font-bold text-mobileJudul md:text-[32px]">
               {title}
             </h1>
-            <p className="text-center text-mobileDesk md:text-webSubjudul">See How We Elevate Businesses. Explore Our Success Projects. </p>
+            <p className="text-center text-mobileDesk md:text-webDesk">See How We Elevate Businesses. Explore Our Success Projects. </p>
           </div>
         </div>
       </div>

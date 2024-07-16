@@ -73,14 +73,14 @@ export default function Index({ portfolios, categories }: any) {
 
   return (
     <section>
-      <div className="flex md:gap-2 px-5 lg:justify-center gap-4 mt-5 lg:mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
+      <div className="flex md:gap-2 items-center md:justify-center px-5 mt-5 lg:mt-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
         {["All", ...categories.map((category: any) => category.title)].map(category => (
           <div
             key={category}
-            className={`h-[17px] md:w-auto md:h-[43px] cursor-pointer rounded-[8px] md:rounded-[16px] flex items-center justify-center py-4 px-6 md:px-10 ${filter === category ? 'bg-blue' : ''}`}
+            className={`h-[17px] md:w-auto md:h-[43px] cursor-pointer rounded-[8px] md:rounded-[16px] flex items-center justify-center gap-10 ${filter === category ? 'bg-blue py-4 px-6 md:px-10' : 'px-5'}`}
             onClick={() => handleCategoryChange(category)}
           >
-            <p className={`text-${filter === category ? 'white' : 'dark'} font-[500] text-mobileSubjudul md:text-webSubjudul transition-colors duration-300 whitespace-nowrap md:whitespace-normal`}>
+            <p className={`text-${filter === category ? 'white' : 'dark'} font-[500] text-mobileSubjudul md:text-webSubjudul transition-colors duration-300 text-nowrap`}>
               {category}
             </p>
           </div>
