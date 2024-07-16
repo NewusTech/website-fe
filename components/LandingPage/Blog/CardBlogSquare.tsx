@@ -1,3 +1,4 @@
+import { removeHTMLTags } from "@/lib/utils";
 import { formattedDate } from "@/utils/blog";
 import Image from "next/image";
 import Link from "next/link";
@@ -36,24 +37,24 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos="fade-up"
       data-aos-duration="1000"
       className={`${type === "landing"
-        ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 border-[0.5px]"
+        ? "bg-[#14141F] text-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 w-full h-[104px] md:h-auto shadow-sm gap-3 border-[0.5px]"
         : "bg-transparent flex-row md:w-[410px] h-full rounded-[2px]"
         } flex gap-3`}
     >
       <div
         className={`${type === "landing"
-          ? "md:w-full w-[40%] md:h-[233px] h-full rounded-l-[6px] md:rounded-[10px]"
+          ? "md:w-full w-[30%] md:h-[233px] min-h-[104px] rounded-l-[6px] md:rounded-[10px]"
           : "rounded-[2px] w-4/12 md:w-5/12"
           }`}
       >
         <Image
-          src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
+          src={`${image || '/assets/images/blog.jpg'}`}
           loading="lazy"
           alt="blog"
           width={326}
           height={233}
           className={`${type === "landing"
-            ? " md:h-[300px] object-cover md:rounded-[10px] rounded-l-[6px]"
+            ? "md:h-[300px] h-full object-cover md:rounded-[10px] rounded-l-[6px]"
             : "rounded-[2px] md:w-full md:h-[150px] object-cover"
             }
           `}
@@ -79,8 +80,8 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
-          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-[150px] md:w-[291px] pb-2 hover:underline truncate" href={`/blog/${slug}`}>
-            {title ? title : 'Lorem Ipsum'}
+          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-full mb-1 hover:underline line-clamp-2" href={`/blog/${slug}`}>
+            {title || 'Lorem Ipsum'}
           </Link>
           <Link className="hidden md:block" href={`/blog/${slug}`}>
             <Image
@@ -88,18 +89,18 @@ const CardBlogSquare = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
               alt="arrow up"
               width={32}
               height={32}
-              className="w-5 h-5"
+              className="w-3 h-3"
             />
           </Link>
         </div>
         <p
-          className={`${type === "landing" ? "-mt-2 md:text-webDesk w-[182px] md:w-full" : "w-[142px] md:w-full -mt-3"} text-mobileDesk md:text-webDesk text-gray line-clamp-2`}
+          className={`${type === "landing" ? "md:text-webDesk w-full" : "w-full -mt-3"} text-mobileDesk md:text-webDesk text-gray line-clamp-1 md:line-clamp-1`}
         >
-          {body ? body : "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
+          {removeHTMLTags(body) || "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
         <div className="flex gap-1 mt-3 md:items-end">
           <div className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1">
-            <p className="text-white md:text-webDesk text-mobileDesk">{tagblog_title}</p>
+            <p className="text-white md:text-webDesk text-mobileDesk">{tagblog_title || "Lörem ipsum"}</p>
           </div>
         </div>
       </div>

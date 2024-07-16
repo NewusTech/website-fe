@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import styles from './style.module.css';
 import CardBlogSide from "./CardBlogSide";
 import TagsDisplay from "./Tags";
+import { removeHTMLTags } from "@/lib/utils";
 
 export default function RecentPost({ blogs, categories }: any) {
   const [filter, setFilter] = useState<string>("All");
@@ -94,7 +95,7 @@ export default function RecentPost({ blogs, categories }: any) {
                 </div>
                 <div className="relative">
                   <p className="md:text-webDesk text-mobileDesk text-gray w-[182px] md:w-full line-clamp-2">
-                    {blogs[0]?.body}
+                    {removeHTMLTags(blogs[0]?.body)}
                     <Link href={`/${blogs[0]?.slug}`} className="absolute bottom-0 right-0 hover:underline md:text-webDesk text-mobileDesk bg-[#F4F4F4] rounded-sm px-1">
                       Selengkapnya
                     </Link>
@@ -208,7 +209,7 @@ export default function RecentPost({ blogs, categories }: any) {
                 ))}
               </section>
             </div>
-            <div className="hidden lg:block bg-white p-5 rounded-md">
+            <div className="hidden lg:block bg-white p-5 rounded-md xl:h-[300px] 2xl:h-[313px]">
               <TagsDisplay blogs={blogs} />
             </div>
           </div>

@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ListIcon from "@/public/assets/icons/ListIcon";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import CardBlogSquare from "./CardBlogSquare";
+import { removeHTMLTags } from "@/lib/utils";
 export const dynamic = 'force-dynamic';
 
 interface BlogProps {
@@ -62,7 +63,7 @@ export default async function Blog() {
                     {lastBlog?.title}
                   </h2>
                   <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-none">
-                    {lastBlog?.excerpt}
+                    {removeHTMLTags(lastBlog?.body)}
                   </p>
                 </div>
                 <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] xl:w-[60%] rounded-xl">
@@ -89,9 +90,9 @@ export default async function Blog() {
                 </Link>
               </div>
             </TabsContent>
-            <TabsContent value="square">
-              <div className="md:py-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-4 items-center">
-                {blogList?.slice(0, 12).map((blog: any, i: number) => (
+            <TabsContent value="square" className="">
+              <div className="md:-ml-5 pt-5 md:py-10 px-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 gap-x-3 xl:gap-x-10 items-center whitespace-nowrap">
+                {blogList?.slice(-12).map((blog: any, i: number) => (
                   <CardBlogSquare key={i} blogs={blog} />
                 ))}
               </div>
