@@ -69,7 +69,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-white"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
-          <Link className="block md:hidden" href={`/blog/${slug}`}>
+          <Link className="block md:hidden" href={`/${slug}`}>
             <Image
               src="/assets/icons/arrow.svg"
               alt="arrow up"
@@ -80,10 +80,10 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           </Link>
         </div>
         <div className="flex items-start w-full md:gap-2 my-1 md:my-3 justify-between">
-          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-full md:w-11/12 hover:underline line-clamp-2" href={`/blog/${slug}`}>
+          <Link className="font-medium text-white md:text-webSubjudul text-mobileSubjudul w-full md:w-11/12 hover:underline line-clamp-2" href={`/${slug}`}>
             {title ? title : 'Lorem Ipsum'}
           </Link>
-          <Link className="hidden md:flex w-1/12 justify-end" href={`/blog/${slug}`}>
+          <Link className="hidden md:flex w-1/12 justify-end" href={`/${slug}`}>
             <Image
               src="/assets/icons/arrow.svg"
               alt="arrow up"

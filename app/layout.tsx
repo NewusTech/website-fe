@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Footer from "@/components/shared/Footer";
+import lambang from "@/public/assets/icons/logo.svg";
 import Bottombar from "@/components/shared/Bottombar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Newus Technology",
-  description: "New With Us Technology - We are a team of professionals",
+  title: "IT CONSULTANT LAMPUNG & SOFTWARE DEVELOPMENT",
+  description: "Mal Pelayanan Publik Lampung Timur",
+  icons: {
+    icon: {
+      url: `${lambang.src}`,
+    },
+  },
 };
 
 export default function RootLayout({

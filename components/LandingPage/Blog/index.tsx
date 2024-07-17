@@ -65,6 +65,7 @@ export default async function Blog() {
                   <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-none">
                     {removeHTMLTags(lastBlog?.body)}
                   </p>
+                  <Link className="text-mobileDesk md:text-webDesk hover:underline text-white" href={`/${lastBlog?.slug}`}>Selengkapnya</Link>
                 </div>
                 <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] xl:w-[60%] rounded-xl">
                   <Image

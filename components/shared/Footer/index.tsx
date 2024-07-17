@@ -90,15 +90,19 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          <div className="lg:ml-[320px] xl:ml-[417px] lg:mt-[40px] xl:mt-10">
+          <div className="lg:ml-[310px] xl:ml-[400px] lg:mt-[20px] xl:mt-10  lg:w-8/12 xl:w-8/12">
             <Image
               src="/assets/icons/logo.svg"
               alt="logo"
               width={206}
               height={56}
-              className="mb-5 md:mb-0 2xl:mb-10 w-[100px] h-[30px] xl:w-[206px] md:w-[150px] md:h-[56px]"
+              className="mb-2 lg:mb-3 xl:mb-5 2xl:mb-10 w-[100px] h-[30px] xl:w-[206px] md:w-[150px] md:h-[56px]"
             />
-            <div className="flex gap-2 lg:gap-4 items-start md:mt-5 xl:mt-10 2xl:mt-[40px]">
+            <p className="text-white md:text-[12px] text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px] xl:leading-6">
+              Newus Technology adalah Software House di Bandar Lampung yang mengkhususkan diri dalam pengembangan website kustom, aplikasi/sistem berbasis web, dan aplikasi berbasis Android dan iOS. Sebagai perusahaan software di Bandar Lampung, Newus Technology juga menyediakan layanan sebagai konsultan IT di Lampung.
+            </p>
+            <h1 className="text-white md:text-sm text-[10px] font-semibold pt-5 pb-3">Hubungi Kami</h1>
+            <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-start">
               <Image
                 src="/assets/icons/place.svg"
                 alt="place"
@@ -106,52 +110,54 @@ const Footer = () => {
                 height={24}
                 className="w-[15px] h-[15px] lg:w-6 lg:h-6"
               />
-              <p className="text-white md:text-sm text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px]">
+              <p className="text-white md:text-webDesk text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px]">
                 {dataAbout?.address || 'Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212'}
               </p>
             </div>
-            <div className="flex gap-2 lg:gap-4 items-center mt-2 lg:mt-6">
-              <Image
-                src="/assets/icons/phone.svg"
-                alt="place"
-                width={24}
-                height={24}
-                className="w-[15px] h-[15px] lg:w-6 lg:h-6"
-              />
-              <p className="text-white md:text-sm text-[10px]">
-                {dataAbout?.phoneNumber || '(+62) 888-991-2992'}
-              </p>
-            </div>
-            <div className="flex gap-2 lg:gap-4 items-center mt-2 lg:mt-6">
-              <Image
-                src="/assets/icons/printer.svg"
-                alt="place"
-                width={24}
-                height={24}
-                className="w-[15px] h-[15px] lg:w-6 lg:h-6"
-              />
-              <p className="text-white md:text-sm text-[10px]">
-                {dataAbout?.email || 'newustechnology@gmail.com'}
-              </p>
-            </div>
-            <div className="hidden lg:flex gap-4 items-center pt-5">
-              {dataSocials?.map((social: any) => (
-                <SocialLink
-                  key={social.id}
-                  href={social.link}
-                  src={getIconSrc(social.title)}
-                  alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
+            <div className="flex items-center gap-3 pt-3 flex-wrap">
+              <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-center">
+                <Image
+                  src="/assets/icons/phone.svg"
+                  alt="place"
+                  width={24}
+                  height={24}
+                  className="w-[15px] h-[15px] lg:w-6 lg:h-6"
                 />
-              ))}
-              {/* <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
+                <p className="text-white md:text-webDesk text-[10px]">
+                  {dataAbout?.phoneNumber || '(+62) 888-991-2992'}
+                </p>
+              </div>
+              <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-center">
+                <Image
+                  src="/assets/icons/printer.svg"
+                  alt="place"
+                  width={24}
+                  height={24}
+                  className="w-[15px] h-[15px] lg:w-6 lg:h-6"
+                />
+                <p className="text-white md:text-webDesk text-[10px]">
+                  {dataAbout?.email || 'newustechnology@gmail.com'}
+                </p>
+              </div>
+              <div className="hidden lg:flex gap-4 items-center">
+                {dataSocials?.map((social: any) => (
+                  <SocialLink
+                    key={social.id}
+                    href={social.link}
+                    src={getIconSrc(social.title)}
+                    alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
+                  />
+                ))}
+                {/* <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
               <SocialLink href="https://www.twitter.com" src="/assets/icons/twitter.svg" alt="Twitter" />
               <SocialLink href="https://id.linkedin.com/company/newustechnology" src="/assets/icons/linkedin.svg" alt="LinkedIn" />
               <SocialLink href="https://www.youtube.com" src="/assets/icons/youtube.svg" alt="YouTube" />
               <SocialLink href="https://www.instagram.com/newustechnology/" src="/assets/icons/instagram.svg" alt="Instagram" />
               <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" /> */}
+              </div>
             </div>
           </div>
-          <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[42px] lg:ml-[0px] lg:w-1/3">
+          <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[32px] xl:mt-[42px] lg:ml-[10px] lg:w-4/12 xl:w-4/12">
             <div>
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Technology
