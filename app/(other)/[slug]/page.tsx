@@ -1,7 +1,7 @@
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import { getBlogDetail, getBlogList } from "@/components/Fetching/Blog/blog";
-import { getSocialMedia } from "@/components/Fetching/Contact/contact";
 import BodyContent from "@/components/BlogPage/Detail/Detail";
+import { getSocialMedia } from "@/components/Fetching/About/about";
 export const dynamic = 'force-dynamic';
 
 export default async function DetailBlogPage({ params }: { params: { slug: string } }) {
@@ -27,7 +27,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
     publishAt = "",
     createdAt = "",
     updatedAt = ""
-  } = blogDetail[0] || {};
+  } = (blogDetail?.length > 0 ? blogDetail[0] : {});
 
   const blogPaths = [
     { label: 'Home', href: '/' },
@@ -40,7 +40,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
       <div className="py-2">
         <Breadcrumbs paths={blogPaths} />
       </div>
-      <BodyContent blogDetail={blogDetail[0]} blogList={blogList} dataSocials={dataSocials} />
+      <BodyContent blogDetail={blogDetail?.length > 0 ? blogDetail[0] : {}} blogList={blogList} dataSocials={dataSocials} />
     </section>
   );
 };

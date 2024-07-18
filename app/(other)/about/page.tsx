@@ -1,6 +1,6 @@
 import AboutLayout from "@/components/About";
+import { getAboutCompany } from "@/components/Fetching/About/about";
 import { getClientist } from "@/components/Fetching/Client/client";
-import { getAboutCompany } from "@/components/Fetching/Contact/contact";
 import { getTeamList, getTeamMedia } from "@/components/Fetching/Division/division";
 import Header from "@/components/shared/Header/HeaderAbout";
 export const dynamic = 'force-dynamic';

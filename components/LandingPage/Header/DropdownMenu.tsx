@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import NavItem from "./NavItem";
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ data }: any) => {
   const [openDropdown, setOpenDropdown] = useState(false);
+  // const whiteLogo = data.siteLogo || '/assets/icons/newus-light.svg'
+  const whiteLogo = '/assets/icons/newus-light.svg'
 
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
@@ -28,10 +30,11 @@ const DropdownMenu = () => {
     <>
       <div className="flex items-center justify-between gap-6 w-full">
         <Image
-          src="/assets/icons/logo.svg"
+          src={whiteLogo}
           alt="NEWUS"
-          width={206}
-          height={56}
+          width={1000}
+          height={1000}
+          className="object-cover w-[200px] h-[50px] 2xl:w-[206px] 2xl:h-[56px]"
         />
         <Image
           className="cursor-pointer flex items-center justify-center"
