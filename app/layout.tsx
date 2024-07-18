@@ -4,6 +4,7 @@ import "./globals.css";
 import lambang from "@/public/assets/icons/logo.svg";
 import Bottombar from "@/components/shared/Bottombar";
 import { getAboutCompany } from "@/components/Fetching/About/about";
+export const dynamic = 'force-dynamic';
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,6 +1,7 @@
 import { getAboutCompany } from "@/components/Fetching/About/about";
 import RightSide from "@/components/LandingPage/Header/RightSide";
 import Footer from "@/components/shared/Footer";
+export const dynamic = 'force-dynamic';
 
 export default async function RootLayout({
   children,
