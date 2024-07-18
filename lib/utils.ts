@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function removeHTMLTags(inputString: any) {
-  return inputString.replace(/<\/?[^>]+(>|$)/g, "");
+  return inputString?.replace(/<\/?[^>]+(>|$)/g, "");
 }

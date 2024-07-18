@@ -33,7 +33,7 @@ interface BlogProps {
 
 export default async function Blog() {
   const blogList = await getBlogList();
-  const lastBlog = blogList[blogList.length - 2];
+  const lastBlog = blogList[blogList.length - 1];
   // const lastBlog = blogList[0];
   const remainingBlogs = blogList.slice(0, -1);
 
@@ -43,9 +43,6 @@ export default async function Blog() {
         <div className="container md:mx-auto">
           <div className="flex flex-col items-center md:py-1">
             <h4 className="text-mobileJudul md:text-[20px] font-semibold text-tangerine">Blog</h4>
-            {/* <h2 className="text-[32px] hidden md:block font-semibold text-white">
-              Blogssss
-            </h2> */}
           </div>
           <Tabs defaultValue="list" className="min-w-screen">
             <TabsList className="hidden md:flex justify-end md:mt-5">
@@ -62,7 +59,7 @@ export default async function Blog() {
                   <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-mobileJudul md:text-webJudul text-white truncate lg:text-clip text-wrap capitalize">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-none">
+                  <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-14">
                     {removeHTMLTags(lastBlog?.body)}
                   </p>
                   <Link className="text-mobileDesk md:text-webDesk hover:underline text-white" href={`/${lastBlog?.slug}`}>Selengkapnya</Link>
