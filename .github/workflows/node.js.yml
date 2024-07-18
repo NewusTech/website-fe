@@ -33,5 +33,5 @@ jobs:
       run: npm run build --if-present
     - name : change repo
       run : cd /home/root-newus/htdocs/newus.id/actions-runner/_work/website-fe/website-fe
-    - run : pm2 restart newus.id
+    - run : pm2 restart newus.id --update-env
     
