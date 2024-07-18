@@ -59,7 +59,7 @@ export default async function Blog() {
                   <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-mobileJudul md:text-webJudul text-white truncate lg:text-clip text-wrap capitalize">
                     {lastBlog?.title}
                   </h2>
-                  <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-14">
+                  <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-[14]">
                     {removeHTMLTags(lastBlog?.body)}
                   </p>
                   <Link className="text-mobileDesk md:text-webDesk hover:underline text-white" href={`/${lastBlog?.slug}`}>Selengkapnya</Link>
