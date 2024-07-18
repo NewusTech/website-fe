@@ -2,7 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Job from "./Job/index";
 import Intern from "./Intern/index";
 
-const CareerLayout = ({ dataJobs, categoryJobs }: any) => {
+const CareerLayout = ({ dataJobs, categoryJobs, dataIntern }: any) => {
   return (
     <section className="max-w-7xl mx-auto p-4 md:pt-20 md:pb-20">
       <Tabs defaultValue="say-hello">
@@ -21,7 +21,7 @@ const CareerLayout = ({ dataJobs, categoryJobs }: any) => {
           <Job dataJobs={dataJobs} categoryJobs={categoryJobs} />
         </TabsContent>
         <TabsContent value="build-project" className="ml-1">
-          <Intern />
+          <Intern dataIntern={dataIntern} />
         </TabsContent>
       </Tabs>
     </section>
