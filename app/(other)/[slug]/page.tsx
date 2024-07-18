@@ -1,7 +1,7 @@
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import { getBlogDetail, getBlogList } from "@/components/Fetching/Blog/blog";
-import { getSocialMedia } from "@/components/Fetching/Contact/contact";
 import BodyContent from "@/components/BlogPage/Detail/Detail";
+import { getSocialMedia } from "@/components/Fetching/About/about";
 export const dynamic = 'force-dynamic';
 
 export default async function DetailBlogPage({ params }: { params: { slug: string } }) {

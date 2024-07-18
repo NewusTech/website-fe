@@ -8,7 +8,7 @@ interface OurClientProps {
 }
 
 const OurClient = ({ clients }: any) => {
-  const ourClient = clients.length > 7 ? clients : ourClientAbout
+  const ourClient = clients.length >= 6 ? clients : ourClientAbout
 
   const firstRow = ourClient.slice(0, 7);
   const secondRow = ourClient.slice(7, 14);

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 import TabsContact from './TabsContact'
 import SocialLink from '../shared/Social/SocialLink'
-import { getAboutCompany, getSocialMedia } from '../Fetching/Contact/contact'
+import { getAboutCompany, getSocialMedia } from '../Fetching/About/about'
 
 export default async function ContactUs() {
   const dataAbout = await getAboutCompany()

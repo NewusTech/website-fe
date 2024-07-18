@@ -8,8 +8,11 @@ import Link from "next/link";
 import DropdownMenu from "@/components/LandingPage/Header/DropdownMenu";
 import NavItem from "./NavItem";
 
-const RightSide = () => {
+const RightSide = ({ aboutCompany }: any) => {
   const [openDropdown, setOpenDropdown] = useState(false);
+  const data = aboutCompany?.[0];
+  const whiteLogo = data.siteLogo || '/assets/icons/newus-light.svg'
+  const BlackLogo = data.siteLogo || '/assets/icons/logo-mobile.svg'
 
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
@@ -31,10 +34,11 @@ const RightSide = () => {
         <div className="px-[14px] py-[23px] flex justify-between items-center md:hidden">
           <Link href='/'>
             <Image
-              src="/assets/icons/logo-2.svg"
+              src={BlackLogo}
               alt="Newus Technology"
-              width={144}
-              height={34}
+              width={2000}
+              height={2000}
+              className="object-cover w-[144px] h-[40px]"
             />
           </Link>
           <Image
@@ -46,16 +50,9 @@ const RightSide = () => {
             className={`md:hidden ${openDropdown ? 'bg-blue md:bg-none text-[#480DEC] -p-1 md:p-0' : 'cursor-pointer md:hidden'}`}
             onClick={handleDropdown}
           />
-          {/* <Image
-            src="/assets/icons/hamburger-2.svg"
-            alt="hamburger menu"
-            width={20}
-            height={20}
-            onClick={handleDropdown}
-          /> */}
         </div>
         <div className="hidden md:flex bg-blue w-5/12 lg:w-4/12 xl:w-3/12  flex-col items-start container mx-auto pt-[26px]">
-          <DropdownMenu />
+          <DropdownMenu data={data} />
         </div>
         {openDropdown && (
           <nav data-aos="fade-down"
