@@ -18,7 +18,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
     body = "",
   } = blogDetail || {};
 
-  const sanitizedBody = DOMPurify.sanitize(body);
+  const sanitizedBody = DOMPurify?.sanitize(body);
 
   useEffect(() => {
     const handleScroll = () => {
