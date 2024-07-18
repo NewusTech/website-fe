@@ -23,6 +23,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '20.x'
+    - name: Git pull
+      run: |
+          cd /home/root-newus/htdocs/newus.id
+          git pull
     - name: Run Npm
       run: npm ci
     - name: Build Proccess
