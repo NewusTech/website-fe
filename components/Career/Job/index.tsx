@@ -1,91 +1,87 @@
-import React from 'react'
-import CardJob from './CardJob'
+'use client'
+
+import React, { useState } from 'react';
+import CardJob from './CardJob';
 import NotFound from '@/components/shared/NotFound';
 
-const Job = ({ dataJobs }: any) => {
-  console.log(dataJobs);
+interface Job {
+  JobCategory: any;
+  category: string;
+  id: number;
+  title: string;
+  description: string;
+  salary: string | number;
+  status: string;
+}
 
-  const jobData = [
-    {
-      id: 1,
-      title: 'Product Designer',
-      description: 'We are looking for a mid-level product designer to join our team.',
-      minSalary: 10000000,
-      maxSalary: 15000000,
-      status: ['Full Remote', 'Full Time']
-    },
-    {
-      id: 2,
-      title: 'Fullstack Developer',
-      description: 'Join our development team as a Fullstack Developer to build robust web applications.',
-      minSalary: 10000000,
-      maxSalary: 15000000,
-      status: ['Full Remote', 'Full Time']
-    },
-    {
-      id: 3,
-      title: 'Sales Marketing',
-      description: 'We need a Sales Marketing expert to help grow our customer base and drive sales.',
-      minSalary: 10000000,
-      maxSalary: 15000000,
-      status: ['Full Onsite', 'Full Time']
-    },
-    {
-      id: 4,
-      title: 'Frontend Developer',
-      description: 'We are looking for a skilled Frontend Developer to enhance our user interfaces.',
-      minSalary: 10000000,
-      maxSalary: 15000000,
-      status: ['Full Remote', 'Full Time']
-    }
-  ];
+interface Category {
+  id: number;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+interface JobProps {
+  dataJobs: Job[];
+  categoryJobs: Category[];
+}
+
+const Job: React.FC<JobProps> = ({ dataJobs, categoryJobs }) => {
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+
+  const filteredJobs = selectedCategory === 'All'
+    ? dataJobs
+    : dataJobs.filter(job => job.JobCategory.title === selectedCategory);
 
   return (
     <section className='pb-20'>
       <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pb-4 md:pb-0 md:pt-10">
-        <div className="bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[16px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-white font-bold text-mobileSubjudul md:text-webSubjudul whitespace-nowrap md:whitespace-normal">
+        <div
+          className={`bg-blue w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[16px] md:rounded-[16px] flex items-center justify-center py-3 px-10 cursor-pointer ${selectedCategory === 'All' ? 'bg-blue text-white' : 'bg-white text-dark'
+            }`}
+          onClick={() => setSelectedCategory('All')}
+        >
+          <p className="font-bold text-mobileSubjudul md:text-webSubjudul whitespace-nowrap md:whitespace-normal">
             All
           </p>
         </div>
-        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Design
-          </p>
-        </div>
-        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Development
-          </p>
-        </div>
-        <div className="w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10">
-          <p className="text-dark font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
-            Marketing
-          </p>
-        </div>
+        {categoryJobs.map((category) => (
+          <div
+            key={category.id}
+            className={`w-[46px] h-[14px] md:w-auto md:h-[43px] rounded-[4px] md:rounded-[16px] flex items-center justify-center py-3 px-10 cursor-pointer ${selectedCategory === category.title ? 'bg-blue text-white' : 'bg-white text-dark'
+              }`}
+            onClick={() => setSelectedCategory(category.title)}
+          >
+            <p className="font-[500] text-mobileSubjudul md:text-webSubjudul hover:text-blue transition-colors duration-300 whitespace-nowrap md:whitespace-normal">
+              {category.title}
+            </p>
+          </div>
+        ))}
       </div>
 
-      <div className='md:pt-10'>
-        <NotFound />
-      </div>
-      <div className='hidden'>
+      <div>
         <div className='md:pt-6 flex flex-col gap-4'>
-          {jobData.map((job) => (
-            <div key={job.title} className='md:pt-6'>
-              <CardJob
-                id={job.id}
-                title={job.title}
-                description={job.description}
-                minSalary={job.minSalary}
-                maxSalary={job.maxSalary}
-                status={job.status}
-              />
+          {filteredJobs.length > 0 ? (
+            filteredJobs.map((job) => (
+              <div key={job.id} className='md:pt-6'>
+                <CardJob
+                  id={job.id}
+                  title={job.title}
+                  description={job.description}
+                  salary={job.salary}
+                  status={job.status}
+                />
+              </div>
+            ))
+          ) : (
+            <div className='md:pt-10'>
+              <NotFound />
             </div>
-          ))}
+          )}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Job
+export default Job;
