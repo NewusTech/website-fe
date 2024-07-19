@@ -18,31 +18,33 @@ const CardListProject = ({ projects }: any) => {
 
   return (
     <div data-aos="flip-left" className="bg-white rounded-[10px] w-full mb-[10px] shadow-lg">
-      <div className="flex md:gap-[32px] md:w-full h-[140px] md:h-[243px] relative">
-        <div className="w-[40%] md:w-[30%] h-full flex items-center relative">
+      <div className="flex md:gap-[12px] lg:gap-[32px] md:w-full h-[130px] md:h-[243px] relative">
+        <div className="w-[45%] md:w-[45%] lg:w-[30%] h-full flex items-center relative">
           <Image
             src={image || `/assets/images/placeholder-image (2).jpg`}
             alt="image card list"
             width={1000}
             height={1000}
-            className="rounded-l-[10px] h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            loading="lazy"
+            className="rounded-l-[10px] h-full w-full object-contain md:object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
-          <div className="absolute top-2 right-2 z-10">
+          <div className="absolute top-1 right-1 z-10">
             <Image
               src={logo || `/assets/images/placeholder-logo.jpg`}
               alt="Logo"
               width={1000}
               height={1000}
-              className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+              loading="lazy"
+              className="w-[30px] h-[30px] md:w-[50px] md:h-[50px] object-contain"
             />
           </div>
         </div>
 
-        <div className="w-[70%] md:w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 md:py-5 rounded-r-[10px]">
-          <h2 className="md:text-webJudul text-mobileJudul font-semibold">
+        <div className="w-[70%] md:w-[70%] flex flex-col justify-center pr-4 md:pr-[42px] bg-white pl-2 md:py-5 rounded-r-[10px] h-full">
+          <h2 className="md:text-webJudul text-mobileSubjudul font-semibold  line-clamp-2 md:line-clamp-none">
             {title || 'Name Project'}
           </h2>
-          <p className="md:text-webSubjudul text-mobileSubjudul text-gray mt-[10px] mb-2 md:mb-5 w-full md:w-full line-clamp-3">
+          <p className="md:text-webSubjudul text-mobileDesk text-gray my-1 md:mt-3 md:mb-4 w-full md:w-full line-clamp-2 md:line-clamp-3">
             {removeHTMLTags(body) || 'lorem1'}
           </p>
           <Link target="_blank" href={`/portfolio/${slug}`}>

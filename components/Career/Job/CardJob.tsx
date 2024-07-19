@@ -5,7 +5,7 @@ import React from 'react'
 
 const CardJob = ({ id, title, description, salary, status }: any) => {
   return (
-    <div className='flex  p-[30px] border border-[#4F4F4F] rounded-[10px]' style={{ boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.06)' }}>
+    <div className='flex p-5 xl:p-10 2xl:p-[30px] border border-[#4F4F4F] rounded-[10px]' style={{ boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.06)' }}>
       <div className='flex-1 flex flex-col gap-6'>
         <h1 className='font-bold md:text-[24px] hidden md:block'>{title}</h1>
         <div className='flex md:hidden justify-between items-center'>

@@ -134,9 +134,9 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 <li>Mobile Apps Development</li>
                 <li>Website Development</li>
                 <li>Web Based Application</li>
-                <li>Mobile Applications</li>
+                {/* <li>Mobile Applications</li>
                 <li>Email Bussines</li>
-                <li>Maintenance</li>
+                <li>Maintenance</li> */}
               </ul>
             </div>
             <div>
@@ -146,9 +146,9 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
               <ul className="list-disc pl-4 lg:pl-5 text-white md:text-webDesk text-[10px] mt-[6px] lg:mt-[10px]">
                 <li>Online Advertising (SEO)</li>
                 <li>Social Media Campaign</li>
-                <li>Facebook Ads</li>
+                {/* <li>Facebook Ads</li>
                 <li>Instagram Ads</li>
-                <li>Search Engine Optimization</li>
+                <li>Search Engine Optimization</li> */}
                 <li>Content & Engagement</li>
               </ul>
             </div>
