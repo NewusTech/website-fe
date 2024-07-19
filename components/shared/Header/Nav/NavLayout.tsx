@@ -24,8 +24,8 @@ const NavLayout = ({ aboutCompany }: any) => {
   };
 
   const data = aboutCompany?.[0];
-  const whiteLogo = data.siteLogo || '/assets/icons/newus-light.svg'
-  const BlackLogo = data.siteLogo || '/assets/icons/logo-mobile.svg'
+  const whiteLogo = data?.siteLogo || '/assets/icons/newus-light.svg'
+  const BlackLogo = data?.siteLogo || '/assets/icons/logo-mobile.svg'
 
   return (
     <section className="max-w-screen 2xl:container 2xlmx-auto">

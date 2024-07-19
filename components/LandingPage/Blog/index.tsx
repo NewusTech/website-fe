@@ -40,7 +40,7 @@ export default async function Blog() {
   return (
     <section className="overflow-hidden">
       <div className="bg-[#14141F] md:bg-[#14141F] py-6 md:py-10">
-        <div className="container md:mx-auto">
+        <div className="px-5 md:container md:mx-auto">
           <div className="flex flex-col items-center md:py-1">
             <h4 className="text-mobileJudul md:text-[20px] font-semibold text-tangerine">Blog</h4>
           </div>

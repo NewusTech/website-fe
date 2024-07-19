@@ -32,11 +32,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
             className={`w-full h-full object-cover`}
           />
         </div>
-        <div className="-mt-[200px] md:ml-[30px] xl:mx-auto md:-mt-[500px] xl:-mt-[600px] text-white max-w-7xl mx-auto">
-          <div className="max-w-[500px] p-[35px] md:p-0">
-            <h1 className="text-[14px] md:text-[36px] font-bold pb-2 md:pb-[50px]">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
-            <h2 className="text-[12px] md:text-[20px] pb-2 md:pb-5">{projectsDetail?.portfolioYear ? getYearFromDate(projectsDetail.portfolioYear) : '2023'}</h2>
-            <p className="text-[12px] md:text-[20px] pb-2 md:pb-[50px]">{projectsDetail?.excerpt ? projectsDetail.excerpt : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
+        <div className="-mt-[200px] md:ml-[30px] xl:mx-auto md:-mt-[500px]  xl:-mt-[500px] 2xl:-mt-[600px] text-white max-w-7xl mx-auto">
+          <div className="max-w-[500px] p-[35px] 2xl:p-0">
+            <h1 className="text-[14px] md:text-[20px] font-bold pb-2 md:pb-[50px]">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
+            <h2 className="text-mobileSubjudul md:text-webSubjudul pb-2 md:pb-5">{projectsDetail?.portfolioYear ? getYearFromDate(projectsDetail.portfolioYear) : '2023'}</h2>
+            <p className="text-mobileSubjudul md:text-webSubjudul pb-2 md:pb-[50px]">{projectsDetail?.excerpt ? projectsDetail.excerpt : 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
             <div className="flex items-center gap-2 md:gap-6">
               <Link
                 className="flex items-center justify-center gap-[5px] md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm"
@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto min-h-screen md:pb-44 pt-8 md:pt-[250px] xl:pt-[400px] p-[10px] md:p-5 xl:p-0">
+      <div className="2xl:max-w-7xl mx-auto min-h-screen md:pb-44 pt-8 md:pt-[250px] xl:pt-[400px] p-[10px] md:p-5 xl:p-0">
         <div className="flex items-center gap-[40px] relative">
           <div className="w-[40%] md:w-[28%] h-full flex items-center relative">
             <Image
