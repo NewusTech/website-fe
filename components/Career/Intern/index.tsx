@@ -45,7 +45,7 @@ const Intern = ({ dataIntern }: any) => {
         console.log('Success:', result);
       })
       .catch(error => {
-        console.error('Error:', error);
+        alert(error);
       });
   }
 
