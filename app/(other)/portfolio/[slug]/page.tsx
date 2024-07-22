@@ -6,6 +6,7 @@ import ImageSlider from "@/components/shared/SliderImage";
 import CardSquarePorto from "@/components/Portfolio/CardSquarePorto";
 import { getProjectList, getProjectDetail } from "@/components/Fetching/Portfolio/port";
 import Link from "next/link";
+import { removeHTMLTags } from "@/lib/utils";
 export const dynamic = 'force-dynamic';
 
 export default async function Page({ params }: { params: { slug: string } }) {
@@ -74,7 +75,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="flex items-center gap-[40px] relative">
           <div className="w-[40%] md:w-[28%] h-full flex items-center relative">
             <Image
-              src={projectsDetail?.image ? projectsDetail.image : "/assets/images/placeholder-image (2).jpg"}
+              src={projectsDetail?.image || "/assets/images/placeholder-image (2).jpg"}
               alt="image card list"
               width={1000}
               height={1000}
@@ -82,7 +83,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
             />
             <div className="absolute top-2 right-2 z-10">
               <Image
-                src={projectsDetail?.logo ? projectsDetail.logo : `/assets/images/placeholder-image (2).jpg`}
+                src={projectsDetail?.logo || `/assets/images/placeholder-image (2).jpg`}
                 alt="Logo"
                 width={1000}
                 height={1000}
@@ -90,39 +91,23 @@ export default async function Page({ params }: { params: { slug: string } }) {
               />
             </div>
           </div>
-          {/* <div className="absolute top-0 left-[128px] md:left-[420px] z-10">
-            <Image
-              src={projectsDetail?.logo ? projectsDetail.logo : `/assets/images/placeholder-image (2).jpg`}
-              alt="Logo"
-              width={1000}
-              height={1000}
-              className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-contain"
-            />
-          </div> */}
-          {/* <Image
-            src={projectsDetail?.image ? projectsDetail.image : "/assets/images/placeholder-image (2).jpg"}
-            alt="image card list"
-            width={1000}
-            height={1000}
-            className="w-[64px] h-[36px] md:w-[467px] md:h-[310px] rounded-l-[10px] object-cover"
-          /> */}
           <div>
             <h1 className="text-2xl md:text-[24px] font-bold md:pb-4">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
-            <p className="hidden md:block text-[16px] line-clamp-3">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
+            <p className="hidden md:block text-[16px] line-clamp-3">{removeHTMLTags(projectsDetail?.body) || 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
           </div>
         </div>
-        <p className="md:hidden text-[16px] text-justify text-sm pt-5">{projectsDetail?.body ? projectsDetail.body : 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
+        <p className="md:hidden text-[16px] text-justify text-sm pt-5">{removeHTMLTags(projectsDetail?.body) || 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
 
-        <div className="hidden md:flex gap-[40px] items-center justify-between">
+        <div className="hidden md:flex gap-[40px] items-center justify-center py-4 md:py-10">
           {/* <div className="hidden flex gap-[40px] pt-5 md:pt-[86px] items-center justify-between"> */}
-          <div className="md:w-1/2">
+          {/* <div className="md:w-1/2">
             <div className="md:hidden mb-4">
               <Image height={367} width={570} src={images[0]} alt="slider" className="w-full" />
             </div>
             <h1 className="text-[24px] font-bold pb-3">{projectsDetail?.title ? projectsDetail.title : 'Project Name'}</h1>
             <p className="text-[16px]">{projectsDetail?.body ? projectsDetail.body : 'Do you really think graphic arts supply houses were hiring  scholars Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig. Kronde est.  <br /> <br /> Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar direlig.Lörem ipsum astrobel sar direlig. Kronde est '}
             </p>
-          </div>
+          </div> */}
           <div className="block md:w-1/2">
             <ImageSlider images={images} />
           </div>
@@ -144,9 +129,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
         <div className="pt-5 md:pt-[84px]">
           <h1 className="md:text-[28px] font-[500] pb-5 md:pb-10">Deskripsi</h1>
-          <h2 className="text-sm md:text-[20px] font-[500] pb-5 md:pb-10">{projectsDetail?.title ? projectsDetail.title : 'Figma ipsum component variant main'}</h2>
+          <h2 className="text-sm md:text-[20px] font-[500] pb-5 md:pb-10">{projectsDetail?.title || 'Figma ipsum component variant main'}</h2>
           <p className="text-sm md:text-[16px] text-justify">
-            {projectsDetail?.body ? projectsDetail.body : 'Figma ipsum component variant main layer. Share mask layer shadow community library horizontal inspect. Link image frame component underline ellipse. Move mask component scrolling underline blur fill. Asset arrow image variant arrow follower align strikethrough. Ipsum background component text auto invite style component blur. Device distribute union variant share opacity stroke editor layout. Component project flows union union figma share boolean. Reesizing clip frame slice figjam scrolling connection distribute strikethrough team. List community main selection style connection vector. Layout flatten line project image project slice flatten prototype. Pencil ellipse component rectangle star ipsum draft style. Text hand hand arrange figma device italic selection pencil arrow. Project underline image group group flatten star list fill vertical. Background blur opacity variant draft. Connection thumbnail boolean share style object thumbnail pen slice. Follower arrange share fill select rectangle shadow selection. Rotate strikethrough arrange inspect connection fill share create group. Comment line scale team subtract select subtract horizontal. Layout fill figjam clip project effect layer. Union boolean reesizing strikethrough distribute. Rotate subtract object image ipsum scrolling. Pencil undo main reesizing arrange export. Mask follower italic layout comment layer slice. Scale community bold thumbnail pen auto figjam distribute select. Line pencil stroke prototype invite thumbnail hand. Rotate overflow rotate italic font project scrolling vertical layer boolean. Undo subtract comment rectangle inspect component subtract inspect. Shadow library follower union community boolean scale. Star inspect device object flows italic thumbnail frame. Layer blur asset effect pencil scrolling vertical export. Outline italic plugin rectangle align flows. Variant hand star hand thumbnail union arrange frame layer. Stroke bullet bold community follower distribute boolean export. Subtract library pixel distribute object rotate polygon flatten flows team.'}
+            {removeHTMLTags(projectsDetail?.body) || 'Figma ipsum component variant main layer. Share mask layer shadow community library horizontal inspect. Link image frame component underline ellipse. Move mask component scrolling underline blur fill. Asset arrow image variant arrow follower align strikethrough. Ipsum background component text auto invite style component blur. Device distribute union variant share opacity stroke editor layout. Component project flows union union figma share boolean. Reesizing clip frame slice figjam scrolling connection distribute strikethrough team. List community main selection style connection vector. Layout flatten line project image project slice flatten prototype. Pencil ellipse component rectangle star ipsum draft style. Text hand hand arrange figma device italic selection pencil arrow. Project underline image group group flatten star list fill vertical. Background blur opacity variant draft. Connection thumbnail boolean share style object thumbnail pen slice. Follower arrange share fill select rectangle shadow selection. Rotate strikethrough arrange inspect connection fill share create group. Comment line scale team subtract select subtract horizontal. Layout fill figjam clip project effect layer. Union boolean reesizing strikethrough distribute. Rotate subtract object image ipsum scrolling. Pencil undo main reesizing arrange export. Mask follower italic layout comment layer slice. Scale community bold thumbnail pen auto figjam distribute select. Line pencil stroke prototype invite thumbnail hand. Rotate overflow rotate italic font project scrolling vertical layer boolean. Undo subtract comment rectangle inspect component subtract inspect. Shadow library follower union community boolean scale. Star inspect device object flows italic thumbnail frame. Layer blur asset effect pencil scrolling vertical export. Outline italic plugin rectangle align flows. Variant hand star hand thumbnail union arrange frame layer. Stroke bullet bold community follower distribute boolean export. Subtract library pixel distribute object rotate polygon flatten flows team.'}
           </p>
         </div>
 
