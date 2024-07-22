@@ -29,13 +29,16 @@ interface WhyChooseUsProps {
 const WhyChooseUs = () => {
   return (
     <section className="px-5 md:container mx-auto py-8 md:pt-5 md:pb-16 xl:pb-16 2xl:pb-[90px] overflow-hidden">
-      <div>
-        <h1 className="text-center text-tangerine text-mobileJudul md:text-[20px]">
-          <strong className="text-blue mr-1 md:mr-[2px]">Why </strong>Choose Us?
-        </h1>
-        <h4 className="font-bold text-mobileDesk md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
+      <div className="lg:px-10">
+        <div className="flex items-center gap-3">
+          <h1 className="text-center text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px]">
+            <span className="text-blue mr-1 md:mr-[2px]">Why </span>Choose Us?
+          </h1>
+          <div className="w-full h-[1px] bg-gray"></div>
+        </div>
+        {/* <h4 className="font-bold text-mobileDesk md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
           &quot;Trusted IT Consulting for Exceptional Service Quality&quot;
-        </h4>
+        </h4> */}
         <div className="flex items-start md:items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[30px] max-w-6xl mx-auto overflow-hidden">
           {chooseUs.map(({ id, logo, name, desc }: WhyChooseUsProps) => (
             <div
@@ -61,9 +64,12 @@ const WhyChooseUs = () => {
         </div>
       </div>
       <div className="pt-10 2xl:pt-20 lg:px-10">
-        <h1 className="text-center text-tangerine text-mobileJudul md:text-[20px] pb-3 md:pb-10">
-          <strong className="text-blue mr-2 md:mr-[10px]">Our Skills</strong>
-        </h1>
+        <div className="flex items-center gap-3 pb-3">
+          <h1 className="text-center text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px]">
+            <span className="text-blue mr-1 md:mr-[2px]">Our </span>Skills
+          </h1>
+          <div className="w-full h-[1px] bg-gray"></div>
+        </div>
         <div className="grid grid-cols-3 md:grid-cols-6 flex-grow-0
          gap-2 md:gap-4">
           {skills.map((skill, index) => (
@@ -84,7 +90,7 @@ const WhyChooseUs = () => {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

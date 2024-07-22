@@ -82,7 +82,7 @@ export default async function Blog() {
               </div>
               <div className="flex items-center justify-center md:pb-5 mt-5">
                 <Link href='/blog'>
-                  <Button className="md:h-[51px] bg-tangerine hover:bg-tangerine-2 py-1 text-[11px] md:text-webDesk  text-white">
+                  <Button className="md:h-[51px] h-[31px] rounded-xl bg-tangerine hover:bg-tangerine-2 py-1 text-[11px] md:text-webDesk  text-white">
                     See More Articles
                   </Button>
                 </Link>
@@ -96,7 +96,7 @@ export default async function Blog() {
               </div>
               <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
                 <Link href='/blog'>
-                  <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-mobileDesk md:text-webDesk  text-white">
+                  <Button className="rounded-xl h-[16px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-mobileDesk md:text-webDesk  text-white">
                     See More Articles
                   </Button>
                 </Link>

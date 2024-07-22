@@ -6,8 +6,14 @@ export default async function TestiomoniStars() {
   const dummyImage = "/assets/images/antoni.svg"
 
   return (
-    <div className="container mx-auto px-1 py-10 md:pt-20 lg:px-14">
-      <h2 className="text-mobileJudul md:text-[24px] font-bold text-center pb-3 md:pb-36 capitalize">Testimonials</h2>
+    <div className="text-center md:px-8 2xl:max-w-7xl mx-auto bg-gray-100 pb-10 pt-5">
+      {/* <div className="container mx-auto px-1 py-10 md:pt-10 2xl:pt-20 lg:px-14"> */}
+      <div className="md:mt-10 mt-[10px] flex justify-between items-center   gap-3 md:gap-5 px-5">
+        <h2 className="font-bold lg:mb-4 capitalize text-mobileJudul md:text-[24px] text-nowrap">
+          Testimonials
+        </h2>
+        <div className="w-full md:mb-3 h-[2px] bg-gray-4"></div>
+      </div>
       <div>
         <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">
           {dataTestimony?.map((testimonial: any, index: number) => (
