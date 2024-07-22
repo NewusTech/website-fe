@@ -11,8 +11,8 @@ import NavItem from "./NavItem";
 const RightSide = ({ aboutCompany }: any) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   const data = aboutCompany?.[0];
-  const whiteLogo = data.siteLogo || '/assets/icons/newus-light.svg'
-  const BlackLogo = data.siteLogo || '/assets/icons/logo-mobile.svg'
+  const whiteLogo = data?.siteLogo || '/assets/icons/newus-light.svg'
+  const BlackLogo = data?.siteLogo || '/assets/icons/logo-mobile.svg'
 
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);

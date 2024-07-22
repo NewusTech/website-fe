@@ -57,18 +57,18 @@ export default async function Blog() {
               <div className="flex justify-between items-center gap-4 lg:gap-8  w-full xl:mt-[20px]">
                 <div className="flex-col gap-4 xl:gap-6 hidden md:flex md:w-[40%] lg:w-[40%] xl:w-[40%]">
                   <h2 data-aos="zoom-in" className="font-medium lg:w-[400px] xl:w-[480px] text-mobileJudul md:text-webJudul text-white truncate lg:text-clip text-wrap capitalize">
-                    {lastBlog?.title}
+                    {lastBlog?.title || 'Title'}
                   </h2>
                   <p data-aos="zoom-in" className="text-mobileSubjudul md:text-webSubjudul text-white text-justify md:line-clamp-12 xl:line-clamp-[14]">
-                    {removeHTMLTags(lastBlog?.body)}
+                    {removeHTMLTags(lastBlog?.body || 'None')}
                   </p>
                   <Link className="text-mobileDesk md:text-webDesk hover:underline text-white" href={`/${lastBlog?.slug}`}>Selengkapnya</Link>
                 </div>
                 <div data-aos='fade-right' className="hidden md:block md:w-[58%] lg:w-[60%] xl:w-[60%] rounded-xl">
                   <Image
                     data-aos="zoom-in"
-                    src={lastBlog?.image ? lastBlog.image : '/assets/images/blog.jpg'}
-                    alt={lastBlog?.title}
+                    src={lastBlog?.image || '/assets/images/blog.jpg'}
+                    alt={lastBlog?.title || 'logo'}
                     width={690}
                     height={430}
                     className="rounded-xl w-full h-[300px] lg:h-[300px] xl:h-[400px] bg-cover object-cover"
@@ -82,7 +82,7 @@ export default async function Blog() {
               </div>
               <div className="flex items-center justify-center md:pb-5 mt-5">
                 <Link href='/blog'>
-                  <Button className="md:h-[51px] bg-tangerine hover:bg-tangerine-2 py-1 text-[11px] md:text-webDesk  text-white">
+                  <Button className="md:h-[51px] h-[31px] rounded-xl bg-tangerine hover:bg-tangerine-2 py-1 text-[11px] md:text-webDesk  text-white">
                     See More Articles
                   </Button>
                 </Link>
@@ -96,7 +96,7 @@ export default async function Blog() {
               </div>
               <div className="flex items-center justify-center mb-6 md:mb-0 md:pb-5 mt-5">
                 <Link href='/blog'>
-                  <Button className="h-[20px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-mobileDesk md:text-webDesk  text-white">
+                  <Button className="rounded-xl h-[16px] md:h-[51px] bg-tangerine hover:bg-tangerine-2 text-mobileDesk md:text-webDesk  text-white">
                     See More Articles
                   </Button>
                 </Link>

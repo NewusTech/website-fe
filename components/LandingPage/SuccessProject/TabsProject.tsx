@@ -100,7 +100,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
           <p className="text-gray text-mobileSubjudul md:text-webSubjudul">
             See How We Elevate Businesses. Explore Our Success Projects.
           </p>
-          <div className="flex flex-col xl:flex-row gap-4 my-4 md:my-5 ">
+          <div className="flex flex-col xl:flex-row my-4 md:my-5 ">
             <div className="gap-4 md:flex hidden">
               {categories.map((category) => (
                 <Button
