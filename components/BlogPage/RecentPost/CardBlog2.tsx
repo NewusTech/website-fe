@@ -38,7 +38,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       <div className="w-[40%] max-h-[130px] rounded-[10px]">
         <Link href={`/${slug}`}>
           <Image
-            src={`${image || '/assets/images/blog.jpg'}`}
+            src={image || '/assets/images/blog.jpg'}
             alt="blog"
             width={267}
             height={305}
