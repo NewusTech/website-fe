@@ -10,6 +10,7 @@ interface BlogProps {
   keyword: string,
   excerpt: string,
   body: string,
+  altImage: string,
   kategoriblog_id: number,
   kategoriblog_title: string,
   tagblog_id: number,
@@ -30,7 +31,7 @@ interface CardBlogProps {
 }
 
 const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
-  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, tagblog_title } = blogs;
+  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, altImage, tagblog_title } = blogs;
 
   return (
     <div
@@ -49,8 +50,8 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           }`}
       >
         <Image
-          src={`${image ? `${image}` : '/assets/images/blog.jpg'}`}
-          alt="blog"
+          src={image || '/assets/images/blog.jpg'}
+          alt={altImage || "blog"}
           width={326}
           height={233}
           className={`${type === "landing"

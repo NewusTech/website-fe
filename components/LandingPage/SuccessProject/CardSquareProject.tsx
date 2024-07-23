@@ -6,14 +6,7 @@ import { removeHTMLTags } from "@/lib/utils";
 const CardSquareProject = ({ projects }: any) => {
   const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
-    portfolioYear = '',
-    webLink = '',
-    appsLink = '',
-    KategoriportofolioId = '',
-    TagportofolioId = '',
-    createdAt = '',
-    updatedAt = '',
-    Kategoriportofolio = {},
+    altImage = '',
     Tagportofolio = {} } = projects || {};
 
   return (
@@ -21,7 +14,7 @@ const CardSquareProject = ({ projects }: any) => {
       <div className="relative">
         <Image
           src={image || `/assets/images/placeholder-image (2).jpg`}
-          alt="placeholder"
+          alt={altImage || "image card list"}
           width={1000}
           height={1000}
           loading="lazy"

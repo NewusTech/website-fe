@@ -9,6 +9,7 @@ interface BlogProps {
   keyword: string;
   excerpt: string;
   body: string;
+  altImage: string,
   kategoriblog_id: number;
   kategoriblog_title: string;
   tagblog_id: number;
@@ -29,7 +30,7 @@ interface CardBlogProps {
 }
 
 const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
-  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, tagblog_title } = blogs;
+  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, altImage, tagblog_title } = blogs;
 
   return (
     <div
@@ -41,9 +42,9 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         className="w-[40%] h-[80px] overflow-hidden rounded-[2px]"
       >
         <Image
-          src={`${image || '/assets/images/blog.jpg'}`}
           loading="lazy"
-          alt="blog"
+          src={image || '/assets/images/blog.jpg'}
+          alt={altImage || "blog"}
           width={1000}
           height={1000}
           className="w-full h-full object-cover"

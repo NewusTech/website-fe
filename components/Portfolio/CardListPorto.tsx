@@ -14,7 +14,7 @@ const CardListPorto = ({ projects }: any) => {
     createdAt = '',
     updatedAt = '',
     Kategoriportofolio = {},
-    Tagportofolio = {} } = projects || {};
+    altImage = '' } = projects || {};
 
   return (
     <div data-aos="flip-left" className="bg-white rounded-[10px] w-full mb-[10px] shadow-lg">
@@ -22,7 +22,7 @@ const CardListPorto = ({ projects }: any) => {
         <div className="w-[45%] md:w-[45%] lg:w-[30%] h-full flex items-center relative">
           <Image
             src={image || `/assets/images/placeholder-image (2).jpg`}
-            alt="image card list"
+            alt={altImage || "placeholder"}
             width={1000}
             height={1000}
             loading="lazy"

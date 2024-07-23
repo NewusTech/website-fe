@@ -6,14 +6,7 @@ import { removeHTMLTags } from "@/lib/utils";
 const CardListProject = ({ projects }: any) => {
   const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
-    portfolioYear = '',
-    webLink = '',
-    appsLink = '',
-    KategoriportofolioId = '',
-    TagportofolioId = '',
-    createdAt = '',
-    updatedAt = '',
-    Kategoriportofolio = {},
+    altImage = '',
     Tagportofolio = {} } = projects || {};
 
   return (
@@ -22,7 +15,7 @@ const CardListProject = ({ projects }: any) => {
         <div className="w-[45%] md:w-[45%] lg:w-[30%] h-full flex items-center relative">
           <Image
             src={image || `/assets/images/placeholder-image (2).jpg`}
-            alt="image card list"
+            alt={altImage || "image card list"}
             width={1000}
             height={1000}
             loading="lazy"

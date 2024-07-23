@@ -6,22 +6,14 @@ import { removeHTMLTags } from "@/lib/utils";
 const CardSquarePorto = ({ projects }: any) => {
   const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
-    portfolioYear = '',
-    webLink = '',
-    appsLink = '',
-    KategoriportofolioId = '',
-    TagportofolioId = '',
-    createdAt = '',
-    updatedAt = '',
-    Kategoriportofolio = {},
-    Tagportofolio = {} } = projects || {};
+    altImage = '' } = projects || {};
 
   return (
     <div data-aos="fade-down" className="rounded-[10px] bg-white md:bg-transparent border-2 border-gray-1 lg:w-[31%] md:w-[47%] w-[47%] shadow-lg relative">
       <div className="relative">
         <Image
           src={image || `/assets/images/placeholder-image (2).jpg`}
-          alt="placeholder"
+          alt={altImage || "placeholder"}
           width={1000}
           height={1000}
           loading="lazy"

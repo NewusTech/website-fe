@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./CardTeam.module.css"; // Buat file CSS module untuk styling
+import { removeHTMLTags } from "@/lib/utils";
 
 const CardTeam = ({ image, name, position, onClick }: any) => {
   const [isSelected, setIsSelected] = useState(false);

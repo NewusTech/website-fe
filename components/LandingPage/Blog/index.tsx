@@ -68,7 +68,7 @@ export default async function Blog() {
                   <Image
                     data-aos="zoom-in"
                     src={lastBlog?.image || '/assets/images/blog.jpg'}
-                    alt={lastBlog?.title || 'logo'}
+                    alt={lastBlog?.altImage || 'logo'}
                     width={690}
                     height={430}
                     className="rounded-xl w-full h-[300px] lg:h-[300px] xl:h-[400px] bg-cover object-cover"
