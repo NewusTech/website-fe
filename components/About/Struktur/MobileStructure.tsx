@@ -51,7 +51,7 @@ const StrukturMobile = ({ teams }: any) => {
       </div>
       <div className='flex flex-col items-center justify-center'>
         <div className='flex flex-col items-center' onClick={() => handleImageClick(direktur)}>
-          <Image width={1000} height={1000} src={direktur.image || "/assets/images/dummy8.png"} alt="Antoni, ST" className="h-[200px] w-[200px] rounded-sm shadow object-cover" />
+          <Image width={1000} height={1000} src={direktur?.image || "/assets/images/dummy8.png"} alt="Antoni, ST" className="h-[200px] w-[200px] rounded-sm shadow object-cover" />
           <div className="w-[300px] text-center text-white text-[12px] mt-2">Antoni, ST<br />Direktur</div>
         </div>
         <div className='flex flex-col w-full pt-5'>

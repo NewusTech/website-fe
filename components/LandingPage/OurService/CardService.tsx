@@ -39,7 +39,7 @@ const CardService = () => {
                 <div className="bg-tangerine w-[123px] h-[30px] absolute z-10 mb-[17.5px] mr-[0px]"></div>
               )}
               {type === "mobile" && (
-                <div className="bg-tangerine w-[105px] h-[22px] absolute z-10 mb-[45px] mr-[135px]"></div>
+                <div className="bg-tangerine w-[105px] h-[22px] absolute z-10 mb-[45px] mr-[35px] lg:mr-[100px] xl:mr-[135px]"></div>
               )}
               {type === "ui/ux" && (
                 <div className="bg-tangerine w-[84px] h-[24px] absolute z-10 mb-[44.5px]"></div>

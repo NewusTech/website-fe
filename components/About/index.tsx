@@ -7,7 +7,7 @@ import Aspekti from "./Tabs/Aspekti";
 import Kadin from "./Tabs/Kadin";
 import TenagaAhli from "./Tabs/TenagaAhli";
 import Struktur from "./Struktur";
-import StrukturMobile from "./Struktur/mobile";
+import StrukturMobile from "./Struktur/MobileStructure";
 import Medias from "./Medias";
 import Image from "next/image";
 

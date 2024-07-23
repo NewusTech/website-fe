@@ -37,21 +37,21 @@ const Struktur = ({ teams }: any) => {
     <div className="px-10 2xl:px-[67px] py-5 xl:pt-10 bg-[url('/assets/illustration/bg-about.svg')] bg-cover">
       <div className='flex items-center justify-center 2xl:max-w-7xl mx-auto'>
         <div className='w-3/12 flex items-center pt-40 relative'>
-          <div className="absolute -top-28 xl:text-nowrap text-white pt-20 pb-3 text-mobileJudul md:text-webJudul font-semibold">
+          <div className="absolute -top-28 xl:text-nowrap text-white pb-3 text-mobileJudul md:text-webJudul font-semibold">
             Organizational Structure
           </div>
           <div className='flex flex-col items-center' onClick={() => handleImageClick(direktur)}>
-            <Image width={1000} height={1000} src={direktur.image || "/assets/images/dummy8.png"} alt="Antoni, ST" className="lg:h-[200px] w-[150px] h-[150px] lg:w-[200px] xl:h-[300px] xl:w-[300px] object-cover" />
+            <Image width={1000} height={1000} src={direktur?.image || "/assets/images/dummyceo.svg"} alt="Antoni, ST" className="lg:h-[200px] w-[150px] h-[150px] lg:w-[200px] xl:h-[300px] xl:w-[300px] object-cover" />
             <div className="h-[150px] w-[150px] xl:w-[300px] text-center text-white text-mobileJudul md:text-webJudul mt-2">Antoni, ST<br />Direktur</div>
           </div>
         </div>
 
         <div className='w-2/12 relative'>
-          <div className="text-white text-mobileSubJudul md:text-webSubjudul mb-2 absolute -top-[170px] left-[17px] xl:-top-[210px] 2xl:-top-[220px] lg:-top-[185px] border-b-2 text-nowrap max-w-[148px] w-[178px] lg:max-w-[114px] xl:max-w-[148px] 2xl:max-w-[160px]">Developer Team</div>
+          <div className="text-white text-mobileSubJudul md:text-webSubjudul mb-2 absolute -top-[170px] left-[17px] xl:-top-[210px] 2xl:-top-[210px] lg:-top-[185px] border-b-2 text-nowrap max-w-[148px] w-[178px] lg:max-w-[114px] xl:max-w-[148px] 2xl:max-w-[160px]">Developer Team</div>
           <div className='border-l-2 border-y-2 h-[108px] lg:h-[112px] xl:h-[160px] xl:w-10 w-7 absolute lg:-top-[220px] xl:-top-[270px] -top-[200px] -right-1'></div>
-          <div className="text-white text-nowrap text-mobileSubJudul md:text-webSubjudul mb-2 absolute top-[20px] lg:top-[30px] left-[17px] xl:top-[40px] 2xl:top-[38px] border-b-2 max-w-[148px]  w-[178px] lg:max-w-[114px] xl:max-w-[148px] 2xl:max-w-[160px]">Digital Marketing</div>
+          <div className="text-white text-nowrap text-mobileSubJudul md:text-webSubjudul mb-2 absolute top-[20px] lg:top-[30px] left-[17px] xl:top-[43px] 2xl:top-[43px] border-b-2 max-w-[148px]  w-[178px] lg:max-w-[114px] xl:max-w-[148px] 2xl:max-w-[160px]">Digital Marketing</div>
           <div className='border-l-2 border-y-2 h-[50px] xl:w-10 w-7 absolute top-[15px] lg:top-[27px] xl:top-[40px] -right-1'></div>
-          <div className="text-white text-nowrap text-mobileSubJudul md:text-webSubjudul mb-2 absolute top-[150px] lg:top-[185px] left-[17px] xl:top-[222px] 2xl:top-[220px] border-b-2 max-w-[148px]  w-[178px] lg:max-w-[114px] xl:max-w-[148px] 2xl:max-w-[160px]">Back Office</div>
+          <div className="text-white text-nowrap text-mobileSubJudul md:text-webSubjudul mb-2 absolute top-[150px] lg:top-[185px] left-[17px] xl:top-[222px] 2xl:top-[224px] border-b-2 max-w-[148px]  w-[178px] lg:max-w-[114px] xl:max-w-[148px] 2xl:max-w-[160px]">Back Office</div>
           <div className='border-l-2 border-y-2 h-[50px] w-7 xl:w-10 absolute top-[150px] lg:top-[180px] xl:top-[220px] -right-1'></div>
         </div>
 
