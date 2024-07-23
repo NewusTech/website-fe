@@ -16,6 +16,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
     image = "",
     publishAt = "",
     body = "",
+    altImage = ""
   } = blogDetail || {};
 
   const sanitizedBody = DOMPurify?.sanitize(body || 'None');
@@ -55,8 +56,8 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
         </div>
         <div className="w-full h-[150px] md:w-full md:h-[400px] rounded-[6px] pr-0 lg:pr-5">
           <Image
-            src={image ? image : `/assets/images/blog.jpg`}
-            alt="blog"
+            src={image || '/assets/images/blog.jpg'}
+            alt={altImage || "blog"}
             width={1140}
             height={211}
             className="w-full h-[150px] md:h-[400px] object-cover rounded-[6px] md:rounded-[10px]"

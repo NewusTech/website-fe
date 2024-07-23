@@ -6,29 +6,22 @@ import { removeHTMLTags } from "@/lib/utils";
 const CardListProject = ({ projects }: any) => {
   const { id = "", title = '', slug = "", keyword = "", logo = "",
     excerpt = "", body = "", image = '',
-    portfolioYear = '',
-    webLink = '',
-    appsLink = '',
-    KategoriportofolioId = '',
-    TagportofolioId = '',
-    createdAt = '',
-    updatedAt = '',
-    Kategoriportofolio = {},
+    altImage = '',
     Tagportofolio = {} } = projects || {};
 
   return (
     <div data-aos="flip-left" className="bg-white rounded-[10px] w-full mb-[10px] shadow-lg">
-      <div className="flex md:gap-[12px] lg:gap-[32px] md:w-full h-[130px] md:h-[243px] relative">
+      <div className="flex md:gap-[12px] lg:gap-[22px] xl:gap-[32px] md:w-full h-[130px] md:h-[243px] relative">
         <div className="w-[45%] md:w-[45%] lg:w-[30%] h-full flex items-center relative">
           <Image
             src={image || `/assets/images/placeholder-image (2).jpg`}
-            alt="image card list"
+            alt={altImage || "image card list"}
             width={1000}
             height={1000}
             loading="lazy"
-            className="rounded-l-[10px] h-full w-full object-contain md:object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            className="rounded-l-[10px] h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
-          <div className="absolute top-1 right-1 z-10">
+          <div className="absolute top-0 right-0 z-10">
             <Image
               src={logo || `/assets/images/placeholder-logo.jpg`}
               alt="Logo"
@@ -44,7 +37,7 @@ const CardListProject = ({ projects }: any) => {
           <h2 className="md:text-webJudul text-mobileSubjudul font-semibold  line-clamp-2 md:line-clamp-none">
             {title || 'Name Project'}
           </h2>
-          <p className="md:text-webSubjudul text-mobileDesk text-gray my-1 md:mt-3 md:mb-4 w-full md:w-full line-clamp-2 md:line-clamp-3">
+          <p className="md:text-webSubjudul text-mobileDesk text-gray my-1 mb-2 md:mt-3 md:mb-4 w-full md:w-full line-clamp-2 md:line-clamp-3">
             {removeHTMLTags(body) || 'lorem1'}
           </p>
           <Link target="_blank" href={`/portfolio/${slug}`}>

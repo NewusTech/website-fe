@@ -20,7 +20,7 @@ const ModalStructure = ({ showModal, setShowModal, teams }: any) => {
             <div className="flex-auto relative xl:max-w-[85vw] 2xl:max-w-[75vw]">
               <Image
                 className="object-cover object-top w-full h-auto rounded-xl max-h-screen"
-                src={teams.image}
+                src={teams?.image || "/assets/images/dummyceo.png"}
                 alt="Full Image"
                 width={1000}
                 height={1000}

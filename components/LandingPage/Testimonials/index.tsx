@@ -6,13 +6,13 @@ export default async function TestiomoniStars() {
   const dummyImage = "/assets/images/antoni.svg"
 
   return (
-    <div className="text-center md:px-8 2xl:max-w-7xl mx-auto bg-gray-100 pb-10 pt-5">
+    <div className="text-center md:px-8 2xl:container mx-auto bg-gray-100 pb-10 pt-5">
       {/* <div className="container mx-auto px-1 py-10 md:pt-10 2xl:pt-20 lg:px-14"> */}
-      <div className="md:mt-10 mt-[10px] flex justify-between items-center   gap-3 md:gap-5 px-5">
-        <h2 className="font-bold lg:mb-4 capitalize text-mobileJudul md:text-[24px] text-nowrap">
+      <div className="md:mt-5 xl:mt-10 mt-[10px] flex justify-between items-center   gap-3 md:gap-5 px-5 md:px-0">
+        <h2 className="font-bold capitalize text-mobileJudul md:text-[20px] text-nowrap">
           Testimonials
         </h2>
-        <div className="w-full md:mb-3 h-[2px] bg-gray-4"></div>
+        <div className="w-full h-[1px] bg-gray"></div>
       </div>
       <div>
         <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">

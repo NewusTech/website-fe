@@ -14,33 +14,38 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const projects = await getProjectList()
   const projectsDetail = await getProjectDetail(slug)
 
-  const images = [
-    projectsDetail?.image,
-    projectsDetail?.image,
-    projectsDetail?.image,
-    projectsDetail?.image,
-  ];
+  const truncate = (str: any, maxLength: any) => {
+    if (!str) return '';
+    return str.length > maxLength ? str.substring(0, maxLength) + '...' : str;
+  };
+
+  // const truncateBody = (str: any, maxLength: any) => {
+  //   if (!str) return '';
+  //   const div: any = document.createElement('div');
+  //   div.innerHTML = str;
+  //   return div.textContent.length > maxLength ? div.textContent.substring(0, maxLength) + '...' : div.textContent;
+  // };
 
   return (
     <section className="min-h-screen overflow-hidden">
       <header className="w-full z-10 relative">
-        <div className="md:min-w-[1350px] md:min-h-[75px]">
+        <div className="xl:min-w-[1350px] md:min-h-[75px]">
           <Image
             src={image || '/assets/images/blog.jpg'}
             alt="Detail Porto header"
             width={1350}
             height={75}
-            className={`w-full h-full object-cover`}
+            className={`w-full h-full md:h-[50vh] lg:h-[90vh] xl:h-[85vh] 2xl:h-[100vh] object-cover`}
           />
         </div>
-        <div className="-mt-[200px] md:ml-[30px] xl:mx-auto md:-mt-[500px]  xl:-mt-[500px] 2xl:-mt-[600px] text-white max-w-7xl mx-auto">
-          <div className="max-w-[500px] p-[35px] 2xl:p-0">
-            <h1 className="text-mobileJudul md:text-webJudul font-bold pb-2 md:pb-[50px]">{projectsDetail?.title || 'Project Name'}</h1>
+        <div className="-mt-[190px] px-[10px] md:px-5 xl:px-10 xl:mx-auto md:-mt-[300px] lg:-mt-[330px] xl:-mt-[400px] 2xl:-mt-[400px] text-white 2xl:max-w-7xl">
+          <div className="max-w-[500px] pt-5 2xl:p-0">
+            <h1 className="text-mobileJudul md:text-webJudul font-bold pb-2 md:pb-5 xl:pb-[50px] uppercase">{truncate(projectsDetail?.title, 50) || 'Project Name'}</h1>
             <h2 className="text-mobileSubjudul md:text-webSubjudul pb-2 md:pb-5">{projectsDetail?.portfolioYear || 'INSTANSI'}</h2>
-            <p className="text-mobileSubjudul md:text-webSubjudul pb-2 md:pb-[50px]">{projectsDetail?.excerpt || 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
-            <div className="flex items-center gap-2 md:gap-6">
+            <p className="text-mobileDesk md:text-webDesk pb-2 md:pb-[50px]">{truncate(projectsDetail?.excerpt, 150) || 'Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel sar'}</p>
+            <div className="flex items-center gap-2 md:gap-6 pt-3 md:pt-0">
               <Link
-                className="flex items-center justify-center gap-[5px] md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm"
+                className="flex justify-center gap-1 md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm"
                 href={projectsDetail?.webLink || '/'}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,103 +59,112 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 />
                 <p className="text-[10px] md:text-[16px]">Visit Website</p>
               </Link>
-              <div>
-                <Link rel="noopener noreferrer" className="flex justify-center gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm" target="_blank" href={projectsDetail?.appsLink || '/'}>
-                  <Image
-                    src={iconPlaystore || '/assets/images/web.jpg'}
-                    width={24}
-                    height={24}
-                    alt="Icon playstore"
-                    className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
-                  />
-                  <p className="text-[10px] md:text-[16px]">Google Play</p>
-                </Link>
-              </div>
+              <Link rel="noopener noreferrer" className="flex justify-center gap-1 md:gap-[10px] md:py-4 py-[6.5px] px-[7.5px] md:px-8 bg-[#333333] border border-white rounded-sm" target="_blank" href={projectsDetail?.appsLink || '/'}>
+                <Image
+                  src={iconPlaystore || '/assets/images/web.jpg'}
+                  width={24}
+                  height={24}
+                  alt="Icon playstore"
+                  className="w-[14px] h-[14px] md:w-[24px] md:h-[24px]"
+                />
+                <p className="text-[10px] md:text-[16px]">Google Play</p>
+              </Link>
             </div>
           </div>
         </div>
       </header>
 
-      <div className="2xl:max-w-7xl mx-auto min-h-screen md:pb-44 pt-8 md:pt-[250px] xl:pt-[200px] 2xl:pt-[380px] p-[10px] md:p-5 xl:p-5">
+      <div className="2xl:max-w-7xl mx-auto min-h-screen md:pb-24 pt-8 md:pt-[70px] lg:pt-[110px] xl:pt-[150px] 2xl:pt-[180px] p-[10px] md:p-5 xl:p-10">
         <div className="flex items-center gap-5 relative">
-          <div className="flex justify-center items-center md:hidden">
-            <div className="w-[40%] md:w-[28%] h-full flex items-center relative">
+          <div className="flex justify-center items-center md:hidden w-full">
+            <div className="w-[60%] h-full flex items-center relative">
               <Image
                 src={projectsDetail?.image || "/assets/images/placeholder-image (2).jpg"}
                 alt="image card list"
                 width={1000}
                 height={1000}
-                className="h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105 shadow-md"
               />
-              <div className="absolute top-2 right-2 z-10">
+              <div className="absolute top-0 right-0 z-10">
                 <Image
                   src={projectsDetail?.logo || `/assets/images/placeholder-image (2).jpg`}
                   alt="Logo"
                   width={1000}
                   height={1000}
-                  className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+                  className="w-[30px] h-[30px] md:w-[50px] md:h-[50px] object-cover"
                 />
               </div>
             </div>
           </div>
-          <div className="hidden w-[40%] md:w-[28%] h-full md:flex items-center relative">
+          <div className="hidden max-w-[300px] xl:max-w-[130px] lg:max-w-[200px] md:w-full h-full md:flex items-center relative">
             <Image
               src={projectsDetail?.image || "/assets/images/placeholder-image (2).jpg"}
-              alt="image card list"
+              alt={projectsDetail?.altImage || "image card list"}
               width={1000}
               height={1000}
-              className="h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+              className="h-full w-full xl:w-[200px] 2xl:w-[130px] object-contain transition-transform duration-300 ease-in-out transform hover:scale-105"
             />
-            <div className="absolute top-2 right-2 z-10">
+            <div className="absolute top-1 right-1 z-10">
               <Image
                 src={projectsDetail?.logo || `/assets/images/placeholder-image (2).jpg`}
                 alt="Logo"
                 width={1000}
                 height={1000}
-                className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-cover"
+                className="w-[35px] h-[35px] md:w-[30px] md:h-[30px] xl:w-[40px] xl:h-[40px] object-cover"
               />
             </div>
           </div>
           <div>
-            {/* <h1 className="text-2xl md:text-[24px] font-bold md:pb-4">{projectsDetail?.title || 'Project Name'}</h1> */}
-            <p className="hidden md:block text-webDesk line-clamp-3">{removeHTMLTags(projectsDetail?.body) || 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
+            {/* Responsive Body Content */}
+            {/* Medium devices (tablets, less than 1024px) */}
+            <div className="hidden md:block lg:hidden text-webDesk text-justify line-clamp-1"
+              dangerouslySetInnerHTML={{ __html: truncate(projectsDetail?.body, 615) }} />
+
+            {/* Large devices (desktops, between 1024px and 1280px) */}
+            <div className="hidden lg:block xl:hidden text-webDesk text-justify line-clamp-1"
+              dangerouslySetInnerHTML={{ __html: truncate(projectsDetail?.body, 800) }} />
+
+            {/* Extra large devices (large desktops, 1280px and up) */}
+            <div className="hidden xl:block text-webDesk text-justify line-clamp-1"
+              dangerouslySetInnerHTML={{ __html: truncate(projectsDetail?.body, 860) }} />
           </div>
         </div>
-        <p className="md:hidden text-mobileDesk md:text-webDesk text-justify pt-5">{removeHTMLTags(projectsDetail?.body) || 'Lorem ipsum dolor sit amet consectetur. Quam diam cursus sed et tortor ornare blandit maecenas. Sagittis etiam lacus luctus nibh commodo fames ultrices. Tristique velit at mattis pretium enim eros. Suscipit ultricies nulla egestas in lectus feugiat etiam. In in fermentum id arcu. Pellentesque gravida lectus posuere fringilla pretium enim commodo. Convallis eget sed ut maecenas morbi id in. Sem tortor et ac nibh. '}</p>
-
-        <div className="hidden md:flex gap-[40px] items-center justify-center py-4 md:py-10">
-          <div className="block md:w-9/12">
-            <ImageSlider images={images} />
+        <div className="md:hidden text-mobileDesk md:text-webDesk text-justify pt-5" dangerouslySetInnerHTML={{ __html: projectsDetail?.body }} />
+        {/* <p >{removeHTMLTags(projectsDetail?.body) || 'Lorem ipsum '}</p> */}
+        <div className="hidden md:flex gap-[40px] items-center justify-center py-4 md:py-6">
+          <div className="block md:w-9/12 pt-5">
+            <ImageSlider images={projectsDetail?.galeri} />
           </div>
         </div>
 
         <div className="pt-5">
-          <h1 className="text-mobileJudul md:text-webJudul font-[500] pb-5">Technology</h1>
+          <div className="flex gap-3 items-center pb-5">
+            <h1 className="text-mobileJudul md:text-webJudul font-[500]">Technology</h1>
+            <div className="w-full h-[1px] bg-gray"></div>
+          </div>
           <div className="flex gap-3 md:gap-5">
-            <div className="flex justify-center flex-col items-center">
-              <Image src={"/assets/icons/react.png"} height={60} width={60} alt="Icon" className="w-[30px] h-[30px] md:w-[60px] md:h-[60px]" />
-              <p className="text-mobileDesk md:text-webSubjudul">React</p>
-            </div>
-            <div className="flex justify-center flex-col items-center">
-              <Image src={"/assets/icons/fire.png"} height={60} width={60} alt="Icon" className="w-[30px] h-[30px] md:w-[60px] md:h-[60px]" />
-              <p className="text-mobileDesk md:text-webSubjudul">Firebase</p>
-            </div>
+            {
+              projectsDetail?.TechnologyPortofolio && (
+                <div className="flex justify-center flex-col items-center gap-2">
+                  <Image src={projectsDetail?.TechnologyPortofolio.image || "/assets/icons/react.png"} height={60} width={60} alt="Icon" className="w-[30px] h-[30px] md:w-[60px] md:h-[60px]" />
+                  <h3 className="text-mobileDesk md:text-webSubjudul">{projectsDetail?.TechnologyPortofolio.title || 'Title'}</h3>
+                </div>
+              )
+            }
           </div>
         </div>
 
         <div className="pt-5 md:pt-10">
-          <div className="flex gap-5 items-center pb-5">
-            <h1 className="text-mobileJudul md:text-webJudul font-[500]">Deskripsi</h1>
+          <div className="flex gap-3 items-center pb-5">
+            <h1 className="text-mobileJudul md:text-webJudul font-[500]">Description</h1>
             <div className="w-full h-[1px] bg-gray"></div>
           </div>
           <h2 className="text-mobileJudul md:text-webJudul font-[500] pb-5">{projectsDetail?.title || 'Figma ipsum component variant main'}</h2>
-          <p className="text-mobileDesk md:text-webDesk text-justify">
-            {removeHTMLTags(projectsDetail?.body) || 'Figma ipsum component variant main layer. Share mask layer shadow community library horizontal inspect. Link image frame component underline ellipse. Move mask component scrolling underline blur fill. Asset arrow image variant arrow follower align strikethrough. Ipsum background component text auto invite style component blur. Device distribute union variant share opacity stroke editor layout. Component project flows union union figma share boolean. Reesizing clip frame slice figjam scrolling connection distribute strikethrough team. List community main selection style connection vector. Layout flatten line project image project slice flatten prototype. Pencil ellipse component rectangle star ipsum draft style. Text hand hand arrange figma device italic selection pencil arrow. Project underline image group group flatten star list fill vertical. Background blur opacity variant draft. Connection thumbnail boolean share style object thumbnail pen slice. Follower arrange share fill select rectangle shadow selection. Rotate strikethrough arrange inspect connection fill share create group. Comment line scale team subtract select subtract horizontal. Layout fill figjam clip project effect layer. Union boolean reesizing strikethrough distribute. Rotate subtract object image ipsum scrolling. Pencil undo main reesizing arrange export. Mask follower italic layout comment layer slice. Scale community bold thumbnail pen auto figjam distribute select. Line pencil stroke prototype invite thumbnail hand. Rotate overflow rotate italic font project scrolling vertical layer boolean. Undo subtract comment rectangle inspect component subtract inspect. Shadow library follower union community boolean scale. Star inspect device object flows italic thumbnail frame. Layer blur asset effect pencil scrolling vertical export. Outline italic plugin rectangle align flows. Variant hand star hand thumbnail union arrange frame layer. Stroke bullet bold community follower distribute boolean export. Subtract library pixel distribute object rotate polygon flatten flows team.'}
-          </p>
+          <div className='text-mobileDesk md:text-webDesk 2xl:text-webSubjudul leading-6 2xl:leading-7' dangerouslySetInnerHTML={{ __html: projectsDetail?.closingDescription }} />
         </div>
 
         <div className="pt-10 w-full pb-5 xl:pb-20">
-          <div className="flex gap-5 items-center pb-5">
+          <div className="flex gap-3 items-center pb-5">
             <h1 className="text-mobileJudul md:text-webJudul font-[500] text-nowrap">More Portfolio</h1>
             <div className="w-full h-[1px] bg-gray"></div>
           </div>

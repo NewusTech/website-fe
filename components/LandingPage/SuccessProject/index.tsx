@@ -7,7 +7,7 @@ export default async function SuccessProject() {
   const categories = await getProjectKategoriList();
 
   return (
-    <section className="my-5 md:my-10 2xl:my-[80px] mx-4 md:mx-auto md:container">
+    <section className="my-5 md:my-10 2xl:my-10 mx-4 md:mx-auto md:container">
       <TabsProject portfolios={projectList} categories={categories} />
     </section>
   );

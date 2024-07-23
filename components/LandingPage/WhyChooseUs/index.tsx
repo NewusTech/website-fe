@@ -29,17 +29,14 @@ interface WhyChooseUsProps {
 const WhyChooseUs = () => {
   return (
     <section className="px-5 md:container mx-auto py-8 md:pt-5 md:pb-16 xl:pb-16 2xl:pb-[90px] overflow-hidden">
-      <div className="lg:px-10">
+      <div className="">
         <div className="flex items-center gap-3">
           <h1 className="text-center text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px]">
             <span className="text-blue mr-1 md:mr-[2px]">Why </span>Choose Us?
           </h1>
           <div className="w-full h-[1px] bg-gray"></div>
         </div>
-        {/* <h4 className="font-bold text-mobileDesk md:text-webSubjudul text-center mt-[10px] md:mt-5 text-black">
-          &quot;Trusted IT Consulting for Exceptional Service Quality&quot;
-        </h4> */}
-        <div className="flex items-start md:items-center justify-center mt-4 md:mt-10 gap-2 md:gap-[30px] max-w-6xl mx-auto overflow-hidden">
+        <div className="flex items-start md:items-center justify-center mt-4 md:my-10 gap-2 md:gap-[30px] overflow-hidden">
           {chooseUs.map(({ id, logo, name, desc }: WhyChooseUsProps) => (
             <div
               data-aos='fade-in'
@@ -63,7 +60,7 @@ const WhyChooseUs = () => {
           ))}
         </div>
       </div>
-      <div className="pt-10 2xl:pt-20 lg:px-10">
+      <div className="pt-10 2xl:pt-20">
         <div className="flex items-center gap-3 pb-3">
           <h1 className="text-center text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px]">
             <span className="text-blue mr-1 md:mr-[2px]">Our </span>Skills

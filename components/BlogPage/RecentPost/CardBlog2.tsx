@@ -11,6 +11,7 @@ interface BlogProps {
   keyword?: string,
   excerpt?: string,
   body?: string,
+  altImage: string,
   kategoriblog_id?: number,
   kategoriblog_title?: string,
   tagblog_id?: number,
@@ -31,7 +32,7 @@ interface CardBlogProps {
 }
 
 const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
-  const { title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title, image, slug, createdAt, updatedAt, id } = blogs;
+  const { title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title, image, slug, createdAt, updatedAt, altImage, id } = blogs;
 
   return (
     <div className="gap-2 flex w-full h-auto">
@@ -39,7 +40,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         <Link href={`/${slug}`}>
           <Image
             src={image || '/assets/images/blog.jpg'}
-            alt="blog"
+            alt={altImage || "blog"}
             width={267}
             height={305}
             className="w-full h-full object-cover rounded-sm"

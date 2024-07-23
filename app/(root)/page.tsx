@@ -6,7 +6,7 @@ import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
 import WhyChooseUs from "../../components/LandingPage/WhyChooseUs";
 import Blog from "../../components/LandingPage/Blog";
-import TestiomoniStars from "@/components/LandingPage/Testimonials/Testiomoni-stars";
+import Testiomonials from "@/components/LandingPage/Testimonials/index";
 import Certifications from "@/components/LandingPage/Certifications";
 import AboutLanding from "@/components/LandingPage/About";
 import CTA from "@/components/LandingPage/CTA";
@@ -23,7 +23,7 @@ export default function Home() {
       <OurService />
       <WhyChooseUs />
       <Blog />
-      <TestiomoniStars />
+      <Testiomonials />
       <Certifications />
       <CTA />
       {/* </Suspense> */}
