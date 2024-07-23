@@ -97,7 +97,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
           </TabsTrigger>
         </TabsList>
         <TabsContent value="list">
-          <p className="text-gray text-mobileSubjudul md:text-webSubjudul">
+          <p className="text-gray text-mobileSubjudul md:text-webSubjudul text-nowrap">
             See How We Elevate Businesses. Explore Our Success Projects.
           </p>
           <div className="flex flex-col xl:flex-row my-4 md:my-5 ">
@@ -129,7 +129,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
                 />
               </div>
             </div>
-            <div className="gap-2 md:hidden flex overflow-auto">
+            <div className="gap-2 pt-2 md:hidden flex overflow-auto">
               {categories.map((category) => (
                 <Button
                   key={category.id}
