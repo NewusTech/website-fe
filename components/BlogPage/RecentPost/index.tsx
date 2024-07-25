@@ -61,7 +61,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
             <section className="hidden md:flex gap-5 md:gap-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
               {["All", ...categories.map((category: any) => category.title)].map(category => (
                 <div key={category}
-                  className={`w-full rounded-xl flex items-center justify-center ${filter === category ? "bg-blue md:px-10 py-2 px-5" : ""}`}
+                  className={`rounded-xl flex items-center justify-center ${filter === category ? "bg-blue md:px-10 py-2 px-5" : ""}`}
                   onClick={() => handleFilterChange(category)}
                 >
                   <p className={`text-nowrap text-mobileSubjudul md:text-webSubjudul ${filter === category ? "text-white font-semibold" : "text-dark hover:text-blue transition-colors duration-300 cursor-pointer capitalize"}`}>
@@ -136,8 +136,8 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
           {/* Side bar web */}
           <div className="w-4/12 xl:w-3/12 lg:flex flex-col gap-4 relative hidden ml-3 my-5 md:mt-0">
             <div className="bg-white p-5 rounded-md">
-              <h1 className="text-webJudul font-bold text-center relative z-20 -mt-3 py-3 ">Rekomendasi Artikel</h1>
-              <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
+              <h1 className="text-webJudul font-bold text-center relative z-20 py-3 ">Rekomendasi Artikel</h1>
+              <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 right-16"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
                 {recomendations?.slice(-12).map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog.blog} />

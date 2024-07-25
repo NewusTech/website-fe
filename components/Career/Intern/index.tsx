@@ -1,6 +1,7 @@
 'use client'
 
 import NotFound from '@/components/shared/NotFound'
+import { removeHTMLTags } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -51,7 +52,7 @@ const Intern = ({ dataIntern }: any) => {
 
   return (
     <section>
-      {data.length === 0 ? (
+      {data === null ? (
         <div className='md:pt-10'>
           <NotFound />
         </div>
@@ -61,11 +62,12 @@ const Intern = ({ dataIntern }: any) => {
             <h2 className="font-bold text-mobileJudul md:text-webJudul pb-3 md:py-10">Description :</h2>
             <ul className={classList}>
               {/* <li>{data.description}</li> */}
-              {data.description}
+
+              {removeHTMLTags(data?.description || '')}
             </ul>
             <div className='flex items-center gap-2 py-4 md:pt-10'>
               <Image src={`/assets/icons/cover-later.svg`} alt='Icon cover later' width={18} height={18} className="" />
-              <Link href={data.coverLetter} target='_blank' className='text-[#FF6600] text-[12px] md:text-mobileSubjudul'>
+              <Link href={data?.coverLetter || '/'} target='_blank' className='text-[#FF6600] text-[12px] md:text-mobileSubjudul'>
                 Internship application letter
               </Link>
             </div>
