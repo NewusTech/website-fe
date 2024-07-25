@@ -8,7 +8,7 @@ import CardBlogSide from "./CardBlogSide";
 import TagsDisplay from "./Tags";
 import HeaderBlog from "./HeaderBlog";
 
-export default function RecentPost({ blogs, categories }: any) {
+export default function RecentPost({ blogs, categories, recomendations }: any) {
   const [filter, setFilter] = useState<string>("All");
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,7 +38,7 @@ export default function RecentPost({ blogs, categories }: any) {
 
   return (
     <main className="relative">
-      <section className="px-5 2xl:px-10 mt-[40px] md:mb-[80px] mb-3 relative w-full">
+      <section className="px-5 2xl:px-10 mt-[40px] md:mb-[80px] mb-5 relative w-full">
         <div className="flex justify-center absolute inset-x-0 -top-[63px] xl:-top-[67px] z-10 overflow-hidden">
           <Input
             type="text"
@@ -61,7 +61,7 @@ export default function RecentPost({ blogs, categories }: any) {
             <section className="hidden md:flex gap-5 md:gap-10" style={{ overflowX: 'scroll', scrollbarWidth: 'thin', msOverflowStyle: 'scrollbar', overflowY: 'hidden' }}>
               {["All", ...categories.map((category: any) => category.title)].map(category => (
                 <div key={category}
-                  className={`w-full rounded-xl flex items-center justify-center ${filter === category ? "bg-blue md:px-10 py-2 px-5" : ""}`}
+                  className={`rounded-xl flex items-center justify-center ${filter === category ? "bg-blue md:px-10 py-2 px-5" : ""}`}
                   onClick={() => handleFilterChange(category)}
                 >
                   <p className={`text-nowrap text-mobileSubjudul md:text-webSubjudul ${filter === category ? "text-white font-semibold" : "text-dark hover:text-blue transition-colors duration-300 cursor-pointer capitalize"}`}>
@@ -100,11 +100,11 @@ export default function RecentPost({ blogs, categories }: any) {
 
             {/* Mobile Side */}
             <div className="md:hidden block bg-white p-5 mb-5 rounded-md">
-              <h1 className="text-webJudul font-bold relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
+              <h1 className="text-webJudul font-bold relative z-20 -mt-3 py-3 ">Rekomendasi Artikel</h1>
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {blogs?.slice(-12).map((blog: any, index: number) => (
-                  <CardBlogSide key={index} blogs={blog} />
+                {recomendations?.slice(-12).map((blog: any, index: number) => (
+                  <CardBlogSide key={index} blogs={blog.blog} />
                 ))}
               </section>
             </div>
@@ -136,11 +136,11 @@ export default function RecentPost({ blogs, categories }: any) {
           {/* Side bar web */}
           <div className="w-4/12 xl:w-3/12 lg:flex flex-col gap-4 relative hidden ml-3 my-5 md:mt-0">
             <div className="bg-white p-5 rounded-md">
-              <h1 className="text-webJudul font-bold text-center relative z-20 -mt-3 py-3 ">Artikel Terbaru</h1>
-              <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
+              <h1 className="text-webJudul font-bold text-center relative z-20 py-3 ">Rekomendasi Artikel</h1>
+              <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 right-16"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {blogs?.slice(-12).map((blog: any, index: number) => (
-                  <CardBlogSide key={index} blogs={blog} />
+                {recomendations?.slice(-12).map((blog: any, index: number) => (
+                  <CardBlogSide key={index} blogs={blog.blog} />
                 ))}
               </section>
             </div>

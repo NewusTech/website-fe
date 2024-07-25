@@ -9,7 +9,7 @@ import TagsDisplay from "@/components/BlogPage/Detail/Tags";
 import SocialLink from "@/components/shared/Social/SocialLink";
 import DOMPurify from 'dompurify';
 
-const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
+const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any) => {
   const {
     title = "",
     user_title = "",
@@ -19,7 +19,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
     altImage = ""
   } = blogDetail || {};
 
-  const sanitizedBody = DOMPurify?.sanitize(body || 'None');
+  const sanitizedBody = (body || 'None');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +63,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
             className="w-full h-[150px] md:h-[400px] object-cover rounded-[6px] md:rounded-[10px]"
           />
         </div>
-        <div className="pt-3 md:pt-5 md:text-[14px] text-mobileDesk mr-0 lg:mr-5">
+        <div className="pt-3 my-5 md:pt-5 md:text-[14px] text-mobileDesk mr-0 lg:mr-5 max-h-[130vh] overflow-y-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'scrollbar' }}>
           <div className="prose lg:prose-lg" dangerouslySetInnerHTML={{ __html: sanitizedBody }} />
         </div>
         <div className="py-5">
@@ -98,11 +98,11 @@ const BodyContent = ({ blogDetail, blogList, dataSocials }: any) => {
       </div>
       <div className="w-full md:w-4/12 xl:w-3/12 lg:flex flex-col gap-2 relative my-5 md:mt-0 sidebar lg:pt-20">
         <div className="bg-white p-5 rounded-md">
-          <h1 className="text-webJudul font-bold text-center relative z-10">Artikel Terbaru</h1>
-          <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 right-20"></div>
+          <h1 className="text-webJudul font-bold text-center relative z-10">Rekomendasi Artikel</h1>
+          <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 right-12"></div>
           <section className="my-5 grid grid-cols-1 gap-3 w-full">
-            {blogList?.slice(-12).map((blog: any, index: any) => (
-              <CardBlogSide key={index} blogs={blog} />
+            {recomendations?.slice(-12).map((blog: any, index: any) => (
+              <CardBlogSide key={index} blogs={blog.blog} />
             ))}
           </section>
         </div>

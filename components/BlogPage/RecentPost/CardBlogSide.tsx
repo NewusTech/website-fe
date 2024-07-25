@@ -55,7 +55,7 @@ const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       >
         <div>
           <div className="flex items-center gap-1 md:gap-2">
-            <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title ? user_title : 'Lorenka'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title || 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-black"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>

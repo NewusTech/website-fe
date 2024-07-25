@@ -35,7 +35,7 @@ const RightSide = ({ aboutCompany }: any) => {
           <Link href='/'>
             <Image
               src={BlackLogo}
-              alt="Newus Technology"
+              alt="Newus Technology : Software Development Indonesia"
               width={2000}
               height={2000}
               className="object-cover w-[144px] h-[40px]"
@@ -43,7 +43,7 @@ const RightSide = ({ aboutCompany }: any) => {
           </Link>
           <Image
             src={`${openDropdown ? "/assets/icons/close.svg" : "/assets/icons/hamburger-2.svg"}`}
-            alt="logo"
+            alt="Newus Technology : Software Development Indonesia"
             loading="lazy"
             width={24}
             height={40}

@@ -17,7 +17,7 @@ const CardJob = ({ id, title, description, salary, status }: any) => {
             </Link>
           </div>
         </div>
-        <h2 className='text-[12px] md:text-sm'>{removeHTMLTags(description)}</h2>
+        <div className="prose lg:prose-lg" dangerouslySetInnerHTML={{ __html: description }} />
         <p className='text-[12px] md:text-sm'>{formatRupiah(salary)} / Month</p>
         {/* <p className='text-[12px] md:text-sm'>Rp. {minSalary.toLocaleString()} - Rp. {maxSalary.toLocaleString()} / Month</p> */}
         <div className='flex justify-start items-center gap-4'>

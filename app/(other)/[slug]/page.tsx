@@ -1,5 +1,5 @@
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
-import { getBlogDetail, getBlogList } from "@/components/Fetching/Blog/blog";
+import { getBlogDetail, getBlogList, getBlogRecomendation } from "@/components/Fetching/Blog/blog";
 import BodyContent from "@/components/BlogPage/Detail/Detail";
 import { getSocialMedia } from "@/components/Fetching/About/about";
 export const dynamic = 'force-dynamic';
@@ -9,24 +9,10 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
   const blogDetail = await getBlogDetail(slug);
   const dataSocials = await getSocialMedia()
   const blogList = await getBlogList();
+  const recomendations = await getBlogRecomendation();
 
   const {
     title = "",
-    keyword = "",
-    excerpt = "",
-    body = "",
-    kategoriblog_id = "",
-    kategoriblog_title = "",
-    tagblog_id = "",
-    tagblog_title = "",
-    user_id = "",
-    user_title = "",
-    image = "",
-    status = "",
-    status_desc = "",
-    publishAt = "",
-    createdAt = "",
-    updatedAt = ""
   } = (blogDetail?.length > 0 ? blogDetail[0] : {});
 
   const blogPaths = [
@@ -40,7 +26,7 @@ export default async function DetailBlogPage({ params }: { params: { slug: strin
       <div className="py-2">
         <Breadcrumbs paths={blogPaths} />
       </div>
-      <BodyContent blogDetail={blogDetail?.length > 0 ? blogDetail[0] : {}} blogList={blogList} dataSocials={dataSocials} />
+      <BodyContent blogDetail={blogDetail?.length > 0 ? blogDetail[0] : {}} blogList={blogList} dataSocials={dataSocials} recomendations={recomendations} />
     </section>
   );
 };
