@@ -183,8 +183,3 @@ export default async function Page({ params }: { params: { slug: string } }) {
     </section >
   )
 }
-
-const getYearFromDate = (dateString: any) => {
-  const date = new Date(dateString);
-  return date.getFullYear();
-};

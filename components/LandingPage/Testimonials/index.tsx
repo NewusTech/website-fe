@@ -15,9 +15,9 @@ export default async function TestiomoniStars() {
         <div className="w-full h-[1px] bg-gray"></div>
       </div>
       <div>
-        <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3">
+        <div className="grid grid-cols-3 gap-1 md:gap-4 lg:gap-10 w-full md:grid-cols-3 lg:grid-cols-3 pt-32">
           {dataTestimony?.map((testimonial: any, index: number) => (
-            <div key={index} className="relative bg-[#14141F] text-white rounded-md xl:rounded-2xl p-2 lg:p-6 text-center shadow-xl shadow-gray mt-10 md:mt-0">
+            <div key={index} className="relative bg-[#14141F] text-white rounded-md xl:rounded-2xl p-2 lg:p-6 text-center shadow-xl shadow-gray mt-10 md:mt-0 mb-20">
               <div className="relative flex justify-center">
                 <div className="absolute top-[-40px] md:top-[-100px] lg:top-[-115px]">
                   <Image

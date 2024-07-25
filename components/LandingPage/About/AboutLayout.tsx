@@ -7,8 +7,8 @@ import Image from "next/image";
 import PropTypes from 'prop-types';
 
 const AboutLayout = ({ data }: any) => {
-  const sanitizedBody = DOMPurify.sanitize(data?.[0]?.body || '');
-  const sanitizedMission = DOMPurify.sanitize(data?.[0]?.mission || '');
+  const sanitizedBody = (data?.[0]?.body || '');
+  const sanitizedMission = (data?.[0]?.mission || '');
 
   return (
     <section className="min-h-[300px] bg-[rgb(20,20,31)] text-white my-0 md:mt-10 py-5 md:py-8">
