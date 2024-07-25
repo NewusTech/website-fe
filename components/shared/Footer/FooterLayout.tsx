@@ -61,7 +61,7 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
           <div className="lg:ml-[310px] xl:ml-[400px] lg:mt-[20px] xl:mt-10  lg:w-8/12 xl:w-8/12">
             <Image
               src={dataAbout?.footerLogo || "/assets/icons/logo.svg"}
-              alt="logo"
+              alt="Newus Technology : Software Development Indonesia"
               width={206}
               height={56}
               className="mb-2 lg:mb-3 xl:mb-5 2xl:mb-10 w-[100px] h-[30px] xl:w-[206px] md:w-[150px] md:h-[56px]"
