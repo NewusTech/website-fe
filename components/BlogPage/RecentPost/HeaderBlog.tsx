@@ -60,7 +60,7 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
             <CardBlog2 key={index} blogs={blog} type="landing" />
           )))}
       </div>
-      <div className="grid md:grid-cols-1 xl:hidden xl:grid-cols-4 gap-2 w-full">
+      <div className="grid md:grid-cols-1 md:hidden lg:block xl:hidden xl:grid-cols-4 gap-2 w-full">
         {blogs.length === 0 ? (
           <CardDummy />
         ) : (

@@ -4,7 +4,7 @@ const OurService = () => {
   return (
     <section className="md:pb-5 2xl:pb-16 overflow-hidden">
       <div className="bg-[rgb(20,20,31)] py-8 md:py-5 2xl:py-10">
-        <div className="mx-auto px-5 md:container ">
+        <div className="mx-auto px-5 md:container">
           <h1 className="text-mobileJudul md:text-[20px] font-semibold text-white md:pt-5 2xl:pt-5">
             Our Service
           </h1>

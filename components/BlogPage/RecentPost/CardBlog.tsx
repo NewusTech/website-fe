@@ -39,7 +39,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
       data-aos-duration="1000"
       className={`${type === "landing"
         ? "bg-white flex-row md:flex-col rounded-[6px] md:rounded-[10px] md:p-5 md:w-[100%] w-full h-[97px] md:h-auto shadow-sm gap-3 "
-        : "bg-transparent flex-col md:w-[32.5%] 2xl:w-[32.8%] h-full rounded-[2px]"
+        : "bg-transparent flex-col w-full h-full rounded-[2px]"
         } flex`}
     >
       <div

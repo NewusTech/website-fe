@@ -19,7 +19,7 @@ export default async function WhatWeDo() {
         </p>
         <div className="md:w-[70px] md:h-[45px] w-[51px] h-[45px] bg-tangerine absolute z-10 -mt-24 -ml-16 md:-mt-[100px] md:-ml-[80px]"></div>
       </div>
-      <section className="grid grid-cols-2 gap-x-3 md:gap-x-2 2xl:gap-x-10 mb-5 py-5 md:px-5 xl:px-10">
+      <section className="grid grid-cols-2 gap-x-3 md:gap-x-2 2xl:gap-x-10 py-5 md:px-5 xl:px-10">
         {services?.map((service: any, i: number) => (
           <CardServices
             key={i}

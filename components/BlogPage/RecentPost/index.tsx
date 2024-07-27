@@ -83,7 +83,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               )}
             </section>
             {/* MD ketas */}
-            <section className="hidden my-5 md:grid-cols-3 gap-[5px] md:flex md:flex-wrap md:flex-grow-0 xl:gap-2 min-h-[1147px]">
+            <section className="hidden my-5 gap-[5px] md:grid md:grid-cols-3 md:flex-wrap md:flex-grow-0 xl:gap-2">
               {displayedBlogs.length > 0 ? (
                 displayedBlogs.map((blog: any, index: number) => ( //ganti nanti
                   <CardBlog key={index} blogs={blog} />
@@ -104,7 +104,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
                 {recomendations?.slice(-12).map((blog: any, index: number) => (
-                  <CardBlogSide key={index} blogs={blog.blog} />
+                  <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
             </div>
@@ -140,7 +140,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 right-16"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
                 {recomendations?.slice(-12).map((blog: any, index: number) => (
-                  <CardBlogSide key={index} blogs={blog.blog} />
+                  <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
             </div>
