@@ -46,10 +46,10 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
       <div className="w-full lg:w-9/12 main-content">
         <div>
           <h1 className="text-mobileJudul md:text-webJudul font-bold py-1 md:py-2">
-            {title ? title : 'Lorem Ipsum Dolor Amet Amit Amon Amin'}
+            {title || 'Lorem Ipsum Dolor Amet Amit Amon Amin'}
           </h1>
           <div className="flex items-center gap-1.5 text-dark py-3">
-            <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title ? user_title : 'Lorenka'}</h5>
+            <h5 className="md:text-webDesk text-mobileDesk capitalize">{user_title || 'Lorenka'}</h5>
             <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-dark"></div>
             <h5 className="md:text-webDesk text-mobileDesk">{publishAt ? formattedDate(publishAt) : 'January 13, 2024'}</h5>
           </div>
@@ -102,7 +102,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
           <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 right-12"></div>
           <section className="my-5 grid grid-cols-1 gap-3 w-full">
             {recomendations?.slice(-12).map((blog: any, index: any) => (
-              <CardBlogSide key={index} blogs={blog.blog} />
+              <CardBlogSide key={index} blogs={blog} />
             ))}
           </section>
         </div>

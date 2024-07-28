@@ -57,7 +57,7 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
         {blogs.length === 0 ? (
           <CardDummy />
         ) : (
-          displayedBlogs?.slice(-4, -1).reverse().map((blog: any, index: number) => (
+          displayedBlogs?.slice(-5, -1).reverse().map((blog: any, index: number) => (
             <CardBlog2 key={index} blogs={blog} type="landing" />
           ))
         )}

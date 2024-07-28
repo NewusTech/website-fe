@@ -10,6 +10,7 @@ export default async function AboutPage() {
   const clients = await getClientist();
   const medias = await getTeamMedia();
   const abouts = await getAboutCompany();
+  console.log(teams);
 
   return (
     <section className="min-h-[1200px]">
