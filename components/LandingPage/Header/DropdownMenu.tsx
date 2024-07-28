@@ -72,7 +72,7 @@ const DropdownMenu = ({ data }: any) => {
       )}
       <div data-aos="fade-down"
         data-aos-easing="linear"
-        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "hidden pt-[10px]" : "block pt-10 md:pt-28 lg:pt-[60px] xl:pt-[150px]"}`}>
+        data-aos-duration="500" className={`flex flex-col items-start ${openDropdown ? "hidden pt-[10px]" : "block pt-10 md:pt-28 lg:pt-[80px] xl:pt-[150px]"}`}>
         <h1 className="text-[24px] xl:text-3xl font-extrabold text-white w-72 xl:w-[277px] 2xl:w-72">
           <span className="text-tangerine text-[24px] xl:text-3xl ">Software House Lampung</span><br />Innovate & Elevate: Your Custom Software
         </h1>

@@ -6,7 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function removeHTMLTags(inputString: any) {
-  return inputString?.replace(/<\/?[^>]+(>|$)/g, "");
+  // Menghapus tag HTML
+  let cleanedString = inputString?.replace(/<\/?[^>]+(>|$)/g, "");
+
+  // Menghapus entitas HTML, misalnya &nbsp;, &amp;, &lt;, &gt;
+  cleanedString = cleanedString?.replace(/&[a-zA-Z0-9#]+;/g, "");
+
+  return cleanedString;
 }
 
 export function formatRupiah(amount: string | number): string {

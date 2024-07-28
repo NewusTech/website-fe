@@ -35,7 +35,7 @@ const CardBlog2 = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
   const { title, body, user_title, publishAt, excerpt, kategoriblog_title, tagblog_title, image, slug, createdAt, updatedAt, altImage, id } = blogs;
 
   return (
-    <div className="gap-2 flex w-full h-auto">
+    <div className="gap-2 flex w-full h-auto pb-2">
       <div className="w-[40%] max-h-[130px] rounded-[10px]">
         <Link href={`/${slug}`}>
           <Image

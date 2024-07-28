@@ -19,7 +19,8 @@ const AboutLayout = ({ data }: any) => {
             <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 ml-10 md:ml-[60px] lg:-ml-0"></div>
           </div>
           <h2 className="text-mobileDesk md:text-webDesk 2xl:text-webSubjudul  leading-5 2xl:leading-6 text-justify">
-            <div dangerouslySetInnerHTML={{ __html: sanitizedBody }} />
+            {removeHTMLTags(sanitizedBody)}
+            {/* <span dangerouslySetInnerHTML={{ __html: sanitizedBody }} /> */}
           </h2>
         </div>
         <div className="flex lg:flex-row flex-col gap-5 xl:gap-10 w-full">

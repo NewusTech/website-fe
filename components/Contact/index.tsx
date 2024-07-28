@@ -27,11 +27,11 @@ export default async function ContactUs() {
 
 
   return (
-    <section className="max-w-7xl mx-auto pt-2 md:pt-10 2xl:pt-20 md:pb-20">
-      <div className='flex flex-col 2xl:gap-[45px] md:flex-row justify-between'>
+    <section className="max-w-7xl mx-auto pt-2 md:pt-10 md:pb-10 2xl:mb-10">
+      <div className='flex flex-col 2xl:gap-[10px] md:flex-row justify-between'>
         <div className="w-[40%] md:justify-start hidden md:flex md:flex-col font-bold px-5">
-          <Image src={'/assets/images/contact.svg'} width={485} height={563} alt="Dummy Contact" className='2xl:pb-16 w-full object-cover h-[450px] 2xl:h-[500px]' />
-          <h1 className='text-[24px] py-4'>Bandar Lampung</h1>
+          <Image src={'/assets/images/contact.svg'} width={485} height={563} alt="Dummy Contact" className='2xl:pb-4 w-full object-cover h-[450px] 2xl:h-[500px]' />
+          <h1 className='text-[20px] 2xl:text-[24px] py-4'>Bandar Lampung</h1>
           <h2 className='font-normal pb-4'>Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212</h2>
           <div className='flex items-center justify-start gap-6 '>
             {dataSocials?.map((social: any) => (

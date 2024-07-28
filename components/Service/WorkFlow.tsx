@@ -6,7 +6,7 @@ import MobileCycle from './LifeCycle/MobileCycle'
 const WorkFlow = () => {
   return (
     <div className='overflow-hidden'>
-      <div className="md:mt-10 mt-[10px] flex justify-between items-center gap-2 md:gap-5 md:px-5 relative">
+      <div className="md:mt-10 flex justify-between items-center gap-2 md:gap-5 md:px-5 relative">
         <h1 className="relative z-20 uppercase text-black text-center font-bold md:text-webJudul text-nowrap text-mobileJudul">
           Software Development <span className="text-blue">Life Cycle</span>
         </h1>
@@ -21,14 +21,14 @@ const WorkFlow = () => {
       </div>
 
       <div className='lg:py-10'>
-        <div className="2xl:mt-10 mt-[10px] flex justify-between items-center gap-2 md:gap-5 md:px-5 relative">
+        <div className="2xl:mt-10 -mt-[20px] md:-mt-[20px] flex justify-between items-center gap-2 md:gap-5 md:px-5 relative">
           <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute -z-10 mt-2 right-0 md:-ml-16 md:mt-[15px] md:right-0"></div>
           <div className="w-full h-[1px] bg-gray-4"></div>
           <h1 className="relative z-20 uppercase text-center font-bold md:text-webJudul text-nowrap text-mobileJudul text-tangerine">
             Design <span className="text-blue">Process</span>
           </h1>
         </div>
-        <div className="max-w-7xl mx-auto flex items-center md:justify-center xl:justify-between gap-10 py-10 2xl:py-20 relative">
+        <div className="max-w-7xl mx-auto flex items-center md:justify-center xl:justify-between gap-10 md:py-10 2xl:py-20 relative">
           <div className='hidden absolute inset-0 lg:flex items-center justify-center'>
             <div className="w-52 h-52 md:w-[400px] md:h-[300px] xl:w-[400px] xl:h-[600px] z-40">
               <Image

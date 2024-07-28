@@ -38,7 +38,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
 
   return (
     <main className="relative">
-      <section className="px-5 2xl:px-10 mt-[40px] md:mb-[80px] mb-5 relative w-full">
+      <section className="px-5 2xl:px-10 mt-[40px] md:mb-10 mb-5 relative w-full">
         <div className="flex justify-center absolute inset-x-0 -top-[63px] xl:-top-[67px] z-10 overflow-hidden">
           <Input
             type="text"
@@ -53,7 +53,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
           <section>
             <h1 className="text-dark md:text-[24px] font-medium pt-5">Recent Blog Post</h1>
             {displayedBlogsMobile.length > 0 &&
-              <HeaderBlog blogs={blogs} displayedBlogs={displayedBlogs} />}
+              <HeaderBlog blogs={blogs} displayedBlogs={filteredBlogs} />}
           </section>
         )}
         <div className="flex md:pt-8 w-full">
@@ -83,7 +83,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               )}
             </section>
             {/* MD ketas */}
-            <section className="hidden my-5 md:grid-cols-3 gap-[5px] md:flex md:flex-wrap md:flex-grow-0 xl:gap-2 min-h-[1147px]">
+            <section className="hidden my-5 gap-[10px] md:grid md:grid-cols-3 md:flex-wrap md:flex-grow-0 xl:gap-5">
               {displayedBlogs.length > 0 ? (
                 displayedBlogs.map((blog: any, index: number) => ( //ganti nanti
                   <CardBlog key={index} blogs={blog} />
@@ -104,7 +104,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
                 {recomendations?.slice(-12).map((blog: any, index: number) => (
-                  <CardBlogSide key={index} blogs={blog.blog} />
+                  <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
             </div>
@@ -140,7 +140,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 right-16"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
                 {recomendations?.slice(-12).map((blog: any, index: number) => (
-                  <CardBlogSide key={index} blogs={blog.blog} />
+                  <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
             </div>

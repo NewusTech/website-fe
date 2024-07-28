@@ -19,9 +19,9 @@ const Struktur = ({ teams }: any) => {
 
   // Filter data dari props teams berdasarkan DivitionCategory.title
   useEffect(() => {
-    const devTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Developer Team');
-    const digiTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Digital Marketing Team');
-    const backOffice = teams.filter((member: any) => member.DivitionCategory.title === 'Back Office Team');
+    const devTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Developer');
+    const digiTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Digital Marketing');
+    const backOffice = teams.filter((member: any) => member.DivitionCategory.title === 'Back Office');
 
     setDeveloperTeam(devTeam);
     setDigitalMarketingTeam(digiTeam);
@@ -37,11 +37,11 @@ const Struktur = ({ teams }: any) => {
     <div className="px-10 2xl:px-[67px] py-5 xl:pt-10 bg-[url('/assets/illustration/bg-about.svg')] bg-cover">
       <div className='flex items-center justify-center 2xl:max-w-7xl mx-auto'>
         <div className='w-3/12 flex items-center pt-40 relative'>
-          <div className="absolute -top-28 xl:text-nowrap text-white pb-3 text-mobileJudul md:text-webJudul font-semibold">
+          <div className="absolute -top-5 xl:text-nowrap text-white pb-3 text-mobileJudul md:text-webJudul font-semibold">
             Organizational Structure
           </div>
           <div className='flex flex-col items-center' onClick={() => handleImageClick(direktur)}>
-            <Image width={1000} height={1000} src={direktur?.image || "/assets/images/dummyceo.svg"} alt="Antoni, ST" className="lg:h-[200px] w-[150px] h-[150px] lg:w-[200px] xl:h-[300px] xl:w-[300px] object-cover" />
+            <Image width={1000} height={1000} src={direktur?.image || "/assets/images/dummyceo.svg"} alt="Antoni, ST" className="lg:h-[200px] w-[150px] h-[150px] lg:w-[200px] xl:h-[300px] xl:w-[300px] object-cover object-left" />
             <div className="h-[150px] w-[150px] xl:w-[300px] text-center text-white text-mobileJudul md:text-webJudul mt-2">Antoni, ST<br />Direktur</div>
           </div>
         </div>

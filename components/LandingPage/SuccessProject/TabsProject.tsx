@@ -101,7 +101,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
             See How We Elevate Businesses. Explore Our Success Projects.
           </p>
           <div className="flex flex-col xl:flex-row my-4 md:my-5 ">
-            <div className="gap-4 md:flex hidden md:pr-4">
+            <div className="gap-4 xl:flex hidden md:pr-4">
               {categories.map((category) => (
                 <Button
                   key={category.id}
@@ -112,7 +112,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
                 </Button>
               ))}
             </div>
-            <div className="flex w-full">
+            <div className="flex w-full pt-2 xl:pt-0">
               <Input
                 type="text"
                 value={searchTerm}
@@ -129,7 +129,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
                 />
               </div>
             </div>
-            <div className="gap-2 pt-2 md:hidden flex overflow-auto">
+            <div className="gap-2 pt-2 xl:hidden flex overflow-auto">
               {categories.map((category) => (
                 <Button
                   key={category.id}

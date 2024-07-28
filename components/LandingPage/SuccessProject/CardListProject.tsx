@@ -19,9 +19,9 @@ const CardListProject = ({ projects }: any) => {
             width={1000}
             height={1000}
             loading="lazy"
-            className="rounded-l-[10px] h-full w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
+            className="rounded-l-[10px] h-full w-full object-cover xl:object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
-          <div className="absolute top-0 right-0 z-10">
+          <div className="absolute top-1 right-1 z-10">
             <Image
               src={logo || `/assets/images/placeholder-logo.jpg`}
               alt="Logo"

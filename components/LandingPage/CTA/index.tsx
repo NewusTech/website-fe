@@ -16,7 +16,9 @@ export default async function CTA() {
         <div className="w-full md:w-5/12 flex flex-col justify-center gap-2 px-5 py-6 md:pb-10">
           <h1 className="hidden xl:block text-mobileJudul md:text-2xl font-bold md:pb-3">Wujudkan <span className="text-tangerine">Website Impian <br />Anda </span>Sekarang Juga</h1>
           <h1 className="xl:hidden pb-2 text-mobileJudul md:text-2xl font-bold md:pb-3">Wujudkan <span className="text-tangerine">Website Impian Anda </span>Sekarang Juga</h1>
-          <p className="text-mobileDesk md:text-webDesk">Kami paham bahwa membuat website bukanlah keputusan mudah. Silahkan berkonsultasi untuk mendapatkan penawaran terbaik yang sesuai dengan budget Anda.</p>
+          <p className="text-mobileDesk md:text-webDesk">
+            Kami tahu bahwa merancang aplikasi berkualitas memerlukan pertimbangan matang. Membangun aplikasi adalah sebuah investasi, dan harga yang murah seringkali berdampak pada kualitas aplikasi. Hubungi kami untuk mendapatkan solusi terbaik yang sesuai dengan kebutuhan dan anggaran Anda.
+          </p>
           <div className="pt-2 md:pt-5">
             <Link href='https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0' target='_blank' className="cursor-pointer inline-flex text-white gap-2 items-center bg-green-950 rounded-[20px] text-mobileDesk md:text-webDesk py-2 px-4">
               <p>

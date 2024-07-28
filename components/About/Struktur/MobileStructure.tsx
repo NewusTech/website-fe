@@ -30,9 +30,9 @@ const StrukturMobile = ({ teams }: any) => {
   });
 
   useEffect(() => {
-    const devTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Developer Team');
-    const digiTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Digital Marketing Team');
-    const backOffice = teams.filter((member: any) => member.DivitionCategory.title === 'Back Office Team');
+    const devTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Developer');
+    const digiTeam = teams.filter((member: any) => member.DivitionCategory.title === 'Digital Marketing');
+    const backOffice = teams.filter((member: any) => member.DivitionCategory.title === 'Back Office');
 
     setDeveloperTeam(devTeam);
     setDigitalMarketingTeam(digiTeam);
