@@ -7,11 +7,11 @@ const CardJob = ({ id, title, description, salary, status }: any) => {
   return (
     <div className='flex p-5 xl:p-10 2xl:p-[30px] border border-[#4F4F4F] rounded-[10px]' style={{ boxShadow: '0px 10px 10px 0px rgba(0, 0, 0, 0.06)' }}>
       <div className='flex-1 flex flex-col gap-6'>
-        <h1 className='font-bold md:text-[24px] hidden md:block'>{title}</h1>
+        <h1 className='font-bold text-[14px] md:text-[16px] hidden md:block'>{title}</h1>
         <div className='flex md:hidden justify-between items-center'>
-          <h1 className='font-bold md:text-[24px] w-[70%]'>{title}</h1>
+          <h1 className='font-bold text-[14px] md:text-[16px]'>{title}</h1>
           <div className='w-[50%]'>
-            <Link href={`/career/${id}`} className='bg-[#480DEC] text-white rounded-2xl md:rounded-[10px] px-4 py-2 md:px-6 md:py-3 flex items-center justify-center md:gap-3 text-[12px] md:text-[16px] hover:bg-[#7b4bff]'>
+            <Link href={`/career/${id}`} className='bg-[#480DEC] text-white rounded-2xl md:rounded-[10px] px-4 py-2 md:px-6 md:py-3 flex items-center justify-center md:gap-3 text-[14px] md:text-[16px] hover:bg-[#7b4bff]'>
               Apply Now
               <Image src="/assets/icons/arrow-up-right.svg" alt="Icon arrow up right" width={19} height={19} className="" />
             </Link>

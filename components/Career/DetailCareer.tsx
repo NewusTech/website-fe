@@ -53,10 +53,8 @@ const DetailCareer = ({ title, description, requirements, prefered, benefits, co
       <h1 className={classFirstHeading}>{title}</h1>
       <div>
         <h2 className={classSecondHeading}>Description :</h2>
-        <p className="text-mobileDesk md:text-webSubjudul">{description}</p>
-        <ul className={classList}>
-          {/* Additional list items */}
-        </ul>
+        <div className="prose lg:prose-lg text-mobileDesk md:text-webDesk" dangerouslySetInnerHTML={{ __html: description }} />
+        {/* <p className="text-mobileDesk md:text-webSubjudul">{description}</p> */}
       </div>
 
       <div className='flex items-center gap-2 py-4 md:pt-10'>

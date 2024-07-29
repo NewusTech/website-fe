@@ -8,6 +8,8 @@ import React, { useState } from 'react'
 
 const Intern = ({ dataIntern }: any) => {
   const data = dataIntern?.[0]
+  console.log(data);
+
   const classList: string = 'list-disc text-[12px] md:text-mobileSubjudul md:text-webSubjudul'
 
   const [instituteName, setInstituteName] = useState('');
@@ -52,7 +54,7 @@ const Intern = ({ dataIntern }: any) => {
 
   return (
     <section>
-      {data === null ? (
+      {data === undefined ? (
         <div className='md:pt-10'>
           <NotFound />
         </div>
