@@ -19,7 +19,7 @@ const OurClient = ({ clients }: any) => {
     <div className={`flex w-full gap-3 md:gap-9 flex-wrap pb-5 justify-${justify}`}>
       {clients.map(({ id, image }: OurClientProps) => (
         <div key={id} className="flex items-center">
-          <Image src={image} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
+          <Image src={image} alt="logo" height={60} width={100} className="w-full h-auto object-contain" />
         </div>
       ))}
     </div>

@@ -4,12 +4,12 @@ import '../../lib/fa';
 import OurClient from "../../components/LandingPage/OurClient";
 import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
-import WhyChooseUs from "../../components/LandingPage/WhyChooseUs";
 import Blog from "../../components/LandingPage/Blog";
 import Testiomonials from "@/components/LandingPage/Testimonials/index";
 import Certifications from "@/components/LandingPage/Certifications";
 import AboutLanding from "@/components/LandingPage/About";
 import CTA from "@/components/LandingPage/CTA";
+import WhyChooseUs from "@/components/LandingPage/WhyChooseUs/index";
 // import LoadingScreen from "@/components/shared/Loading";
 export const dynamic = 'force-dynamic';
 
