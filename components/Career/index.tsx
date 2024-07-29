@@ -3,6 +3,8 @@ import Job from "./Job/index";
 import Intern from "./Intern/index";
 
 const CareerLayout = ({ dataJobs, categoryJobs, dataIntern }: any) => {
+  console.log(dataIntern?.[0]);
+
   return (
     <section className="max-w-7xl mx-auto p-4 md:pt-10 2xl:pt-20 md:pb-20">
       <Tabs defaultValue="say-hello">

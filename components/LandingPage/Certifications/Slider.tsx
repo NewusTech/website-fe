@@ -4,9 +4,14 @@ import React, { useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Image from "next/image";
-import Modal from "./ModalImage"; // Adjust the import path as needed
+import Modal from "@/components/shared/SliderOwner/ModalImage";
+// import Modal from "./ModalImage"; // Adjust the import path as needed
 
 const images = [
+  {
+    image: "/assets/images/KADIN.jpg",
+    logo: "/assets/icons/logokadin.webp"
+  },
   {
     image: "/assets/images/ASPILUKI.jpg",
     logo: "/assets/icons/logoaspekti.png"
@@ -19,10 +24,6 @@ const images = [
     image: "/assets/images/ICTPM.jpg",
     logo: "/assets/icons/logoBNSP.webp"
   },
-  {
-    image: "/assets/images/KADIN.jpg",
-    logo: "/assets/icons/logokadin.webp"
-  }
 ];
 
 const CarouselImage = () => {
@@ -50,9 +51,9 @@ const CarouselImage = () => {
                 className="flex flex-col items-center md:rounded-lg"
                 onClick={() => handleImageClick(src.image)}
               >
-                <div className="h-72 md:min-h-[500px] lg:min-h-[480px] xl:min-h-[550px] flex items-center">
+                <div className="h-60 md:min-h-[500px] xl:min-h-[550px] flex items-center">
                   <Image
-                    className="object-cover h-full rounded-md"
+                    className="object-contain h-full rounded shadow-md shadow-white"
                     src={src.image}
                     alt={`banner-${index}`}
                     width={1450}

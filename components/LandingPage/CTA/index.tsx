@@ -7,10 +7,10 @@ export default async function CTA() {
       <div className="min-h-[200px] md:min-h-[350px] xl:min-h-[430px] 2xl:max-w-none 2xl:pl-0 h-full w-full flex flex-col md:flex-row justify-center md:gap-4 relative">
         <div className="w-full md:w-7/12 relative">
           <div className="absolute inset-0 hidden md:block">
-            <Image src={'/assets/images/bg-cta.svg'} alt="Background" layout="fill" objectFit="cover" loading="lazy" />
+            <Image src={'/assets/images/bg-cta.svg'} alt="Background" width={1000} height={1000} loading="lazy" className='h-[200px] md:h-[350px] xl:h-[430px] object-cover' />
           </div>
           <div className="relative block md:hidden">
-            <Image src={'/assets/images/bg-cta.svg'} alt="Background" width={1000} height={1000} className="w-full h-auto object-cover" loading="lazy" />
+            <Image src={'/assets/images/bg-cta.svg'} alt="Background" width={1000} height={1000} className="w-full h-[150px] sm:h-[300px] md:h-[350px] xl:h-[430px] object-cover" loading="lazy" />
           </div>
         </div>
         <div className="w-full md:w-5/12 flex flex-col justify-center gap-2 px-5 py-6 md:pb-10">

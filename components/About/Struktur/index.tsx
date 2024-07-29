@@ -41,7 +41,7 @@ const Struktur = ({ teams }: any) => {
             Organizational Structure
           </div>
           <div className='flex flex-col items-center' onClick={() => handleImageClick(direktur)}>
-            <Image width={1000} height={1000} src={direktur?.image || "/assets/images/dummyceo.svg"} alt="Antoni, ST" className="lg:h-[200px] w-[150px] h-[150px] lg:w-[200px] xl:h-[300px] xl:w-[300px] object-cover object-left" />
+            <Image width={1000} height={1000} src={direktur?.image || "/assets/images/dummyceo.svg"} alt="Antoni, ST" className="lg:h-[200px] w-[150px] h-[150px] lg:w-[200px] xl:h-[300px] xl:w-[300px] object-cover object-right" />
             <div className="h-[150px] w-[150px] xl:w-[300px] text-center text-white text-mobileJudul md:text-webJudul mt-2">Antoni, ST<br />Direktur</div>
           </div>
         </div>
