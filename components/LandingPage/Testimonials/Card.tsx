@@ -17,7 +17,7 @@ const Testimonial = ({ imageSrc, quote, name, position, company }: any) => {
         loading='lazy'
         className="rounded-full w-[100px] h-[100px] object-contain mx-auto mb-4"
       />
-      <blockquote className="text-[#707A88] text-mobileDesk md:text-webDesk mb-4">
+      <blockquote className="text-[#707A88] text-mobileDesk md:text-webDesk mb-4 min-h-[70px]">
         {quote}
       </blockquote>
       <h1 className="font-bold text-lg text-mobileJudul md:text-webJudul">{name}</h1>
