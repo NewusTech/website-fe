@@ -29,7 +29,7 @@ const CardTeam = ({ image, name, position, onClick, team }: any) => {
         onClick={handleClick}
       />
       <Link href={`/team/${team.id}`} target="_blank">
-        <h1 className="text-mobileJudul md:text-webJudul font-semibold mt-2 text-center">{name}</h1>
+        <h1 className="text-mobileJudul md:text-webJudul font-semibold mt-2 text-center hover:underline">{name}</h1>
       </Link>
       <p className="text-mobileSubjudul md:text-webSubjudul text-gray-600 text-center">
         {position}
