@@ -26,7 +26,7 @@ const AboutLayout = ({ data }: any) => {
         <div className="flex lg:flex-row flex-col gap-5 xl:gap-10 w-full">
           <div className="lg:w-1/2">
             <div className="pb-2">
-              <Image src={'/assets/images/newuslanding.svg'} alt="Logo" width={500} height={500} className="w-full md:min-h-[300px] xl:min-h-[280px] 2xl:min-h-[370px] 2xl:object-cover" />
+              <Image src={'/assets/images/newuslanding.svg'} alt="Logo" width={500} height={500} className="w-full md:min-h-[300px] xl:min-h-[280px] 2xl:min-h-[370px] 2xl:object-cover" loading="lazy" />
             </div>
             <div>
               <div className="flex gap-2 md:gap-5 items-center pb-2 pt-3">

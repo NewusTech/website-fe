@@ -188,6 +188,9 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
             <li><Link href='/about' className="text-mobileSubjudul md:text-webSubjudul">
               About
             </Link></li>
+            <li><Link href='/team' className="text-mobileSubjudul md:text-webSubjudul">
+              Teams
+            </Link></li>
             <li><Link href='/career' className="text-mobileSubjudul md:text-webSubjudul">
               Career
             </Link></li>

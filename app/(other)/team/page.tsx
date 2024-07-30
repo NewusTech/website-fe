@@ -1,5 +1,5 @@
-import TeamLayout from '@/components/About/Team'
 import { getTeamList } from '@/components/Fetching/Division/division';
+import TeamLayout from '@/components/Team';
 import React from 'react'
 export const dynamic = 'force-dynamic';
 

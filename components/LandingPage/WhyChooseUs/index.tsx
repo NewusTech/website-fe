@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { chooseUs } from "@/constants";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -30,38 +31,43 @@ interface WhyChooseUsProps {
 const WhyChooseUs = () => {
   return (
     <section className="px-5 md:container mx-auto py-8 md:pt-5 md:pb-16 xl:pb-16 2xl:pb-[90px] overflow-hidden">
-      <div className="flex flex-col lg:flex-row w-full gap-5 h-max">
-        <div className="w-full lg:w-1/2 flex flex-col gap-3 h-full">
+      <div className="flex flex-col lg:flex-row w-full gap-5 lg:h-[380px] xl:h-[380px]">
+        <div className="w-full lg:w-1/2 flex flex-col gap-3">  {/* Set fixed height */}
           <h1 className="text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px] pb-3 xl:pb-5 text-center lg:text-left">
             <span className="text-blue mr-1 md:mr-[2px]">Why </span>Choose Us?
           </h1>
           <h2 className="text-mobileSubjudul md:text-[24px] font-bold">
-            Nobody Knows Clients Like We Have Preferred
+            We offer a transparent, collaborative and customer-oriented approach.
           </h2>
           <p className="text-mobileDesk md:text-webDesk">
-            Lorem ipsum dolor sit amet consectetur. Enim malesuada integer sit vitae. Etiam leo amet
-            nam pellentesque tempus. Fermentum sed consectetur senectus nibh curabitur vitae. Nam
-            massa elit neque sociis.
+            Active in Indonesia's IT development since 2021 with software services, digital marketing strategies, and quality IT solutions.
           </p>
-          <div className="flex-grow h-full">
+          <div className="flex-grow">
             <Services />
           </div>
         </div>
-        <div className="w-full lg:w-1/2 h-full relative">
+        <div className="w-full h-[200px] sm:h-[300px] lg:h-full flex flex-col lg:w-1/2 relative">  {/* Match fixed height */}
           <Image
             alt="Background"
             src="/assets/icons/about-landing/bg.jpeg"
             width={1000}
             height={544}
-            className="rounded-xl h-[250px] md:h-[355px] lg:h-[402.6px] xl:h-[340px] 2xl:h-[340px] object-cover"
+            className="rounded-xl h-full object-cover"
           />
-          <div className="absolute bottom-3 left-3 bg-white inline-flex p-3 rounded-md items-center z-20" >
-            <Image alt='Certified Enginners' src={'/assets/icons/about-landing/Trusted.svg'} width={50} height={50} className="w-[30px] lg:w-[50px]" />
-            <p className="text-mobileDesk md:text-webDesk text-gray-600">Trusted By 9000 Clients</p>
+          <div className="absolute bottom-3 left-3 bg-white inline-flex p-3 rounded-md items-center z-20">
+            <Image
+              alt="Certified Engineers"
+              src="/assets/icons/about-landing/Trusted.svg"
+              width={50}
+              height={50}
+              className="w-[30px] lg:w-[50px]"
+            />
+            <p className="text-mobileDesk md:text-webDesk text-gray-600">Successfully completed 30+ project</p>
           </div>
         </div>
       </div>
-      <div className="pt-8 2xl:pt-20">
+
+      <div className="pt-8 2xl:pt-10">
         <div className="flex items-center gap-3 pb-3">
           <h1 className="text-center text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px]">
             <span className="text-blue mr-1 md:mr-[2px]">Our </span>Skills

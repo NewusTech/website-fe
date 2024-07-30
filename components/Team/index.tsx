@@ -23,6 +23,7 @@ const TeamLayout = ({ teams }: any) => {
         {teams?.map((team: any, i: number) => (
           <CardTeam
             key={i}
+            team={team}
             image={team.image || "/assets/images/team.svg"}
             name={team.name || `Name ${team.id}`}
             position={team.title || `Position ${team.id}`}

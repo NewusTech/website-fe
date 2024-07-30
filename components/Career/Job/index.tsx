@@ -35,9 +35,9 @@ const Job: React.FC<JobProps> = ({ dataJobs, categoryJobs }) => {
 
   return (
     <section className='pb-20'>
-      <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pb-4 md:pb-0 md:pt-5">
+      <div className="w-full flex justify-between md:justify-start gap md:gap-6 flex-wrap md:overflow-hidden pt-2 pb-4 md:pb-0 md:pt-5">
         <div
-          className={`bg-blue w-[46px] h-[30px] mt-1 md:w-auto md:h-[43px] rounded-md md:rounded-[16px] md:px-10 flex items-center justify-center py-3 cursor-pointer ${selectedCategory === 'All' ? 'bg-blue text-white px-4 md:px-10' : 'bg-white text-dark'
+          className={`bg-blue w-[46px] h-[30px] mt-1 md:w-auto md:h-[43px]  rounded-[10px] md:rounded-[16px] md:px-10 flex items-center justify-center py-3 cursor-pointer ${selectedCategory === 'All' ? 'bg-blue text-white px-4 md:px-10' : 'bg-white text-dark'
             }`}
           onClick={() => setSelectedCategory('All')}
         >
@@ -48,7 +48,7 @@ const Job: React.FC<JobProps> = ({ dataJobs, categoryJobs }) => {
         {categoryJobs.map((category) => (
           <div
             key={category.id}
-            className={`h-[30px] mt-1 md:w-auto md:h-[43px] rounded  md:rounded-[16px] flex items-center justify-center py-3 md:px-10 cursor-pointer ${selectedCategory === category.title ? 'bg-blue text-white px-4 md:px-10' : 'bg-white text-dark'
+            className={`h-[30px] mt-1 md:w-auto md:h-[43px] rounded-[10px] md:rounded-[16px] flex items-center justify-center py-3 md:px-10 cursor-pointer ${selectedCategory === category.title ? 'bg-blue text-white px-4 md:px-10' : 'bg-white text-dark'
               }`}
             onClick={() => setSelectedCategory(category.title)}
           >
