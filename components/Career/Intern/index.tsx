@@ -5,6 +5,7 @@ import { removeHTMLTags } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import CustomAlert from '../Alert'
 
 const Intern = ({ dataIntern }: any) => {
   const data = dataIntern?.[0]
@@ -18,6 +19,8 @@ const Intern = ({ dataIntern }: any) => {
   const [startDate, setStartDate] = useState('');
   const [finishDate, setFinishDate] = useState('');
   const [coverLetter, setCoverLetter] = useState<File | null>(null);
+  const [alertMessage, setAlertMessage] = useState<string | null>(null);
+  const [alertType, setAlertType] = useState<'success' | 'error'>('success');
 
   const handleSummit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -43,17 +46,26 @@ const Intern = ({ dataIntern }: any) => {
         return response.json();
       })
       .then(result => {
-        alert(result.message)
-        location.reload()
-        console.log('Success:', result);
+        setAlertMessage(result.message);
+        setAlertType('success');
+        setInstituteName('');
+        setEmail('');
+        setMajor('');
+        setStartDate('');
+        setFinishDate('');
+        setCoverLetter(null);
+        // setAlertMessage(null);
       })
       .catch(error => {
-        alert(error);
+        setAlertMessage(error);
+        setAlertType('error');
       });
   }
 
   return (
     <section>
+      {/* <CustomAlert message={alertMessage} /> */}
+      {alertMessage && <CustomAlert message={alertMessage} type={alertType} />}
       {data === undefined ? (
         <div className='md:pt-10'>
           <NotFound />

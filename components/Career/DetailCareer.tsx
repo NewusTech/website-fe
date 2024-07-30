@@ -1,19 +1,20 @@
 'use client'
 
-import DOMPurify from 'dompurify';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import CustomAlert from './Alert';
 
 const DetailCareer = ({ title, description, requirements, prefered, benefits, coverLetter }: any) => {
-  const classFirstHeading: string = 'font-bold text-mobilejudul md:text-webjudul pt-4 md:pt-8';
+  const classFirstHeading: string = 'font-bold text-mobilejudul md:text-webjudul py-4 md:pt-8';
   const classSecondHeading: string = 'text-mobileSubjudul md:text-webSubjudul font-bold pb-3 pt-3 md:pt-6';
-  const classList: string = 'list-disc px-5 text-mobileSubjudul md:text-webSubjudul';
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [cv, setCv] = useState<File | null>(null);
   const [coverLetterFile, setCoverLetterFile] = useState<File | null>(null);
+  const [alertMessage, setAlertMessage] = useState<string | null>(null);
+  const [alertType, setAlertType] = useState<'success' | 'error'>('success');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,27 +40,32 @@ const DetailCareer = ({ title, description, requirements, prefered, benefits, co
         return response.json();
       })
       .then(result => {
-        alert(result.message)
-        location.reload()
-        console.log('Success:', result);
+        setName('')
+        setEmail('')
+        setCv(null)
+        setCoverLetterFile(null)
+        setAlertMessage(result.message || 'Submit berhasil!');
+        setAlertType('success');
       })
       .catch(error => {
-        alert(error);
+        setAlertMessage(error);
+        setAlertType('error');
       });
   };
 
   return (
     <section>
+      {alertMessage && <CustomAlert message={alertMessage} type={alertType} />}
       <h1 className={classFirstHeading}>{title}</h1>
       <div>
-        <h2 className={classSecondHeading}>Description :</h2>
+        {/* <h2 className={classSecondHeading}>Description :</h2> */}
         <div className="prose lg:prose-lg text-mobileDesk md:text-webDesk" dangerouslySetInnerHTML={{ __html: description }} />
         {/* <p className="text-mobileDesk md:text-webSubjudul">{description}</p> */}
       </div>
 
       <div className='flex items-center gap-2 py-4 md:pt-10'>
         <Image src={`/assets/icons/cover-later.svg`} alt='Icon cover later' width={18} height={18} className="" />
-        <Link href={coverLetter} className='text-[#FF6600] text-mobileSubjudul md:text-webSubjudul'>
+        <Link target='_blank' href={coverLetter} className='text-[#FF6600] text-mobileSubjudul md:text-webSubjudul'>
           Download Cover Letter
         </Link>
       </div>
