@@ -23,7 +23,7 @@ const AboutLayout = ({ abouts, teams, clients, medias }: any) => {
 
   return (
     <section className="bg-white md:bg-[#F4F4F4] overflow-hidden">
-      <Tabs defaultValue="about" className="md:p-[20px] lg:p-[50px] 2xl:px-[120px] 2xl:pt-[120px] w-full">
+      <Tabs defaultValue="about" className="md:p-[20px] lg:p-[50px] 2xl:px-[120px] 2xl:pt-20 w-full">
         <TabsList className="w-full text-[#FF6600]">
           <TabsTrigger className="text-[#FF6600] px-4 py-2 md:px-10 md:py-[25px] data-[state=active]:bg-[#FF6600] font-bold text-mobileSubjudul md:text-webSubjudul data-[state=active]:border-[rgb(255,102,0)] border-[#FF6600] border data-[state=active]:rounded-none rounded-none w-full" value="about">
             ABOUT
@@ -58,7 +58,7 @@ const AboutLayout = ({ abouts, teams, clients, medias }: any) => {
         </TabsContent>
       </Tabs>
 
-      <div className="max-w-7xl mx-auto px-5 pt-5 pb-10 2xl:py-10 xl:pb-20 md:px-[67px] w-full flex flex-col justify-center items-center">
+      <div className="max-w-7xl mx-auto px-5 pt-5 pb-10 xl:pb-20 md:px-[67px] w-full flex flex-col justify-center items-center">
         <h1 className='text-[#FF6600] font-bold text-mobileJudul md:text-webJudul pb-5 md:pb-10 text-center md:text-start uppercase'>Principles <span className='text-[#480DEC] text-center md:text-start'>& Values</span></h1>
         <div className="grid gap-4 md:gap-6 grid-cols-3 md:grid-cols-6">
           {dummyValues.map((dummy: any, i: number) => (

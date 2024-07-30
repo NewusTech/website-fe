@@ -52,6 +52,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         <Image
           src={image || '/assets/images/blog.jpg'}
           alt={altImage || "blog"}
+          loading="lazy"
           width={326}
           height={233}
           className={`${type === "landing"
@@ -74,6 +75,7 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
             <Image
               src="/assets/icons/arrow.svg"
               alt="arrow up"
+              loading="lazy"
               width={24}
               height={24}
               className="w-3 h-3"

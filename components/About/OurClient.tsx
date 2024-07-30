@@ -19,7 +19,7 @@ const OurClient = ({ clients }: any) => {
     <div className={`flex w-full gap-3 md:gap-9 flex-wrap pb-5 justify-${justify}`}>
       {clients.map(({ id, image }: OurClientProps) => (
         <div key={id} className="flex items-center">
-          <Image src={image} alt="logo" height={60} width={100} className="w-full h-auto object-contain" />
+          <Image src={image || '/assets/images/dummy1.png'} alt="logo" height={60} width={100} className="w-full h-auto object-contain" />
         </div>
       ))}
     </div>
@@ -51,7 +51,7 @@ const OurClient = ({ clients }: any) => {
       <div className="flex flex-wrap justify-center md:hidden items-center w-full">
         {mobile.map(({ id, image }: OurClientProps) => (
           <div key={id} className="w-[20%] flex justify-center mb-5">
-            <Image src={image} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
+            <Image src={image || '/assets/images/dummy1.png'} alt="logo" height={60} width={100} className="w-full h-[60px] object-contain" />
           </div>
         ))}
       </div>

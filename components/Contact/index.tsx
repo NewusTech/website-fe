@@ -27,7 +27,7 @@ export default async function ContactUs() {
 
 
   return (
-    <section className="max-w-7xl mx-auto pt-2 md:pt-10 md:pb-10 2xl:mb-10">
+    <section className="max-w-7xl mx-auto pt-2 md:pt-10 md:pb-10 2xl:mb-10 xl:pt-20">
       <div className='flex flex-col 2xl:gap-[10px] md:flex-row justify-between'>
         <div className="w-[40%] md:justify-start hidden md:flex md:flex-col font-bold px-5">
           <Image src={'/assets/images/contact.svg'} width={485} height={563} alt="Dummy Contact" className='2xl:pb-4 w-full object-cover h-[450px] 2xl:h-[500px]' />
