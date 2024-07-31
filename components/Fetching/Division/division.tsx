@@ -14,9 +14,9 @@ export async function getTeamList() {
   }
 }
 
-export async function getTeamDetail(slug: string) {
+export async function getTeamDetail(id: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/team/detail`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/admin/${id}/team/detail`, {
       cache: 'no-store',
     });
 

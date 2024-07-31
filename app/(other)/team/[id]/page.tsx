@@ -1,4 +1,6 @@
+import { getTeamDetail } from "@/components/Fetching/Division/division";
 import { getSeoPages } from "@/components/Fetching/SEO";
+import { removeHTMLTags } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 export const dynamic = 'force-dynamic';
@@ -14,8 +16,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function DetailTeamPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function DetailTeamPage({ params }: { params: { id: string } }) {
+  const { id } = params;
+  console.log('Component Slug:', id);
+
+  const data = await getTeamDetail(id);
+  console.log(data);
+
   const columns = [
     {
       imageSrc: '/assets/images/antoni.svg',
@@ -58,36 +65,38 @@ export default async function DetailTeamPage({ params }: { params: { slug: strin
   return (
     <section className="overflow-hidden min-h-screen">
       <header className="w-full z-10 relative" style={{ background: 'linear-gradient(90deg, #4F4F4F 0%, #959595 100%)' }}>
-        <div className="flex justify-end max-w-6xl 2xl:max-w-7xl py-10">
+        <div className="flex justify-end max-w-6xl 2xl:max-w-7xl md:py-10">
           <Image
             src='/assets/icons/logo.svg'
             alt="blog header"
             loading="lazy"
             width={1350}
             height={75}
-            className={`w-[400px] object-contain md:h-[305px] xl:h-[200px] h-[200px]`}
+            className={`w-[150px] md:w-[400px] object-contain md:h-[305px] xl:h-[200px] h-[200px]`}
           />
         </div>
       </header>
 
       {/* Foto */}
-      <div className="max-w-6xl mx-auto -mt-[130px] z-10 relative">
-        <Image
-          src='/assets/images/antoni.svg'
-          alt="blog header"
-          loading="lazy"
-          width={550}
-          height={75}
-          className={`w-[200px] object-contain rounded-full`}
-        />
+      <div className="max-w-6xl px-5 mx-auto -mt-[120px] z-10 relative ">
+        <div className="rounded-full">
+          <Image
+            src={data?.image || '/assets/images/antoni.svg'}
+            alt="blog header"
+            loading="lazy"
+            width={600}
+            height={600}
+            className="w-60 h-60 rounded-full object-cover"
+          />
+        </div>
       </div>
 
-      <div className="max-w-6xl mx-auto bg-[#F4F4F4] pb-10">
-        <div className="bg-gradient-to-r from-gray-700 to-gray-300 pt-10 pb-5 flex justify-between gap-10">
+      <div className="max-w-6xl px-5 mx-auto bg-[#F4F4F4] pb-10">
+        <div className="bg-gradient-to-r from-gray-700 to-gray-300 pt-10 pb-5 flex justify-between gap-3 md:gap-10">
           <div className="w-9/12 flex flex-col gap-3">
-            <h1 className="text-webJudul font-bold">Muhammad Muttaqin</h1>
-            <p className="text-webSubjudul font-semibold">Fullstack Developer</p>
-            <p className="text-webDesk items-stretch flex">Lebih baik jadi yang terbaik dari yang terbaik, daripada jadi yang terburuk dari yang terbaik. Tapi ingat satu hal, jangan pernah menjadi yang terbaik dari yang terburuk.</p>
+            <h1 className="text-webJudul font-bold">{data?.name}</h1>
+            <p className="text-webSubjudul font-semibold">{data?.title}</p>
+            <p className="text-webDesk items-stretch flex">{removeHTMLTags(data?.description)}</p>
             <div className="font-bold text-webDesk flex flex-col gap-1">
               <p>Institut Teknologi Sumatera</p>
               <p>Teknik Informatika, Aug 2008-Aug 2021</p>
@@ -104,7 +113,7 @@ export default async function DetailTeamPage({ params }: { params: { slug: strin
           </div>
         </div>
 
-        <div className="bg-white shadow-lg rounded-lg px-10 py-8">
+        <div className="bg-white shadow-lg rounded-lg p-5 mb-8 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul">Contact Info</h2>
           <div className="flex flex-wrap gap-6 mt-4 w-full">
             <div className="w-[45%] flex flex-col gap-3">
@@ -153,10 +162,10 @@ export default async function DetailTeamPage({ params }: { params: { slug: strin
         </div>
 
         {/* Certi */}
-        <div className="bg-white shadow-lg rounded-lg px-10 my-8 py-8">
+        <div className="bg-white shadow-lg rounded-lg p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Certificate</h2>
 
-          <div className="grid grid-cols-3 gap-x-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5">
             {columns.map((column, index) => (
               <div key={index} className="border rounded-md shadow-sm">
                 <Image
@@ -177,7 +186,7 @@ export default async function DetailTeamPage({ params }: { params: { slug: strin
         </div>
 
         {/* Licenses & certifications */}
-        <div className="bg-white shadow-lg rounded-lg px-10 my-8 py-8">
+        <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Licenses & certifications</h2>
 
           <div className="space-y-4">
@@ -188,7 +197,7 @@ export default async function DetailTeamPage({ params }: { params: { slug: strin
         </div>
 
         {/* Skills */}
-        <div className="bg-white shadow-lg rounded-lg px-10 my-8 py-8">
+        <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Skills</h2>
           <div className="space-y-4">
             {certifications.map((certification, index) => (
@@ -198,7 +207,7 @@ export default async function DetailTeamPage({ params }: { params: { slug: strin
         </div>
 
         {/* Projects */}
-        <div className="bg-white shadow-lg rounded-lg px-10 my-8 py-8">
+        <div className="bg-white shadow-lg rounded-lg p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Projects</h2>
           <div className="space-y-4">
             {certifications.map((certification, index) => (
