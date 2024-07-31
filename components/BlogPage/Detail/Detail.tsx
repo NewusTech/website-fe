@@ -8,6 +8,7 @@ import CardBlogSide from "@/components/BlogPage/RecentPost/CardBlogSide";
 import TagsDisplay from "@/components/BlogPage/Detail/Tags";
 import SocialLink from "@/components/shared/Social/SocialLink";
 import DOMPurify from 'dompurify';
+import TagsBottom from './TagsBottom';
 
 const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any) => {
   const {
@@ -66,8 +67,9 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
         <div className="pt-3 my-5 md:pt-5 md:text-[14px] text-mobileDesk mr-0 lg:mr-5 max-h-[130vh] overflow-y-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'scrollbar' }}>
           <div className="prose lg:prose-lg" dangerouslySetInnerHTML={{ __html: sanitizedBody }} />
         </div>
-        <div className="py-5">
-          <h1 className="font-semibold text-mobileJudul pb-2  md:text-webJudul">Share</h1>
+        <TagsBottom blogs={blogList} />
+        <div className="py-5 flex items-center">
+          <h1 className="font-semibold text-mobileJudul  md:text-webJudul mr-2">Share : </h1>
           <div className="flex gap-4 items-center">
             {dataSocials?.map((social: any) => (
               <SocialLink
@@ -84,24 +86,24 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
             <h2 className="font-medium md:text-webJudul text-mobileJudul text-nowrap">More Articles</h2>
             <div className="w-full h-[1px] bg-blue-2"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 py-3 md:hidden">
-            {blogList?.slice(0, 2).map((blog: any, index: any) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 py-3 xl:hidden">
+            {blogList?.slice(0, 2).reverse().map((blog: any, index: any) => (
               <CardBlog key={index} blogs={blog} />
             ))}
           </div>
-          <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-5">
-            {blogList?.slice(0, 3).map((blog: any, index: any) => (
+          <div className="hidden xl:grid grid-cols-3  xl:grid-cols-3 gap-5 w-full overflow-x-auto">
+            {blogList?.slice(0, 3).reverse().map((blog: any, index: any) => (
               <CardBlog type='landing' key={index} blogs={blog} />
             ))}
           </div>
         </div>
       </div>
-      <div className="w-full md:w-4/12 xl:w-3/12 lg:flex flex-col gap-2 relative my-5 md:mt-0 sidebar lg:pt-20">
+      <div className="w-full hidden lg:w-4/12 xl:w-3/12 lg:flex flex-col gap-2 relative my-5 md:mt-0 sidebar lg:pt-20">
         <div className="bg-white p-5 rounded-md">
           <h1 className="text-webJudul font-bold text-center relative z-10">Rekomendasi Artikel</h1>
           <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 right-12"></div>
           <section className="my-5 grid grid-cols-1 gap-3 w-full">
-            {recomendations?.slice(-12).map((blog: any, index: any) => (
+            {recomendations?.slice(-12).reverse().map((blog: any, index: any) => (
               <CardBlogSide key={index} blogs={blog} />
             ))}
           </section>
@@ -110,7 +112,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
           <h1 className="text-webJudul font-bold text-center relative z-20">Recent Post</h1>
           <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
           <section className="my-5 grid grid-cols-1 gap-3 w-full">
-            {blogList?.slice(-5).map((blog: any, index: any) => (
+            {blogList?.slice(-5).reverse().map((blog: any, index: any) => (
               <CardBlogSide key={index} blogs={blog} />
             ))}
           </section>

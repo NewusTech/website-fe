@@ -2,7 +2,20 @@ import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import { getBlogDetail, getBlogList, getBlogRecomendation } from "@/components/Fetching/Blog/blog";
 import BodyContent from "@/components/BlogPage/Detail/Detail";
 import { getSocialMedia } from "@/components/Fetching/About/about";
+import { getSeoPages } from "@/components/Fetching/SEO";
+import { Metadata } from "next";
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seoAbout = await getSeoPages();
+  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Blog");
+  const title = aboutMeta?.metaTitle;
+  const description = aboutMeta?.metaDesc;
+  return {
+    title,
+    description,
+  };
+}
 
 export default async function DetailBlogPage({ params }: { params: { slug: string } }) {
   const { slug } = params;

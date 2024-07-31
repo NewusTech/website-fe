@@ -11,8 +11,8 @@ const inter = Inter({ subsets: ["latin"] });
 export async function generateMetadata(): Promise<Metadata> {
   const data = await getAboutCompany();
   const companyInfo = data?.[0] || {};
-  const title = companyInfo?.siteTitle || "IT CONSULTANT LAMPUNG & SOFTWARE DEVELOPMENT";
-  const description = companyInfo?.siteDescription || "IT CONSULTANT LAMPUNG & SOFTWARE DEVELOPMENT";
+  const title = companyInfo?.siteTitle;
+  const description = companyInfo?.siteDescription;
   const favicon = companyInfo?.favicon || lambang.src;
 
   return {

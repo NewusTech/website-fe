@@ -19,7 +19,7 @@ const TeamLayout = ({ teams }: any) => {
   return (
     <main className="overflow-hidden">
       <Header teams={selectedTeam} />
-      <section className={`flex md:flex-row flex-wrap justify-center py-1 md:py-1 md:px-0 gap-1 xl:gap-2 md:pb-20 w-full ${styles.teamSection}`}>
+      <section className={`py-1 md:py-1 md:px-0 pb-5 lg:pb-20 w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5  2xl:grid gap-1 ${styles.teamSection}`}>
         {teams?.map((team: any, i: number) => (
           <CardTeam
             key={i}
