@@ -1,42 +1,6 @@
 import React from 'react';
-// import { useForm } from 'react-hook-form';
-// import { zodResolver } from '@hookform/resolvers/zod';
-// import { z } from 'zod';
 
 const TabOne = () => {
-  // const formSchema = z.object({
-  //   firstName: z
-  //     .string({ message: 'First name can not be empty' })
-  //     .min(4, { message: 'First name must be at least 4 characters' })
-  //     .max(50, { message: 'First name must be less than 50 characters' }),
-  //   lastName: z
-  //     .string({ message: 'Last name can not be empty' })
-  //     .min(4, { message: 'Last name must be at least 4 characters' })
-  //     .max(50, { message: 'Last name must be less than 50 characters' }),
-  //   email: z
-  //     .string({ message: 'Email can not be empty' })
-  //     .email({ message: 'Email must be in email format' }),
-  //   phoneNumber: z
-  //     .string({ message: 'Phone number can not be empty' })
-  //     .min(9, { message: 'Phone number must be at least 9 characters' })
-  //     .max(13, { message: 'Phone number must be less than 13 characters' }),
-  //   subjectMessage: z
-  //     .string({ message: 'Subject message can not be empty' })
-  //     .min(5, { message: 'Subject message must be at least 5 characters' })
-  //     .max(50, { message: 'Subject message must be less than 50 characters' }),
-  //   message: z
-  //     .string({ message: 'Message can not be empty' })
-  //     .min(5, { message: 'Message must be at least 5 characters' }),
-  // });
-
-  // const { handleSubmit, formState: { errors } } = useForm({
-  //   resolver: zodResolver(formSchema)
-  // });
-
-  // const onSubmit = (data) => {
-  //   console.log(data);
-  //   // Lakukan sesuatu dengan data yang disubmit
-  // };
 
   return (
     <section className='pt-4 md:pt-5'>

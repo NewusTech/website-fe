@@ -46,10 +46,10 @@ const WhyChooseUs = () => {
             <Services />
           </div>
         </div>
-        <div className="w-full h-[200px] sm:h-[300px] lg:h-full flex flex-col lg:w-1/2 relative">  {/* Match fixed height */}
+        <div className="w-full h-[200px] sm:h-[300px] lg:h-full flex flex-col lg:w-1/2 relative">
           <Image
             alt="Background"
-            src="/assets/icons/about-landing/bg.jpeg"
+            src="/assets/images/whysnewus.jpg"
             width={1000}
             height={544}
             className="rounded-xl h-full object-cover"
