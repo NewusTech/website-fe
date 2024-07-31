@@ -85,12 +85,12 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
             <div className="w-full h-[1px] bg-blue-2"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 py-3 md:hidden">
-            {blogList?.slice(0, 2).map((blog: any, index: any) => (
+            {blogList?.slice(0, 2).reverse().map((blog: any, index: any) => (
               <CardBlog key={index} blogs={blog} />
             ))}
           </div>
           <div className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-5">
-            {blogList?.slice(0, 3).map((blog: any, index: any) => (
+            {blogList?.slice(0, 3).reverse().map((blog: any, index: any) => (
               <CardBlog type='landing' key={index} blogs={blog} />
             ))}
           </div>
@@ -101,7 +101,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
           <h1 className="text-webJudul font-bold text-center relative z-10">Rekomendasi Artikel</h1>
           <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-0 -mt-6 right-12"></div>
           <section className="my-5 grid grid-cols-1 gap-3 w-full">
-            {recomendations?.slice(-12).map((blog: any, index: any) => (
+            {recomendations?.slice(-12).reverse().map((blog: any, index: any) => (
               <CardBlogSide key={index} blogs={blog} />
             ))}
           </section>
@@ -110,7 +110,7 @@ const BodyContent = ({ blogDetail, blogList, dataSocials, recomendations }: any)
           <h1 className="text-webJudul font-bold text-center relative z-20">Recent Post</h1>
           <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-6 right-20"></div>
           <section className="my-5 grid grid-cols-1 gap-3 w-full">
-            {blogList?.slice(-5).map((blog: any, index: any) => (
+            {blogList?.slice(-5).reverse().map((blog: any, index: any) => (
               <CardBlogSide key={index} blogs={blog} />
             ))}
           </section>

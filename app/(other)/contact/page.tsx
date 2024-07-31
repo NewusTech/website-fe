@@ -1,6 +1,19 @@
 import ContactLayout from "@/components/Contact";
 import Header from "@/components/shared/Header/HeaderAbout";
+import { getSeoPages } from "@/components/Fetching/SEO";
+import { Metadata } from "next";
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seoAbout = await getSeoPages();
+  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Contact");
+  const title = aboutMeta?.metaTitle;
+  const description = aboutMeta?.metaDesc;
+  return {
+    title,
+    description,
+  };
+}
 
 const ContactPage = () => {
   return (

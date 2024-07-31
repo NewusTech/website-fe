@@ -103,7 +103,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               <h1 className="text-webJudul font-bold relative z-20 -mt-3 py-3 ">Rekomendasi Artikel</h1>
               <div className="md:w-[60px] md:h-[20px] w-[61px] h-[15px] bg-tangerine absolute z-10 -mt-6 left-28"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {recomendations?.slice(-12).map((blog: any, index: number) => (
+                {recomendations?.slice(-12).reverse().map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
@@ -121,12 +121,12 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
                 <div className="w-full h-[1px] bg-gray-4"></div>
               </div>
               <section className="hidden my-5 xl:grid grid-cols-3 gap-3 w-full">
-                {blogs?.slice(-3).map((blog: any, index: number) => (
+                {blogs?.slice(-3).reverse().map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
               <section className="xl:hidden my-5 grid grid-cols-2 gap-3 w-full">
-                {blogs?.slice(-2).map((blog: any, index: number) => (
+                {blogs?.slice(-2).reverse().map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>
@@ -139,7 +139,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               <h1 className="text-webJudul font-bold text-center relative z-20 py-3 ">Rekomendasi Artikel</h1>
               <div className="md:w-[60px] md:h-[20px] w-[51px] h-[15px] bg-tangerine absolute z-10 -mt-9 right-16"></div>
               <section className="my-5 grid grid-cols-1 gap-3 w-full">
-                {recomendations?.slice(-12).map((blog: any, index: number) => (
+                {recomendations?.slice(-12).reverse().map((blog: any, index: number) => (
                   <CardBlogSide key={index} blogs={blog} />
                 ))}
               </section>

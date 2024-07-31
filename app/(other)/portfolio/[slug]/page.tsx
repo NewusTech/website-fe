@@ -6,8 +6,20 @@ import ImageSlider from "@/components/shared/SliderImage";
 import CardSquarePorto from "@/components/Portfolio/CardSquarePorto";
 import { getProjectList, getProjectDetail } from "@/components/Fetching/Portfolio/port";
 import Link from "next/link";
-import { removeHTMLTags } from "@/lib/utils";
+import { getSeoPages } from "@/components/Fetching/SEO";
+import { Metadata } from "next";
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seoAbout = await getSeoPages();
+  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Portfolio");
+  const title = aboutMeta?.metaTitle;
+  const description = aboutMeta?.metaDesc;
+  return {
+    title,
+    description,
+  };
+}
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;

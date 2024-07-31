@@ -9,8 +9,6 @@ import CustomAlert from '../Alert'
 
 const Intern = ({ dataIntern }: any) => {
   const data = dataIntern?.[0]
-  console.log(data);
-
   const classList: string = 'list-disc text-[12px] md:text-mobileSubjudul md:text-webSubjudul'
 
   const [instituteName, setInstituteName] = useState('');
@@ -146,7 +144,6 @@ const Intern = ({ dataIntern }: any) => {
                     className='border flex w-full bg-[#F4F4F4] border-[#DDE5E9] text-mobileSubjudul md:text-webSubjudul rounded-lg px-4 py-[9px]'
                     onChange={(e) => {
                       if (e.target.files && e.target.files.length > 0) {
-                        console.log(e.target.files[0]);
                         setCoverLetter(e.target.files[0]);
                       }
                     }}

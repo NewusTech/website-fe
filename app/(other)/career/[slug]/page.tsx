@@ -2,7 +2,20 @@ import DetailCareer from "@/components/Career/DetailCareer";
 import { getobDetail } from "@/components/Fetching/Career/career";
 import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import React from 'react'
+import { getSeoPages } from "@/components/Fetching/SEO";
+import { Metadata } from "next";
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata(): Promise<Metadata> {
+  const seoAbout = await getSeoPages();
+  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Career");
+  const title = aboutMeta?.metaTitle;
+  const description = aboutMeta?.metaDesc;
+  return {
+    title,
+    description,
+  };
+}
 
 export default async function Page({ params }: { params: { slug: number } }) {
   const { slug } = params;
