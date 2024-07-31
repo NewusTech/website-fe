@@ -31,8 +31,8 @@ const CardSquareProject = ({ projects }: any) => {
           />
         </div>
       </div>
-      <div className="md:mt-4 my-3 md:mb-3 flex flex-col gap-1 md:gap-2 px-3 md:px-4">
-        <h2 className="md:text-webJudul text-mobileSubjudul font-semibold line-clamp-2">
+      <div className="md:mt-4 my-3 md:mb-3 flex flex-col justify-between gap-1 md:gap-2 px-3 md:px-4">
+        <h2 className="md:text-webJudul text-mobileSubjudul font-semibold line-clamp-2 min-h-12 xl:min-h-12">
           {title || 'Name Project'}
         </h2>
         <p className="text-gray text-mobileDesk md:text-webSubjudul md:text-base line-clamp-2 md:line-clamp-3 md:min-h-[72px]">

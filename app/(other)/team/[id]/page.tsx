@@ -3,6 +3,7 @@ import { getSeoPages } from "@/components/Fetching/SEO";
 import { removeHTMLTags } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,8 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function DetailTeamPage({ params }: { params: { id: string } }) {
   const { id } = params;
-  console.log('Component Slug:', id);
-
   const data = await getTeamDetail(id);
   console.log(data);
 
@@ -43,24 +42,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
       subtitle: 'Subtitle for Third Image'
     }
   ];
-  const certifications = [
-    {
-      logoSrc: '/assets/images/antoni.svg',
-      title: 'ICT PROJECT MANAGER (ICT-PM)',
-      organization: 'Badan Nasional Sertifikasi Profesi (BNSP)',
-      issueDate: 'Oct 2023',
-      expireDate: 'Oct 2025',
-      credentialId: 'BNSP-ISP-317-ID',
-    },
-    {
-      logoSrc: '/assets/images/antoni.svg',
-      title: 'PROGRAMER SENIOR',
-      organization: 'Badan Nasional Sertifikasi Profesi (BNSP)',
-      issueDate: 'Oct 2023',
-      expireDate: 'Oct 2025',
-      credentialId: 'BNSP-ISP-317-ID',
-    },
-  ];
+  const certifications = data?.teamsertifikat
 
   return (
     <section className="overflow-hidden min-h-screen">
@@ -98,13 +80,13 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
             <p className="text-webSubjudul font-semibold">{data?.title}</p>
             <p className="text-webDesk items-stretch flex">{removeHTMLTags(data?.description)}</p>
             <div className="font-bold text-webDesk flex flex-col gap-1">
-              <p>Institut Teknologi Sumatera</p>
-              <p>Teknik Informatika, Aug 2008-Aug 2021</p>
+              <p>{data?.institute}</p>
+              <p>{data?.major}</p>
             </div>
           </div>
 
           <div className="w-3/12 flex flex-col text-webDesk gap-2">
-            <h1>Join Date  : 18 Agustus 2022</h1>
+            <h1>Join Date  : {data?.joinDate}</h1>
             <p className="font-bold">Language</p>
             <div>
               <div className="bg-red-500 h-2 w-5"></div>
@@ -121,18 +103,18 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                 <div>
                   <Image src='/assets/icons/teams/linkedin.svg' alt="Logo" width={20} height={20} className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="-mt-1">
                   <h3 className="font-semibold">Profile</h3>
-                  <p className="text-webDesk text-[#480DEC]">linkedin.com/in/muhammad-muttaqin</p>
+                  <p className="text-webDesk text-[#480DEC]">{data?.linkedin}</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start">
                 <div>
                   <Image src='/assets/icons/teams/email.svg' alt="Logo" width={20} height={20} className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="-mt-1">
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-webDesk text-[#480DEC]">Muttaqin@gmail.com</p>
+                  <p className="text-webDesk text-[#480DEC]">{data?.email}</p>
                 </div>
               </div>
             </div>
@@ -141,9 +123,9 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                 <div>
                   <Image src='/assets/icons/teams/addres.svg' alt="Logo" width={20} height={20} className="w-5 h-5" />
                 </div>
-                <div>
+                <div className="-mt-1">
                   <h3 className="font-semibold">Address</h3>
-                  <p className="text-webDesk text-[#480DEC]">Jl. Salim Batubara No.118</p>
+                  <p className="text-webDesk text-[#480DEC]">{data?.address}</p>
                 </div>
               </div>
               <div>
@@ -151,9 +133,9 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                   <div>
                     <Image src='/assets/icons/teams/bday.svg' alt="Logo" width={20} height={20} className="w-5 h-5" />
                   </div>
-                  <div>
+                  <div className="-mt-1">
                     <h3 className="font-semibold">Birthday</h3>
-                    <p className="text-webDesk">August 09</p>
+                    <p className="text-webDesk">{data?.birthdayDate}</p>
                   </div>
                 </div>
               </div>
@@ -166,19 +148,19 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Certificate</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5">
-            {columns.map((column, index) => (
+            {certifications.map((certification: any, index: number) => (
               <div key={index} className="border rounded-md shadow-sm">
                 <Image
-                  src={column.imageSrc}
-                  alt={column.altText}
+                  src={certification.image || '/assets/images/antoni.svg'}
+                  alt={'Certification'}
                   loading="lazy"
                   width={550}
                   height={75}
                   className={`w-full h-[270px] object-contain rounded-t-md bg-gray`}
                 />
                 <div className="px-10 py-5">
-                  <h1 className="text-webSubjudul font-semibold">{column.title}</h1>
-                  <h2 className="text-webSubjudul">{column.subtitle}</h2>
+                  <h1 className="text-webSubjudul font-semibold uppercase">{certification?.title}</h1>
+                  <h2 className="text-webSubjudul">{certification?.publisher}</h2>
                 </div>
               </div>
             ))}
@@ -190,8 +172,8 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Licenses & certifications</h2>
 
           <div className="space-y-4">
-            {certifications.map((certification, index) => (
-              <CertificationCard key={index} certification={certification} />
+            {certifications.map((certification: any, i: number) => (
+              <CertificationCard key={i} certification={certification} />
             ))}
           </div>
         </div>
@@ -200,17 +182,17 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
         <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Skills</h2>
           <div className="space-y-4">
-            {certifications.map((certification, index) => (
+            {certifications.map((certification: any, index: number) => (
               <CardSkill key={index} certification={certification} />
             ))}
           </div>
         </div>
 
         {/* Projects */}
-        <div className="bg-white shadow-lg rounded-lg p-5 md:px-10 md:py-8">
+        <div className="bg-white shadow-lg rounded-lg p-5 mb-8 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Projects</h2>
           <div className="space-y-4">
-            {certifications.map((certification, index) => (
+            {certifications.map((certification: any, index: number) => (
               <ProjectCard key={index} certification={certification} />
             ))}
           </div>
@@ -252,12 +234,12 @@ const CertificationCard = ({ certification }: any) => {
         />
       </div>
       <div className="w-10/12 flex flex-col gap-1">
-        <h1 className="text-webJudul font-semibold">{certification.title}</h1>
-        <h2 className="text-webSubjudul font-semibold">{certification.organization}</h2>
-        <p className="text-webDesk">Issued {certification.issueDate}. Expires {certification.expireDate}</p>
-        <p className="text-webDesk">Credential ID {certification.credentialId}</p>
+        <h1 className="text-webJudul font-semibold">{certification?.title}</h1>
+        <h2 className="text-webSubjudul font-semibold">{certification?.publisher}</h2>
+        <p className="text-webDesk">Issued {certification?.startDate}. Expires {certification?.finishDate}</p>
+        <p className="text-webDesk">Credential ID {certification?.credentialID}</p>
         <div>
-          <button className="mt-2 px-4 py-2 border rounded-md text-blue-500 border-blue-500 hover:bg-blue-500 hover:text-white flex items-center gap-3">
+          <Link href={certification?.credentialURL || '/'} target="_blank" className="inline-flex mt-2 px-4 py-2 border rounded-md text-blue-500 border-blue-500 hover:font-semibold items-center gap-3">
             <p className="text-webDesk">Show credential</p>
             <Image
               src='/assets/icons/teams/Vector (19).svg'
@@ -265,7 +247,7 @@ const CertificationCard = ({ certification }: any) => {
               width={13}
               height={13}
             />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
