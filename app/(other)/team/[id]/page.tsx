@@ -20,30 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function DetailTeamPage({ params }: { params: { id: string } }) {
   const { id } = params;
   const data = await getTeamDetail(id);
-  console.log(data);
-
-  const columns = [
-    {
-      imageSrc: '/assets/images/antoni.svg',
-      altText: 'ICT Project Manager',
-      title: 'MANAJER PROYEK TIK',
-      subtitle: 'ICT Project Manager'
-    },
-    {
-      imageSrc: '/assets/images/antoni.svg',
-      altText: 'Second Image Description',
-      title: 'Title for Second Image',
-      subtitle: 'Subtitle for Second Image'
-    },
-    {
-      imageSrc: '/assets/images/antoni.svg',
-      altText: 'Third Image Description',
-      title: 'Title for Third Image',
-      subtitle: 'Subtitle for Third Image'
-    }
-  ];
   const certifications = data?.teamsertifikat
   const teamprojects = data?.teamproject
+  const skills = data?.teamskill
 
   return (
     <section className="overflow-hidden min-h-screen">
@@ -87,7 +66,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           </div>
 
           <div className="w-3/12 flex flex-col text-webDesk gap-2">
-            <h1>Join Date  : {data?.joinDate}</h1>
+            <h1>Join Date  : {convertJoinDate(data?.joinDate)}</h1>
             <p className="font-bold">Language</p>
             <div>
               <div className="bg-red-500 h-2 w-5"></div>
@@ -106,7 +85,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                 </div>
                 <div className="-mt-1">
                   <h3 className="font-semibold">Profile</h3>
-                  <p className="text-webDesk text-[#480DEC]">{data?.linkedin}</p>
+                  <Link href={data?.linkedin || '/'} target="_blank" className="text-webDesk text-[#480DEC]">{data?.linkedin}</Link>
                 </div>
               </div>
               <div className="flex gap-3 items-start">
@@ -149,7 +128,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Certificate</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5">
-            {certifications.length > 0 ? certifications.map((certification: any, index: number) => (
+            {certifications?.length > 0 ? certifications.map((certification: any, index: number) => (
               <div key={index} className="border rounded-md shadow-sm">
                 <Image
                   src={certification.media || '/assets/images/antoni.svg'}
@@ -157,7 +136,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                   loading="lazy"
                   width={550}
                   height={500}
-                  className={`w-full h-[270px] object-contain rounded-t-md bg-gray`}
+                  className={`w-full h-[270px] object-contain rounded-t-md`}
                 />
                 <div className="px-10 py-5">
                   <h1 className="text-webSubjudul font-semibold uppercase">{certification?.title}</h1>
@@ -173,31 +152,31 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Licenses & certifications</h2>
 
           <div className="space-y-4">
-            {certifications.length > 0 ? certifications.map((certification: any, i: number) => (
+            {certifications?.length > 0 ? certifications.map((certification: any, i: number) => (
               <CertificationCard key={i} certification={certification} />
             )) :
-              <>No data</>
+              <>No Data</>
             }
           </div>
         </div>
 
         {/* Skills */}
-        {/* <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
+        <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Skills</h2>
           <div className="space-y-4">
-            {certifications.map((certification: any, index: number) => (
-              <CardSkill key={index} certification={certification} />
-            ))}
+            {skills?.length > 0 ? skills.map((skill: any, index: number) => (
+              <CardSkill key={index} skill={skill} />
+            )) : <>No Data</>}
           </div>
-        </div> */}
+        </div>
 
         {/* Projects */}
         <div className="bg-white shadow-lg rounded-lg p-5 mb-8 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Projects</h2>
           <div className="space-y-4">
-            {teamprojects.map((teamproject: any, index: number) => (
+            {teamprojects?.length > 0 ? teamprojects.map((teamproject: any, index: number) => (
               <ProjectCard key={index} teamproject={teamproject} />
-            ))}
+            )) : <>No Data</>}
           </div>
         </div>
       </div>
@@ -210,7 +189,7 @@ const CardSkill = ({ certification }: any) => {
     <div className="flex items-center gap-1">
       <div>
         <Image
-          src={certification.logoSrc}
+          src={certification?.media}
           alt="Certification logo"
           width={100}
           height={100}
@@ -218,7 +197,7 @@ const CardSkill = ({ certification }: any) => {
         />
       </div>
       <div>
-        <h1 className="text-webJudul font-semibold">{certification.title}</h1>
+        <h1 className="text-webJudul font-semibold">{certification?.title}</h1>
       </div>
     </div>
   )
@@ -242,7 +221,7 @@ const CertificationCard = ({ certification }: any) => {
         <p className="text-webDesk">Issued {convertDate(certification?.startDate)}. Expires {convertDate(certification?.finishDate)}</p>
         <p className="text-webDesk">Credential ID {certification?.credentialID}</p>
         <div>
-          <Link href={certification?.credentialURL || '/'} target="_blank" className="inline-flex mt-2 px-4 py-2 border rounded-md text-blue-500 border-blue-500 hover:font-semibold items-center gap-3">
+          <Link href={certification?.credentialURL || '/'} target="_blank" className="inline-flex mt-2 px-4 py-2 border rounded-xl text-blue-500 border-gray hover:font-semibold items-center gap-3">
             <p className="text-webDesk">Show credential</p>
             <Image
               src='/assets/icons/teams/Vector (19).svg'
@@ -292,4 +271,17 @@ function convertDate(dateString: string) {
   const year = date.getFullYear();
 
   return `${month} ${year}`;
+}
+
+function convertJoinDate(dateString: string) {
+  // Membuat objek Date dari string tanggal
+  const date = new Date(dateString);
+
+  // Mendapatkan bulan, tanggal, dan tahun dari objek Date
+  const month = date.toLocaleString('default', { month: 'long' });
+  const day = date.getDate();
+  const year = date.getFullYear();
+
+  // Mengembalikan format yang diinginkan (contoh: "3 Juni 2020")
+  return `${day} ${month} ${year}`;
 }
