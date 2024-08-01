@@ -51,7 +51,7 @@ const AboutLayout = ({ data }: any) => {
                 <h2 className="text-mobileJudul md:text-webJudul font-semibold relative z-10 uppercase">VISION</h2>
                 <div className="md:w-[60px] md:h-[20px] w-[51px] h-[13px] bg-tangerine absolute z-0 -mt-[22px] ml-6"></div>
               </div>
-              <p className="text-mobileDesk md:text-webDesk 2xl:text-webSubjudul leading-5 2xl:leading-6 text-justify">{removeHTMLTags(data?.[0].vision || 'Null')}</p>
+              <p className="text-mobileDesk md:text-webDesk 2xl:text-webSubjudul leading-5 2xl:leading-6 text-justify">{removeHTMLTags(data?.[0]?.vision || '')}</p>
             </div>
             <div className="pt-5">
               <div className="pb-2">

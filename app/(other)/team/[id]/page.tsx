@@ -43,6 +43,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
     }
   ];
   const certifications = data?.teamsertifikat
+  const teamprojects = data?.teamproject
 
   return (
     <section className="overflow-hidden min-h-screen">
@@ -96,9 +97,9 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
         </div>
 
         <div className="bg-white shadow-lg rounded-lg p-5 mb-8 md:px-10 md:py-8">
-          <h2 className="text-gray-900 font-extrabold text-webJudul">Contact Info</h2>
+          <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Contact Info</h2>
           <div className="flex flex-wrap gap-6 mt-4 w-full">
-            <div className="w-[45%] flex flex-col gap-3">
+            <div className="w-[45%] flex flex-col gap-5">
               <div className="flex gap-3 items-start">
                 <div>
                   <Image src='/assets/icons/teams/linkedin.svg' alt="Logo" width={20} height={20} className="w-5 h-5" />
@@ -118,7 +119,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                 </div>
               </div>
             </div>
-            <div className="w-[45%] flex flex-col gap-3">
+            <div className="w-[45%] flex flex-col gap-5">
               <div className="flex gap-3 items-start">
                 <div>
                   <Image src='/assets/icons/teams/addres.svg' alt="Logo" width={20} height={20} className="w-5 h-5" />
@@ -148,14 +149,14 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Certificate</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-5">
-            {certifications.map((certification: any, index: number) => (
+            {certifications.length > 0 ? certifications.map((certification: any, index: number) => (
               <div key={index} className="border rounded-md shadow-sm">
                 <Image
-                  src={certification.image || '/assets/images/antoni.svg'}
+                  src={certification.media || '/assets/images/antoni.svg'}
                   alt={'Certification'}
                   loading="lazy"
                   width={550}
-                  height={75}
+                  height={500}
                   className={`w-full h-[270px] object-contain rounded-t-md bg-gray`}
                 />
                 <div className="px-10 py-5">
@@ -163,7 +164,7 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
                   <h2 className="text-webSubjudul">{certification?.publisher}</h2>
                 </div>
               </div>
-            ))}
+            )) : <>No Data</>}
           </div>
         </div>
 
@@ -172,28 +173,30 @@ export default async function DetailTeamPage({ params }: { params: { id: string 
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Licenses & certifications</h2>
 
           <div className="space-y-4">
-            {certifications.map((certification: any, i: number) => (
+            {certifications.length > 0 ? certifications.map((certification: any, i: number) => (
               <CertificationCard key={i} certification={certification} />
-            ))}
+            )) :
+              <>No data</>
+            }
           </div>
         </div>
 
         {/* Skills */}
-        <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
+        {/* <div className="bg-white shadow-lg rounded-lg my-8 p-5 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Skills</h2>
           <div className="space-y-4">
             {certifications.map((certification: any, index: number) => (
               <CardSkill key={index} certification={certification} />
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Projects */}
         <div className="bg-white shadow-lg rounded-lg p-5 mb-8 md:px-10 md:py-8">
           <h2 className="text-gray-900 font-extrabold text-webJudul pb-5">Projects</h2>
           <div className="space-y-4">
-            {certifications.map((certification: any, index: number) => (
-              <ProjectCard key={index} certification={certification} />
+            {teamprojects.map((teamproject: any, index: number) => (
+              <ProjectCard key={index} teamproject={teamproject} />
             ))}
           </div>
         </div>
@@ -226,7 +229,7 @@ const CertificationCard = ({ certification }: any) => {
     <div className="border rounded-md shadow-sm p-4 flex items-start gap-5">
       <div className="w-2/12">
         <Image
-          src={certification.logoSrc}
+          src={certification.media}
           alt="Certification logo"
           width={1000}
           height={1000}
@@ -236,7 +239,7 @@ const CertificationCard = ({ certification }: any) => {
       <div className="w-10/12 flex flex-col gap-1">
         <h1 className="text-webJudul font-semibold">{certification?.title}</h1>
         <h2 className="text-webSubjudul font-semibold">{certification?.publisher}</h2>
-        <p className="text-webDesk">Issued {certification?.startDate}. Expires {certification?.finishDate}</p>
+        <p className="text-webDesk">Issued {convertDate(certification?.startDate)}. Expires {convertDate(certification?.finishDate)}</p>
         <p className="text-webDesk">Credential ID {certification?.credentialID}</p>
         <div>
           <Link href={certification?.credentialURL || '/'} target="_blank" className="inline-flex mt-2 px-4 py-2 border rounded-md text-blue-500 border-blue-500 hover:font-semibold items-center gap-3">
@@ -254,25 +257,39 @@ const CertificationCard = ({ certification }: any) => {
   );
 };
 
-const ProjectCard = ({ certification }: any) => {
+const ProjectCard = ({ teamproject }: any) => {
   return (
     <div className="border rounded-md shadow-sm p-4 flex items-start gap-5">
       <div className="w-full flex flex-col gap-2">
-        <h1 className="text-webJudul font-semibold">{certification.title}</h1>
-        <p className="text-webDesk">{certification.issueDate} - {certification.expireDate}</p>
-        <p className="text-webDesk">Lorem ipsum dolor sit amet consectetur. Arcu vel tincidunt arcu tellus purus massa.</p>
+        <h1 className="text-webJudul font-semibold">{teamproject?.projectName}</h1>
+        <p className="text-webDesk">{convertDate(teamproject?.startDate)} - {convertDate(teamproject?.finishDate)}</p>
+        <p className="text-webDesk">{teamproject?.description}</p>
         <div>
-          <button className="mt-2 px-4 py-2 border rounded-[20px] text-blue-500 border-black hover:bg-blue-500 hover:text-white flex items-center gap-3">
+          <Link href={teamproject?.url || '/'} className="mt-2 px-4 py-2 border rounded-[20px] text-blue-500 border-black hover:font-semibold inline-flex items-center gap-3">
             <p className="text-webDesk">Show Project</p>
             <Image
-              src='/assets/icons/teams/Vector (19).svg'
+              src={'/assets/icons/teams/Vector (19).svg'}
               alt="Certification logo"
               width={13}
               height={13}
             />
-          </button>
+          </Link>
         </div>
       </div>
     </div>
   );
 };
+
+function convertDate(dateString: string) {
+  const months = [
+    "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+  ];
+
+  const date = new Date(dateString);
+
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${month} ${year}`;
+}
