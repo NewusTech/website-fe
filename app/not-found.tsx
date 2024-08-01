@@ -1,3 +1,6 @@
+import React from 'react';
+import { CSSProperties } from 'react';
+
 const NotFound = () => {
     return (
         <div style={styles.container}>
@@ -8,7 +11,7 @@ const NotFound = () => {
     );
 }
 
-const styles = {
+const styles: { [key: string]: CSSProperties } = {
     container: {
         display: 'flex',
         flexDirection: 'column',
