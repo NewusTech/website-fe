@@ -4,6 +4,7 @@ import { removeHTMLTags } from "@/lib/utils";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,6 +21,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function DetailTeamPage({ params }: { params: { id: string } }) {
   const { id } = params;
   const data = await getTeamDetail(id);
+
+  if (!data) {
+		return notFound()
+	}
+
   const certifications = data?.teamsertifikat
   const teamprojects = data?.teamproject
   const skills = data?.teamskill

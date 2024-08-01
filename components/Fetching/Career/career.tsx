@@ -42,6 +42,6 @@ export async function getobDetail(id: number) {
     return data.data;
   } catch (error) {
     console.error('Error fetching blog list:', error);
-    return [];
+    return null;
   }
 }

@@ -8,6 +8,7 @@ import { getProjectList, getProjectDetail } from "@/components/Fetching/Portfoli
 import Link from "next/link";
 import { getSeoPages } from "@/components/Fetching/SEO";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,6 +26,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
   const projects = await getProjectList()
   const projectsDetail = await getProjectDetail(slug)
+
+  if (!projectsDetail) {
+		return notFound()
+	}
 
   const truncate = (str: any, maxLength: any) => {
     if (!str) return '';

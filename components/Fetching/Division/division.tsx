@@ -27,7 +27,7 @@ export async function getTeamDetail(id: string) {
     return data.data;
   } catch (error) {
     console.error('Error fetching blog list:', error);
-    return [];
+    return null;
   }
 }
 

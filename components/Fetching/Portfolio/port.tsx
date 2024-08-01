@@ -27,7 +27,7 @@ export async function getProjectDetail(slug: string) {
     return data.portfolio;
   } catch (error) {
     console.error('Error fetching blog list:', error);
-    return [];
+    return null;
   }
 }
 

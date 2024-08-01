@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/shared/Breadcrumbs";
 import React from 'react'
 import { getSeoPages } from "@/components/Fetching/SEO";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,6 +21,11 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function Page({ params }: { params: { slug: number } }) {
   const { slug } = params;
   const jobDetail = await getobDetail(slug);
+
+  if (!jobDetail) {
+		return notFound()
+	}
+
   const careerPaths = [
     { label: 'Home', href: '/' },
     { label: 'Career', href: '/career' },
