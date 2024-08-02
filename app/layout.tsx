@@ -4,7 +4,7 @@ import "./globals.css";
 import lambang from "@/public/assets/icons/logo.svg";
 import Bottombar from "@/components/shared/Bottombar";
 import { getAboutCompany } from "@/components/Fetching/About/about";
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,9 +33,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* GTM Script */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-XXXXXX');`,
+          }}
+        />
+      </head>
       <body className={inter.className}>
         {children}
         <Bottombar />
+        {/* GTM NoScript */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NVWRN8TQ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
       </body>
     </html>
   );

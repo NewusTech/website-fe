@@ -1,38 +1,37 @@
-'use client'
+"use client";
 
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useState } from 'react'
-import SocialLink from '../Social/SocialLink'
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useState } from "react";
+import SocialLink from "../Social/SocialLink";
 
 const FooterLayout = ({ dataAbout, dataSocials }: any) => {
   const [isOpen, setIsOpen] = useState(false);
   const getIconSrc = (title: any) => {
     switch (title.toLowerCase()) {
-      case 'facebook':
-        return '/assets/icons/facebook.svg';
-      case 'twitter':
-        return '/assets/icons/twitter.svg';
-      case 'linkedin':
-        return '/assets/icons/linkedin.svg';
-      case 'youtube':
-        return '/assets/icons/youtube.svg';
-      case 'instagram':
-        return '/assets/icons/instagram.svg';
-      case 'tiktok':
-        return '/assets/icons/tiktok.svg';
+      case "facebook":
+        return "/assets/icons/facebook.svg";
+      case "twitter":
+        return "/assets/icons/twitter.svg";
+      case "linkedin":
+        return "/assets/icons/linkedin.svg";
+      case "youtube":
+        return "/assets/icons/youtube.svg";
+      case "instagram":
+        return "/assets/icons/instagram.svg";
+      case "tiktok":
+        return "/assets/icons/tiktok.svg";
       default:
-        return '/assets/icons/default.svg';
+        return "/assets/icons/default.svg";
     }
   };
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
 
   return (
     <footer className="bg-blue relative pb-12 pt-5 md:pt-2 md:pb-0">
@@ -44,7 +43,11 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 Contact Form
               </h3>
             </div>
-            <form action="mailto:newustechnology@gmail.com" method="post" encType="text/plain">
+            <form
+              action="mailto:newustechnology@gmail.com"
+              method="post"
+              encType="text/plain"
+            >
               <div className="mt-[10px] mx-[18px] mb-[16px] flex flex-col gap-[10px]">
                 <Input type="text" placeholder="Your Name" />
                 <Input type="text" placeholder="Email" />
@@ -67,9 +70,12 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
               className="mb-2 lg:mb-3 xl:mb-5 2xl:mb-10 w-[100px] h-[30px] xl:w-[206px] md:w-[150px] md:h-[56px]"
             />
             <p className="text-white md:text-[12px] text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px] xl:leading-6">
-              {dataAbout?.footerDescription || 'Newus Technology adalah Software House di Bandar Lampung yang mengkhususkan diri dalam pengembangan website kustom, aplikasi/sistem berbasis web, dan aplikasi berbasis Android dan iOS. Sebagai perusahaan software di Bandar Lampung, Newus Technology juga menyediakan layanan sebagai konsultan IT di Lampung.'}
+              {dataAbout?.footerDescription ||
+                "Newus Technology adalah Software House di Bandar Lampung yang mengkhususkan diri dalam pengembangan website kustom, aplikasi/sistem berbasis web, dan aplikasi berbasis Android dan iOS. Sebagai perusahaan software di Bandar Lampung, Newus Technology juga menyediakan layanan sebagai konsultan IT di Lampung."}
             </p>
-            <h1 className="text-white md:text-sm text-[10px] font-semibold pt-5 pb-3">Hubungi Kami</h1>
+            <h1 className="text-white md:text-sm text-[10px] font-semibold pt-5 pb-3">
+              Hubungi Kami
+            </h1>
             <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-start">
               <Image
                 src="/assets/icons/place.svg"
@@ -79,11 +85,12 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 className="w-[15px] h-[15px] lg:w-6 lg:h-6"
               />
               <p className="text-white md:text-webDesk text-[10px] md:min-w-[250px] lg:min-w-[250px] xl:w-[550px] 2xl:w-[700px]">
-                {dataAbout?.address || 'Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212'}
+                {dataAbout?.address ||
+                  "Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212"}
               </p>
             </div>
-            <div className="flex items-center gap-3 pt-3 flex-wrap">
-              <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-center">
+            <div className="flex items-center gap-6 pt-3 flex-wrap">
+              <div className="flex flex-row gap-2 lg:gap-2 2xl:gap-3 items-center">
                 <Image
                   src="/assets/icons/phone.svg"
                   alt="place"
@@ -92,41 +99,19 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                   className="w-[15px] h-[15px] lg:w-6 lg:h-6"
                 />
                 <p className="text-white md:text-webDesk text-[10px]">
-                  {dataAbout?.phoneNumber || '(+62) 888-991-2992'}
+                  {dataAbout?.phoneNumber || "(+62) 888-991-2992"}
                 </p>
               </div>
-              <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-center">
-                <Image
-                  src="/assets/icons/printer.svg"
-                  alt="place"
-                  width={24}
-                  height={24}
-                  className="w-[15px] h-[15px] lg:w-6 lg:h-6"
-                />
-                <p className="text-white md:text-webDesk text-[10px]">
-                  {dataAbout?.email || 'newustechnology@gmail.com'}
-                </p>
-              </div>
-              <div className="hidden lg:flex gap-4 items-center">
-                {dataSocials?.map((social: any) => (
-                  <SocialLink
-                    key={social.id}
-                    href={social.link}
-                    src={getIconSrc(social.title)}
-                    alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
-                  />
-                ))}
-                {/* <SocialLink href="https://www.facebook.com/newustechnology/" src="/assets/icons/facebook.svg" alt="Facebook" />
-            <SocialLink href="https://www.twitter.com" src="/assets/icons/twitter.svg" alt="Twitter" />
-            <SocialLink href="https://id.linkedin.com/company/newustechnology" src="/assets/icons/linkedin.svg" alt="LinkedIn" />
-            <SocialLink href="https://www.youtube.com" src="/assets/icons/youtube.svg" alt="YouTube" />
-            <SocialLink href="https://www.instagram.com/newustechnology/" src="/assets/icons/instagram.svg" alt="Instagram" />
-            <SocialLink href="https://www.tiktok.com/@newustech" src="/assets/icons/tiktok.svg" alt="Tiktok" /> */}
-              </div>
+              <a
+                href="#"
+                className="text-white md:text-webDesk text-[10px] underline"
+              >
+                Find us on Google
+              </a>
             </div>
           </div>
-          <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[32px] xl:mt-[42px] lg:ml-[10px] lg:w-4/12 xl:w-4/12">
-            <div>
+          <div className="flex flex-row gap-4 lg:flex-col lg:gap-0 mt-5 lg:mt-[32px] xl:mt-[42px] lg:ml-[10px] lg:w-4/12 xl:w-4/12">
+            <div className="flex flex-col gap-3">
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Technology
               </h4>
@@ -139,7 +124,7 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 <li>Maintenance</li> */}
               </ul>
             </div>
-            <div>
+            <div className="flex flex-col gap-3">
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase lg:mt-3">
                 Digital Marketing
               </h4>
@@ -152,17 +137,20 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 <li>Content & Engagement</li>
               </ul>
             </div>
-            <div className="lg:hidden flex flex-col">
+            <div className="flex flex-col gap-3 lg:mt-6">
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Social Media
               </h4>
-              <div className="grid grid-cols-4 gap-3 mt-[6px]">
+              <div className="flex flex-row gap-4">
                 {dataSocials?.map((social: any) => (
                   <SocialLink
                     key={social.id}
                     href={social.link}
                     src={getIconSrc(social.title)}
-                    alt={social.title.charAt(0).toUpperCase() + social.title.slice(1)}
+                    alt={
+                      social.title.charAt(0).toUpperCase() +
+                      social.title.slice(1)
+                    }
                   />
                 ))}
               </div>
@@ -176,27 +164,76 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
         <div className="hidden lg:flex mt-5 pb-5 justify-between items-center">
           <ul className="flex gap-10 text-white uppercase font-medium text-mobileSubjudul md:text-webSubjudul">
             <li>
-              <Link href='/service' className="text-mobileSubjudul md:text-webSubjudul" >
+              <Link
+                href="/service"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
                 Service
-              </Link></li>
-            <li><Link href='/portfolio' className="text-mobileSubjudul md:text-webSubjudul">
-              Portfolio
-            </Link></li>
-            <li><Link href='/blog' className="text-mobileSubjudul md:text-webSubjudul">
-              Blog
-            </Link></li>
-            <li><Link href='/about' className="text-mobileSubjudul md:text-webSubjudul">
-              About
-            </Link></li>
-            <li><Link href='/team' className="text-mobileSubjudul md:text-webSubjudul">
-              Teams
-            </Link></li>
-            <li><Link href='/career' className="text-mobileSubjudul md:text-webSubjudul">
-              Career
-            </Link></li>
-            <li><Link href='/contact' className="text-mobileSubjudul md:text-webSubjudul">
-              Contact
-            </Link></li>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/portfolio"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Portfolio
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/blog"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/team"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Teams
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/career"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Career
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Contact
+              </Link>
+            </li>
+            <li className="flex flex-row gap-1 underline">
+              <Link
+                href="/terms-and-conditions"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Terms & Conditions
+              </Link>
+              {"|"}
+              <Link
+                href="/privacy-policy"
+                className="text-mobileSubjudul md:text-webSubjudul"
+              >
+                Privacy Policy
+              </Link>
+            </li>
           </ul>
           <p className="text-sm text-white">
             Copyright © 2023 • Newus Technology.
@@ -205,8 +242,13 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
       </div>
       <div className="fixed bottom-14 md:bottom-4 lg:bottom-3 right-4 z-40">
         <div className="bg-[#5FD568] rounded-3xl py-2 px-4">
-          <button onClick={toggleDropdown} className="flex gap-3 lg:gap-4 text-white items-center focus:outline-none">
-            <span className="lg:font-semibold text-mobileSubjudul md:text-webSubjudul">Contact Us</span>
+          <button
+            onClick={toggleDropdown}
+            className="flex gap-3 lg:gap-4 text-white items-center focus:outline-none"
+          >
+            <span className="lg:font-semibold text-mobileSubjudul md:text-webSubjudul">
+              Contact Us
+            </span>
             <Image
               src="/assets/icons/whatsapp-icon.svg"
               alt="Contact Us"
@@ -254,7 +296,7 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
         )}
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default FooterLayout
+export default FooterLayout;
