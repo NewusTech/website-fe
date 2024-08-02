@@ -1,12 +1,16 @@
 import AboutLayout from "@/components/About";
 import { getAboutCompany } from "@/components/Fetching/About/about";
 import { getClientist } from "@/components/Fetching/Client/client";
-import { getTeamList, getTeamMedia } from "@/components/Fetching/Division/division";
+import {
+  getTeamList,
+  getTeamMedia,
+} from "@/components/Fetching/Division/division";
 import { getSeoPages } from "@/components/Fetching/SEO";
 import Header from "@/components/shared/Header/HeaderAbout";
-import { Metadata } from 'next'
+import { Metadata } from "next";
+import { BASE_URL } from "@/constants/constants";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seoAbout = await getSeoPages();
@@ -16,8 +20,28 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = aboutMeta?.metaDesc;
 
   return {
-    title,
-    description,
+    title: title,
+    description: description,
+    openGraph: {
+      type: "website",
+      title: title,
+      description: description,
+      url: `${BASE_URL}`,
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/header-abot.jpg`,
+          width: 800,
+          height: 600,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: [`${BASE_URL}/assets/images/header-abot.jpg`],
+    },
   };
 }
 
@@ -33,9 +57,14 @@ export default async function AboutPage() {
         <Header
           type="About Us"
           title="About Us"
-          image="/assets/images/header-about.png"
+          image="/assets/images/header-about.jpg"
         />
-        <AboutLayout abouts={abouts} teams={teams} clients={clients} medias={medias} />
+        <AboutLayout
+          abouts={abouts}
+          teams={teams}
+          clients={clients}
+          medias={medias}
+        />
       </section>
     </>
   );
