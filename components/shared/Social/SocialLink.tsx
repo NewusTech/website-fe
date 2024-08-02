@@ -2,7 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SocialLink = ({ href, src, alt }: any) => (
-  <Link href={href} passHref target="_blank" rel="noopener noreferrer" className="hover:backdrop-blur-xl hover:shadow-xl">
+  <Link
+    href={href}
+    passHref
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:backdrop-blur-xl hover:shadow-xl w-fit"
+  >
     <Image
       src={src}
       alt={alt}
