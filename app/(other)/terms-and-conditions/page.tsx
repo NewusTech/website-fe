@@ -14,5 +14,5 @@ import React from "react";
 //   }
 
 export default function page() {
-  return <section className="md:min-h-[1200px]">tes</section>;
+  return <section className="md:min-h-[1200px]"></section>;
 }
