@@ -6,8 +6,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import React, { useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
@@ -20,11 +18,11 @@ interface OurClientProps {
 
 const OurClient = () => {
   useEffect(() => {
-    Aos.init()
-  }, [])
+    Aos.init();
+  }, []);
 
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+    Autoplay({ delay: 2000, stopOnInteraction: true })
   );
 
   return (

@@ -12,7 +12,7 @@ import Image from "next/image";
 
 const CarouselHeader = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true }),
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
@@ -28,7 +28,7 @@ const CarouselHeader = () => {
             <div className="h-48 md:min-h-[600px] lg:min-h-screen">
               <Image
                 className="object-cover h-48 md:min-h-[600px] lg:min-h-screen "
-                src="/assets/images/banner.jpg"
+                src="/assets/images/banner.jpeg"
                 alt="banner"
                 width={1450}
                 height={600}
