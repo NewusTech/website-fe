@@ -1,16 +1,42 @@
-import Breadcrumbs from "@/components/shared/Breadcrumbs";
-import {
-  getBlogDetail,
-  getBlogList,
-  getBlogRecomendation,
-} from "@/components/Fetching/Blog/blog";
-import BodyContent from "@/components/BlogPage/Detail/Detail";
-import { getSocialMedia } from "@/components/Fetching/About/about";
-import { getSeoPages } from "@/components/Fetching/SEO";
+import { getBlogDetail } from "@/components/Fetching/Blog/blog";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BASE_URL } from "@/constants/constants";
+import { getobDetail } from "@/components/Fetching/Career/career";
+import RenderBlog from "./partials/RenderBlog";
+import RenderCareer from "./partials/RenderCareer";
+import { getProjectDetail } from "@/components/Fetching/Portfolio/port";
+import RenderPortofolio from "./partials/RenderPortofolio";
+import { getTeamDetail } from "@/components/Fetching/Division/division";
+import RenderTeam from "./partials/RenderTeam";
 export const dynamic = "force-dynamic";
+
+const metaData = (data: any) => {
+  return {
+    title: data.title,
+    description: data.excerpt,
+    openGraph: {
+      type: "article",
+      title: data.title,
+      description: data.excerpt,
+      url: `${BASE_URL}/${data.slug}`,
+      images: [
+        {
+          url: data.image,
+          width: 800,
+          height: 600,
+          alt: data.altImage,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: data.title,
+      description: data.excerpt,
+      images: [data.image],
+    },
+  };
+};
 
 export async function generateMetadata({
   params,
@@ -18,70 +44,51 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   const getPost = await getBlogDetail(params.slug);
-  const post = getPost[0];
-
-  if (!post) {
-    return notFound();
+  if (getPost) {
+    return metaData(getPost[0]);
   }
 
-  return {
-    title: post.title,
-    description: post.excerpt,
-    openGraph: {
-      type: "article",
-      title: post.title,
-      description: post.excerpt,
-      url: `${BASE_URL}/${post.slug}`,
-      images: [
-        {
-          url: post.image,
-          width: 800,
-          height: 600,
-          alt: post.altImage,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: post.title,
-      description: post.excerpt,
-      images: [post.image],
-    },
-  };
+  const getProject = await getobDetail(params.slug);
+  if (getProject) {
+    return metaData(getProject);
+  }
+
+  const getPortofolio = await getProjectDetail(params.slug);
+  if (getPortofolio) {
+    return metaData(getPortofolio);
+  }
+
+  const getTeam = await getTeamDetail(params.slug);
+  if (getTeam) {
+    return metaData(getTeam);
+  }
+
+  // Jika tidak ditemukan data apapun
+  return notFound();
 }
 
-export default async function DetailBlogPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
+
   const blogDetail = await getBlogDetail(slug);
-  const dataSocials = await getSocialMedia();
-  const blogList = await getBlogList();
-  const recomendations = await getBlogRecomendation();
-  if (!blogDetail) {
-    return notFound();
+  if (blogDetail) {
+    return <RenderBlog blogDetail={blogDetail} slug={slug} />;
   }
-  const { title = "" } = blogDetail?.length > 0 ? blogDetail[0] : {};
 
-  const blogPaths = [
-    { label: "Home", href: "/" },
-    { label: "Blog", href: "/blog" },
-    { label: title, href: `/${slug}` },
-  ];
+  const jobDetail = await getobDetail(slug);
+  if (jobDetail) {
+    return <RenderCareer jobDetail={jobDetail} />;
+  }
 
-  return (
-    <section className="max-w-7xl mx-auto md:my-32 mb-6 px-3 md:px-5">
-      <div className="py-2">
-        <Breadcrumbs paths={blogPaths} />
-      </div>
-      <BodyContent
-        blogDetail={blogDetail?.length > 0 ? blogDetail[0] : {}}
-        blogList={blogList}
-        dataSocials={dataSocials}
-        recomendations={recomendations}
-      />
-    </section>
-  );
+  const getPortofolio = await getProjectDetail(params.slug);
+  if (getPortofolio) {
+    return <RenderPortofolio projectsDetail={getPortofolio} />;
+  }
+
+  const teamDetail = await getTeamDetail(params.slug);
+  if (teamDetail) {
+    return <RenderTeam teamDetail={teamDetail} />;
+  }
+
+  return notFound();
 }

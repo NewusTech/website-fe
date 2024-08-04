@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-abot.jpg`,
+          url: `${BASE_URL}/assets/images/header-about.jpg`,
           width: 800,
           height: 600,
           alt: title,
@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: title,
       description: description,
-      images: [`${BASE_URL}/assets/images/header-abot.jpg`],
+      images: [`${BASE_URL}/assets/images/header-about.jpg`],
     },
   };
 }
