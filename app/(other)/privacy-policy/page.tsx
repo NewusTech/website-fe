@@ -3,19 +3,41 @@ import { Metadata } from "next";
 import React from "react";
 import Image from "next/image";
 import privacyImg from "@/public/assets/images/privacy-img.webp";
+import { BASE_URL } from "@/constants/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find(
+  const seoPages = await getSeoPages();
+  const privacyMeta = seoPages?.find(
     (page: any) => page.pages === "Terms-and-Conditions"
   );
   const title =
-    aboutMeta?.metaTitle || "Software Host Lampung | Newus Pricy Policy";
+    privacyMeta?.metaTitle || "Software Host Lampung | Newus Pricy Policy";
   const description =
-    aboutMeta?.metaDesc || "Pelajari Kebijakan Privasi Newus Technology";
+    privacyMeta?.metaDesc || "Pelajari Kebijakan Privasi Newus Technology";
+
   return {
-    title,
-    description,
+    title: title,
+    description: description,
+    openGraph: {
+      type: "website",
+      title: title,
+      description: description,
+      url: `${BASE_URL}`,
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          width: 800,
+          height: 600,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+    },
   };
 }
 

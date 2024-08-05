@@ -2,16 +2,38 @@ import Header from "@/components/shared/Header/Header";
 import WhatWeDo from "@/components/Service";
 import { getSeoPages } from "@/components/Fetching/SEO";
 import { Metadata } from "next";
-export const dynamic = 'force-dynamic';
+import { BASE_URL } from "@/constants/constants";
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Service");
-  const title = aboutMeta?.metaTitle;
-  const description = aboutMeta?.metaDesc;
+  const seoPages = await getSeoPages();
+  const serviceMeta = seoPages?.find((page: any) => page.pages === "Service");
+  const title = serviceMeta?.metaTitle;
+  const description = serviceMeta?.metaDesc;
+
   return {
-    title,
-    description,
+    title: title,
+    description: description,
+    openGraph: {
+      type: "website",
+      title: title,
+      description: description,
+      url: `${BASE_URL}`,
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          width: 800,
+          height: 600,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+    },
   };
 }
 
