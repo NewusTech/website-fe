@@ -36,8 +36,8 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
   return (
     <footer className="bg-blue relative pb-12 pt-5 md:pt-2 md:pb-0">
       <div className="px-5 md:container mx-auto">
-        <div className="h-full md:h-full lg:h-[370px] w-full flex flex-col lg:flex-row py-0 md:py-5 lg:py-0">
-          <div className="block mx-auto lg:absolute md:w-[18rem] xl:w-[23rem] my-5 bg-white rounded-[10px] -mt-12 shadow-sm">
+        <div className="h-full md:h-full lg:h-[370px] w-full flex flex-col lg:flex-row py-0 md:py-5 lg:py-0 ">
+          <div className="hidden lg:block w-[300px] xl:w-[370px] h-[390px] bg-white rounded-[10px] absolute -mt-12">
             <div className="w-full h-auto bg-blue py-[14px] px-[19px] rounded-t-[10px]">
               <h3 className="uppercase text-white font-bold text-[16px]">
                 Contact Form
@@ -89,8 +89,8 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                   "Jl. Salim Batubara No.118, Kupang Teba, Kec. Tlk. Betung Utara, Kota Bandar Lampung, Lampung 35212"}
               </p>
             </div>
-            <div className="flex items-center gap-6 pt-3 flex-wrap">
-              <div className="flex flex-row gap-2 lg:gap-2 2xl:gap-3 items-center">
+            <div className="flex items-center gap-3 pt-3 flex-wrap">
+              <div className="flex gap-2 lg:gap-2 2xl:gap-3 items-center">
                 <Image
                   src="/assets/icons/phone.svg"
                   alt="place"
@@ -102,40 +102,43 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                   {dataAbout?.phoneNumber || "(+62) 888-991-2992"}
                 </p>
               </div>
-              <a
-                href="#"
-                className="text-white md:text-webDesk text-[10px] underline"
+              <Link
+                className="text-white underline text-[10px] md:text-webDesk ml-3"
+                href={
+                  "https://www.google.com/search?gs_ssp=eJzj4tVP1zc0LDLKNazMNjc3YLRSNagwSjUxSElKS7NMNTNOtjRNszKoMEtKMU42tjSxNDdNMbYwMPDiz0stLy1WKEnNzsvPyU_PBADOhBU1&q=newus+teknologi&oq=Newus+Teknologi&gs_lcrp=EgZjaHJvbWUqDQgAEC4YrwEYxwEYgAQyDQgAEC4YrwEYxwEYgAQyDAgBEEUYORjjAhiABDIKCAIQABiABBiiBDIKCAMQABiABBiiBDIGCAQQRRg8MgYIBRBFGD0yBggGEEUYPdIBCDQ5OTNqMGo3qAIIsAIB&sourceid=chrome&ie=UTF-8"
+                }
+                target="_blank"
               >
                 Find us on Google
-              </a>
+              </Link>
             </div>
           </div>
-          <div className="flex flex-col gap-4 sm:flex-row lg:flex-col lg:gap-0 mt-5 lg:mt-[32px] xl:mt-[42px] lg:ml-[10px] lg:w-4/12 xl:w-4/12">
-            <div className="flex flex-col gap-2">
+          <div className="flex lg:flex-col gap-3 md:gap-10 lg:gap-0 mt-5 lg:mt-[32px] xl:mt-[42px] lg:ml-[10px] lg:w-4/12 xl:w-4/12">
+            <div>
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Technology
               </h4>
-              <ul className="list-disc pl-3 md:pl-4 lg:pl-5 text-white md:text-webDesk text-[10px]">
+              <ul className="list-disc pl-3 md:pl-4 lg:pl-5 text-white md:text-webDesk text-[10px] mt-[6px] lg:mt-[10px]">
                 <li>Mobile Apps Development</li>
                 <li>Website Development</li>
                 <li>Web Based Application</li>
               </ul>
             </div>
-            <div className="flex flex-col gap-2">
+            <div>
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase lg:mt-3">
                 Digital Marketing
               </h4>
-              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-webDesk text-[10px]">
+              <ul className="list-disc pl-4 lg:pl-5 text-white md:text-webDesk text-[10px] mt-[6px] lg:mt-[10px]">
                 <li>Online Advertising (SEO)</li>
                 <li>Social Media Campaign</li>
                 <li>Content & Engagement</li>
               </ul>
             </div>
-            <div className="flex flex-col gap-2 lg:mt-6">
+            <div className="lg:hidden flex flex-col">
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Social Media
               </h4>
-              <div className="flex flex-row gap-4">
+              <div className="grid grid-cols-4 gap-3 mt-[6px]">
                 {dataSocials?.map((social: any) => (
                   <SocialLink
                     key={social.id}
@@ -150,9 +153,16 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
               </div>
             </div>
           </div>
+          <div className="text-[10px] md:text-webSubjudul text-white flex flex-row gap-2 lg:hidden pt-3">
+            <Link href="/terms-and-conditions">Terms & Conditions</Link>
+            {"|"}
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <p className="ml-3">Copyright © 2023 • Newus Technology.</p>
+          </div>
         </div>
-        <div className="flex flex-col sm:flex-row mt-5 pb-5 gap-2 sm:gap-0 justify-start items-start sm:items-center">
-          <ul className="hidden xl:flex gap-10 text-white uppercase font-medium text-mobileSubjudul md:text-webSubjudul">
+        <div className="hidden lg:block h-[1px] w-full bg-white"></div>
+        <div className="hidden lg:flex mt-5 pb-5 justify-between items-center">
+          <ul className="flex gap-10 text-white uppercase font-medium text-mobileSubjudul md:text-webSubjudul">
             <li>
               <Link
                 href="/service"

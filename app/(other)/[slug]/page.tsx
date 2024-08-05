@@ -15,6 +15,7 @@ const metaData = (data: any) => {
   return {
     title: data.title,
     description: data.excerpt,
+    keyword: data.keyword,
     openGraph: {
       type: "article",
       title: data.title,
