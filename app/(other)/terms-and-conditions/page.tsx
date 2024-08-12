@@ -3,20 +3,43 @@ import { Metadata } from "next";
 import React from "react";
 import Image from "next/image";
 import conditionImg from "@/public/assets/images/condition-img.webp";
+import { BASE_URL } from "@/constants/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find(
-    (page: any) => page.pages === "Terms-and-Conditions"
-  );
-  const title =
-    aboutMeta?.metaTitle ||
-    "Software Host Lampung | Newus Terms and Conditions";
-  const description =
-    aboutMeta?.metaDesc || "Pelajari Terms and Conditions Newus Technology";
+  const seoPages = await getSeoPages();
+  const tncMeta = seoPages?.find((page) => page.pages === "Portfolio") || {
+    id: 0,
+    metaDesc: "Pelajari Terms and Conditions Newus Technology",
+    metaImage: "",
+    metaTitle: "Software Host Lampung | Newus Terms and Conditions",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
+
   return {
-    title,
-    description,
+    title: tncMeta.metaTitle,
+    description: tncMeta.metaDesc,
+    openGraph: {
+      type: "website",
+      title: tncMeta.metaTitle,
+      description: tncMeta.metaTitle,
+      url: `${BASE_URL}`,
+      images: [
+        {
+          url: tncMeta.metaImage,
+          width: 800,
+          height: 600,
+          alt: tncMeta.metaTitle,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: tncMeta.metaTitle,
+      description: tncMeta.metaDesc,
+      images: [tncMeta.metaImage],
+    },
   };
 }
 

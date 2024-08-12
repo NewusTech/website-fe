@@ -6,32 +6,39 @@ import { BASE_URL } from "@/constants/constants";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Contact");
-  const title = aboutMeta?.metaTitle;
-  const description = aboutMeta?.metaDesc;
+  const seoPages = await getSeoPages();
+  const contactMeta = seoPages?.find((page) => page.pages === "Contact") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
+
   return {
-    title: title,
-    description: description,
+    title: contactMeta.metaTitle,
+    description: contactMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: contactMeta.metaTitle,
+      description: contactMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: contactMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: contactMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: contactMeta.metaTitle,
+      description: contactMeta.metaDesc,
+      images: [contactMeta.metaImage],
     },
   };
 }

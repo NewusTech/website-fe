@@ -12,33 +12,39 @@ import { BASE_URL } from "@/constants/constants";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Blog");
-  const title = aboutMeta?.metaTitle;
-  const description = aboutMeta?.metaDesc;
+  const seoPages = await getSeoPages();
+  const blogMeta = seoPages?.find((page) => page.pages === "Blog") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: blogMeta.metaTitle,
+    description: blogMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: blogMeta.metaTitle,
+      description: blogMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: blogMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: blogMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: blogMeta.metaTitle,
+      description: blogMeta.metaDesc,
+      images: [blogMeta.metaImage],
     },
   };
 }

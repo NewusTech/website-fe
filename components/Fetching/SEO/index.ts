@@ -1,5 +1,15 @@
 import { API_URL } from "@/constants/constants";
 
+export type seoPagesType = {
+  id: number;
+  pages: string;
+  metaTitle: string;
+  metaDesc: string;
+  metaImage: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export async function getSeoPages() {
   try {
     const response = await fetch(
@@ -12,7 +22,7 @@ export async function getSeoPages() {
       throw new Error("Failed to fetch project list");
     }
     const data = await response.json();
-    return data.data;
+    return data.data as seoPagesType[];
   } catch (error) {
     console.error("Error fetching Seo Pages list:", error);
     return [];

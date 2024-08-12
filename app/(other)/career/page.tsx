@@ -11,33 +11,39 @@ import { BASE_URL } from "@/constants/constants";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Career");
-  const title = aboutMeta?.metaTitle;
-  const description = aboutMeta?.metaDesc;
+  const seoPages = await getSeoPages();
+  const careerMeta = seoPages?.find((page) => page.pages === "Career") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: careerMeta.metaTitle,
+    description: careerMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: careerMeta.metaTitle,
+      description: careerMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: careerMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: careerMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: careerMeta.metaTitle,
+      description: careerMeta.metaDesc,
+      images: [careerMeta.metaImage],
     },
   };
 }
