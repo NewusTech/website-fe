@@ -7,36 +7,40 @@ import { BASE_URL } from "@/constants/constants";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seoPages = await getSeoPages();
-  const privacyMeta = seoPages?.find(
-    (page: any) => page.pages === "Terms-and-Conditions"
-  );
-  const title =
-    privacyMeta?.metaTitle || "Software Host Lampung | Newus Pricy Policy";
-  const description =
-    privacyMeta?.metaDesc || "Pelajari Kebijakan Privasi Newus Technology";
+  const privacyPoljcyMeta = seoPages?.find(
+    (page) => page.pages === "privacy-policy"
+  ) || {
+    id: 0,
+    metaDesc: "Pelajari Kebijakan Privasi Newus Technology",
+    metaImage: `${BASE_URL}/assets/images/header-about.jpg`,
+    metaTitle: "Software Host Lampung | Newus Pricy Policy",
+    pages: "privacy-policy",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: privacyPoljcyMeta.metaTitle,
+    description: privacyPoljcyMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: privacyPoljcyMeta.metaTitle,
+      description: privacyPoljcyMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: privacyPoljcyMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: privacyPoljcyMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: privacyPoljcyMeta.metaTitle,
+      description: privacyPoljcyMeta.metaDesc,
+      images: [privacyPoljcyMeta.metaImage],
     },
   };
 }

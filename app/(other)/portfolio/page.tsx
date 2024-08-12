@@ -13,33 +13,39 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const seoPages = await getSeoPages();
   const portofolioMeta = seoPages?.find(
-    (page: any) => page.pages === "Portfolio"
-  );
-  const title = portofolioMeta?.metaTitle;
-  const description = portofolioMeta?.metaDesc;
+    (page) => page.pages === "Portfolio"
+  ) || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: portofolioMeta.metaTitle,
+    description: portofolioMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: portofolioMeta.metaTitle,
+      description: portofolioMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: portofolioMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: portofolioMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: portofolioMeta.metaTitle,
+      description: portofolioMeta.metaDesc,
+      images: [portofolioMeta.metaImage],
     },
   };
 }

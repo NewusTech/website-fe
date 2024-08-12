@@ -7,32 +7,38 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const seoPages = await getSeoPages();
-  const serviceMeta = seoPages?.find((page: any) => page.pages === "Service");
-  const title = serviceMeta?.metaTitle;
-  const description = serviceMeta?.metaDesc;
+  const serviceMeta = seoPages?.find((page) => page.pages === "Service") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: serviceMeta.metaTitle,
+    description: serviceMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: serviceMeta.metaTitle,
+      description: serviceMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: serviceMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: serviceMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: serviceMeta.metaTitle,
+      description: serviceMeta.metaDesc,
+      images: [serviceMeta.metaImage],
     },
   };
 }

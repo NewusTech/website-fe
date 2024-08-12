@@ -17,33 +17,39 @@ import { BASE_URL } from "@/constants/constants";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find((page: any) => page.pages === "Home");
-  const title = aboutMeta?.metaTitle;
-  const description = aboutMeta?.metaDesc;
+  const seoPages = await getSeoPages();
+  const landingMeta = seoPages.find((page) => page.pages === "Home") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: landingMeta.metaTitle,
+    description: landingMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: landingMeta.metaTitle,
+      description: landingMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/banner.jpeg`,
+          url: landingMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: landingMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/banner.jpeg`],
+      title: landingMeta.metaTitle,
+      description: landingMeta.metaDesc,
+      images: [landingMeta.metaImage],
     },
   };
 }

@@ -13,34 +13,39 @@ import { BASE_URL } from "@/constants/constants";
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const seoAbout = await getSeoPages();
-  const aboutMeta = seoAbout?.find((page: any) => page.pages === "About");
-
-  const title = aboutMeta?.metaTitle;
-  const description = aboutMeta?.metaDesc;
+  const seoPages = await getSeoPages();
+  const aboutMeta = seoPages?.find((page) => page.pages === "About") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
 
   return {
-    title: title,
-    description: description,
+    title: aboutMeta.metaTitle,
+    description: aboutMeta.metaDesc,
     openGraph: {
       type: "website",
-      title: title,
-      description: description,
+      title: aboutMeta.metaTitle,
+      description: aboutMeta.metaTitle,
       url: `${BASE_URL}`,
       images: [
         {
-          url: `${BASE_URL}/assets/images/header-about.jpg`,
+          url: aboutMeta.metaImage,
           width: 800,
           height: 600,
-          alt: title,
+          alt: aboutMeta.metaTitle,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: title,
-      description: description,
-      images: [`${BASE_URL}/assets/images/header-about.jpg`],
+      title: aboutMeta.metaTitle,
+      description: aboutMeta.metaDesc,
+      images: [aboutMeta.metaImage],
     },
   };
 }
