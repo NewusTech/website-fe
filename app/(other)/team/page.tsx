@@ -45,10 +45,21 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function TeamPage() {
+  const seoPages = await getSeoPages();
+  const teamMeta = seoPages?.find((page) => page.pages === "Team") || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
   const teams = await getTeamList();
 
   return (
     <section className="md:min-h-[1200px]">
+      <h1 className="hidden">{teamMeta.metaTitle}</h1>
       <TeamLayout teams={teams} />
     </section>
   );

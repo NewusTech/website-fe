@@ -53,8 +53,21 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function PortofolioPage() {
   const projectList = await getProjectList();
   const categories = await getProjectKategoriList();
+  const seoPages = await getSeoPages();
+  const portofolioMeta = seoPages?.find(
+    (page) => page.pages === "Portfolio"
+  ) || {
+    id: 0,
+    metaDesc: "",
+    metaImage: "",
+    metaTitle: "",
+    pages: "",
+    createdAt: "",
+    updatedAt: "",
+  };
   return (
     <section className="min-h-[55vh] overflow-hidden">
+      <h1 className="hidden">{portofolioMeta.metaTitle}</h1>
       <Header
         type="Portfolio"
         title="Portfolio"
