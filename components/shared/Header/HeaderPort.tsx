@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 
 const Header = ({
@@ -28,7 +28,9 @@ const Header = ({
             <h1 className="text-black uppercase font-bold text-mobileJudul md:text-[32px]">
               {title}
             </h1>
-            <p className="text-center text-mobileDesk md:text-webDesk">See How We Elevate Businesses. Explore Our Success Projects. </p>
+            <h1 className="text-center text-mobileDesk md:text-webDesk">
+              Discover Our Expertise: Newus Technology Portfolio
+            </h1>
           </div>
         </div>
       </div>
