@@ -1,22 +1,22 @@
-'use client'
+"use client";
 
-import React, { useState } from 'react'
-import NavItem from './NavItem'
-import Link from 'next/link'
-import Image from 'next/image'
-import { usePathname } from 'next/navigation'
+import React, { useState } from "react";
+import NavItem from "./NavItem";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const NavLayout = ({ aboutCompany }: any) => {
   const [openDropdown, setOpenDropdown] = useState<boolean>(false);
   const pathname = usePathname();
   const lightLogoPaths = [
-    '/',
-    '/service',
-    '/team',
-    '/about',
-    '/career',
-    '/blog',
-    '/portfolio',
+    "/",
+    "/service",
+    "/team",
+    "/about",
+    "/career",
+    "/blog",
+    "/portofolio",
   ];
   const useLightLogo = lightLogoPaths.includes(pathname);
   const handleDropdown = () => {
@@ -24,8 +24,8 @@ const NavLayout = ({ aboutCompany }: any) => {
   };
 
   const data = aboutCompany?.[0];
-  const whiteLogo = data?.siteLogo || '/assets/icons/newus-light.svg'
-  const BlackLogo = data?.siteLogo || '/assets/icons/logo-mobile.svg'
+  const whiteLogo = data?.siteLogo || "/assets/icons/newus-light.svg";
+  const BlackLogo = data?.siteLogo || "/assets/icons/logo-mobile.svg";
 
   return (
     <section className="max-w-screen 2xl:container 2xlmx-auto">
@@ -54,17 +54,19 @@ const NavLayout = ({ aboutCompany }: any) => {
           loading="lazy"
           width={24}
           height={40}
-          className={`md:hidden ${openDropdown ? 'bg-blue md:bg-none text-[#480DEC] -p-1 md:p-0' : 'cursor-pointer md:hidden'}`}
+          className={`md:hidden ${openDropdown ? "bg-blue md:bg-none text-[#480DEC] -p-1 md:p-0" : "cursor-pointer md:hidden"}`}
           onClick={handleDropdown}
         />
         <div
-          onClick={handleDropdown} className={`hidden md:block ${openDropdown ? 'p-[0.5px]' : 'py-[10px] px-[7px] '} md:bg-blue rounded-[4px]`}>
+          onClick={handleDropdown}
+          className={`hidden md:block ${openDropdown ? "p-[0.5px]" : "py-[10px] px-[7px] "} md:bg-blue rounded-[4px]`}
+        >
           <Image
             src={`${openDropdown ? "/assets/icons/close.svg" : "/assets/icons/hamburger.svg"}`}
             alt="logo"
             width={24}
             height={40}
-            className={`cursor-pointer ${openDropdown ? 'w-10' : ''}`}
+            className={`cursor-pointer ${openDropdown ? "w-10" : ""}`}
           />
         </div>
         {openDropdown && (
@@ -73,8 +75,8 @@ const NavLayout = ({ aboutCompany }: any) => {
               <NavItem path="/service" onClick={handleDropdown}>
                 Service
               </NavItem>
-              <NavItem path="/portfolio" onClick={handleDropdown}>
-                Portfolio
+              <NavItem path="/portofolio" onClick={handleDropdown}>
+                Portofolio
               </NavItem>
               <NavItem path="/blog" onClick={handleDropdown}>
                 Blog
@@ -91,10 +93,13 @@ const NavLayout = ({ aboutCompany }: any) => {
               <NavItem path="/career" onClick={handleDropdown}>
                 Career
               </NavItem>
-              <NavItem onClick={handleDropdown} dropdownItems={[
-                { path: '/company-profile', label: 'Company Profile' },
-                { path: '/certificate', label: 'Sertifikat' }
-              ]}>
+              <NavItem
+                onClick={handleDropdown}
+                dropdownItems={[
+                  { path: "/company-profile", label: "Company Profile" },
+                  { path: "/certificate", label: "Sertifikat" },
+                ]}
+              >
                 Download
               </NavItem>
             </ul>
@@ -102,7 +107,7 @@ const NavLayout = ({ aboutCompany }: any) => {
         )}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default NavLayout
+export default NavLayout;
