@@ -46,8 +46,8 @@ const Bottombar = () => {
           href="/portofolio"
           className="flex flex-col gap-1 items-center justify-center group"
         >
-          <PortfolioIcon color={getIconColor("/portfolio")} />
-          <p className={`text-[6px] ${getLinkClass("/portfolio")}`}>
+          <PortfolioIcon color={getIconColor("/portofolio")} />
+          <p className={`text-[6px] ${getLinkClass("/portofolio")}`}>
             Portofolio
           </p>
         </Link>
