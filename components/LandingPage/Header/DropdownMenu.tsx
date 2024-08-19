@@ -18,7 +18,7 @@ const DropdownMenu = ({ data }: { data: any }) => {
   // Data untuk menu navigasi
   const navItems = [
     { path: "/service", label: "Service" },
-    { path: "/portfolio", label: "Portfolio" },
+    { path: "/portofolio", label: "Portofolio" },
     { path: "/blog", label: "Blog" },
     { path: "/about", label: "About" },
     { path: "/team", label: "Team" },
