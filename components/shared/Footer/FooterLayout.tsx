@@ -134,7 +134,7 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 <li>Content & Engagement</li>
               </ul>
             </div>
-            <div className="lg:hidden flex flex-col">
+            <div className=" flex flex-col lg:mt-3">
               <h4 className="font-semibold text-white md:text-sm text-[10px] uppercase">
                 Social Media
               </h4>
