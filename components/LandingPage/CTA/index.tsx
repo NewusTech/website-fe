@@ -31,14 +31,14 @@ export default async function CTA() {
           <h1 className="hidden xl:block text-mobileJudul md:text-2xl font-bold md:pb-3">
             Wujudkan{" "}
             <span className="text-tangerine">
-              Website Berkualitas <br />
+              Aplikasi Berkualitas <br />
               Anda{" "}
             </span>
             Sekarang Juga
           </h1>
           <h1 className="xl:hidden pb-2 text-mobileJudul md:text-2xl font-bold md:pb-3">
             Wujudkan{" "}
-            <span className="text-tangerine">Website Berkualitas Anda </span>
+            <span className="text-tangerine">Aplikasi Berkualitas Anda </span>
             Sekarang Juga
           </h1>
           <p className="text-mobileDesk md:text-webDesk">
