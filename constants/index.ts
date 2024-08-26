@@ -105,7 +105,7 @@ export const ourClientAbout = [
   },
   {
     id: 3,
-    image: "/assets/images/bgp.svg"
+    image: "/assets/images/bgp.svg",
   },
   {
     id: 4,
@@ -149,7 +149,7 @@ export const ourClientAbout = [
   },
   {
     id: 15,
-    image: "/assets/images/bgp.svg"
+    image: "/assets/images/bgp.svg",
   },
   {
     id: 16,
@@ -166,17 +166,12 @@ export const ourClientAbout = [
   {
     id: 19,
     image: "/assets/images/bvet.png",
-  }, {
+  },
+  {
     id: 20,
     image: "/assets/images/ggf.png",
   },
-  {
-    id: 21,
-    logo: "/assets/images/sma-printis.png",
-  },
-
 ];
-
 
 export const teamImage = [
   {
@@ -189,42 +184,42 @@ export const teamImage = [
   },
   {
     id: 3,
-    image: "/assets/images/dummy-team/3.svg"
+    image: "/assets/images/dummy-team/3.svg",
   },
   {
     id: 4,
-    image: "/assets/images/dummy-team/4.svg"
+    image: "/assets/images/dummy-team/4.svg",
   },
   {
     id: 5,
-    image: "/assets/images/dummy-team/5.svg"
+    image: "/assets/images/dummy-team/5.svg",
   },
   {
     id: 6,
-    image: "/assets/images/dummy-team/6.svg"
+    image: "/assets/images/dummy-team/6.svg",
   },
   {
     id: 7,
-    image: "/assets/images/dummy-team/7.svg"
+    image: "/assets/images/dummy-team/7.svg",
   },
   {
     id: 8,
-    image: "/assets/images/dummy-team/8.svg"
+    image: "/assets/images/dummy-team/8.svg",
   },
   {
     id: 9,
-    image: "/assets/images/dummy-team/9.svg"
+    image: "/assets/images/dummy-team/9.svg",
   },
   {
     id: 10,
-    image: "/assets/images/dummy-team/10.svg"
+    image: "/assets/images/dummy-team/10.svg",
   },
   {
     id: 11,
-    image: "/assets/images/dummy-team/11.svg"
+    image: "/assets/images/dummy-team/11.svg",
   },
   {
     id: 12,
-    image: "/assets/images/dummy-team/12.svg"
+    image: "/assets/images/dummy-team/12.svg",
   },
 ];

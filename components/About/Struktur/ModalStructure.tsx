@@ -9,7 +9,7 @@ const ModalStructure = ({ showModal, setShowModal, teams }: any) => {
 
   return (
     <>
-      {showModal ? (
+      {showModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
           onClick={closePopup}
@@ -28,23 +28,28 @@ const ModalStructure = ({ showModal, setShowModal, teams }: any) => {
                 loading="lazy"
               />
             </div>
-            <div className="relative">
-              <div className="absolute top-[-155px] md:top-[-235px] left-[250px] xl:top-[-246px] 2xl:top-[-406px] md:left-[760px] lg:left-[495px] xl:left-[650px] 2xl:left-[650px] opacity-[1] max-w-[130px] md:max-w-[300px] xl:max-w-[400px] text-white">
-                <h1 className="text-mobileJudul 2xl:text-[32px] text-[#480DEC] font-bold">{teams?.name ? teams.name : 'Name Team'}</h1>
+            <div className="absolute flex h-full w-[40%] top-0 right-0">
+              <div className="flex flex-col mt-auto mb-auto text-white">
+                <h1 className="text-mobileJudul 2xl:text-[24px] text-[#480DEC] font-bold">
+                  {teams?.name ? teams.name : "Name Team"}
+                </h1>
 
-                <h2 className="text-mobileSubjudul 2xl:text-[24px] text-black pb-2 md:pb-4">{teams?.title ? teams.title : 'POSITION'}</h2>
+                <h2 className="text-mobileSubjudul 2xl:text-[18px] text-black pb-2 md:pb-4">
+                  {teams?.title ? teams.title : "POSITION"}
+                </h2>
 
                 <p className="md:hidden text-[11px] capitalize leading-3 line-clamp-5 font-light">
-                  {removeHTMLTags(teams?.description) || ''}
+                  {removeHTMLTags(teams?.description) || ""}
                 </p>
-                <p className="hidden md:block text-mobileDesk 2xl:text-[16px] capitalize">
-                  {removeHTMLTags(teams?.description) || 'Lorem ipsum dolor sit amet consectetur. Volutpat velit nibh orci eu vel a phasellus dui est. Habitasse eget cum sed pulvinar morbi. Lorem ut ullamcorper est tincidunt venenatis venenatis dignissim magna. Eget adipiscing purus duis vel etiam.'}
+                <p className="hidden md:block text-mobileDesk 2xl:text-[14px] capitalize">
+                  {removeHTMLTags(teams?.description) ||
+                    "Lorem ipsum dolor sit amet consectetur. Volutpat velit nibh orci eu vel a phasellus dui est. Habitasse eget cum sed pulvinar morbi. Lorem ut ullamcorper est tincidunt venenatis venenatis dignissim magna. Eget adipiscing purus duis vel etiam."}
                 </p>
               </div>
             </div>
           </div>
         </div>
-      ) : null}
+      )}
     </>
   );
 };
