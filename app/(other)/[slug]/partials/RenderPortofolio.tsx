@@ -163,11 +163,13 @@ export default async function RenderPortofolio({
           dangerouslySetInnerHTML={{ __html: projectsDetail?.body }}
         />
         {/* <p >{removeHTMLTags(projectsDetail?.body) || 'Lorem ipsum '}</p> */}
-        <div className="hidden md:flex gap-[40px] items-center justify-center py-4 md:py-6">
-          <div className="block md:w-9/12 pt-5">
-            <ImageSlider images={projectsDetail?.galeri} />
+        {projectsDetail.galeri.length > 0 && (
+          <div className="hidden md:flex gap-[40px] items-center justify-center py-4 md:py-6">
+            <div className="block md:w-9/12 pt-5">
+              <ImageSlider images={projectsDetail?.galeri} />
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="pt-5">
           <div className="flex gap-3 items-center pb-5">
