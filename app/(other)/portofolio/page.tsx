@@ -70,8 +70,9 @@ export default async function PortofolioPage() {
       <h1 className="hidden">{portofolioMeta.metaTitle}</h1>
       <Header
         type="Portfolio"
-        title="portfolio"
+        title="portofolio"
         image="/assets/images/header-port.jpg"
+        // image="/assets/images/banner.jpeg"
       />
       <PortLayout portfolios={projectList} categories={categories} />
     </section>

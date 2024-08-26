@@ -98,9 +98,14 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                   height={24}
                   className="w-[15px] h-[15px] lg:w-6 lg:h-6"
                 />
-                <p className="text-white md:text-webDesk text-[10px]">
-                  {dataAbout?.phoneNumber || "(+62) 888-991-2992"}
-                </p>
+                <a
+                  className="text-white md:text-webDesk text-[10px]"
+                  href="https://api.whatsapp.com/message/VAQVUDT6TDXVG1?autoload=1&app_absent=0"
+                  target="_blank"
+                  rel="nofollow"
+                >
+                  {dataAbout?.phoneNumber || "(+62) 878-9864-4177"}
+                </a>
               </div>
               <Link
                 className="text-white underline text-[10px] md:text-webDesk ml-3"
