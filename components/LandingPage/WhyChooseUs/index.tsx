@@ -62,7 +62,7 @@ const WhyChooseUs = () => {
               height={50}
               className="w-[30px] lg:w-[50px]"
             />
-            <p className="text-mobileDesk md:text-webDesk text-gray-600">Successfully completed 30+ project</p>
+            <p className="text-mobileDesk md:text-webDesk text-gray-600">Successfully completed 100+ project</p>
           </div>
         </div>
       </div>

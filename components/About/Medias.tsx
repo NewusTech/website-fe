@@ -26,8 +26,8 @@ const Medias = ({ medias }: { medias: any[] }) => {
             className={`px-4 md:px-[50px] pb-10 min-h-[250px] md:min-h-[500px] 2xl:min-h-[892px] bg-cover bg-center flex justify-center items-end`}
             style={{ backgroundImage: `url('${backgroundUrl.imgUrl}')` }}
           >
-            <div className="text-center md:text-left md:w-[892px] z-[1]">
-              <h1 className="text-white text-start text-mobileJudul md:text-[32px] font-bold font-asap">
+            <div className="text-center md:text-left md:w-[892px] z-[1] w-[90%]">
+              <h1 className="text-white text-start text-mobileJudul md:text-[28px] font-bold font-asap">
                 {backgroundUrl.title ?? "Strength in Numbers"}{" "}
                 <span className="text-[#480DEC]">:</span>
               </h1>
@@ -36,7 +36,7 @@ const Medias = ({ medias }: { medias: any[] }) => {
                   `“Together We Stand, United We Achieve!”`}
               </h2>
             </div>
-            <div className="absolute bg-black/25 w-full h-36" />
+            <div className="absolute bg-black/25 w-full h-[3rem] md:h-[10rem]" />
           </div>
 
           <div

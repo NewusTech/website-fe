@@ -20,7 +20,7 @@ export async function getTeamList() {
 export async function getTeamDetail(slug: string) {
   try {
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/admin/${slug}/team/detail`,
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/team/${slug}`,
       {
         cache: "no-store",
       }
