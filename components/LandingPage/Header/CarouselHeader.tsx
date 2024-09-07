@@ -57,7 +57,7 @@ const CarouselHeader = (props: CarouselHeaderProps) => {
       setApi={setApi} // Meneruskan fungsi untuk mengatur API Embla
     >
       <CarouselContent>
-        {banner.map((item) => (
+        {banner?.map((item) => (
           <CarouselItem key={item.id}>
             <div className="h-48 md:min-h-[600px] lg:min-h-screen">
               <Image

@@ -40,6 +40,7 @@ const RightSide = ({ aboutCompany }: any) => {
       throw new Error("Failed to fetch project list");
     }
     const data = await response.json();
+    console.log(data.data)
     setBannerData(data.data);
     try {
     } catch (error) {
@@ -122,10 +123,10 @@ const RightSide = ({ aboutCompany }: any) => {
           >
             <h1 className="text-mobileJudul font-extrabold text-white w-60 xl:w-52 text-center">
               <span className="text-tangerine">
-                {bannerData[activeIndex].metaTitle}
+                {bannerData[activeIndex]?.metaTitle}
               </span>
               <br />
-              {bannerData[activeIndex].metaSubTitle}
+              {bannerData[activeIndex]?.metaSubTitle}
             </h1>
             <Link href="/contact">
               <Button
