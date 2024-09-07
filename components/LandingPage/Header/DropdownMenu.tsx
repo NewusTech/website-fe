@@ -85,15 +85,15 @@ const DropdownMenu = ({ data ,itemBanner}: { data: any,itemBanner:bannerType }) 
       >
         <h1 className="text-[24px] xl:text-3xl font-extrabold text-white w-72 xl:w-[277px] 2xl:w-72">
           <span className="text-tangerine text-[24px] xl:text-3xl ">
-           {itemBanner.metaTitle}
+           {itemBanner?.metaTitle}
           </span>
           <br />
-          {itemBanner.metaSubTitle}
+          {itemBanner?.metaSubTitle}
         </h1>
         <p
           className={`text-mobileDesk md:text-webDesk  text-white leading-7 mt-3 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}
         >
-          {itemBanner.metaDesc}
+          {itemBanner?.metaDesc}
         </p>
         <Button className="xl:py-7 py-5 px-5 xl:px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
           <Link
