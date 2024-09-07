@@ -13,7 +13,7 @@ const Header = ({
 }) => {
   return (
     <header className="w-full z-10 relative">
-      <div className="md:min-w-screen md:h-[305px] md:min-h-[75px]">
+      <div className="md:min-w-screen md:h-[305px] md:min-h-[75px] brightness-50">
         <Link href='/'>
           <Image
             src={image}

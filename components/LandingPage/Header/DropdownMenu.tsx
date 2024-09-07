@@ -5,8 +5,9 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import NavItem from "./NavItem";
+import { bannerType } from "./RightSide";
 
-const DropdownMenu = ({ data }: { data: any }) => {
+const DropdownMenu = ({ data ,itemBanner}: { data: any,itemBanner:bannerType }) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   // const whiteLogo = data.siteLogo || '/assets/icons/newus-light.svg'
   const whiteLogo = "/assets/icons/newus-light.svg";
@@ -84,15 +85,15 @@ const DropdownMenu = ({ data }: { data: any }) => {
       >
         <h1 className="text-[24px] xl:text-3xl font-extrabold text-white w-72 xl:w-[277px] 2xl:w-72">
           <span className="text-tangerine text-[24px] xl:text-3xl ">
-            Software House Lampung
+           {itemBanner.metaTitle}
           </span>
           <br />
-          Innovate & Elevate: Your Custom Software
+          {itemBanner.metaSubTitle}
         </h1>
         <p
           className={`text-mobileDesk md:text-webDesk  text-white leading-7 mt-3 ${openDropdown ? "mb-[40px]" : "mb-[60px]"} w-[277px]`}
         >
-          Journey Starts Here (New Experience With Us)
+          {itemBanner.metaDesc}
         </p>
         <Button className="xl:py-7 py-5 px-5 xl:px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
           <Link

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import CarouselHeader from "@/components/LandingPage/Header/CarouselHeader";
 import { Button } from "@/components/ui/button";
@@ -8,21 +8,19 @@ import Link from "next/link";
 import DropdownMenu from "@/components/LandingPage/Header/DropdownMenu";
 import NavItem from "./NavItem";
 
-type bannerType = {
-  judul: string;
-  subJudul: string;
-  desck: string;
+export type bannerType = {
+  id: number;
+  metaTitle: string;
+  metaSubTitle: string;
+  metaDesc: string;
+  image: string;
 };
 
 const RightSide = ({ aboutCompany }: any) => {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [bannerData, setBannerData] = useState<bannerType[]>([
-    {
-      judul: "Software House Lampung",
-      subJudul: "Innovate & Elevate: Your Custom Software",
-      desck: "Journey Starts Here (New Experience With Us)",
-    },
-  ]);
+  const [bannerData, setBannerData] = useState<bannerType[]>([]);
+  // State to hold the index of the currently active slide
+  const [activeIndex, setActiveIndex] = useState(0);
   const data = aboutCompany?.[0];
   const whiteLogo = data?.siteLogo || "/assets/icons/newus-light.svg";
   const BlackLogo = data?.siteLogo || "/assets/icons/logo-mobile.svg";
@@ -32,11 +30,26 @@ const RightSide = ({ aboutCompany }: any) => {
   };
 
   const getBanner = async () => {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/admin/banner/get`,
+      {
+        cache: "no-store",
+      }
+    );
+    if (!response.ok) {
+      throw new Error("Failed to fetch project list");
+    }
+    const data = await response.json();
+    setBannerData(data.data);
     try {
     } catch (error) {
       console.error("Gagal mengambil Banner");
     }
   };
+
+  useEffect(() => {
+    getBanner();
+  }, []);
 
   const navItems = [
     { path: "/service", label: "Service" },
@@ -72,7 +85,7 @@ const RightSide = ({ aboutCompany }: any) => {
           />
         </div>
         <div className="hidden md:flex bg-blue w-5/12 lg:w-4/12 xl:w-3/12  flex-col items-start container mx-auto pt-[26px]">
-          <DropdownMenu data={data} />
+          <DropdownMenu data={data} itemBanner={bannerData[activeIndex]} />
         </div>
         {openDropdown && (
           <nav
@@ -102,12 +115,17 @@ const RightSide = ({ aboutCompany }: any) => {
           </nav>
         )}
         <div className="w-full md:w-9/12 relative flex items-center justify-center">
-          <CarouselHeader />
-          <div className="absolute gap-[10px] md:hidden flex flex-col items-center justify-center">
+          <CarouselHeader banner={bannerData} setActiveIndex={setActiveIndex} />
+          <div
+            className="absolute gap-[10px] md:hidden flex flex-col items-center justify-center"
+            key={activeIndex}
+          >
             <h1 className="text-mobileJudul font-extrabold text-white w-60 xl:w-52 text-center">
-              <span className="text-tangerine">Software House Lampung</span>
+              <span className="text-tangerine">
+                {bannerData[activeIndex].metaTitle}
+              </span>
               <br />
-              Innovate & Elevate: Your Custom Software
+              {bannerData[activeIndex].metaSubTitle}
             </h1>
             <Link href="/contact">
               <Button

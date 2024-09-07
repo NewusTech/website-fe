@@ -1,7 +1,7 @@
 import Image from "next/image";
 import CardBlog from "@/components/LandingPage/Blog/CardBlog";
 import { Button } from "@/components/ui/button";
-import { getBlogList } from "@/components/Fetching/Blog/blog";
+import { getBlogSelected } from "@/components/Fetching/Blog/blog";
 import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ListIcon from "@/public/assets/icons/ListIcon";
@@ -32,10 +32,8 @@ interface BlogProps {
 }
 
 export default async function Blog() {
-  const blogList = await getBlogList();
+  const blogList = await getBlogSelected();
   const lastBlog = blogList[blogList.length - 1];
-  // const lastBlog = blogList[0];
-  const remainingBlogs = blogList.slice(0, -1);
 
   return (
     <section className="overflow-hidden">
