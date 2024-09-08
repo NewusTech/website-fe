@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { HTMLAttributeAnchorTarget, useEffect, useState } from "react";
 
 interface NavItemProps {
   path?: string;
   onClick: () => void;
   children: React.ReactNode;
   dropdownItems?: { path: string; label: string }[];
+  target?: HTMLAttributeAnchorTarget
 }
 
-const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItems = [] }) => {
+const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItems = [], target="" }) => {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -47,10 +48,10 @@ const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItem
         )}
       </div>
       {isDropdownOpen && (
-        <ul className="absolute right-0 mt-2 w-48 bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl capitalize border border-gray-200 rounded-md shadow-lg">
+        <ul className="absolute right-0 mt-2 w-48 bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl capitalize border border-gray-200 rounded-md shadow-lg gap-y-4">
           {dropdownItems.map((item, index) => (
             <li key={index} className="bg-[#F4F4F4] md:bg-[#F4F4F4]/80 md:backdrop-blur-3xl">
-              <Link href={item.path} onClick={onClick} className="block px-4 py-2 text-sm text-gray-700">
+              <Link href={item.path} onClick={onClick} className="block px-4 py-2 text-sm text-gray-700" target={target}>
                 {item.label}
               </Link>
             </li>

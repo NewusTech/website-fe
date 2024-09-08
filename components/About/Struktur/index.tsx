@@ -102,7 +102,7 @@ const Struktur = ({ teams }: any) => {
           <div className="flex flex-col p-4 gap-2">
             {renderTeam(developerTeam, "Developer Team")}
             {renderTeam(digitalMarketingTeam, "Digital Marketing")}
-            {renderTeam(digitalMarketingTeam, "Back Office")}
+            {renderTeam(backOfficeTeam, "Back Office")}
           </div>
         </div>
         <ModalStructure

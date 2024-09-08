@@ -12,14 +12,14 @@ const Header = ({
 }) => {
   return (
     <header className="w-full z-10 relative">
-      <div className="md:min-w-screen md:h-[305px] md:min-h-[75px]">
+      <div className="md:min-w-screen md:h-[305px] md:min-h-[75px] bg-white">
         <Image
           src={image}
           alt="blog header"
           loading="lazy"
           width={1350}
           height={75}
-          className={`w-full h-full object-cover ${type === "service" ? "" : "md:rounded-b-[30px]"} `}
+          className={`w-full h-full object-cover ${type === "service" ? "" : "md:rounded-b-[30px]"} opacity-65`}
         />
       </div>
       <div className="flex justify-center md:w-full ">

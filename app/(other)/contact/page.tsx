@@ -49,7 +49,7 @@ const ContactPage = () => {
       <Header
         type="Contact Us"
         title="Contact Us"
-        image="/assets/images/contact-header.svg"
+        image="/assets/images/bgcta.jpeg"
       />
       <ContactLayout />
       <div>

@@ -71,8 +71,7 @@ export default async function PortofolioPage() {
       <Header
         type="Portfolio"
         title="portofolio"
-        image="/assets/images/header-port.jpg"
-        // image="/assets/images/banner.jpeg"
+        image="/assets/images/banner.jpeg"
       />
       <PortLayout portfolios={projectList} categories={categories} />
     </section>
