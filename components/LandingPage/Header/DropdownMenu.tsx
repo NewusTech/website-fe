@@ -7,7 +7,13 @@ import Link from "next/link";
 import NavItem from "./NavItem";
 import { bannerType } from "./RightSide";
 
-const DropdownMenu = ({ data ,itemBanner}: { data: any,itemBanner:bannerType }) => {
+const DropdownMenu = ({
+  data,
+  itemBanner,
+}: {
+  data: any;
+  itemBanner: bannerType;
+}) => {
   const [openDropdown, setOpenDropdown] = useState(false);
   // const whiteLogo = data.siteLogo || '/assets/icons/newus-light.svg'
   const whiteLogo = "/assets/icons/newus-light.svg";
@@ -65,9 +71,10 @@ const DropdownMenu = ({ data ,itemBanner}: { data: any,itemBanner:bannerType }) 
             ))}
             <li>
               <NavItem
+                target="_blank"
                 onClick={handleDropdown}
                 dropdownItems={[
-                  { path: "/company-profile", label: "Company Profile" },
+                  { path: "https://www.instagram.com/newustechnology/", label: "Company Profile" },
                   { path: "/certificate", label: "Sertifikat" },
                 ]}
               >
@@ -85,7 +92,7 @@ const DropdownMenu = ({ data ,itemBanner}: { data: any,itemBanner:bannerType }) 
       >
         <h1 className="text-[24px] xl:text-3xl font-extrabold text-white w-72 xl:w-[277px] 2xl:w-72">
           <span className="text-tangerine text-[24px] xl:text-3xl ">
-           {itemBanner?.metaTitle}
+            {itemBanner?.metaTitle}
           </span>
           <br />
           {itemBanner?.metaSubTitle}

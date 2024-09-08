@@ -210,7 +210,7 @@ export default async function RenderPortofolio({
             {projectsDetail?.title || "Figma ipsum component variant main"}
           </h2>
           <div
-            className="text-mobileDesk md:text-webDesk 2xl:text-webSubjudul leading-6 2xl:leading-7"
+            className="text-mobileDesk md:text-webDesk 2xl:text-webSubjudul leading-6 2xl:leading-7 prose prose-li:list-decimal prose-ul:list-inside"
             dangerouslySetInnerHTML={{
               __html: projectsDetail?.closingDescription,
             }}

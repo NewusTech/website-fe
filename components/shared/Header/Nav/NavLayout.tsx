@@ -96,9 +96,10 @@ const NavLayout = ({ aboutCompany }: any) => {
               <NavItem
                 onClick={handleDropdown}
                 dropdownItems={[
-                  { path: "/company-profile", label: "Company Profile" },
+                  { path: "https://www.instagram.com/newustechnology/", label: "Company Profile" },
                   { path: "/certificate", label: "Sertifikat" },
                 ]}
+                target="_blank"
               >
                 Download
               </NavItem>

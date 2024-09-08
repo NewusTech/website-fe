@@ -1,15 +1,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { HTMLAttributeAnchorTarget, useEffect, useState } from "react";
 
 interface NavItemProps {
   path?: string;
   onClick: () => void;
   children: React.ReactNode;
   dropdownItems?: { path: string; label: string }[];
+  target?: HTMLAttributeAnchorTarget
 }
 
-const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItems = [] }) => {
+const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItems = [], target }) => {
   const pathname = usePathname();
   const [isActive, setIsActive] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -56,8 +57,8 @@ const NavItem: React.FC<NavItemProps> = ({ path, onClick, children, dropdownItem
       {isDropdownOpen && (
         <ul className="mt-2 md:w-48 text-black md:bg-[#480DEC] capitalize">
           {dropdownItems.map((item, index) => (
-            <li key={index} className="md:bg-[#480DEC]">
-              <Link href={item.path} onClick={onClick} className="md:py-3 text-black md:text-white text-mobileSubjudul md:text-webSubjudul">
+            <li key={index} className="md:bg-[#480DEC] mt-4">
+              <Link href={item.path} onClick={onClick} className="md:py-3 text-black md:text-white text-mobileSubjudul md:text-webSubjudul" target={target}>
                 {item.label}
               </Link>
             </li>
