@@ -21,59 +21,60 @@ const config = {
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: '100%',
-            fontSize: '11px',
+            maxWidth: "100%",
+            fontSize: "11px",
             h1: {
-              fontSize: '14px',
-              fontWeight: 'bold',
+              fontSize: "14px",
+              fontWeight: "bold",
             },
             h2: {
-              fontSize: '12px',
-              fontWeight: 'bold',
+              fontSize: "12px",
+              fontWeight: "bold",
             },
             h3: {
-              fontSize: '11px',
-              fontWeight: 'bold',
+              fontSize: "11px",
+              fontWeight: "bold",
             },
             p: {
-              fontSize: '11px',
+              fontSize: "11px",
             },
           },
         },
         lg: {
           css: {
-            maxWidth: '100%',
-            fontSize: '12px',
+            maxWidth: "100%",
+            fontSize: "12px",
             h1: {
-              fontSize: '16px',
-              fontWeight: 'bold',
+              fontSize: "16px",
+              fontWeight: "bold",
             },
             h2: {
-              fontSize: '14px',
-              fontWeight: 'bold',
+              fontSize: "14px",
+              fontWeight: "bold",
             },
             h3: {
-              fontSize: '12px',
-              fontWeight: 'bold',
+              fontSize: "12px",
+              fontWeight: "bold",
             },
             p: {
-              fontSize: '12px',
+              fontSize: "12px",
             },
           },
         },
       },
       lineClamp: {
-        7: '7',
-        8: '8',
-        12: '12',
+        7: "7",
+        8: "8",
+        12: "12",
       },
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        asap: ['Asap', 'sans-serif'],
+        inter: ["Inter", "sans-serif"],
+        asap: ["Asap", "sans-serif"],
       },
       colors: {
         blue: "#480DEC",
         "blue-2": "#2600a1",
+        "blue-smooth": "#1E4D98",
         tangerine: "#FF6600",
         "tangerine-2": "#e75d00",
         gray: "#A7ABB6",
@@ -136,17 +137,16 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontSize: {
-        mobileJudul: '14px',
-        mobileSubjudul: '12px',
-        mobileDesk: '11px',
-        webJudul: '16px',
-        webSubjudul: '14px',
-        webDesk: '12px',
+        mobileJudul: "14px",
+        mobileSubjudul: "12px",
+        mobileDesk: "11px",
+        webJudul: "16px",
+        webSubjudul: "14px",
+        webDesk: "12px",
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography'),],
-
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 } satisfies Config;
 
 export default config;

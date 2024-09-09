@@ -27,11 +27,10 @@ export async function getProjectDetail(slug: string) {
     );
 
     if (!response.ok) {
-      // throw new Error('Failed to fetch project detail');
       return null;
     }
     const data = await response.json();
-    return data.portfolio;
+    return data.data;
   } catch (error) {
     console.error("Error fetching blog list:", error);
     return null;
