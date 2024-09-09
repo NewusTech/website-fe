@@ -56,7 +56,7 @@ export default async function Blog() {
 
   return (
     <section>
-      <Header title="Blog" type="Blog" image="/assets/images/header-blog.jpg" />
+      <Header title="Blog" type="Blog" image="/assets/images/header-blog1.jpg" />
       <RecentPost
         blogs={blogs}
         categories={categories}
