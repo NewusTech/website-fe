@@ -23,6 +23,7 @@ const BodyContent = ({
     publishAt = "",
     body = "",
     altImage = "",
+    tags = [{ id: 1, title: "" }],
   } = blogDetail || {};
 
   const sanitizedBody = body || "None";
@@ -82,7 +83,7 @@ const BodyContent = ({
             dangerouslySetInnerHTML={{ __html: sanitizedBody }}
           />
         </div>
-        <TagsBottom blogs={blogList} />
+        <TagsBottom tags={tags} />
         <div className="py-5 flex items-center">
           <h1 className="font-semibold text-mobileJudul  md:text-webJudul mr-2">
             Share :{" "}
