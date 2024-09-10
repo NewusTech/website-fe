@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface Blog {
   id: number;
@@ -18,21 +18,29 @@ interface Blog {
   image: any;
   status: boolean;
   status_desc: string;
+  tags: {
+    id: number;
+    title: string;
+  }[];
   publishAt: Date | string;
   createdAt: Date;
   updatedAt: Date;
 }
 
-interface TagsDisplayProps {
+type TagsDisplayProps = {
   blogs: Blog[];
-}
+};
 
 const extractUniqueTags = (data: Blog[]): string[] => {
-  const allTags = data.map(blog => blog.tagblog_title);
+  // Menggabungkan semua tags dari setiap blog menjadi satu array
+  const allTags = data.flatMap((blog) => blog.tags.map((tag) => tag.title));
+  // Menghapus duplikat dengan Set dan mengubah kembali menjadi array
   return [...new Set(allTags)];
 };
 
-const TagsDisplay = ({ blogs }: TagsDisplayProps) => {
+const TagsDisplay = (props: TagsDisplayProps) => {
+  const { blogs } = props;
+
   const [tags, setTags] = useState<string[]>([]);
 
   useEffect(() => {
@@ -44,9 +52,12 @@ const TagsDisplay = ({ blogs }: TagsDisplayProps) => {
     <div>
       <h1 className="text-mobileJudul md:text-webJudul font-bold pb-3">Tags</h1>
       <div className="flex flex-wrap gap-2 mt-2">
-        {tags.map((tag, index) => (
-          <div key={index} className="rounded-sm bg-blue text-white px-3 py-1 text-sm">
-            {tag}
+        {tags.map((data, index) => (
+          <div
+            key={index}
+            className="rounded-sm bg-blue text-white px-3 py-1 text-sm cursor-pointer"
+          >
+            {data}
           </div>
         ))}
       </div>

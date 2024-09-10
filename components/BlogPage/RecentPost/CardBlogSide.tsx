@@ -22,6 +22,10 @@ interface BlogProps {
   publishAt: Date | string;
   createdAt: Date;
   updatedAt: Date;
+  tags: {
+    id: number;
+    title: string;
+  }[];
 }
 
 interface CardBlogProps {
@@ -30,7 +34,7 @@ interface CardBlogProps {
 }
 
 const CardBlogSide = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
-  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, altImage, tagblog_title } = blogs;
+  const { id, title, body, image, user_title, publishAt, slug, excerpt, kategoriblog_title, altImage, tagblog_title, tags} = blogs;
 
   return (
     <div

@@ -33,7 +33,7 @@ const CardServices = ({ illustration, title, desc }: CardServiceProps) => {
             Start Project
           </Button>
         </Link>
-        <Link target="_blank" href='/portfolio'>
+        <Link target="_blank" href='/portofolio'>
           <Button className="md:h-[51px] bg-gray-2 md:w-[161px] w-[80px] h-[22px] text-[10px] md:text-webDesk text-white">
             View Portfolio
           </Button>

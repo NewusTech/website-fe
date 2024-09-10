@@ -50,7 +50,7 @@ const OurHistory = () => {
       <Image src={'/assets/icons/lineabout.svg'} width={220} height={2} alt="vector" className="hidden md:block pb-8" />
       <div className="w-[60%] md:w-full flex-col gap-4">
         {logos.map((logo: any, index: any) => (
-          <Image key={index} src={logo} width={111} height={40} alt="logo" className="pb-4" />
+          <Image key={index} src={logo} width={90} height={40} alt="logo" className="pb-4" />
         ))}
       </div>
     </div>

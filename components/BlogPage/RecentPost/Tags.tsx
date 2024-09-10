@@ -18,6 +18,10 @@ interface Blog {
   image: any;
   status: boolean;
   status_desc: string;
+  tags: {
+    id: number;
+    title: string;
+  }[];
   publishAt: Date | string;
   createdAt: Date;
   updatedAt: Date;
@@ -28,7 +32,9 @@ interface TagsDisplayProps {
 }
 
 const extractUniqueTags = (data: Blog[]): string[] => {
-  const allTags = data.map(blog => blog.tagblog_title);
+  // Menggabungkan semua tags dari setiap blog menjadi satu array
+  const allTags = data.flatMap(blog => blog.tags.map(tag => tag.title));
+  // Menghapus duplikat dengan Set dan mengubah kembali menjadi array
   return [...new Set(allTags)];
 };
 

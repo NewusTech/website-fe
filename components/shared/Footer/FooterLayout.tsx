@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import SocialLink from "../Social/SocialLink";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { sendMessage } from "@/app/api";
 
 const FooterLayout = ({ dataAbout, dataSocials }: any) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,10 +31,62 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
     }
   };
 
+  const [modalActionSend, setModalActionSend] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState({
+    status: true,
+    message: "Berhasil Mengirim Formulir",
+  });
+
+  const [dataMessage, setDataMessage] = useState({
+    name: "",
+    email: "",
+    sub_message: "",
+    message: "",
+  });
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleSendMessage = async (e: any) => {
+    e.preventDefault();
+    if (
+      dataMessage.email === "" ||
+      dataMessage.message === "" ||
+      dataMessage.name === "" ||
+      dataMessage.sub_message === ""
+    )
+      return;
+
+    // Payload
+
+    const payload = {
+      name: dataMessage.name,
+      lastname: "-",
+      email: dataMessage.email,
+      message: dataMessage.message,
+      subject: dataMessage.sub_message,
+      phoneNumber: "-",
+    };
+
+    // Action
+    try {
+      const response = await sendMessage(payload);
+      console.log(response);
+      setDataMessage({
+        name: "",
+        email: "",
+        sub_message: "",
+        message: "",
+      })
+      setStatus({status:true,message:"Berhasil Mengirim Formulir"})
+    } catch (error:any) {
+      console.error(error);
+      setStatus({status:false,message:error.message.toString()})
+    }
+    setModalActionSend(true);
+  };
   return (
     <footer className="bg-blue relative pb-12 pt-5 md:pt-2 md:pb-0">
       <div className="px-5 md:container mx-auto">
@@ -43,16 +97,52 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
                 Contact Form
               </h3>
             </div>
-            <form
-              action="mailto:newustechnology@gmail.com"
-              method="post"
-              encType="text/plain"
-            >
+            <form onSubmit={handleSendMessage}>
               <div className="mt-[10px] mx-[18px] mb-[16px] flex flex-col gap-[10px]">
-                <Input type="text" placeholder="Your Name" />
-                <Input type="text" placeholder="Email" />
-                <Input type="text" placeholder="Subject Message" />
-                <Textarea placeholder="Message" className="h-[100px]" />
+                <Input
+                  type="text"
+                  placeholder="Your Name"
+                  value={dataMessage.name}
+                  onChange={(value) =>
+                    setDataMessage({
+                      ...dataMessage,
+                      name: value.target.value,
+                    })
+                  }
+                />
+                <Input
+                  type="email"
+                  placeholder="user@gmail.com"
+                  value={dataMessage.email}
+                  onChange={(value) =>
+                    setDataMessage({
+                      ...dataMessage,
+                      email: value.target.value,
+                    })
+                  }
+                />
+                <Input
+                  type="text"
+                  placeholder="Subject Message"
+                  value={dataMessage.sub_message}
+                  onChange={(value) =>
+                    setDataMessage({
+                      ...dataMessage,
+                      sub_message: value.target.value,
+                    })
+                  }
+                />
+                <Textarea
+                  placeholder="Message"
+                  className="h-[100px]"
+                  value={dataMessage.message}
+                  onChange={(value) =>
+                    setDataMessage({
+                      ...dataMessage,
+                      message: value.target.value,
+                    })
+                  }
+                />
                 <div className="flex items-center justify-center">
                   <Button className="mt-4 bg-blue hover:bg-blue-2 rounded-[10px] py-2 px-12">
                     Send
@@ -290,6 +380,19 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
           </div>
         )}
       </div>
+      <Dialog open={modalActionSend} onOpenChange={setModalActionSend}>
+        <DialogContent className="w-[50%] max-h-[70%]">
+          <p className="text-2xl text-center w-full">
+           {status.message}
+          </p>
+          <Button
+            className="mt-4 bg-blue hover:bg-blue-2 rounded-[10px] py-2 px-12"
+            onClick={() => setModalActionSend(false)}
+          >
+            Oke
+          </Button>
+        </DialogContent>
+      </Dialog>
     </footer>
   );
 };

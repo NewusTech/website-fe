@@ -242,13 +242,13 @@ export default function RenderPortofolio({
               <div className="w-full h-[1px] bg-gray"></div>
             </div>
             <div className="flex flex-col gap-3 md:gap-5">
-              <div className="flex flex-row w-full">
+              <div className="flex flex-col md:flex-row w-full justify-center items-center gap-8 md:gap-0">
                 <div className="rounded-full w-[9rem] h-[9rem] flex flex-col justify-center items-center bg-[#E3EDFD]">
                   <p className="text-3xl font-semibold">5,0</p>
                   <p className="text-lg">Dari 5</p>
                 </div>
-                <div className="flex flex-col ml-auto gap-4 my-auto">
-                  <p className="flex flex-col font-semibold gap-2 text-center">
+                <div className="flex flex-col ml-0 md:ml-auto gap-4 my-auto">
+                  <div className="flex flex-col font-semibold gap-2 text-center">
                     Pelayanan
                     <div className="text-base text-yellow-500 w-full flex flex-row justify-center gap-2">
                       <FontAwesomeIcon icon={faStar} />
@@ -256,8 +256,8 @@ export default function RenderPortofolio({
                       <FontAwesomeIcon icon={faStar} />
                       <FontAwesomeIcon icon={faStar} />
                     </div>
-                  </p>
-                  <p className="flex flex-col font-semibold gap-2 text-center">
+                  </div>
+                  <div className="flex flex-col font-semibold gap-2 text-center">
                     Kecepatan membalas
                     <div className="text-base text-yellow-500 w-full flex flex-row justify-center gap-2">
                       <FontAwesomeIcon icon={faStar} />
@@ -265,10 +265,10 @@ export default function RenderPortofolio({
                       <FontAwesomeIcon icon={faStar} />
                       <FontAwesomeIcon icon={faStar} />
                     </div>
-                  </p>
+                  </div>
                 </div>
-                <div className="flex flex-col ml-20 mr-auto gap-4 my-auto">
-                  <p className="flex flex-col font-semibold gap-2 text-center">
+                <div className="flex flex-col ml-0 md:ml-20 mr-0 md:mr-auto gap-4 my-auto">
+                  <div className="flex flex-col font-semibold gap-2 text-center">
                     Value for money
                     <div className="text-base text-yellow-500 w-full flex flex-row justify-center gap-2">
                       <FontAwesomeIcon icon={faStar} />
@@ -276,8 +276,8 @@ export default function RenderPortofolio({
                       <FontAwesomeIcon icon={faStar} />
                       <FontAwesomeIcon icon={faStar} />
                     </div>
-                  </p>
-                  <p className="flex flex-col font-semibold gap-2 text-center">
+                  </div>
+                  <div className="flex flex-col font-semibold gap-2 text-center">
                     Keterampilan dan keahlian
                     <div className="text-base text-yellow-500 w-full flex flex-row justify-center gap-2">
                       <FontAwesomeIcon icon={faStar} />
@@ -285,21 +285,51 @@ export default function RenderPortofolio({
                       <FontAwesomeIcon icon={faStar} />
                       <FontAwesomeIcon icon={faStar} />
                     </div>
-                  </p>
+                  </div>
                 </div>
               </div>
               <div className="mt-4 bg-gray/20 rounded-md flex flex-col p-4">
-                <div className="flex flex-row w-full items-center">
-                  <FontAwesomeIcon icon={faCircleUser} className="text-[#4475E0] w-[62px] h-[62px]"/>
-                  <p className="my-auto flex flex-col gap-1 ml-6">Dila<span>03/09/2024</span></p>
-                  <p className="ml-auto"><FontAwesomeIcon icon={faStar} className="text-yellow-500"/> 5,0</p>
+                <div className="flex flex-col-reverse md:flex-row ">
+                  <div className="flex flex-row w-full items-center">
+                    <FontAwesomeIcon
+                      icon={faCircleUser}
+                      className="text-[#4475E0] w-[62px] h-[62px]"
+                    />
+                    <p className="my-auto flex flex-col gap-1 ml-6">
+                      Dila<span>03/09/2024</span>
+                    </p>
+                  </div>
+                  <p className="ml-auto flex flex-row items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      className="text-yellow-500"
+                    />{" "}
+                    5,0
+                  </p>
                 </div>
-                <p className="mt-2 text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis velit officiis nostrum error. Veniam ducimus quod, quia est ex qui incidunt consequatur aut voluptatum rerum quos ratione eum minus laudantium dolorem quaerat, dolor neque at nostrum omnis beatae. Eligendi harum magni assumenda mollitia laborum cupiditate, minus, vero molestias similique libero exercitationem temporibus quidem aperiam, repellendus reprehenderit optio quisquam deserunt quis autem ipsam provident. Eius sapiente facere illo ad soluta esse numquam repellendus iure, a aspernatur magni modi molestiae nobis, veniam consequuntur odio et veritatis asperiores quos delectus libero rem provident rerum perferendis? Debitis et qui eaque delectus officiis impedit vero, nostrum autem blanditiis magni sed perspiciatis inventore quidem cumque fugiat saepe aperiam doloremque voluptatum fugit numquam? Temporibus pariatur harum iure odit.</p>
+                <p className="mt-2 text-justify">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nobis velit officiis nostrum error. Veniam ducimus quod, quia
+                  est ex qui incidunt consequatur aut voluptatum rerum quos
+                  ratione eum minus laudantium dolorem quaerat, dolor neque at
+                  nostrum omnis beatae. Eligendi harum magni assumenda mollitia
+                  laborum cupiditate, minus, vero molestias similique libero
+                  exercitationem temporibus quidem aperiam, repellendus
+                  reprehenderit optio quisquam deserunt quis autem ipsam
+                  provident. Eius sapiente facere illo ad soluta esse numquam
+                  repellendus iure, a aspernatur magni modi molestiae nobis,
+                  veniam consequuntur odio et veritatis asperiores quos delectus
+                  libero rem provident rerum perferendis? Debitis et qui eaque
+                  delectus officiis impedit vero, nostrum autem blanditiis magni
+                  sed perspiciatis inventore quidem cumque fugiat saepe aperiam
+                  doloremque voluptatum fugit numquam? Temporibus pariatur harum
+                  iure odit.
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="w-[100%] py-5 mt-10 container flex flex-row bg-[#E3EDFD] justify-between">
+          <div className="w-[100%] py-5 mt-10 container flex flex-col sm:flex-row bg-[#E3EDFD] justify-center sm:justify-between items-center">
             <Image
               src="/assets/images/icon-park_protect.svg"
               height={90}
@@ -307,14 +337,13 @@ export default function RenderPortofolio({
               alt="newus protected"
             />
             <div className="flex flex-col ml-auto w-[90%]">
-              <p className="text-blue-smooth text-5xl font-medium">
+              <p className="text-blue-smooth text-xl md:text-5xl font-medium">
                 Uang Anda akan aman sampai pekerjaan disetujui{" "}
                 <span className="text-black">Layanan aman dan bebas repot</span>
               </p>
               <p
-                className="text-gray-2 text-3xl mt-4 flex flex-row cursor-pointer"
+                className="text-gray-2 text-lg md:text-3xl mt-1 md:mt-4 flex flex-row cursor-pointer"
                 onClick={() => {
-                  console.log("click");
                   setModalTnc(true);
                 }}
               >
@@ -328,7 +357,7 @@ export default function RenderPortofolio({
                 />
               </p>
               <Dialog onOpenChange={setModalTnc} open={modalTnc}>
-                <DialogContent className="w-[70%] overflow-y-auto">
+                <DialogContent className="w-[70%] max-h-[70%] overflow-y-auto">
                   <p className="text-xl font-semibold">Syarat & Ketentuan</p>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                   Cumque voluptas rem sunt ullam maxime, molestias veniam,

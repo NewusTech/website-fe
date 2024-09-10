@@ -29,3 +29,9 @@ export function formatRupiah(amount: string | number): string {
     currency: 'IDR',
   });
 }
+
+export function handleOnlyNumbers(input:string) {
+  // Gunakan regex untuk menghapus semua karakter yang bukan angka
+  const numbersOnly = input.replace(/\D/g, '');
+  return numbersOnly;
+}
