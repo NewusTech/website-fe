@@ -84,6 +84,7 @@ export default function TestiomoniStars() {
                 name={testimonial.name}
                 position={testimonial.title || "Head"}
                 company={testimonial.companyName}
+                createdAt={testimonial.createdAt}
               />
             ))
           ) : (

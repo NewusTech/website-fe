@@ -242,7 +242,7 @@ export default function RenderPortofolio({
               <div className="w-full h-[1px] bg-gray"></div>
             </div>
             <div className="flex flex-col gap-3 md:gap-5">
-              <div className="flex flex-col md:flex-row w-full justify-center items-center gap-8 md:gap-0">
+              {/* <div className="flex flex-col md:flex-row w-full justify-center items-center gap-8 md:gap-0">
                 <div className="rounded-full w-[9rem] h-[9rem] flex flex-col justify-center items-center bg-[#E3EDFD]">
                   <p className="text-3xl font-semibold">5,0</p>
                   <p className="text-lg">Dari 5</p>
@@ -287,7 +287,7 @@ export default function RenderPortofolio({
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="mt-4 bg-gray/20 rounded-md flex flex-col p-4">
                 <div className="flex flex-col-reverse md:flex-row ">
                   <div className="flex flex-row w-full items-center">

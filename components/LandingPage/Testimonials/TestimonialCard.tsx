@@ -1,5 +1,6 @@
 "use client"
 
+import { formattedDate } from "@/utils/blog";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -11,6 +12,7 @@ export default function TestimonialCard({
   name,
   position,
   company,
+  createdAt
 }: any) {
   return (
     <div className="flex flex-col gap-3 md:gap-5">
@@ -28,7 +30,7 @@ export default function TestimonialCard({
             <p className="my-auto flex flex-col gap-1 ml-6 justify-start items-start text-blue-smooth text-left">
               {company}{" "} | {" "} {name}
               <span className="text-orange-500 text-left">Jabatan : {position}</span>{" "}
-              <span className="text-gray-2">03/09/2024</span>
+              <span className="text-gray-2">{formattedDate(createdAt)}</span>
             </p>
           </div>
           <p className="ml-auto flex flex-row items-center gap-2 pb-4 md:pb-0">
