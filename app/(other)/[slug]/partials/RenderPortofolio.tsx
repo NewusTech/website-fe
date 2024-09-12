@@ -6,18 +6,22 @@ import iconWebsite from "@/public/assets/icons/icon-website.svg";
 import iconPlaystore from "@/public/assets/icons/play_store.svg";
 import ImageSlider from "@/components/shared/SliderImage";
 import CardSquarePorto from "@/components/Portfolio/CardSquarePorto";
-import { getProjectList } from "@/components/Fetching/Portfolio/port";
+import {
+  getProjectList,
+  responseGetPortofolio,
+} from "@/components/Fetching/Portfolio/port";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faStar } from "@fortawesome/free-solid-svg-icons";
+import { formattedDate } from "@/utils/blog";
 
 export default function RenderPortofolio({
   projectsDetail,
 }: {
-  projectsDetail: any;
+  projectsDetail: responseGetPortofolio;
 }) {
   const [projects, setProjects] = useState<any[]>([]);
   const [modalTnc, setModalTnc] = useState(false);
@@ -196,23 +200,23 @@ export default function RenderPortofolio({
               <div className="w-full h-[1px] bg-gray"></div>
             </div>
             <div className="flex gap-3 md:gap-5">
-              {projectsDetail?.TechnologyPortofolio && (
-                <div className="flex justify-center flex-col items-center gap-2">
+              {projectsDetail.techs.map((data) => (
+                <div
+                  key={data.TechnologyPortofolioId}
+                  className="flex justify-center flex-col items-center gap-2"
+                >
                   <Image
-                    src={
-                      projectsDetail?.TechnologyPortofolio.image ||
-                      "/assets/icons/react.png"
-                    }
+                    src={data.tech.image || "/assets/icons/react.png"}
                     height={60}
                     width={60}
                     alt="Icon"
                     className="w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
                   />
                   <h3 className="text-mobileDesk md:text-webSubjudul">
-                    {projectsDetail?.TechnologyPortofolio.title || "Title"}
+                    {data.tech.title || "Title"}
                   </h3>
                 </div>
-              )}
+              ))}
             </div>
           </div>
 
@@ -288,48 +292,41 @@ export default function RenderPortofolio({
                   </div>
                 </div>
               </div> */}
-              <div className="mt-4 bg-gray/20 rounded-md flex flex-col p-4">
-                <div className="flex flex-col-reverse md:flex-row ">
-                  <div className="flex flex-row w-full items-center">
-                    <FontAwesomeIcon
-                      icon={faCircleUser}
-                      className="text-[#4475E0] w-[62px] h-[62px]"
-                    />
-                    <p className="my-auto flex flex-col gap-1 ml-6">
-                      Dila<span>03/09/2024</span>
+              {projectsDetail.testimony && (
+                <div className="mt-4 bg-gray/20 rounded-md flex flex-col p-4">
+                  <div className="flex flex-col-reverse md:flex-row ">
+                    <div className="flex flex-row w-full items-center">
+                      <FontAwesomeIcon
+                        icon={faCircleUser}
+                        className="text-[#4475E0] w-[62px] h-[62px]"
+                      />
+                      <p className="my-auto flex flex-col gap-1 ml-6">
+                        {projectsDetail.nameTestimony}
+                        <span>
+                          {formattedDate(
+                            projectsDetail.dateTestimony ||
+                              projectsDetail.createdAt
+                          )}
+                        </span>
+                      </p>
+                    </div>
+                    <p className="ml-auto flex flex-row items-center gap-2">
+                      <FontAwesomeIcon
+                        icon={faStar}
+                        className="text-yellow-500"
+                      />{" "}
+                      5,0
                     </p>
                   </div>
-                  <p className="ml-auto flex flex-row items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faStar}
-                      className="text-yellow-500"
-                    />{" "}
-                    5,0
+                  <p className="mt-2 text-justify">
+                    {projectsDetail.testimony}
                   </p>
                 </div>
-                <p className="mt-2 text-justify">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Nobis velit officiis nostrum error. Veniam ducimus quod, quia
-                  est ex qui incidunt consequatur aut voluptatum rerum quos
-                  ratione eum minus laudantium dolorem quaerat, dolor neque at
-                  nostrum omnis beatae. Eligendi harum magni assumenda mollitia
-                  laborum cupiditate, minus, vero molestias similique libero
-                  exercitationem temporibus quidem aperiam, repellendus
-                  reprehenderit optio quisquam deserunt quis autem ipsam
-                  provident. Eius sapiente facere illo ad soluta esse numquam
-                  repellendus iure, a aspernatur magni modi molestiae nobis,
-                  veniam consequuntur odio et veritatis asperiores quos delectus
-                  libero rem provident rerum perferendis? Debitis et qui eaque
-                  delectus officiis impedit vero, nostrum autem blanditiis magni
-                  sed perspiciatis inventore quidem cumque fugiat saepe aperiam
-                  doloremque voluptatum fugit numquam? Temporibus pariatur harum
-                  iure odit.
-                </p>
-              </div>
+              )}
             </div>
           </div>
 
-          <div className="w-[100%] py-5 mt-10 container flex flex-col sm:flex-row bg-[#E3EDFD] justify-center sm:justify-between items-center">
+          {/* <div className="w-[100%] py-5 mt-10 container flex flex-col sm:flex-row bg-[#E3EDFD] justify-center sm:justify-between items-center">
             <Image
               src="/assets/images/icon-park_protect.svg"
               height={90}
@@ -395,7 +392,7 @@ export default function RenderPortofolio({
                 </DialogContent>
               </Dialog>
             </div>
-          </div>
+          </div> */}
 
           <div className="container pt-10 w-full pb-5 xl:pb-20">
             <div className="flex gap-3 items-center pb-5">
