@@ -50,7 +50,7 @@ const CardSquareProject = ({ projects }: any) => {
           {removeHTMLTags(body) ||
             "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Löremipsum astrobel sar direlig. Kronde est konfoni med kelig."}
         </p>
-        <Link target="_blank" href={`S/${slug}`}>
+        <Link target="_blank" href={`/${slug}`}>
           <Button
             size="sm"
             className="bg-blue md:py-6 md:mt-0 h-7 mt-2 rounded-[10px] w-full hover:bg-blue-2 text-[11px] md:text-webDesk text-white"

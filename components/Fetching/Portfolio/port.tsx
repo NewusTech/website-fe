@@ -56,3 +56,43 @@ export async function getProjectKategoriList() {
     return [];
   }
 }
+
+export type responseGetPortofolio = {
+  id: number;
+  title: string;
+  slug: string;
+  keyword: string;
+  excerpt: string;
+  body: string;
+  image: string;
+  altImage: string;
+  logo: string;
+  portfolioYear: string;
+  webLink: string ;
+  appsLink: string  ;
+  KategoriportofolioId: number;
+  TagportofolioId: number;
+  TechnologyPortofolioId: number;
+  closingDescription: string;
+  testimony: null | string;
+  nameTestimony: null | string;
+  dateTestimony: null | string;
+  createdAt: string;
+  updatedAt: string;
+  Kategoriportofolio: {
+    title: string;
+    createdAt: string;
+  };
+  tags: [];
+  techs: 
+    {
+      id: number;
+      PortofolioId: number;
+      TechnologyPortofolioId: number;
+      tech: {
+        title: string;
+        image: string;
+      };
+    }[],
+  galeri: [];
+};

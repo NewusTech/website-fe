@@ -85,7 +85,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
             {/* MD ketas */}
             <section className="hidden my-5 gap-[10px] md:grid md:grid-cols-3 md:flex-wrap md:flex-grow-0 xl:gap-5">
               {displayedBlogs.length > 0 ? (
-                displayedBlogs.reverse().map((blog: any, index: number) => ( //ganti nanti
+                displayedBlogs.map((blog: any, index: number) => ( //ganti nanti
                   <CardBlog key={index} blogs={blog} />
                 ))
               ) : (

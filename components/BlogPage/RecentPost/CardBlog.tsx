@@ -126,11 +126,11 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
           {removeHTMLTags(body) ||
             "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Terabel pov astrobel ?"}
         </p>
-        <div className="flex gap-1 pt-2 md:items-end">
+        <div className="flex flex-wrap gap-1 pt-2 md:items-end overflow-hidden">
           {tags.map((data) => (
             <div
               key={data.id}
-              className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1"
+              className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1 w-fit"
             >
               <p className="text-white md:text-webDesk text-mobileDesk">
                 {data.title}
