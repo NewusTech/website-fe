@@ -49,7 +49,7 @@ const TagsDisplay = ({ blogs }: TagsDisplayProps) => {
   return (
     <div>
       <h1 className="text-mobileJudul md:text-webJudul font-bold pb-3">Tags</h1>
-      <div className="flex flex-wrap gap-2 mt-2 overflow-y-scroll">
+      <div className="flex flex-wrap gap-2 mt-2">
         {tags.map((tag, index) => (
           <div key={index} className="rounded-sm bg-blue text-white px-3 py-1 text-sm">
             {tag}
