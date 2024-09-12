@@ -108,7 +108,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
                 ))}
               </section>
             </div>
-            <div className="block md:hidden bg-white p-5 rounded-md">
+            <div className="block md:hidden bg-white p-5 rounded-md overflow-y-scroll scrollbar-thin">
               <TagsDisplay blogs={blogs} />
             </div>
 
@@ -144,7 +144,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
                 ))}
               </section>
             </div>
-            <div className="hidden lg:block bg-white p-5 rounded-md xl:h-[300px] 2xl:h-[313px]">
+            <div className="hidden lg:block bg-white p-5 rounded-md xl:h-[300px] 2xl:h-[313px] overflow-y-scroll scrollbar-thin">
               <TagsDisplay blogs={blogs} />
             </div>
           </div>
