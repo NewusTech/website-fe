@@ -1,6 +1,6 @@
 "use client";
 
-import { sendMessage } from "@/app/api";
+import { sendMessage } from "@/api";
 import React, { useState } from "react";
 import { Dialog, DialogContent } from "../ui/dialog";
 import { Button } from "../ui/button";

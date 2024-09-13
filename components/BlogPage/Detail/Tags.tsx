@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 interface Blog {
@@ -53,12 +54,13 @@ const TagsDisplay = (props: TagsDisplayProps) => {
       <h1 className="text-mobileJudul md:text-webJudul font-bold pb-3">Tags</h1>
       <div className="flex flex-wrap gap-2 mt-2">
         {tags.map((data, index) => (
-          <div
+          <Link
             key={index}
+            href={`/blog?tag=${data}`}
             className="rounded-sm bg-blue text-white px-3 py-1 text-sm cursor-pointer"
           >
             {data}
-          </div>
+          </Link>
         ))}
       </div>
     </div>
