@@ -3,7 +3,7 @@ import { formattedDate } from "@/utils/blog";
 import Image from "next/image";
 import Link from "next/link";
 
-interface BlogProps {
+export type BlogProps = {
   id: number;
   title: string;
   slug: string;
@@ -27,7 +27,7 @@ interface BlogProps {
   publishAt: Date | string;
   createdAt: Date;
   updatedAt: Date;
-}
+};
 
 interface CardBlogProps {
   blogs?: BlogProps;
@@ -129,14 +129,13 @@ const CardBlog = ({ blogs = {} as BlogProps, type }: CardBlogProps) => {
         <div className="overflow-y-auto scrollbar-thin">
           <div className="flex flex-row gap-1 pt-2 md:items-end w-full justify-start min-w-0">
             {tags.map((data) => (
-              <div
+              <Link
                 key={data.id}
-                className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1 flex-none"
+                href={`/blog?tag=${data.title}`}
+                className="bg-[#480DEC] rounded-full px-[10px] py-[2px] md:py-1 flex-none text-white md:text-webDesk text-mobileDesk"
               >
-                <p className="text-white md:text-webDesk text-mobileDesk">
-                  {data.title}
-                </p>
-              </div>
+                {data.title}
+              </Link>
             ))}
           </div>
         </div>

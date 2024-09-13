@@ -8,7 +8,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import SocialLink from "../Social/SocialLink";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { sendMessage } from "@/app/api";
+import { sendMessage } from "@/api";
 
 const FooterLayout = ({ dataAbout, dataSocials }: any) => {
   const [isOpen, setIsOpen] = useState(false);
