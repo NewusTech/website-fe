@@ -11,9 +11,9 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
     <section className="hidden md:flex mt-5 xl:mt-5 2xl:mt-10 gap-3 2xl:gap-6">
       <div className="lg:w-1/2 xl:w-1/3 2xl:w-1/2">
         <div className="w-[558px] md:w-full h-[200px] rounded-[10px]">
-          <Link href={`/${blogs[blogs.length - 1]?.slug}`}>
+          <Link href={`/${blogs.slice(0,-1)[0]?.slug}`}>
             <Image
-              src={`${blogs[blogs.length - 1]?.image || "/assets/images/blog.jpg"}`}
+              src={`${blogs.slice(0,-1)[0]?.image || "/assets/images/blog.jpg"}`}
               loading="lazy"
               alt="blog"
               width={558}
@@ -23,17 +23,17 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
           </Link>
         </div>
         <div className="flex items-center gap-1.5 text-gray-2 mt-4">
-          <h5 className="md:text-webDesk text-mobileDesk capitalize">{blogs[blogs.length - 1]?.user_title}</h5>
+          <h5 className="md:text-webDesk text-mobileDesk capitalize">{blogs.slice(0,-1)[0]?.user_title}</h5>
           <div className="rounded-full w-[3px] h-[3px] md:w-[5px] md:h-[5px] bg-gray-2"></div>
-          <h5 className="md:text-webDesk text-mobileDesk">{formattedDate(blogs[blogs.length - 1]?.publishAt)}</h5>
+          <h5 className="md:text-webDesk text-mobileDesk">{formattedDate(blogs.slice(0,-1)[0]?.publishAt)}</h5>
         </div>
         <div className="flex items-start md:gap-2 my-1 md:my-1 justify-between">
           <h3 className="font-medium text-dark md:text-webJudul text-mobileJudul md:w-[491px] line-clamp-2">
-            <Link href={`/${blogs[blogs.length - 1]?.slug}`}>
-              {blogs[blogs.length - 1]?.title}
+            <Link href={`/${blogs.slice(0,-1)[0]?.slug}`}>
+              {blogs.slice(0,-1)[0]?.title}
             </Link>
           </h3>
-          <Link href={`/${blogs[blogs.length - 1]?.slug}`}>
+          <Link href={`/${blogs.slice(0,-1)[0]?.slug}`}>
             <Image
               src="/assets/icons/arrow-up-right-black.svg"
               alt="arrow up"
@@ -45,8 +45,8 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
         </div>
         <div className="relative">
           <p className="md:text-webDesk text-mobileDesk text-gray w-[182px] md:w-full line-clamp-2">
-            {removeHTMLTags(blogs[blogs.length - 1]?.body)}
-            <Link href={`/${blogs[blogs.length - 1]?.slug}`} className="absolute bottom-0 right-0 hover:underline md:text-webDesk text-mobileDesk bg-[#F4F4F4] rounded-sm px-1">
+            {removeHTMLTags(blogs.slice(0,-1)[0]?.body)}
+            <Link href={`/${blogs.slice(0,-1)[0]?.slug}`} className="absolute bottom-0 right-0 hover:underline md:text-webDesk text-mobileDesk bg-[#F4F4F4] rounded-sm px-1">
               Selengkapnya
             </Link>
           </p>
@@ -57,7 +57,7 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
         {blogs.length === 0 ? (
           <CardDummy />
         ) : (
-          displayedBlogs?.slice(-5, -1).reverse().map((blog: any, index: number) => (
+          displayedBlogs?.reverse().slice(-5, -1).map((blog: any, index: number) => (
             <CardBlog2 key={index} blogs={blog} type="landing" />
           ))
         )}
@@ -67,7 +67,7 @@ const HeaderBlog = ({ blogs, displayedBlogs }: any) => {
         {blogs.length === 0 ? (
           <CardDummy />
         ) : (
-          displayedBlogs?.slice(-3).map((blog: any, index: number) => (
+          displayedBlogs?.reverse().slice(-3).map((blog: any, index: number) => (
             <CardBlog2 key={index} blogs={blog} type="landing" />
           ))
         )}

@@ -68,8 +68,8 @@ export type responseGetPortofolio = {
   altImage: string;
   logo: string;
   portfolioYear: string;
-  webLink: string ;
-  appsLink: string  ;
+  webLink: string;
+  appsLink: string;
   KategoriportofolioId: number;
   TagportofolioId: number;
   TechnologyPortofolioId: number;
@@ -83,16 +83,15 @@ export type responseGetPortofolio = {
     title: string;
     createdAt: string;
   };
-  tags: [];
-  techs: 
-    {
-      id: number;
-      PortofolioId: number;
-      TechnologyPortofolioId: number;
-      tech: {
-        title: string;
-        image: string;
-      };
-    }[],
+  tags: { id: string; title: string }[];
+  techs: {
+    id: number;
+    PortofolioId: number;
+    TechnologyPortofolioId: number;
+    tech: {
+      title: string;
+      image: string;
+    };
+  }[];
   galeri: [];
 };

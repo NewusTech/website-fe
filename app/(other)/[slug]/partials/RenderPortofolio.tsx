@@ -394,6 +394,21 @@ export default function RenderPortofolio({
             </div>
           </div> */}
 
+            <div className="flex flex-wrap gap-2 pt-5 items-center container">
+              <h1 className="font-semibold text-mobileJudul  md:text-webJudul mr-2">
+                Tags :
+              </h1>
+              {projectsDetail.tags.map((data) => (
+                <Link
+                  key={data.id}
+                  href={`/portofolio?tag=${data.title}`}
+                  className="rounded-sm border border-gray shadow px-3 py-1 text-sm cursor-pointer"
+                >
+                  {data.title}
+                </Link>
+              ))}
+            </div>
+
           <div className="container pt-10 w-full pb-5 xl:pb-20">
             <div className="flex gap-3 items-center pb-5">
               <h1 className="text-mobileJudul md:text-webJudul font-[500] text-nowrap">

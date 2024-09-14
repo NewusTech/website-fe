@@ -14,8 +14,6 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
 
   const tag = searchParams.get("tag");
 
-  console.log({tag})
-
   const [filter, setFilter] = useState<string>("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -83,7 +81,7 @@ export default function RecentPost({ blogs, categories, recomendations }: any) {
               Recent Blog Post
             </h1>
             {displayedBlogsMobile.length > 0 && (
-              <HeaderBlog blogs={blogs} displayedBlogs={filteredBlogs} />
+              <HeaderBlog blogs={blogs} displayedBlogs={blogs} />
             )}
           </section>
         )}
