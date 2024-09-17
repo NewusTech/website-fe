@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
@@ -61,11 +61,14 @@ const CarouselHeader = (props: CarouselHeaderProps) => {
           <CarouselItem key={item.id}>
             <div className="h-48 md:min-h-[600px] lg:min-h-screen">
               <Image
-                className="object-cover h-48 md:min-h-[600px] lg:min-h-screen"
+                className="object-cover w-full h-full"
                 src={item.image}
                 alt="banner"
-                width={1450}
-                height={600}
+                width={854}
+                height={480}
+                quality={60}
+                placeholder="blur"
+                blurDataURL="URL"
                 loading="lazy"
               />
             </div>

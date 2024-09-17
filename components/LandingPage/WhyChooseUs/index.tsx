@@ -2,7 +2,7 @@
 import { chooseUs } from "@/constants";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faReact, faNodeJs, faFigma, faJs, faGitAlt, faGolang } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faReact, faNodeJs, faFigma, faJs, faGolang } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faCode } from '@fortawesome/free-solid-svg-icons';
 import Services from "./ServiceCard";
 
@@ -20,13 +20,6 @@ const skills = [
   { name: "Go Lang", icon: faGolang },
   { name: "Visual Basic", icon: faCode },
 ];
-
-interface WhyChooseUsProps {
-  id: number;
-  name: string;
-  logo: string;
-  desc: string;
-}
 
 const WhyChooseUs = () => {
   return (
@@ -50,9 +43,10 @@ const WhyChooseUs = () => {
           <Image
             alt="Background"
             src="/assets/images/whysnewus.jpg"
-            width={1000}
-            height={544}
+            width={854}
+            height={480}
             className="rounded-xl h-full object-cover"
+            loading="lazy"
           />
           <div className="absolute bottom-3 left-3 bg-white inline-flex p-3 rounded-md items-center z-20">
             <Image
@@ -89,7 +83,7 @@ const WhyChooseUs = () => {
               ) : (
                 <FontAwesomeIcon icon={skill.icon} className="w-7 h-7 md:h-12 md:w-12 mb-2" />
               )}
-              <h3 className="md:text-webDesk text-mobileDesk font-semibold">{skill.name}</h3>
+              <span className="md:text-webDesk text-mobileDesk font-semibold">{skill.name}</span>
             </div>
           ))}
         </div>

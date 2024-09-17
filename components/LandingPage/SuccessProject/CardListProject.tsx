@@ -27,8 +27,8 @@ const CardListProject = ({ projects }: any) => {
           <Image
             src={image || `/assets/images/placeholder-image (2).jpg`}
             alt={altImage || "image card list"}
-            width={1000}
-            height={1000}
+            width={854}
+            height={480}
             loading="lazy"
             className="rounded-l-[10px] h-full w-full object-cover xl:object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
           />
@@ -36,8 +36,8 @@ const CardListProject = ({ projects }: any) => {
             <Image
               src={logo || `/assets/images/placeholder-logo.jpg`}
               alt="Logo"
-              width={1000}
-              height={1000}
+              width={854}
+              height={480}
               loading="lazy"
               className="w-[30px] h-[30px] md:w-[50px] md:h-[50px] object-contain"
             />

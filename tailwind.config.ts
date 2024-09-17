@@ -139,7 +139,7 @@ const config = {
       fontSize: {
         mobileJudul: "14px",
         mobileSubjudul: "12px",
-        mobileDesk: "11px",
+        mobileDesk: "12px",
         webJudul: "16px",
         webSubjudul: "14px",
         webDesk: "12px",

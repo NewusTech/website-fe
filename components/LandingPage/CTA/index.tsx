@@ -10,9 +10,10 @@ export default async function CTA() {
             <Image
               src={"/assets/images/bgcta.jpeg"}
               alt="Background"
-              width={1000}
-              height={1000}
+              width={854}
+              height={480}
               loading="lazy"
+              quality={60}
               className="h-[200px] md:h-[350px] xl:h-[430px] object-cover"
             />
           </div>
@@ -20,8 +21,9 @@ export default async function CTA() {
             <Image
               src={"/assets/images/bgcta.jpeg"}
               alt="Background"
-              width={1000}
-              height={1000}
+              width={854}
+              height={480}
+              quality={60}
               className="w-full h-[150px] sm:h-[300px] md:h-[350px] xl:h-[430px] object-cover"
               loading="lazy"
             />

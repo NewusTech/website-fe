@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import NavItem from "./NavItem";
 import { bannerType } from "./RightSide";
+import { navItems } from "@/constants";
 
 const DropdownMenu = ({
   data,
@@ -22,26 +23,16 @@ const DropdownMenu = ({
     setOpenDropdown(!openDropdown);
   };
 
-  // Data untuk menu navigasi
-  const navItems = [
-    { path: "/service", label: "Service" },
-    { path: "/portofolio", label: "Portofolio" },
-    { path: "/blog", label: "Blog" },
-    { path: "/about", label: "About" },
-    { path: "/team", label: "Team" },
-    { path: "/contact", label: "Contact" },
-    { path: "/career", label: "Career" },
-  ];
-
   return (
     <>
       <div className="flex items-center justify-between gap-6 w-full">
         <Image
           src={whiteLogo}
           alt="NEWUS"
-          width={1000}
-          height={1000}
+          width={600}
+          height={600}
           className="object-cover w-[200px] h-[50px] 2xl:w-[206px] 2xl:h-[56px]"
+          loading="lazy"
         />
         <Image
           className="cursor-pointer flex items-center justify-center"
@@ -102,7 +93,7 @@ const DropdownMenu = ({
         >
           {itemBanner?.metaDesc}
         </p>
-        <Button className="xl:py-7 py-5 px-5 xl:px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300">
+        <Button className="xl:py-7 py-5 px-5 xl:px-8 bg-tangerine hover:bg-tangerine-2 transition-colors duration-300" aria-label="button">
           <Link
             href="/contact"
             className="flex items-center justify-center gap-2"

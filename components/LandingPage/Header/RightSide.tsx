@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import CarouselHeader from "@/components/LandingPage/Header/CarouselHeader";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import DropdownMenu from "@/components/LandingPage/Header/DropdownMenu";
 import NavItem from "./NavItem";
+import { navItems } from "@/constants";
 
 export type bannerType = {
   id: number;
@@ -16,51 +17,21 @@ export type bannerType = {
   image: string;
 };
 
-const RightSide = ({ aboutCompany }: any) => {
+type RightSideProps = {
+  aboutCompany: any;
+  bannerData: bannerType[];
+};
+
+const RightSide = ({ aboutCompany, bannerData }: RightSideProps) => {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const [bannerData, setBannerData] = useState<bannerType[]>([]);
   // State to hold the index of the currently active slide
   const [activeIndex, setActiveIndex] = useState(0);
   const data = aboutCompany?.[0];
-  const whiteLogo = data?.siteLogo || "/assets/icons/newus-light.svg";
   const BlackLogo = data?.siteLogo || "/assets/icons/logo-mobile.svg";
 
   const handleDropdown = () => {
     setOpenDropdown(!openDropdown);
   };
-
-  const getBanner = async () => {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/admin/banner/get`,
-      {
-        cache: "no-store",
-      }
-    );
-    if (!response.ok) {
-      throw new Error("Failed to fetch project list");
-    }
-    const data = await response.json();
-    console.log(data.data)
-    setBannerData(data.data);
-    try {
-    } catch (error) {
-      console.error("Gagal mengambil Banner");
-    }
-  };
-
-  useEffect(() => {
-    getBanner();
-  }, []);
-
-  const navItems = [
-    { path: "/service", label: "Service" },
-    { path: "/portofolio", label: "Portofolio" },
-    { path: "/blog", label: "Blog" },
-    { path: "/about", label: "About" },
-    { path: "/team", label: "Team" },
-    { path: "/contact", label: "Contact" },
-    { path: "/career", label: "Career" },
-  ];
 
   return (
     <header>
@@ -70,9 +41,10 @@ const RightSide = ({ aboutCompany }: any) => {
             <Image
               src={BlackLogo}
               alt="Newus Technology : Software Development Indonesia"
-              width={2000}
-              height={2000}
+              width={900}
+              height={900}
               className="object-cover w-[144px] h-[40px]"
+              loading="lazy"
             />
           </Link>
           <Image

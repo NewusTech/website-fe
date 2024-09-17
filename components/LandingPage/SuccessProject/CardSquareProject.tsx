@@ -26,8 +26,8 @@ const CardSquareProject = ({ projects }: any) => {
         <Image
           src={image || `/assets/images/placeholder-image (2).jpg`}
           alt={altImage || "image card list"}
-          width={1000}
-          height={1000}
+          width={854}
+          height={480}
           loading="lazy"
           className="w-full h-[120px] md:h-[273px] object-cover"
         />
@@ -35,8 +35,8 @@ const CardSquareProject = ({ projects }: any) => {
           <Image
             src={logo || `/assets/images/placeholder-logo.jpg`}
             alt="Logo"
-            width={1000}
-            height={1000}
+            width={854}
+            height={480}
             loading="lazy"
             className="w-[35px] h-[35px] md:w-[50px] md:h-[50px] object-contain"
           />
