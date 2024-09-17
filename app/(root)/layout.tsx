@@ -1,7 +1,12 @@
+import { bannerLandingQuery } from "@/api";
 import { getAboutCompany } from "@/components/Fetching/About/about";
-import RightSide from "@/components/LandingPage/Header/RightSide";
 import Footer from "@/components/shared/Footer";
-export const dynamic = 'force-dynamic';
+import dynamicComponent from "next/dynamic";
+const RightSide = dynamicComponent(
+  () => import("@/components/LandingPage/Header/RightSide")
+);
+
+export const dynamic = "force-dynamic";
 
 export default async function RootLayout({
   children,
@@ -9,9 +14,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const aboutCompany = await getAboutCompany();
+  const bannerData = await bannerLandingQuery();
   return (
     <div className="flex h-screen flex-col">
-      <RightSide aboutCompany={aboutCompany} />
+      <RightSide aboutCompany={aboutCompany} bannerData={bannerData} />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>

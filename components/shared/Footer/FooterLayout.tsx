@@ -336,9 +336,9 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
             </span>
             <Image
               src="/assets/icons/whatsapp-icon.svg"
-              alt="Contact Us"
-              width={1000}
-              height={1000}
+              alt="icon-wa"
+              width={300}
+              height={300}
               className="w-[16px] h-[16px] md:w-[20px] md:h-[20px] object-contain"
             />
           </button>
@@ -349,8 +349,8 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
               <Image
                 src="/assets/icons/logo-2.svg"
                 alt="Devi"
-                width={1000}
-                height={1000}
+                width={300}
+                height={300}
                 className="w-[16px] h-[16px] lg:w-[20px] lg:h-[20px] object-contain"
               />
               <Link
@@ -365,8 +365,8 @@ const FooterLayout = ({ dataAbout, dataSocials }: any) => {
               <Image
                 src="/assets/images/antoni.svg"
                 alt="Pasha"
-                width={1000}
-                height={1000}
+                width={300}
+                height={300}
                 className="w-[16px] h-[16px] lg:w-[20px] lg:h-[20px] object-contain"
               />
               <Link

@@ -8,28 +8,6 @@ import ListIcon from "@/public/assets/icons/ListIcon";
 import GridIcon from "@/public/assets/icons/GridIcon";
 import CardBlogSquare from "./CardBlogSquare";
 import { removeHTMLTags } from "@/lib/utils";
-export const dynamic = 'force-dynamic';
-
-interface BlogProps {
-  id: number,
-  title: string;
-  slug: string,
-  keyword: string,
-  excerpt: string,
-  body: string,
-  kategoriblog_id: number,
-  kategoriblog_title: string,
-  tagblog_id: number,
-  tagblog_title: string,
-  user_id: number,
-  user_title: string,
-  image: any,
-  status: boolean,
-  status_desc: string,
-  publishAt: Date | string,
-  createdAt: Date;
-  updatedAt: Date;
-}
 
 export default async function Blog() {
   const blogList = await getBlogSelected();
@@ -40,7 +18,7 @@ export default async function Blog() {
       <div className="bg-[#14141F] md:bg-[#14141F] py-6 md:py-10">
         <div className="px-5 md:container md:mx-auto">
           <div className="flex flex-col items-center md:py-1">
-            <h4 className="text-mobileJudul md:text-[20px] font-semibold text-tangerine">Blog</h4>
+            <h3 className="text-mobileJudul md:text-[20px] font-semibold text-tangerine">Blog</h3>
           </div>
           <Tabs defaultValue="list" className="min-w-screen">
             <TabsList className="hidden md:flex justify-end md:mt-5">
@@ -67,8 +45,8 @@ export default async function Blog() {
                     data-aos="zoom-in"
                     src={lastBlog?.image || '/assets/images/blog.jpg'}
                     alt={lastBlog?.altImage || 'logo'}
-                    width={690}
-                    height={430}
+                    width={854}
+                    height={480}
                     className="rounded-xl w-full h-[300px] lg:h-[300px] xl:h-[400px] bg-cover object-cover"
                   />
                 </div>

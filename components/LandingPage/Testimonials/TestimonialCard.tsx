@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { formattedDate } from "@/utils/blog";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
@@ -12,10 +12,14 @@ export default function TestimonialCard({
   name,
   position,
   company,
-  createdAt
+  createdAt,
 }: any) {
   return (
-    <div className="flex flex-col gap-3 md:gap-5">
+    <div
+      data-aos="fade-up"
+      data-aos-duration="500"
+      className="flex flex-col gap-3 md:gap-5"
+    >
       <div className="mt-4 bg-gray/20 rounded-md flex flex-col p-4">
         <div className="flex flex-col-reverse md:flex-row ">
           <div className="flex flex-row w-full items-center">
@@ -28,8 +32,10 @@ export default function TestimonialCard({
               className="rounded-full w-[80px] h-[80px] object-cover"
             />
             <p className="my-auto flex flex-col gap-1 ml-6 justify-start items-start text-blue-smooth text-left">
-              {company}{" "} | {" "} {name}
-              <span className="text-orange-500 text-left">Jabatan : {position}</span>{" "}
+              {company} | {name}
+              <span className="text-orange-500 text-left">
+                Jabatan : {position}
+              </span>{" "}
               <span className="text-gray-2">{formattedDate(createdAt)}</span>
             </p>
           </div>

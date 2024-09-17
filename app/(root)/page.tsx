@@ -1,19 +1,28 @@
 import "aos/dist/aos.css";
 import "../../lib/fa";
 // import { Suspense } from 'react'
-import OurClient from "../../components/LandingPage/OurClient";
 import SuccessProject from "../../components/LandingPage/SuccessProject";
 import OurService from "../../components/LandingPage/OurService";
-import Blog from "../../components/LandingPage/Blog";
-import Testiomonials from "@/components/LandingPage/Testimonials/index";
 import Certifications from "@/components/LandingPage/Certifications";
-import AboutLanding from "@/components/LandingPage/About";
 import CTA from "@/components/LandingPage/CTA";
 import WhyChooseUs from "@/components/LandingPage/WhyChooseUs/index";
 // import LoadingScreen from "@/components/shared/Loading";
 import { getSeoPages } from "@/components/Fetching/SEO";
 import { Metadata } from "next";
 import { BASE_URL } from "@/constants/constants";
+import dynamicComponent from "next/dynamic";
+// dynamic import
+const OurClient = dynamicComponent(
+  () => import("../../components/LandingPage/OurClient")
+);
+const AboutLanding = dynamicComponent(
+  () => import("@/components/LandingPage/About")
+);
+const Blog = dynamicComponent(() => import("@/components/LandingPage/Blog"));
+const Testiomonials = dynamicComponent(
+  () => import("@/components/LandingPage/Testimonials")
+);
+
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -54,7 +63,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default function Home() {
+export default async function Home() {
   return (
     <section className="overflow-hidden">
       {/* <Suspense fallback={<LoadingScreen />}> */}

@@ -1,21 +1,10 @@
-"use client";
-
-import { getTestimony } from "@/components/Fetching/About/about";
 import TestimonialCard from "./TestimonialCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
-export const dynamic = "force-dynamic";
+import { getTestimony } from "@/components/Fetching/About/about";
 
-export default function TestiomoniStars() {
-  const [dataTestimony, setDataTestimony] = useState<any[]>([]);
-
-  const getTestimonyData = async () => {
-    const response = await getTestimony();
-    setDataTestimony(response);
-  };
-
-  const dummyImage = "/assets/images/antoni.svg";
+export default async function TestiomoniStars() {
+  const dataTestimony = await getTestimony();
 
   const data = [
     {
@@ -40,10 +29,6 @@ export default function TestiomoniStars() {
     },
   ];
 
-  useEffect(() => {
-    getTestimonyData();
-  }, []);
-
   return (
     <div className="text-center md:p-8 2xl:container mx-auto bg-gray-100 pb-6 pt-5">
       <div className="flex justify-start items-start gap-3 md:gap-5 px-5 md:px-0">
@@ -53,7 +38,7 @@ export default function TestiomoniStars() {
       </div>
       <div>
         <div className="flex flex-col md:flex-row w-full justify-center items-center gap-8 md:gap-0 px-4 md:px-0">
-          <div className="rounded-full w-[9rem] h-[9rem] flex flex-col justify-center items-center bg-[#E3EDFD]">
+          <div className="rounded-full w-[9rem] h-[9rem] flex flex-col justify-center items-center bg-[#E3EDFD] mr-4">
             <p className="text-3xl font-semibold">5,0</p>
             <p className="text-lg">Dari 5</p>
           </div>
@@ -74,7 +59,7 @@ export default function TestiomoniStars() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-2 px-4 md:px-0">
+        <div className="flex flex-col gap-2 px-4 mt-4 md:px-0">
           {dataTestimony?.length > 0 ? (
             dataTestimony?.map((testimonial: any, index: number) => (
               <TestimonialCard

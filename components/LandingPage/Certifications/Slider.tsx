@@ -56,9 +56,10 @@ const CarouselImage = () => {
                     className="object-contain h-full rounded shadow-md shadow-white"
                     src={src.image}
                     alt={`banner-${index}`}
-                    width={1450}
-                    height={1000}
+                    width={854}
+                    height={480}
                     loading="lazy"
+                    quality={60}
                   />
                 </div>
               </div>

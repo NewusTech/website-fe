@@ -118,6 +118,7 @@ const TabsProject: React.FC<TabsProjectProps> = ({ portfolios, categories }) => 
                 value={searchTerm}
                 onChange={handleInputChange}
                 className="bg-white border border-dark border-r-0 rounded-r-none"
+                aria-label="search-project"
               />
               <div className="border border-l-0 border-dark -ml-4 bg-white flex items-center justify-center rounded-l-0 rounded-r-[6px]">
                 <Image

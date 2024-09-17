@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { removeHTMLTags } from "@/lib/utils";
-import DOMPurify from 'dompurify';
 import Image from "next/image";
 import PropTypes from 'prop-types';
 

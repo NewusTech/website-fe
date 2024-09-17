@@ -1,8 +1,7 @@
-import CarouselImage from "./Slider";
-export const dynamic = 'force-dynamic';
+import dynamic from "next/dynamic";
+const CarouselImage = dynamic(() => import("./Slider"));
 
 export default async function Certifications() {
-
   return (
     <div className="bg-[#010911]">
       <div className="text-center p-5 md:px-8 2xl:container mx-auto md:pb-10">
@@ -10,10 +9,12 @@ export default async function Certifications() {
           <h2 className="font-bold capitalize text-mobileJudul md:text-[20px] text-nowrap text-white">
             Certificate
           </h2>
-          <h3 className="text-mobileDesk md:text-webSubjudul text-white">Newus memiliki sertifikat berusaha dibidang piranti lunak</h3>
+          <h3 className="text-mobileDesk md:text-webSubjudul text-white">
+            Newus memiliki sertifikat berusaha dibidang piranti lunak
+          </h3>
         </div>
         <CarouselImage />
       </div>
-    </div >
+    </div>
   );
 }

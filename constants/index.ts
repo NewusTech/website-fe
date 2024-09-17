@@ -223,3 +223,13 @@ export const teamImage = [
     image: "/assets/images/dummy-team/12.svg",
   },
 ];
+
+export const navItems = [
+  { path: "/service", label: "Service" },
+  { path: "/portofolio", label: "Portofolio" },
+  { path: "/blog", label: "Blog" },
+  { path: "/about", label: "About" },
+  { path: "/team", label: "Team" },
+  { path: "/contact", label: "Contact" },
+  { path: "/career", label: "Career" },
+];
