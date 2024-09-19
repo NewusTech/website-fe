@@ -11,6 +11,7 @@ import { getSeoPages } from "@/components/Fetching/SEO";
 import { Metadata } from "next";
 import { BASE_URL } from "@/constants/constants";
 import dynamicComponent from "next/dynamic";
+import { getTestimony } from "@/components/Fetching/About/about";
 // dynamic import
 const OurClient = dynamicComponent(
   () => import("../../components/LandingPage/OurClient")
@@ -20,7 +21,10 @@ const AboutLanding = dynamicComponent(
 );
 const Blog = dynamicComponent(() => import("@/components/LandingPage/Blog"));
 const Testiomonials = dynamicComponent(
-  () => import("@/components/LandingPage/Testimonials")
+  () => import("@/components/LandingPage/Testimonials"),
+  {
+    ssr: false,
+  }
 );
 
 export const dynamic = "force-dynamic";
@@ -64,6 +68,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
+  const dataTestimony = await getTestimony();
+
   return (
     <section className="overflow-hidden">
       {/* <Suspense fallback={<LoadingScreen />}> */}
@@ -73,7 +79,7 @@ export default async function Home() {
       <OurService />
       <WhyChooseUs />
       <Blog />
-      <Testiomonials />
+      <Testiomonials dataTestimony={dataTestimony} />
       <Certifications />
       <CTA />
       {/* </Suspense> */}

@@ -12,8 +12,6 @@ import {
 } from "@/components/Fetching/Portfolio/port";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser, faStar } from "@fortawesome/free-solid-svg-icons";
 import { formattedDate } from "@/utils/blog";
@@ -45,15 +43,16 @@ export default function RenderPortofolio({
         <header className="w-full z-10 relative">
           <div className="xl:min-w-[1350px] md:min-h-[75px]">
             <Image
-              src={image || "/assets/images/blog.jpg"}
+              src={projectsDetail.image || image}
               alt="Detail Porto header"
               width={1350}
               height={75}
-              className={`w-full h-full md:h-[50vh] lg:h-[90vh] xl:h-[85vh] 2xl:h-[100vh] object-cover`}
+              className={`w-full h-full md:h-[50vh] lg:h-[90vh] xl:h-[85vh] 2xl:h-[100vh] object-cover brightness-50`}
+              loading="lazy"
             />
           </div>
-          <div className="-mt-[190px] px-[10px] md:px-5 xl:px-10 xl:mx-auto md:-mt-[300px] lg:-mt-[330px] xl:-mt-[400px] 2xl:-mt-[400px] text-white 2xl:max-w-7xl">
-            <div className="max-w-[500px] pt-5 2xl:p-0">
+          <div className="text-white absolute w-full bottom-4 md:bottom-10 2xl:bottom-[8rem]">
+            <div className="max-w-[500px] pt-5 2xl:p-0 ml-4 md:ml-[5rem] 2xl:ml-[24rem]">
               <h1 className="text-mobileJudul md:text-webJudul font-bold pb-2 md:pb-5 xl:pb-[50px] uppercase">
                 {truncate(projectsDetail?.title, 50) || "Project Name"}
               </h1>
@@ -199,19 +198,21 @@ export default function RenderPortofolio({
               </h1>
               <div className="w-full h-[1px] bg-gray"></div>
             </div>
-            <div className="flex gap-3 md:gap-5">
+            <div className="flex flex-wrap gap-3 md:gap-5">
               {projectsDetail.techs.map((data) => (
                 <div
                   key={data.TechnologyPortofolioId}
                   className="flex justify-center flex-col items-center gap-2"
                 >
-                  <Image
-                    src={data.tech.image || "/assets/icons/react.png"}
-                    height={60}
-                    width={60}
-                    alt="Icon"
-                    className="w-[30px] h-[30px] md:w-[60px] md:h-[60px]"
-                  />
+                  <div className="w-[30px] h-[30px] md:w-[60px] md:h-[60px]">
+                    <Image
+                      src={data.tech.image || "/assets/icons/react.png"}
+                      height={60}
+                      width={60}
+                      alt="Icon"
+                      className="w-full object-cover bg-center"
+                    />
+                  </div>
                   <h3 className="text-mobileDesk md:text-webSubjudul">
                     {data.tech.title || "Title"}
                   </h3>
@@ -394,20 +395,20 @@ export default function RenderPortofolio({
             </div>
           </div> */}
 
-            <div className="flex flex-wrap gap-2 pt-5 items-center container">
-              <h1 className="font-semibold text-mobileJudul  md:text-webJudul mr-2">
-                Tags :
-              </h1>
-              {projectsDetail.tags.map((data) => (
-                <Link
-                  key={data.id}
-                  href={`/portofolio?tag=${data.title}`}
-                  className="rounded-sm border border-gray shadow px-3 py-1 text-sm cursor-pointer"
-                >
-                  {data.title}
-                </Link>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-2 pt-5 items-center container">
+            <h1 className="font-semibold text-mobileJudul  md:text-webJudul mr-2">
+              Tags :
+            </h1>
+            {projectsDetail.tags.map((data) => (
+              <Link
+                key={data.id}
+                href={`/portofolio?tag=${data.title}`}
+                className="rounded-sm border border-gray shadow px-3 py-1 text-sm cursor-pointer"
+              >
+                {data.title}
+              </Link>
+            ))}
+          </div>
 
           <div className="container pt-10 w-full pb-5 xl:pb-20">
             <div className="flex gap-3 items-center pb-5">
