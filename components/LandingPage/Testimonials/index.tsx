@@ -1,11 +1,17 @@
+"use client";
+
 import TestimonialCard from "./TestimonialCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { getTestimony } from "@/components/Fetching/About/about";
+import { useState } from "react";
+import Pages from "@/components/shared/Pages";
 
-export default async function TestiomoniStars() {
-  const dataTestimony = await getTestimony();
-
+type TestiomoniStarsProps = {
+  dataTestimony: any[];
+};
+export default function TestiomoniStars({
+  dataTestimony,
+}: TestiomoniStarsProps) {
   const data = [
     {
       title: "Kecepatan respons",
@@ -28,6 +34,14 @@ export default async function TestiomoniStars() {
       rating: 5,
     },
   ];
+  const itemsPerPage: number = 8;
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const totalPages = Math.ceil(dataTestimony.length / itemsPerPage);
+  const paginatedtestimony = dataTestimony.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   return (
     <div className="text-center md:p-8 2xl:container mx-auto bg-gray-100 pb-6 pt-5">
@@ -49,7 +63,8 @@ export default async function TestiomoniStars() {
                 className="flex flex-row font-semibold gap-2 justify-between w-full"
               >
                 <p className="text-left w-full">{data.title}</p>
-                <div className="text-base text-yellow-500 w-fit flex flex-row gap-2 ml-auto">
+                <div className="text-base text-yellow-500 w-fit flex flex-row gap-1 ml-auto">
+                  <FontAwesomeIcon icon={faStar} />
                   <FontAwesomeIcon icon={faStar} />
                   <FontAwesomeIcon icon={faStar} />
                   <FontAwesomeIcon icon={faStar} />
@@ -61,7 +76,7 @@ export default async function TestiomoniStars() {
         </div>
         <div className="flex flex-col gap-2 px-4 mt-4 md:px-0">
           {dataTestimony?.length > 0 ? (
-            dataTestimony?.map((testimonial: any, index: number) => (
+            paginatedtestimony?.map((testimonial: any, index: number) => (
               <TestimonialCard
                 key={index}
                 imageSrc={testimonial.image}
@@ -75,6 +90,13 @@ export default async function TestiomoniStars() {
           ) : (
             <div>No Data</div>
           )}
+        </div>
+        <div className="mt-4">
+          <Pages
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={setCurrentPage}
+          />
         </div>
       </div>
     </div>
