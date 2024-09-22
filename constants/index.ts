@@ -233,3 +233,26 @@ export const navItems = [
   { path: "/contact", label: "Contact" },
   { path: "/career", label: "Career" },
 ];
+
+export const testimonyRating = [
+  {
+    title: "Kecepatan respons",
+    rating: 5,
+  },
+  {
+    title: "Layanan",
+    rating: 5,
+  },
+  {
+    title: "Keterampilan dan Keahlian",
+    rating: 5,
+  },
+  {
+    title: "Sepadan dengan harga",
+    rating: 5,
+  },
+  {
+    title: "Kualitas Aplikasi / Mobile / Website",
+    rating: 5,
+  },
+];

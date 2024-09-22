@@ -14,7 +14,7 @@ const CardSquarePorto = ({ projects }: any) => {
     body = "",
     image = "",
     altImage = "",
-    tags=[]
+    tags = [],
   } = projects || {};
 
   return (
@@ -50,19 +50,19 @@ const CardSquarePorto = ({ projects }: any) => {
           {removeHTMLTags(body) ||
             "Lörem ipsum astrobel sar direlig. Kronde est konfoni med kelig. Löremipsum astrobel sar direlig. Kronde est konfoni med kelig."}
         </p>
-        <div className="overflow-y-auto scrollbar-thin">
-            <div className="flex flex-row gap-1 pt-2 md:items-end w-full justify-start min-w-0">
-              {tags?.map((data: { id: number; title: string }) => (
-                <Link
-                  key={data.id}
-                  href={`/portofolio?tag=${data.title}`}
-                  className="bg-white rounded-full px-[10px] py-[2px] md:py-1 flex-none text-blue md:text-webDesk text-mobileDesk border-blue border"
-                >
-                  {data.title}
-                </Link>
-              ))}
-            </div>
+        {/* <div className="overflow-y-auto scrollbar-thin">
+          <div className="flex flex-row gap-1 pt-2 md:items-end w-full justify-start min-w-0">
+            {tags?.map((data: { id: number; title: string }) => (
+              <Link
+                key={data.id}
+                href={`/portofolio?tag=${data.title}`}
+                className="bg-white rounded-full px-[10px] py-[2px] md:py-1 flex-none text-blue md:text-webDesk text-mobileDesk border-blue border"
+              >
+                {data.title}
+              </Link>
+            ))}
           </div>
+        </div> */}
         <Link target="_blank" href={`/${slug}`}>
           <Button
             size="sm"
