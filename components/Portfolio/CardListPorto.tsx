@@ -59,7 +59,7 @@ const CardListPorto = ({ projects }: any) => {
           <p className="md:text-webSubjudul text-mobileDesk text-gray my-1 md:mt-3 md:mb-4 w-full md:w-full line-clamp-2 md:line-clamp-3">
             {removeHTMLTags(body) || "lorem1"}
           </p>
-          <div className="overflow-y-auto scrollbar-thin">
+          {/* <div className="overflow-y-auto scrollbar-thin">
             <div className="flex flex-row gap-1 pt-2 md:items-end w-full justify-start min-w-0">
               {tags?.map((data: { id: number; title: string }) => (
                 <Link
@@ -71,7 +71,7 @@ const CardListPorto = ({ projects }: any) => {
                 </Link>
               ))}
             </div>
-          </div>
+          </div> */}
           <Link target="_blank" href={`/${slug}`} className="mt-2">
             <Button
               size="sm"

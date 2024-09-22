@@ -20,6 +20,7 @@ const metaData = (data: any) => {
       type: "article",
       title: data.title,
       description: data.excerpt,
+      siteName:"Newus Technology",
       url: `${BASE_URL}/${data.slug}`,
       images: [
         {
