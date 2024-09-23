@@ -319,9 +319,7 @@ export default function RenderPortofolio({
                       5,0
                     </p>
                   </div>
-                  <p className="mt-2 text-justify">
-                    {projectsDetail.testimony}
-                  </p>
+                  <div className="mt-2 text-justify" dangerouslySetInnerHTML={ {__html :projectsDetail.testimony}}/>
                 </div>
               )}
             </div>
