@@ -9,18 +9,20 @@ import { getProjectDetail } from "@/components/Fetching/Portfolio/port";
 import RenderPortofolio from "./partials/RenderPortofolio";
 import { getTeamDetail } from "@/components/Fetching/Division/division";
 import RenderTeam from "./partials/RenderTeam";
+import favIcon from "@/app/favicon.ico";
 export const dynamic = "force-dynamic";
 
 const metaData = (data: any) => {
   return {
     title: data.title,
-    description: data.excerpt,
+    description: data.excerpt || data.description,
     keyword: data.keyword,
     openGraph: {
-      type: "article",
+      type: "website",
       title: data.title,
-      description: data.excerpt,
-      siteName:"Newus Technology",
+      description: data.excerpt || data.description,
+      logo: favIcon,
+      siteName: "Newus Technology",
       url: `${BASE_URL}/${data.slug}`,
       images: [
         {
