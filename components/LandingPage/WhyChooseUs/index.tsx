@@ -31,18 +31,18 @@ const skills = [
 
 const WhyChooseUs = () => {
   return (
-    <section className="px-5 md:container mx-auto py-8 md:pt-5 md:pb-16 xl:pb-16 2xl:pb-[90px] overflow-hidden">
+    <section className="px-5 md:container mx-auto pt-5 sm:pt-0 pb-5 sm:pb-0 md:pb-16 xl:pb-16 2xl:pb-[90px] overflow-hidden">
       {/* <div className="flex flex-col w-full gap-5 lg:h-[380px] xl:h-[380px]"> */}
       <div className="flex flex-col w-full gap-5 h-auto">
-        <div className="w-full lg:w-1/2 flex flex-col gap-3">
+        <div className="w-full flex flex-col gap-2">
           {/* Set fixed height */}
-          <h1 className="text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px] pb-3 xl:pb-5 text-center lg:text-left">
+          <p className="text-tangerine font-bold text-nowrap text-mobileJudul md:text-[20px] pb-3 xl:pb-5 text-center lg:text-left">
             <span className="text-blue mr-1 md:mr-[2px]">Why </span>Choose Us?
-          </h1>
-          <h2 className="text-mobileSubjudul md:text-[24px] font-bold">
+          </p>
+          <p className="text-mobileSubjudul md:text-[24px] font-bold">
             We offer a transparent, collaborative and customer-oriented
             approach.
-          </h2>
+          </p>
           <p className="text-mobileDesk md:text-webDesk">
             Active in Indonesia's IT development since 2021 with software
             services, digital marketing strategies, and quality IT solutions.
@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
         <div className="flex-grow">
           <Services />
         </div>
-        <div className="w-full h-[200px] sm:h-[300px] lg:h-full flex flex-col relative">
+        <div data-aos="fade-up" className="w-full h-[200px] sm:h-[300px] lg:h-[450px] flex flex-col relative">
           <Image
             alt="Background"
             src="/assets/images/whysnewus.jpg"

@@ -41,15 +41,18 @@ export default function TestiomoniStars({
             {testimonyRating.map((data) => (
               <div
                 key={data.title}
-                className="flex flex-row font-semibold gap-2 justify-between w-full"
+                className="flex flex-row font-[500] text-mobileSubjudul sm:text-base gap-2 justify-between w-full"
               >
                 <p className="text-left w-full">{data.title}</p>
                 <div className="text-base text-yellow-500 w-fit flex flex-row gap-1 ml-auto">
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
-                  <FontAwesomeIcon icon={faStar} />
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <FontAwesomeIcon
+                      key={index}
+                      width={16}
+                      height={16}
+                      icon={faStar}
+                    />
+                  ))}
                 </div>
               </div>
             ))}
