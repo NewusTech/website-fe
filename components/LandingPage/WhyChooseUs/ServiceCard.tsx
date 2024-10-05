@@ -3,7 +3,7 @@ import React from "react";
 
 const ServiceCard = ({ icon, title, description }: any) => {
   return (
-    <div className="bg-white rounded-tl-lg lg:rounded-none p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
+    <div data-aos="flip-left" className="bg-white rounded-tl-lg lg:rounded-none p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
       <div className="mb-4 flex justify-center">{icon}</div>
       <h3 className="text-mobileSubjudul md:text-webSubjudul font-semibold mb-2">
         {title}
@@ -17,7 +17,7 @@ const ServiceCard = ({ icon, title, description }: any) => {
 
 const ServiceCard2 = ({ icon, title, description }: any) => {
   return (
-    <div className="bg-white rounded-tr-lg lg:rounded-none p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
+    <div data-aos="flip-left" className="bg-white rounded-tr-lg lg:rounded-none p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
       <div className="mb-4 flex justify-center">{icon}</div>
       <h3 className="text-mobileSubjudul md:text-webSubjudul font-semibold mb-2">
         {title}
@@ -59,7 +59,7 @@ const Services = () => {
         title="Delivery on time"
         description="Ensure every IT solution is completed on schedule to support your business success."
       />
-      <div className="bg-white p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
+      <div data-aos="flip-left" className="bg-white p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
         <div className="mb-4 flex justify-center">
           <Image
             alt="Warranty"
@@ -76,7 +76,7 @@ const Services = () => {
           1 year service warranty
         </p>
       </div>
-      <div className="bg-white p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
+      <div data-aos="flip-left" className="bg-white p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
         <div className="mb-4 flex justify-center">
           <Image
             alt="Money back guarantee"
@@ -93,7 +93,7 @@ const Services = () => {
           100% money back guarantee if our work does not meet your needs
         </p>
       </div>
-      <div className="bg-white rounded-bl-lg p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
+      <div data-aos="flip-left" className="bg-white rounded-bl-lg p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
         <div className="mb-4 flex justify-center">
           <Image
             alt="Delivery on time"
@@ -110,7 +110,7 @@ const Services = () => {
           Experienced technicians more than 12 years
         </p>
       </div>
-      <div className="bg-white rounded-br-lg p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
+      <div data-aos="flip-left" className="bg-white rounded-br-lg p-3 sm:p-5 xl:p-6 text-center shadow-lg border-[0.5px] border-gray-300 w-full h-full flex flex-col justify-start lg:justify-center lg:py-10">
         <div className="mb-4 flex justify-center">
           <Image
             alt="Delivery on time"

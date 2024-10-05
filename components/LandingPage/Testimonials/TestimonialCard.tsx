@@ -29,21 +29,21 @@ export default function TestimonialCard({
               width={500}
               height={500}
               loading="lazy"
-              className="rounded-full w-[80px] h-[80px] object-cover"
+              className="rounded-full w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] object-cover"
             />
-            <p className="my-auto flex flex-col gap-1 ml-6 justify-start items-start text-blue-smooth text-left">
+            <p className="my-auto flex flex-col gap-1 ml-6 justify-start items-start text-blue-smooth text-left text-mobileSubjudul sm:text-base">
               {company} | {name}
-              <span className="text-orange-500 text-left">
+              <span className="text-orange-500 text-left text-mobileSubjudul sm:text-base">
                 Jabatan : {position}
               </span>{" "}
               <span className="text-gray-2">{formattedDate(createdAt)}</span>
             </p>
           </div>
-          <p className="ml-auto flex flex-row items-center gap-2 pb-4 md:pb-0">
+          <p className="ml-auto flex flex-row items-center gap-2 pb-2 md:pb-0 text-mobileSubjudul sm:text-base">
             <FontAwesomeIcon icon={faStar} className="text-yellow-500" /> 5,0
           </p>
         </div>
-        <p className="mt-4 text-justify">{quote}</p>
+        <p className="mt-4 text-justify text-mobileSubjudul sm:text-base">{quote}</p>
       </div>
     </div>
   );
